@@ -15,7 +15,7 @@ import android.view.WindowInsets
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.webkit.WebViewAssetLoader
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     var lastSafeTopDp = 48f
     var lastSafeBottomDp = 20f
+
+    private lateinit var assetLoader: WebViewAssetLoader
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
@@ -44,10 +46,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Borda a borda & Tema Escuro Obsidian
+        // Configuração de tela borda a borda
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.statusBarColor = Color.TRANSPARENT
         window.navigationBarColor = Color.TRANSPARENT
+
+        assetLoader = WebViewAssetLoader.Builder()
+            .addPathHandler("/assets/", WebViewAssetLoader.AssetsPathHandler(this))
+            .build()
 
         webView = WebView(this).apply {
             setBackgroundColor(Color.parseColor("#05070C"))
@@ -60,7 +66,8 @@ class MainActivity : AppCompatActivity() {
         startAndBindService()
         setupCommandStreamToUi()
 
-        webView.loadUrl("file:///android_asset/web/index.html")
+        // Carrega via host seguro https://appassets.androidplatform.net
+        webView.loadUrl("https://appassets.androidplatform.net/assets/web/index.html")
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -71,20 +78,30 @@ class MainActivity : AppCompatActivity() {
         settings.databaseEnabled = true
         settings.allowFileAccess = true
         settings.allowContentAccess = true
+        settings.allowFileAccessFromFileURLs = true
+        settings.allowUniversalAccessFromFileURLs = true
         settings.loadsImagesAutomatically = true
         settings.mediaPlaybackRequiresUserGesture = false
-        settings.cacheMode = WebSettings.LOAD_NO_CACHE
+        settings.cacheMode = WebSettings.LOAD_DEFAULT
 
         webView.addJavascriptInterface(AndroidBridge(this, webView), "AndroidBridge")
 
         webView.webChromeClient = object : WebChromeClient() {
             override fun onConsoleMessage(consoleMessage: ConsoleMessage?): Boolean {
-                Log.d("AdbSentinelWeb", "${consoleMessage?.message()} -- From line ${consoleMessage?.lineNumber()} of ${consoleMessage?.sourceId()}")
+                Log.d("AdbSentinelWeb", "${consoleMessage?.message()} [${consoleMessage?.sourceId()}:${consoleMessage?.lineNumber()}]")
                 return true
             }
         }
 
         webView.webViewClient = object : WebViewClient() {
+            override fun shouldInterceptRequest(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): WebResourceResponse? {
+                val url = request?.url ?: return null
+                return assetLoader.shouldInterceptRequest(url) ?: super.shouldInterceptRequest(view, request)
+            }
+
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 injectSafeInsets()
@@ -149,7 +166,7 @@ class MainActivity : AppCompatActivity() {
                     val jsonStr = JSONObject.quote(obj.toString())
                     webView.evaluateJavascript("window.onAdbCommandReceived && window.onAdbCommandReceived(JSON.parse($jsonStr));", null)
                 } catch (e: Exception) {
-                    Log.e("MainActivity", "Erro avaliando JS de streaming: ${e.message}")
+                    Log.e("MainActivity", "Erro streaming UI: ${e.message}")
                 }
             }
         }

@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791302870.6551707,
-    "seen": 1791303615.111187,
-    "ast_hash": "2d756d04d260c51e967dcc2c90061eeb",
+    "mtime": 1791301872.8674722,
+    "seen": 1791302083.349749,
+    "ast_hash": "9f0e520b878a38b34786d164e4705bda",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/shaders.js": {
-    "mtime": 1791302696.081331,
-    "seen": 1791303615.111191,
-    "ast_hash": "1e657582141be8ae697d5a8063d5ff1c",
+    "mtime": 1791300963.7206445,
+    "seen": 1791302083.349797,
+    "ast_hash": "52eab3ec577ea1c4c7a4f17a2c090629",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791302638.986278,
-    "seen": 1791303615.111197,
-    "ast_hash": "cf53244f0b6ca79e0f83ff76a26fcdd2",
+    "mtime": 1791300926.9556675,
+    "seen": 1791302083.349802,
+    "ast_hash": "bf40f446b7c52145d0ba4db626d44f11",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -84,9 +84,33 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791302747.4987175,
-    "seen": 1791303615.111201,
-    "ast_hash": "226ccc1f98ba0a21567fec8b51197fd6",
+    "mtime": 1791301032.0740438,
+    "seen": 1791302083.349807,
+    "ast_hash": "08abafe86845fb7c834ce27f14640aed",
+    "semantic_hash": ""
+  },
+  "screenshot_sentinel.png": {
+    "mtime": 1791301274.9310164,
+    "seen": 1791302083.349807,
+    "ast_hash": "d631e8d17dbf508e1caa94b8e5ff8ecf",
+    "semantic_hash": ""
+  },
+  "screenshot_sentinel_terminal_live.png": {
+    "mtime": 1791302024.0373666,
+    "seen": 1791302083.349809,
+    "ast_hash": "eb7418754c65d99fe9067247c4ecc4f6",
+    "semantic_hash": ""
+  },
+  "screenshot_sentinel_v2.png": {
+    "mtime": 1791301694.3637626,
+    "seen": 1791302083.349809,
+    "ast_hash": "3cb35d3ec1afbd3d1a8087018ef4d63c",
+    "semantic_hash": ""
+  },
+  "screenshot_sentinel_v3.png": {
+    "mtime": 1791301743.9650874,
+    "seen": 1791302083.34981,
+    "ast_hash": "48e212e1b15292efab381bb574bfb3b6",
     "semantic_hash": ""
   }
 }

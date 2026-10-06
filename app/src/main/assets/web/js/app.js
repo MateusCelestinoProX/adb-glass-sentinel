@@ -120,12 +120,10 @@
     if (established.length === 0) {
       activeDevicesContainer.innerHTML = `
         <div class="active-host-box" style="border-color: rgba(255,255,255,0.1);">
-          <div class="host-ip-info">
-            <div class="host-ip-title">
-              <span style="color: var(--text-dim); font-size: 13px;">Nenhum dispositivo conectado no momento</span>
-            </div>
-            <div class="host-status-desc">Aguardando handshake na porta 5555 / USB...</div>
+          <div class="host-top-row">
+            <span style="color: var(--text-dim); font-size: 12px; font-family: var(--font-mono);">Nenhum dispositivo conectado</span>
           </div>
+          <div class="host-status-desc">Aguardando handshake na porta 5555 / USB...</div>
         </div>
       `;
       return;
@@ -139,16 +137,16 @@
 
       html += `
         <div class="active-host-box">
-          <div class="host-ip-info">
-            <div class="host-ip-title">
-              <span>${escapeHtml(ipDisplay)}${portDisplay}</span>
-              <span class="host-type-tag">${dev.type}</span>
-            </div>
-            <div class="host-status-desc">Socket: ${dev.state} • Conexão Aberta</div>
+          <div class="host-top-row">
+            <span class="host-ip-title">${escapeHtml(ipDisplay)}${portDisplay}</span>
+            <span class="host-type-tag">${dev.type}</span>
           </div>
-          <div class="host-action-buttons">
-            <button class="btn-glass-action auth" data-ip="${escapeHtml(dev.remoteIp)}" onclick="window.onAuthDeviceClick('${escapeHtml(dev.remoteIp)}')">Autorizar</button>
-            <button class="btn-glass-action deny" data-ip="${escapeHtml(dev.remoteIp)}" onclick="window.onDenyDeviceClick('${escapeHtml(dev.remoteIp)}')">Derrubar</button>
+          <div class="host-bottom-row">
+            <span class="host-status-desc">Socket: ${dev.state} • Conectado</span>
+            <div class="host-action-buttons">
+              <button class="btn-glass-action auth" onclick="window.onAuthDeviceClick('${escapeHtml(dev.remoteIp)}')">Autorizar</button>
+              <button class="btn-glass-action deny" onclick="window.onDenyDeviceClick('${escapeHtml(dev.remoteIp)}')">Derrubar</button>
+            </div>
           </div>
         </div>
       `;
