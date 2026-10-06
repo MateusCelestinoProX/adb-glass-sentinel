@@ -1,0 +1,5 @@
+<resources>
+    <color name="bg_dark">#05070C</color>
+    <color name="accent_green">#00FF66</color>
+    <color name="accent_red">#FF1037</color>
+</resources>

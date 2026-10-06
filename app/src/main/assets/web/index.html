@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#05070c">
+  <title>ADB Glass Sentinel — Guardião de Conexões</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       UNIVERSAL BACKGROUND VIEWPORT (Shaders WebGL do Personal OS)
+       ========================================================= -->
+  <div class="bg-viewport">
+    <div id="bg-webgl-container"></div>
+    <div class="ambient-veil"></div>
+    <div class="vignette-layer"></div>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="app-viewport">
+    
+    <!-- Header de Vidro Líquido -->
+    <header class="header-glass">
+      <div class="brand-badge">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">ADB Sentinel</h1>
+          <span class="brand-subtitle">Kernel Socket Guard</span>
+        </div>
+      </div>
+
+      <div class="header-status-badge" id="header-status-pill">
+        <span class="status-dot" id="header-status-dot"></span>
+        <span id="header-status-text">PORTA 5555 ATIVA</span>
+      </div>
+    </header>
+
+    <!-- Card Principal: Ativação / Desativação do Wireless ADB (Dial Ring) -->
+    <section class="sentinel-main-card">
+      <div class="toggle-dial-container" id="toggle-dial-btn" title="Alternar Wireless ADB">
+        <svg class="dial-svg-ring" viewBox="0 0 160 160">
+          <circle class="dial-track" cx="80" cy="80" r="70" />
+          <circle class="dial-progress" id="dial-progress-ring" cx="80" cy="80" r="70" />
+        </svg>
+        <div class="dial-center-btn">
+          <span class="dial-icon" id="dial-icon-emoji">⚡</span>
+          <span class="dial-state-text" id="dial-state-label">WIRELESS ON</span>
+        </div>
+      </div>
+
+      <!-- Pílula com o IP e Porta do Celular -->
+      <div class="endpoint-info-pill" id="endpoint-pill" title="Toque para copiar">
+        <span style="color: rgba(255,255,255,0.4);">ENDPOINT:</span>
+        <span class="endpoint-ip" id="endpoint-ip-label">192.168.15.22</span><span class="endpoint-port">:5555</span>
+        <span class="copy-badge">COPIAR</span>
+      </div>
+    </section>
+
+    <!-- Card de Revelação Forçada de Dispositivos Conectados (IP Mandatório) -->
+    <section class="disclosure-card">
+      <div class="section-header-row">
+        <h2 class="section-title">
+          <span>📡 Dispositivos no ADB</span>
+        </h2>
+        <span class="section-count-badge" id="active-count-badge">0 CONECTADOS</span>
+      </div>
+
+      <div id="active-devices-container">
+        <!-- Renderizado dinamicamente -->
+        <div class="active-host-box">
+          <div class="host-ip-info">
+            <div class="host-ip-title">
+              <span id="active-host-ip-display">Aguardando Conexão...</span>
+              <span class="host-type-tag" id="active-host-type-tag">TCP</span>
+            </div>
+            <div class="host-status-desc" id="active-host-status-desc">Nenhum socket ativo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPER GLASS BOX TERMINAL (Phosphor Green Letters) -->
+    <section class="terminal-card">
+      <div class="terminal-header">
+        <div class="terminal-title_group">
+          <div class="terminal-lights">
+            <span class="term-light red"></span>
+            <span class="term-light yellow"></span>
+            <span class="term-light green"></span>
+          </div>
+          <span class="terminal-label">ADB SHELL INSPECTOR [LIVE STREAM]</span>
+        </div>
+        <div class="terminal-actions">
+          <button class="term-btn-icon" id="btn-term-pause">PAUSAR</button>
+          <button class="term-btn-icon" id="btn-term-clear">LIMPAR</button>
+        </div>
+      </div>
+
+      <div class="terminal-box-viewport" id="terminal-viewport">
+        <div class="terminal-empty-msg" id="terminal-empty-msg">
+          &gt; Terminal escutando o daemon adbd em tempo real...<br>
+          &gt; Comandos recebidos via shell e IPs de origem serão impressos aqui.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- DOCK INFERIOR DE VIDRO (Troca de Shaders & Histórico) -->
+  <nav class="bottom-dock-glass">
+    <button class="dock-pill-btn active" data-shader="cyber_matrix">🟢 Matrix</button>
+    <button class="dock-pill-btn" data-shader="strands">⚡ Strands</button>
+    <button class="dock-pill-btn" data-shader="plasma">🌌 Plasma</button>
+    <button class="dock-pill-btn" data-shader="veil">🌑 Veil</button>
+    <button class="dock-pill-btn" id="dock-btn-history">📜 Histórico</button>
+  </nav>
+
+  <!-- MODAL SHEET DE HISTÓRICO & CHAVES DO SO -->
+  <div class="modal-overlay" id="history-modal-overlay">
+    <div class="modal-sheet-glass">
+      <div class="modal-sheet-header">
+        <h3 class="modal-title">Histórico de Conexões & Chaves</h3>
+        <button class="modal-close-btn" id="btn-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-scrollable-content" id="modal-content-list">
+        <!-- Renderizado dinamicamente -->
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <button class="btn-glass-action auth" style="flex: 1;" id="btn-clear-history">Limpar Histórico</button>
+        <button class="btn-glass-action deny" style="flex: 1;" id="btn-revoke-all-keys">Revogar Todas as Chaves</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { initShader } from './js/shaders.js';
+    window.initShader = initShader;
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
