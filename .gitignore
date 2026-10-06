@@ -6,3 +6,4 @@ app/build/
 local.properties
 .DS_Store
 screenshot_*.png
+audit_test_*.png

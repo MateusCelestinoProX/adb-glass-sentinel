@@ -41,12 +41,12 @@ object AdbLogStreamer {
         if (isStreaming) return
         isStreaming = true
 
-        // 1. Carrega histórico recente com logcat -d
+        // 1. Carrega histórico recente
         Thread {
             loadRecentLogs()
         }.start()
 
-        // 2. Loop de streaming contínuo
+        // 2. Loop de streaming contínuo via ProcessBuilder logcat
         Thread {
             try {
                 val builder = ProcessBuilder("logcat", "-v", "time", "-s", "adbd:I")
@@ -60,18 +60,61 @@ object AdbLogStreamer {
                     parseAndDispatchLogLine(currentLine)
                 }
             } catch (e: Exception) {
-                Log.e(TAG, "Exceção no streaming do logcat: ${e.message}")
+                Log.v(TAG, "ProcessBuilder logcat fallback: ${e.message}")
             } finally {
-                stopStreaming()
+                // Não encerra isStreaming para manter o file poller
             }
         }.apply {
             name = "AdbLogStreamerThread"
             isDaemon = true
             start()
         }
+
+        // 3. Loop de polling de alto desempenho para /data/local/tmp/adb_commands.txt
+        Thread {
+            val cmdFile = java.io.File("/data/local/tmp/adb_commands.txt")
+            var lastReadHash = 0
+            while (isStreaming) {
+                try {
+                    if (cmdFile.exists() && cmdFile.canRead()) {
+                        val lines = cmdFile.readLines()
+                        val currentHash = lines.hashCode()
+                        if (currentHash != lastReadHash) {
+                            lastReadHash = currentHash
+                            lines.forEach { line ->
+                                if (line.contains("adbd service requested '")) {
+                                    parseAndDispatchLogLine(line)
+                                }
+                            }
+                        }
+                    }
+                } catch (ignored: Exception) {}
+                try {
+                    Thread.sleep(400)
+                } catch (e: InterruptedException) {
+                    break
+                }
+            }
+        }.apply {
+            name = "AdbCommandFilePollingThread"
+            isDaemon = true
+            start()
+        }
     }
 
     private fun loadRecentLogs() {
+        val cmdFile = java.io.File("/data/local/tmp/adb_commands.txt")
+        if (cmdFile.exists() && cmdFile.canRead()) {
+            try {
+                val lines = cmdFile.readLines()
+                lines.takeLast(35).forEach { line ->
+                    if (line.contains("adbd service requested '")) {
+                        parseAndDispatchLogLine(line)
+                    }
+                }
+            } catch (ignored: Exception) {}
+        }
+
         try {
             val process = Runtime.getRuntime().exec(arrayOf("logcat", "-d", "-v", "time", "-s", "adbd:I"))
             val reader = BufferedReader(InputStreamReader(process.inputStream))
@@ -83,12 +126,11 @@ object AdbLogStreamer {
                     recentLines.add(line)
                 }
             }
-            // Processa as últimas 20 linhas
             recentLines.takeLast(25).forEach { line ->
                 parseAndDispatchLogLine(line)
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Erro ao carregar recent logs: ${e.message}")
+            Log.v(TAG, "logcat -d note: ${e.message}")
         }
     }
 
@@ -150,8 +192,8 @@ object AdbLogStreamer {
                 isPrivileged = isPriv
             )
 
-            // Evitar duplicata exata imediata
-            if (commandHistory.firstOrNull()?.command == event.command && commandHistory.firstOrNull()?.timestamp == event.timestamp) {
+            // Evitar duplicata exata
+            if (commandHistory.any { it.command == event.command && it.timestamp == event.timestamp }) {
                 return
             }
 

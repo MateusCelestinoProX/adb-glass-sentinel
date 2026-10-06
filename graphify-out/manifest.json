@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
-    "mtime": 1791301839.3319824,
-    "seen": 1791302083.349798,
-    "ast_hash": "46643506e01fa4fd987c16cc090c6c19",
+    "mtime": 1791310464.3354475,
+    "seen": 1791311916.457578,
+    "ast_hash": "1880e412aab8256de979e0022760b52b",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
@@ -87,6 +87,54 @@
     "mtime": 1791302747.4987175,
     "seen": 1791303615.111201,
     "ast_hash": "226ccc1f98ba0a21567fec8b51197fd6",
+    "semantic_hash": ""
+  },
+  "adb_sentinel_daemon.sh": {
+    "mtime": 1791311393.1753154,
+    "seen": 1791311916.4575691,
+    "ast_hash": "b02e38104fbbaf379d2befba3e5abb2d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1791309631.9842644,
+    "seen": 1791311916.457587,
+    "ast_hash": "6fc39dba802cc598b22e47a5f8da9b10",
+    "semantic_hash": ""
+  },
+  "audit_test_1.png": {
+    "mtime": 1791309720.2828295,
+    "seen": 1791311916.45759,
+    "ast_hash": "02212770527586b64f4129ee2f043b35",
+    "semantic_hash": ""
+  },
+  "audit_test_2.png": {
+    "mtime": 1791309773.6770337,
+    "seen": 1791311916.45759,
+    "ast_hash": "050c4804daaa7604cf368d6d028905e9",
+    "semantic_hash": ""
+  },
+  "audit_test_3.png": {
+    "mtime": 1791309859.911416,
+    "seen": 1791311916.457591,
+    "ast_hash": "223498c79b8306c624f14ae5825e5d6f",
+    "semantic_hash": ""
+  },
+  "audit_test_4.png": {
+    "mtime": 1791311512.304879,
+    "seen": 1791311916.457592,
+    "ast_hash": "1d465106c2cfcd65356552b8c148845a",
+    "semantic_hash": ""
+  },
+  "audit_test_5.png": {
+    "mtime": 1791311646.8763962,
+    "seen": 1791311916.457592,
+    "ast_hash": "ea60c6fb78e686f8bf9d87b441211ffe",
+    "semantic_hash": ""
+  },
+  "audit_test_modal.png": {
+    "mtime": 1791311756.373915,
+    "seen": 1791311916.4575932,
+    "ast_hash": "a43291531150b09e0d2a82e4a773a897",
     "semantic_hash": ""
   }
 }
