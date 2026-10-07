@@ -172,6 +172,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        AdbLogStreamer.startStreaming()
+        injectSafeInsets()
+        webView.evaluateJavascript("window.syncRecentCommands && window.syncRecentCommands();", null)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         if (isServiceBound) {

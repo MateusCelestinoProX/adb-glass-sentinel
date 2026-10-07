@@ -42,15 +42,22 @@ class AdbSentinelService : Service() {
         if (isRunning) return
         isRunning = true
 
+        ensureDaemonRunning()
+
         // 1. Inicia streamer de logs em tempo real
         AdbLogStreamer.startStreaming()
 
         // 2. Loop de verificação de sockets a cada 1.5s
         serviceScope.launch {
             var lastConnectedIp: String? = null
+            var iterCount = 0
 
             while (isActive && isRunning) {
                 try {
+                    if (++iterCount % 8 == 0) {
+                        ensureDaemonRunning()
+                    }
+
                     val connections = AdbSocketTracker.scanActiveConnections()
                     val established = connections.firstOrNull { it.state == "ESTABLISHED" }
 
@@ -70,6 +77,21 @@ class AdbSentinelService : Service() {
                 }
                 delay(1500)
             }
+        }
+    }
+
+    private fun ensureDaemonRunning() {
+        serviceScope.launch(Dispatchers.IO) {
+            try {
+                val script = java.io.File("/data/local/tmp/adb_sentinel_daemon.sh")
+                if (script.exists()) {
+                    val proc = Runtime.getRuntime().exec(arrayOf("sh", "-c", "ps -A | grep -v grep | grep adb_sentinel_daemon"))
+                    val isAlive = proc.inputStream.bufferedReader().use { it.readText() }.trim().isNotEmpty()
+                    if (!isAlive) {
+                        Runtime.getRuntime().exec(arrayOf("sh", "-c", "chmod 755 /data/local/tmp/adb_sentinel_daemon.sh && ( /system/bin/sh /data/local/tmp/adb_sentinel_daemon.sh >/dev/null 2>&1 & )"))
+                    }
+                }
+            } catch (ignored: Exception) {}
         }
     }
 

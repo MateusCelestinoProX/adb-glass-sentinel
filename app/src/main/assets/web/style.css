@@ -529,6 +529,60 @@ html, body {
   letter-spacing: 0.5px;
 }
 
+.terminal-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 255, 102, 0.12);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  font-size: 8.5px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-green);
+  letter-spacing: 0.5px;
+}
+
+.live-dot-pulse {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #00ff66;
+  box-shadow: 0 0 8px #00ff66;
+  animation: liveBeaconPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes liveBeaconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 6px #00ff66;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+    box-shadow: 0 0 12px #00ff66;
+  }
+}
+
+@keyframes cmdFlashIn {
+  0% {
+    background: rgba(0, 255, 102, 0.28);
+    border-left-color: #ffffff;
+    transform: translateX(-4px);
+  }
+  100% {
+    background: rgba(0, 255, 102, 0.03);
+    border-left-color: rgba(0, 255, 102, 0.4);
+    transform: translateX(0);
+  }
+}
+
+.terminal-log-row.cmd-flash-in {
+  animation: cmdFlashIn 0.35s ease-out;
+}
+
 .terminal-actions {
   display: flex;
   gap: 6px;

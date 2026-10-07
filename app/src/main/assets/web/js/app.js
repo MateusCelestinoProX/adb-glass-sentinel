@@ -156,18 +156,26 @@
   }
 
   // 4. Recebimento de Comandos Shell em Tempo Real (Terminal Verde Fósforo)
+  const seenCommandIds = new Set();
+
   window.onAdbCommandReceived = function (event) {
     if (isPaused) return;
+    if (!event || !event.command) return;
+
+    const cmdKey = event.id || `${event.timestamp}_${event.command}`;
+    if (seenCommandIds.has(cmdKey)) return;
+    seenCommandIds.add(cmdKey);
 
     if (terminalEmptyMsg) {
       terminalEmptyMsg.style.display = 'none';
     }
 
     const row = document.createElement('div');
-    row.className = 'terminal-log-row';
+    row.className = 'terminal-log-row cmd-flash-in';
+    row.dataset.id = cmdKey;
 
     const privClass = event.isPrivileged ? ' privileged' : '';
-    const badgeText = event.clientIp || '127.0.0.1';
+    const badgeText = event.clientIp || '192.168.15.23';
 
     row.innerHTML = `
       <div class="log-meta-line">
@@ -181,8 +189,12 @@
     terminalViewport.insertBefore(row, terminalViewport.firstChild);
 
     // Limita o número de linhas no DOM para manter 120fps fluido
-    while (terminalViewport.children.length > 80) {
-      terminalViewport.removeChild(terminalViewport.lastChild);
+    while (terminalViewport.children.length > 90) {
+      const lastChild = terminalViewport.lastChild;
+      if (lastChild && lastChild.dataset && lastChild.dataset.id) {
+        seenCommandIds.delete(lastChild.dataset.id);
+      }
+      terminalViewport.removeChild(lastChild);
     }
   };
 
@@ -200,9 +212,10 @@
   });
 
   btnTermClear.addEventListener('click', () => {
+    seenCommandIds.clear();
     terminalViewport.innerHTML = `
       <div class="terminal-empty-msg" id="terminal-empty-msg">
-        &gt; Terminal limpo. Escutando novos comandos shell...
+        &gt; Terminal limpo. Escutando novos comandos shell em tempo real...
       </div>
     `;
     if (window.AndroidBridge && window.AndroidBridge.vibrate) {
@@ -352,27 +365,33 @@
       .replace(/'/g, '&#039;');
   }
 
-  // 10. Polling inicial e periódico (1.5s)
-  function loadInitialCommands() {
+  // 10. Sincronização em Tempo Real de Comandos (Ultra-Baixa Latência)
+  window.syncRecentCommands = function () {
     if (window.AndroidBridge && window.AndroidBridge.getRecentCommands) {
       try {
         const raw = window.AndroidBridge.getRecentCommands();
         const list = JSON.parse(raw);
         if (list && list.length > 0) {
-          if (terminalEmptyMsg) terminalEmptyMsg.style.display = 'none';
           list.slice().reverse().forEach((event) => {
             window.onAdbCommandReceived(event);
           });
         }
       } catch (e) {
-        console.error('Erro ao ler recent commands', e);
+        console.error('Erro ao sincronizar comandos', e);
       }
     }
-  }
+  };
 
   fetchAdbStatus();
   fetchActiveDevices();
-  loadInitialCommands();
+  window.syncRecentCommands();
+
+  // Interceptador em tempo real de alta frequência (200ms)
+  setInterval(() => {
+    window.syncRecentCommands();
+  }, 200);
+
+  // Atualização periódica de status e conexões
   setInterval(() => {
     fetchAdbStatus();
     fetchActiveDevices();

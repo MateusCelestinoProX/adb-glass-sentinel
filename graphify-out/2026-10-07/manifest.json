@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791345555.2400703,
-    "seen": 1791346236.328196,
-    "ast_hash": "ba5340f88546fc03537d22160b411d9d",
+    "mtime": 1791302870.6551707,
+    "seen": 1791303615.111187,
+    "ast_hash": "2d756d04d260c51e967dcc2c90061eeb",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -24,15 +24,15 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
-    "mtime": 1791344663.1524694,
-    "seen": 1791346236.3281999,
-    "ast_hash": "b6b364ef3c512e2d3008a701cb1da02e",
+    "mtime": 1791310464.3354475,
+    "seen": 1791311916.457578,
+    "ast_hash": "1880e412aab8256de979e0022760b52b",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1791344839.4756079,
-    "seen": 1791346236.328201,
-    "ast_hash": "7d199f135e3bc392db9242af13359b76",
+    "mtime": 1791300893.5590181,
+    "seen": 1791302083.349799,
+    "ast_hash": "c27fdcfc0464111b4261f7757780d263",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791345030.281016,
-    "seen": 1791346236.328204,
-    "ast_hash": "90df409a2a541047b5492edc10034ad2",
+    "mtime": 1791302638.986278,
+    "seen": 1791303615.111197,
+    "ast_hash": "cf53244f0b6ca79e0f83ff76a26fcdd2",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -84,15 +84,15 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791345088.256964,
-    "seen": 1791346236.328209,
-    "ast_hash": "a3e9d2b758bc9c871db8877109d73392",
+    "mtime": 1791302747.4987175,
+    "seen": 1791303615.111201,
+    "ast_hash": "226ccc1f98ba0a21567fec8b51197fd6",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
-    "mtime": 1791344593.7993293,
-    "seen": 1791346236.328191,
-    "ast_hash": "5fb0a6d745da6706bea574f23c087587",
+    "mtime": 1791311393.1753154,
+    "seen": 1791311916.4575691,
+    "ast_hash": "b02e38104fbbaf379d2befba3e5abb2d",
     "semantic_hash": ""
   },
   "README.md": {
@@ -101,16 +101,40 @@
     "ast_hash": "6fc39dba802cc598b22e47a5f8da9b10",
     "semantic_hash": ""
   },
-  "screen_app.png": {
-    "mtime": 1791343380.7837384,
-    "seen": 1791346236.3282099,
-    "ast_hash": "e04b292d0facb42cda84fc30ea6c68ab",
+  "audit_test_1.png": {
+    "mtime": 1791309720.2828295,
+    "seen": 1791311916.45759,
+    "ast_hash": "02212770527586b64f4129ee2f043b35",
     "semantic_hash": ""
   },
-  "screen_now.png": {
-    "mtime": 1791343235.445687,
-    "seen": 1791346236.3282108,
-    "ast_hash": "b048fa6051c7574c52e23674eff6a4cf",
+  "audit_test_2.png": {
+    "mtime": 1791309773.6770337,
+    "seen": 1791311916.45759,
+    "ast_hash": "050c4804daaa7604cf368d6d028905e9",
+    "semantic_hash": ""
+  },
+  "audit_test_3.png": {
+    "mtime": 1791309859.911416,
+    "seen": 1791311916.457591,
+    "ast_hash": "223498c79b8306c624f14ae5825e5d6f",
+    "semantic_hash": ""
+  },
+  "audit_test_4.png": {
+    "mtime": 1791311512.304879,
+    "seen": 1791311916.457592,
+    "ast_hash": "1d465106c2cfcd65356552b8c148845a",
+    "semantic_hash": ""
+  },
+  "audit_test_5.png": {
+    "mtime": 1791311646.8763962,
+    "seen": 1791311916.457592,
+    "ast_hash": "ea60c6fb78e686f8bf9d87b441211ffe",
+    "semantic_hash": ""
+  },
+  "audit_test_modal.png": {
+    "mtime": 1791311756.373915,
+    "seen": 1791311916.4575932,
+    "ast_hash": "a43291531150b09e0d2a82e4a773a897",
     "semantic_hash": ""
   }
 }

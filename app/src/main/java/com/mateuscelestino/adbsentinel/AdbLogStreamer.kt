@@ -2,7 +2,9 @@ package com.mateuscelestino.adbsentinel
 
 import android.util.Log
 import java.io.BufferedReader
+import java.io.File
 import java.io.InputStreamReader
+import java.io.RandomAccessFile
 import java.util.concurrent.CopyOnWriteArrayList
 
 data class AdbShellCommandEvent(
@@ -41,12 +43,12 @@ object AdbLogStreamer {
         if (isStreaming) return
         isStreaming = true
 
-        // 1. Carrega histórico recente
+        // 1. Carrega histórico recente imediatamente
         Thread {
             loadRecentLogs()
         }.start()
 
-        // 2. Loop de streaming contínuo via ProcessBuilder logcat
+        // 2. Loop de streaming direto via ProcessBuilder logcat
         Thread {
             try {
                 val builder = ProcessBuilder("logcat", "-v", "time", "-s", "adbd:I")
@@ -61,8 +63,6 @@ object AdbLogStreamer {
                 }
             } catch (e: Exception) {
                 Log.v(TAG, "ProcessBuilder logcat fallback: ${e.message}")
-            } finally {
-                // Não encerra isStreaming para manter o file poller
             }
         }.apply {
             name = "AdbLogStreamerThread"
@@ -70,9 +70,54 @@ object AdbLogStreamer {
             start()
         }
 
-        // 3. Loop de polling de alto desempenho para /data/local/tmp/adb_commands.txt
+        // 3. Ultra-Fast Tail Streamer via /data/local/tmp/adb_live.log (40ms polling)
         Thread {
-            val cmdFile = java.io.File("/data/local/tmp/adb_commands.txt")
+            val liveFile = File("/data/local/tmp/adb_live.log")
+            var filePointer = 0L
+
+            // Inicializa ponteiro se arquivo já existir para evitar ler tudo de novo
+            if (liveFile.exists() && liveFile.canRead()) {
+                filePointer = maxOf(0L, liveFile.length() - 8192)
+            }
+
+            while (isStreaming) {
+                try {
+                    if (liveFile.exists() && liveFile.canRead()) {
+                        val fileLength = liveFile.length()
+                        if (fileLength < filePointer) {
+                            filePointer = 0L
+                        }
+                        if (fileLength > filePointer) {
+                            RandomAccessFile(liveFile, "r").use { raf ->
+                                raf.seek(filePointer)
+                                var line: String?
+                                while (raf.readLine().also { line = it } != null) {
+                                    val l = line?.trim() ?: continue
+                                    if (l.contains("service requested")) {
+                                        parseAndDispatchLogLine(l)
+                                    }
+                                }
+                                filePointer = raf.filePointer
+                            }
+                        }
+                    }
+                } catch (ignored: Exception) {}
+
+                try {
+                    Thread.sleep(40)
+                } catch (e: InterruptedException) {
+                    break
+                }
+            }
+        }.apply {
+            name = "AdbLiveLogTailThread"
+            isDaemon = true
+            start()
+        }
+
+        // 4. Fallback de backup para /data/local/tmp/adb_commands.txt
+        Thread {
+            val cmdFile = File("/data/local/tmp/adb_commands.txt")
             var lastReadHash = 0
             while (isStreaming) {
                 try {
@@ -82,7 +127,7 @@ object AdbLogStreamer {
                         if (currentHash != lastReadHash) {
                             lastReadHash = currentHash
                             lines.forEach { line ->
-                                if (line.contains("adbd service requested '")) {
+                                if (line.contains("service requested")) {
                                     parseAndDispatchLogLine(line)
                                 }
                             }
@@ -90,28 +135,40 @@ object AdbLogStreamer {
                     }
                 } catch (ignored: Exception) {}
                 try {
-                    Thread.sleep(400)
+                    Thread.sleep(300)
                 } catch (e: InterruptedException) {
                     break
                 }
             }
         }.apply {
-            name = "AdbCommandFilePollingThread"
+            name = "AdbCommandFileBackupThread"
             isDaemon = true
             start()
         }
     }
 
     private fun loadRecentLogs() {
-        val cmdFile = java.io.File("/data/local/tmp/adb_commands.txt")
-        if (cmdFile.exists() && cmdFile.canRead()) {
+        val liveFile = File("/data/local/tmp/adb_live.log")
+        if (liveFile.exists() && liveFile.canRead()) {
             try {
-                val lines = cmdFile.readLines()
-                lines.takeLast(35).forEach { line ->
-                    if (line.contains("adbd service requested '")) {
+                liveFile.readLines().takeLast(30).forEach { line ->
+                    if (line.contains("service requested")) {
                         parseAndDispatchLogLine(line)
                     }
                 }
+                return
+            } catch (ignored: Exception) {}
+        }
+
+        val cmdFile = File("/data/local/tmp/adb_commands.txt")
+        if (cmdFile.exists() && cmdFile.canRead()) {
+            try {
+                cmdFile.readLines().takeLast(30).forEach { line ->
+                    if (line.contains("service requested")) {
+                        parseAndDispatchLogLine(line)
+                    }
+                }
+                return
             } catch (ignored: Exception) {}
         }
 
@@ -122,7 +179,7 @@ object AdbLogStreamer {
             var l: String?
             while (reader.readLine().also { l = it } != null) {
                 val line = l ?: continue
-                if (line.contains("adbd service requested '")) {
+                if (line.contains("service requested")) {
                     recentLines.add(line)
                 }
             }
@@ -135,7 +192,7 @@ object AdbLogStreamer {
     }
 
     private fun parseAndDispatchLogLine(line: String) {
-        if (!line.contains("adbd service requested '")) return
+        if (!line.contains("service requested")) return
 
         try {
             val timestamp = if (line.length >= 18 && (line[0].isDigit() || line[2] == '-')) {
@@ -145,7 +202,11 @@ object AdbLogStreamer {
             }
 
             val marker = "requested '"
-            val startIdx = line.indexOf(marker) + marker.length
+            val startIdx = if (line.contains(marker)) {
+                line.indexOf(marker) + marker.length
+            } else {
+                line.indexOf("service requested") + 17
+            }
             val endIdx = line.lastIndexOf("'")
             val rawPayload = if (startIdx in 0..endIdx) {
                 line.substring(startIdx, endIdx)
@@ -174,6 +235,12 @@ object AdbLogStreamer {
             } else if (command.startsWith("sync:")) {
                 command = "[FILE SYNC / PUSH / PULL]"
                 serviceType = "SYNC"
+            } else if (command.startsWith("reverse:")) {
+                command = command.removePrefix("reverse:")
+                serviceType = "REVERSE"
+            } else if (command.startsWith("forward:")) {
+                command = command.removePrefix("forward:")
+                serviceType = "FORWARD"
             }
 
             // Identifica o IP do cliente ativo
@@ -181,7 +248,7 @@ object AdbLogStreamer {
             val clientIp = activeConnections.firstOrNull { it.state == "ESTABLISHED" }?.remoteIp
                 ?: "192.168.15.23"
 
-            val isPriv = command.startsWith("pm ") || command.startsWith("su") || command.startsWith("setprop") || command.startsWith("settings ") || command.startsWith("am ")
+            val isPriv = command.startsWith("pm ") || command.startsWith("su") || command.startsWith("setprop") || command.startsWith("settings ") || command.startsWith("am ") || command.startsWith("monkey ")
 
             val event = AdbShellCommandEvent(
                 id = "${System.currentTimeMillis()}-${(1000..9999).random()}",
@@ -192,7 +259,7 @@ object AdbLogStreamer {
                 isPrivileged = isPriv
             )
 
-            // Evitar duplicata exata
+            // Evitar duplicata exata no mesmo milissegundo com mesmo comando
             if (commandHistory.any { it.command == event.command && it.timestamp == event.timestamp }) {
                 return
             }
