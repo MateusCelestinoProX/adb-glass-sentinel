@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791345555.2400703,
-    "seen": 1791346236.328196,
-    "ast_hash": "ba5340f88546fc03537d22160b411d9d",
+    "mtime": 1791384532.3599749,
+    "seen": 1791386027.081015,
+    "ast_hash": "7c02ab055200c988b4172188005d31f5",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/shaders.js": {
-    "mtime": 1791302696.081331,
-    "seen": 1791303615.111191,
-    "ast_hash": "1e657582141be8ae697d5a8063d5ff1c",
+    "mtime": 1791384179.5208201,
+    "seen": 1791386027.081017,
+    "ast_hash": "dfbeb863938c065431951dda13c5c4c6",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791345088.256964,
-    "seen": 1791346236.328209,
-    "ast_hash": "a3e9d2b758bc9c871db8877109d73392",
+    "mtime": 1791384250.5694292,
+    "seen": 1791386027.0810292,
+    "ast_hash": "528d82c3df40cf0eb8807feb49b89baa",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -101,16 +101,22 @@
     "ast_hash": "6fc39dba802cc598b22e47a5f8da9b10",
     "semantic_hash": ""
   },
-  "screen_app.png": {
-    "mtime": 1791343380.7837384,
-    "seen": 1791346236.3282099,
-    "ast_hash": "e04b292d0facb42cda84fc30ea6c68ab",
+  "docs/screenshots/connection_history.png": {
+    "mtime": 1791346323.113939,
+    "seen": 1791386027.08103,
+    "ast_hash": "2a34f2e1a70cf3b7b78f423e47a0aa1a",
     "semantic_hash": ""
   },
-  "screen_now.png": {
-    "mtime": 1791343235.445687,
-    "seen": 1791346236.3282108,
-    "ast_hash": "b048fa6051c7574c52e23674eff6a4cf",
+  "docs/screenshots/plasma_background.png": {
+    "mtime": 1791346323.1073754,
+    "seen": 1791386027.0810308,
+    "ast_hash": "201796df733d86c3a801f54f107c8084",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/realtime_terminal.png": {
+    "mtime": 1791346323.0991683,
+    "seen": 1791386027.081032,
+    "ast_hash": "849a6150f119bfec40ee93d8a821b973",
     "semantic_hash": ""
   }
 }

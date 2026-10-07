@@ -1,6 +1,7 @@
 /**
  * ADB GLASS SENTINEL — Motor de Interface Reativa & Bridge
  * Design inspirado no Pomodoro Clock do Personal OS
+ * Terminal Verde Fósforo em Tempo Real • Widget Background & Accent Colors
  */
 
 (function () {
@@ -8,9 +9,10 @@
 
   let isPaused = false;
   let isWirelessOn = true;
-  let activeShader = 'cyber_matrix';
+  let activeShader = localStorage.getItem('adb_sentinel_shader') || 'strands';
+  let activeAccent = localStorage.getItem('adb_sentinel_accent_color') || '#00ff66';
 
-  // Elementos do DOM
+  // Elementos da Interface Geral
   const toggleDialBtn = document.getElementById('toggle-dial-btn');
   const dialProgressRing = document.getElementById('dial-progress-ring');
   const dialIconEmoji = document.getElementById('dial-icon-emoji');
@@ -21,41 +23,136 @@
   const endpointIpLabel = document.getElementById('endpoint-ip-label');
   const activeCountBadge = document.getElementById('active-count-badge');
   const activeDevicesContainer = document.getElementById('active-devices-container');
+
+  // Elementos do Terminal de Comandos
   const terminalViewport = document.getElementById('terminal-viewport');
   const terminalEmptyMsg = document.getElementById('terminal-empty-msg');
   const btnTermPause = document.getElementById('btn-term-pause');
   const btnTermClear = document.getElementById('btn-term-clear');
+
+  // Elementos do Dock Inferior
+  const dockBtnBackground = document.getElementById('dock-btn-background');
+  const dockBtnHistory = document.getElementById('dock-btn-history');
+
+  // Elementos do Widget de Background & Visual
+  const bgWidgetOverlay = document.getElementById('background-widget-overlay');
+  const btnBgModalClose = document.getElementById('btn-bg-modal-close');
+  const colorSwatchButtons = document.querySelectorAll('.color-swatch-btn');
+  const customColorInput = document.getElementById('custom-color-input');
+  const customColorPreview = document.getElementById('custom-color-preview');
+  const customColorHexText = document.getElementById('custom-color-hex-text');
+  const shaderOptionCards = document.querySelectorAll('.shader-option-card');
+
+  // Elementos do Modal de Histórico
   const historyModalOverlay = document.getElementById('history-modal-overlay');
   const btnModalClose = document.getElementById('btn-modal-close');
-  const dockBtnHistory = document.getElementById('dock-btn-history');
   const modalContentList = document.getElementById('modal-content-list');
   const btnClearHistory = document.getElementById('btn-clear-history');
   const btnRevokeAllKeys = document.getElementById('btn-revoke-all-keys');
-  const shaderButtons = document.querySelectorAll('.dock-pill-btn[data-shader]');
 
-  // 1. Inicializar Shaders WebGL com retry
-  function setupShader() {
-    const ctn = document.getElementById('bg-webgl-container');
-    if (ctn && window.initShader) {
-      window.initShader(ctn, activeShader);
-    } else {
-      setTimeout(setupShader, 100);
+  // =========================================================================
+  // 1. GESTÃO DE CORES DE ACENTO DA INTERFACE (Customizável pelo Usuário)
+  // =========================================================================
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) {
+      hex = hex.split('').map((c) => c + c).join('');
     }
+    const num = parseInt(hex, 16);
+    return {
+      r: (num >> 16) & 255,
+      g: (num >> 8) & 255,
+      b: num & 255
+    };
   }
-  setupShader();
 
-  // Alternar Shaders
-  shaderButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const shader = btn.dataset.shader;
-      if (shader && shader !== activeShader) {
-        shaderButtons.forEach((b) => b.classList.remove('active'));
+  function applyAccentColor(hex) {
+    activeAccent = hex;
+    localStorage.setItem('adb_sentinel_accent_color', hex);
+
+    const rgb = hexToRgb(hex);
+    const root = document.documentElement;
+    root.style.setProperty('--accent-primary', hex);
+    root.style.setProperty('--accent-primary-glow', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.45)`);
+    root.style.setProperty('--accent-primary-soft', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.14)`);
+    root.style.setProperty('--accent-primary-border', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.38)`);
+
+    // Atualiza controles visuais
+    if (customColorPreview) {
+      customColorPreview.style.background = hex;
+      customColorPreview.style.boxShadow = `0 0 10px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.5)`;
+    }
+    if (customColorHexText) {
+      customColorHexText.textContent = `Cor Personalizada (${hex.toUpperCase()})`;
+    }
+    if (customColorInput) {
+      customColorInput.value = hex;
+    }
+
+    // Marca o botão da paleta se coincidir
+    colorSwatchButtons.forEach((btn) => {
+      const bColor = btn.dataset.color.toLowerCase();
+      if (bColor === hex.toLowerCase()) {
         btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  // Eventos de clique na paleta de cores rápida
+  colorSwatchButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const color = btn.dataset.color;
+      if (color) {
+        applyAccentColor(color);
+        if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+          window.AndroidBridge.vibrate(15);
+        }
+      }
+    });
+  });
+
+  // Evento do Seletor Livre Hexadecimal
+  if (customColorInput) {
+    customColorInput.addEventListener('input', (e) => {
+      applyAccentColor(e.target.value);
+    });
+  }
+
+  // Inicializa cor de acento salva
+  applyAccentColor(activeAccent);
+
+  // =========================================================================
+  // 2. GESTÃO DOS 5 SHADERS WEBGL DO PERSONAL OS
+  // =========================================================================
+  function updateShaderCardsUi(selectedShader) {
+    shaderOptionCards.forEach((card) => {
+      const type = card.dataset.shader;
+      const tag = card.querySelector('.shader-status-tag');
+      if (type === selectedShader) {
+        card.classList.add('active');
+        if (tag) tag.textContent = 'ATIVO';
+      } else {
+        card.classList.remove('active');
+        if (tag) tag.textContent = 'SELECIONAR';
+      }
+    });
+  }
+
+  shaderOptionCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const shader = card.dataset.shader;
+      if (shader && shader !== activeShader) {
         activeShader = shader;
+        localStorage.setItem('adb_sentinel_shader', activeShader);
+        updateShaderCardsUi(activeShader);
+
         const ctn = document.getElementById('bg-webgl-container');
         if (ctn && window.initShader) {
           window.initShader(ctn, activeShader);
         }
+
         if (window.AndroidBridge && window.AndroidBridge.vibrate) {
           window.AndroidBridge.vibrate(20);
         }
@@ -63,7 +160,107 @@
     });
   });
 
-  // 2. Sincronização de Status do ADB
+  updateShaderCardsUi(activeShader);
+
+  // =========================================================================
+  // 3. WIDGET DE BACKGROUND & VISUAL (Abertura / Fechamento)
+  // =========================================================================
+  if (dockBtnBackground) {
+    dockBtnBackground.addEventListener('click', () => {
+      bgWidgetOverlay.classList.add('open');
+      if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+        window.AndroidBridge.vibrate(15);
+      }
+    });
+  }
+
+  if (btnBgModalClose) {
+    btnBgModalClose.addEventListener('click', () => {
+      bgWidgetOverlay.classList.remove('open');
+    });
+  }
+
+  bgWidgetOverlay.addEventListener('click', (e) => {
+    if (e.target === bgWidgetOverlay) {
+      bgWidgetOverlay.classList.remove('open');
+    }
+  });
+
+  // =========================================================================
+  // 4. TERMINAL ADB EM TEMPO REAL (Zero Tremor • Letras Verdes • Alta Fluidez)
+  // =========================================================================
+  const seenCommandIds = new Set();
+
+  window.onAdbCommandReceived = function (event) {
+    if (isPaused) return;
+    if (!event || !event.command) return;
+
+    // Deduplicação determinística
+    const cmdKey = event.id || `${event.timestamp}_${event.command}`;
+    if (seenCommandIds.has(cmdKey)) return;
+    seenCommandIds.add(cmdKey);
+
+    if (terminalEmptyMsg && terminalEmptyMsg.style.display !== 'none') {
+      terminalEmptyMsg.style.display = 'none';
+    }
+
+    const row = document.createElement('div');
+    row.className = 'terminal-log-row';
+    row.dataset.id = cmdKey;
+
+    const privClass = event.isPrivileged ? ' privileged' : '';
+    const badgeText = event.clientIp || '192.168.15.23';
+
+    row.innerHTML = `
+      <div class="log-meta-line">
+        <span class="log-time">${escapeHtml(event.timestamp)}</span>
+        <span class="log-ip-badge">IP: ${escapeHtml(badgeText)}</span>
+        <span>[${escapeHtml(event.serviceType || 'SHELL')}]</span>
+      </div>
+      <div class="log-cmd-line${privClass}">$ ${escapeHtml(event.command)}</div>
+    `;
+
+    // Inserção suave no topo sem interferir na rolagem ou causar tremor
+    terminalViewport.prepend(row);
+
+    // Limita linhas no DOM para estabilidade perpétua a 120 FPS
+    while (terminalViewport.children.length > 80) {
+      const lastChild = terminalViewport.lastChild;
+      if (lastChild && lastChild.dataset && lastChild.dataset.id) {
+        seenCommandIds.delete(lastChild.dataset.id);
+      }
+      terminalViewport.removeChild(lastChild);
+    }
+  };
+
+  btnTermPause.addEventListener('click', () => {
+    isPaused = !isPaused;
+    btnTermPause.textContent = isPaused ? 'RETOMAR' : 'PAUSAR';
+    if (isPaused) {
+      btnTermPause.style.color = 'var(--accent-amber)';
+      btnTermPause.style.borderColor = 'var(--accent-amber)';
+    } else {
+      btnTermPause.style.color = '';
+      btnTermPause.style.borderColor = '';
+    }
+  });
+
+  btnTermClear.addEventListener('click', () => {
+    seenCommandIds.clear();
+    terminalViewport.innerHTML = `
+      <div class="terminal-empty-msg" id="terminal-empty-msg">
+        &gt; Terminal limpo. Escutando novos comandos shell em tempo real...<br>
+        &gt; Letras verdes terminal green com IP de origem ativo.
+      </div>
+    `;
+    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+      window.AndroidBridge.vibrate(20);
+    }
+  });
+
+  // =========================================================================
+  // 5. STATUS DO ADB & DISPOSITIVOS CONECTADOS (IP Mandatório)
+  // =========================================================================
   function updateUiWithStatus(status) {
     isWirelessOn = status.wirelessEnabled;
 
@@ -100,7 +297,6 @@
     }
   }
 
-  // 3. Atualização dos Dispositivos Conectados (IP Mandatório)
   function fetchActiveDevices() {
     if (window.AndroidBridge && window.AndroidBridge.getActiveConnections) {
       try {
@@ -123,7 +319,7 @@
           <div class="host-top-row">
             <span style="color: var(--text-dim); font-size: 12px; font-family: var(--font-mono);">Nenhum dispositivo conectado</span>
           </div>
-          <div class="host-status-desc">Aguardando handshake na porta 5555 / USB...</div>
+          <div class="host-status-desc">Aguardando conexão na porta 5555 ou USB...</div>
         </div>
       `;
       return;
@@ -155,75 +351,7 @@
     activeDevicesContainer.innerHTML = html;
   }
 
-  // 4. Recebimento de Comandos Shell em Tempo Real (Terminal Verde Fósforo)
-  const seenCommandIds = new Set();
-
-  window.onAdbCommandReceived = function (event) {
-    if (isPaused) return;
-    if (!event || !event.command) return;
-
-    const cmdKey = event.id || `${event.timestamp}_${event.command}`;
-    if (seenCommandIds.has(cmdKey)) return;
-    seenCommandIds.add(cmdKey);
-
-    if (terminalEmptyMsg) {
-      terminalEmptyMsg.style.display = 'none';
-    }
-
-    const row = document.createElement('div');
-    row.className = 'terminal-log-row cmd-flash-in';
-    row.dataset.id = cmdKey;
-
-    const privClass = event.isPrivileged ? ' privileged' : '';
-    const badgeText = event.clientIp || '192.168.15.23';
-
-    row.innerHTML = `
-      <div class="log-meta-line">
-        <span class="log-time">${escapeHtml(event.timestamp)}</span>
-        <span class="log-ip-badge">IP: ${escapeHtml(badgeText)}</span>
-        <span>[${escapeHtml(event.serviceType)}]</span>
-      </div>
-      <div class="log-cmd-line${privClass}">$ ${escapeHtml(event.command)}</div>
-    `;
-
-    terminalViewport.insertBefore(row, terminalViewport.firstChild);
-
-    // Limita o número de linhas no DOM para manter 120fps fluido
-    while (terminalViewport.children.length > 90) {
-      const lastChild = terminalViewport.lastChild;
-      if (lastChild && lastChild.dataset && lastChild.dataset.id) {
-        seenCommandIds.delete(lastChild.dataset.id);
-      }
-      terminalViewport.removeChild(lastChild);
-    }
-  };
-
-  // 5. Controles do Terminal
-  btnTermPause.addEventListener('click', () => {
-    isPaused = !isPaused;
-    btnTermPause.textContent = isPaused ? 'RETOMAR' : 'PAUSAR';
-    if (isPaused) {
-      btnTermPause.style.color = 'var(--accent-amber)';
-      btnTermPause.style.borderColor = 'var(--accent-amber)';
-    } else {
-      btnTermPause.style.color = '';
-      btnTermPause.style.borderColor = '';
-    }
-  });
-
-  btnTermClear.addEventListener('click', () => {
-    seenCommandIds.clear();
-    terminalViewport.innerHTML = `
-      <div class="terminal-empty-msg" id="terminal-empty-msg">
-        &gt; Terminal limpo. Escutando novos comandos shell em tempo real...
-      </div>
-    `;
-    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
-      window.AndroidBridge.vibrate(20);
-    }
-  });
-
-  // 6. Toggle do Wireless ADB
+  // Toggle do Wireless ADB
   toggleDialBtn.addEventListener('click', () => {
     const newState = !isWirelessOn;
     if (window.AndroidBridge && window.AndroidBridge.toggleWirelessAdb) {
@@ -235,7 +363,7 @@
     }
   });
 
-  // 7. Copiar Endpoint
+  // Copiar Endpoint
   endpointPill.addEventListener('click', () => {
     const text = `${endpointIpLabel.textContent}:5555`;
     if (window.AndroidBridge && window.AndroidBridge.copyToClipboard) {
@@ -248,11 +376,11 @@
     }
   });
 
-  // 8. Ações de Autorizar / Derrubar Dispositivo
+  // Autorizar / Derrubar
   window.onAuthDeviceClick = function (ip) {
     if (window.AndroidBridge && window.AndroidBridge.allowDebugging) {
       window.AndroidBridge.allowDebugging(true, ip);
-      alert(`Dispositivo com IP ${ip} autorizado permanentemente no sistema.`);
+      alert(`Dispositivo com IP ${ip} autorizado permanentemente.`);
     }
   };
 
@@ -263,10 +391,15 @@
     }
   };
 
-  // 9. Modal de Histórico & Chaves
+  // =========================================================================
+  // 6. MODAL DE HISTÓRICO & CHAVES
+  // =========================================================================
   dockBtnHistory.addEventListener('click', () => {
     loadHistoryModalData();
     historyModalOverlay.classList.add('open');
+    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+      window.AndroidBridge.vibrate(15);
+    }
   });
 
   btnModalClose.addEventListener('click', () => {
@@ -297,9 +430,7 @@
     }
 
     let html = '';
-
-    // Seção de Chaves do SO
-    html += `<div style="font-size: 12px; font-weight: 700; color: var(--accent-green); margin-top: 4px;">CHAVES AUTORIZADAS NO SO (${keysList.length})</div>`;
+    html += `<div style="font-size: 12px; font-weight: 700; color: var(--accent-primary); margin-top: 4px;">CHAVES AUTORIZADAS NO SO (${keysList.length})</div>`;
     if (keysList.length === 0) {
       html += `<div style="font-size: 11px; color: var(--text-dim); padding: 6px 0;">Nenhuma chave registrada em dumpsys adb.</div>`;
     } else {
@@ -316,7 +447,6 @@
       });
     }
 
-    // Seção de Histórico de Sessões
     html += `<div style="font-size: 12px; font-weight: 700; color: var(--accent-cyan); margin-top: 12px;">SESSÕES ANTERIORES (${historyList.length})</div>`;
     if (historyList.length === 0) {
       html += `<div style="font-size: 11px; color: var(--text-dim); padding: 6px 0;">Nenhuma conexão anterior gravada.</div>`;
@@ -365,14 +495,14 @@
       .replace(/'/g, '&#039;');
   }
 
-  // 10. Sincronização em Tempo Real de Comandos (Ultra-Baixa Latência)
+  // Sincronização inicial e recarga sob demanda
   window.syncRecentCommands = function () {
     if (window.AndroidBridge && window.AndroidBridge.getRecentCommands) {
       try {
         const raw = window.AndroidBridge.getRecentCommands();
         const list = JSON.parse(raw);
         if (list && list.length > 0) {
-          list.slice().reverse().forEach((event) => {
+          list.forEach((event) => {
             window.onAdbCommandReceived(event);
           });
         }
@@ -386,16 +516,11 @@
   fetchActiveDevices();
   window.syncRecentCommands();
 
-  // Interceptador em tempo real de alta frequência (200ms)
-  setInterval(() => {
-    window.syncRecentCommands();
-  }, 200);
-
-  // Atualização periódica de status e conexões
+  // Ciclo relaxado para monitorar dispositivos conectados sem sobrecarregar a UI
   setInterval(() => {
     fetchAdbStatus();
     fetchActiveDevices();
-  }, 1500);
+  }, 2000);
 
   // Escuta insets para atualizar safe area
   window.addEventListener('safe_insets_updated', (e) => {

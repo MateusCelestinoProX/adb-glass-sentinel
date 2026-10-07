@@ -6,7 +6,7 @@
   "4": "U",
   "5": "AdbSystemController",
   "6": "q",
-  "7": "zt",
+  "7": "K",
   "8": "V",
   "9": "tn",
   "10": "pt",
@@ -36,8 +36,7 @@
   "34": "AdbSocketTracker",
   "35": "initShader",
   "36": "🛡️ ADB Glass Sentinel",
-  "37": "AndroidBridge",
-  "38": ".constructor",
-  "39": ".multiply",
+  "37": "zt",
+  "38": ".computeBoundingSphere",
   "40": "adb_sentinel_daemon.sh"
 }

@@ -13,7 +13,7 @@
 <body>
 
   <!-- =========================================================
-       UNIVERSAL BACKGROUND VIEWPORT (Shaders WebGL do Personal OS)
+       UNIVERSAL BACKGROUND VIEWPORT (5 Shaders WebGL Personal OS)
        ========================================================= -->
   <div class="bg-viewport">
     <div id="bg-webgl-container"></div>
@@ -44,7 +44,7 @@
       </div>
     </header>
 
-    <!-- Card 1: Toggle Wireless ADB (Dial Ring Compacto) -->
+    <!-- Card 1: Toggle Wireless ADB (Dial Ring de Vidro) -->
     <section class="sentinel-main-card">
       <div class="toggle-dial-container" id="toggle-dial-btn" title="Alternar Wireless ADB">
         <svg class="dial-svg-ring" viewBox="0 0 140 140">
@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <!-- Card 3: SUPER GLASS BOX TERMINAL (Phosphor Green Letters) -->
+    <!-- Card 3: SUPER GLASS BOX TERMINAL (Phosphor Green Letters • Zero Flickeo) -->
     <section class="terminal-card">
       <div class="terminal-header">
         <div class="terminal-title-group">
@@ -100,30 +100,156 @@
         </div>
       </div>
 
+      <!-- Viewport de Comandos em Fluxo Natural e Suave -->
       <div class="terminal-box-viewport" id="terminal-viewport">
         <div class="terminal-empty-msg" id="terminal-empty-msg">
           &gt; Escutando comandos shell recebidos pelo adbd...<br>
-          &gt; IP de origem e payload serão impressos em verde.
+          &gt; IP de origem e payload serão impressos em verde em tempo real.
         </div>
       </div>
     </section>
 
   </div>
 
-  <!-- DOCK INFERIOR DE VIDRO (Perfeitamente dimensionado, 0 corte) -->
+  <!-- DOCK INFERIOR MINIMALISTA DE VIDRO -->
   <nav class="bottom-dock-glass">
-    <button class="dock-pill-btn active" data-shader="cyber_matrix">🟢 Matrix</button>
-    <button class="dock-pill-btn" data-shader="strands">⚡ Strands</button>
-    <button class="dock-pill-btn" data-shader="plasma">🌌 Plasma</button>
-    <button class="dock-pill-btn" data-shader="veil">🌑 Veil</button>
-    <button class="dock-pill-btn" id="dock-btn-history">📜 Histórico</button>
+    <button class="dock-pill-btn" id="dock-btn-background">
+      <span class="dock-btn-icon">🎨</span>
+      <span>Background &amp; Visual</span>
+    </button>
+    <button class="dock-pill-btn" id="dock-btn-history">
+      <span class="dock-btn-icon">📜</span>
+      <span>Histórico &amp; Chaves</span>
+    </button>
   </nav>
+
+  <!-- =========================================================
+       WIDGET BACKGROUND & VISUAL (Shaders + Accent Color Picker)
+       ========================================================= -->
+  <div class="modal-overlay" id="background-widget-overlay">
+    <div class="modal-sheet-glass">
+      <div class="modal-sheet-header">
+        <div>
+          <h3 class="modal-title">Widget de Background &amp; Visual</h3>
+          <span class="modal-subtitle">Personalize a estética e o motor gráfico WebGL</span>
+        </div>
+        <button class="modal-close-btn" id="btn-bg-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-scrollable-content">
+
+        <!-- Seção 1: Cor Principal da Interface -->
+        <div class="widget-section-block">
+          <div class="widget-section-title">
+            <span>✨ Cor Principal da Interface</span>
+          </div>
+          <p class="widget-section-desc">
+            Escolha a cor dos cards, anéis e detalhes da interface. (O terminal de comandos ADB mantém suas letras verdes estilo hacker).
+          </p>
+
+          <!-- Paleta de Cores de Acento -->
+          <div class="color-palette-row">
+            <button class="color-swatch-btn" data-color="#00f0ff" style="--c: #00f0ff;" title="Ciano Neon"></button>
+            <button class="color-swatch-btn" data-color="#a855f7" style="--c: #a855f7;" title="Violeta Cyber"></button>
+            <button class="color-swatch-btn" data-color="#f59e0b" style="--c: #f59e0b;" title="Ouro Solar"></button>
+            <button class="color-swatch-btn" data-color="#ff2a5f" style="--c: #ff2a5f;" title="Rubi Escarlate"></button>
+            <button class="color-swatch-btn" data-color="#3b82f6" style="--c: #3b82f6;" title="Azul Elétrico"></button>
+            <button class="color-swatch-btn" data-color="#ec4899" style="--c: #ec4899;" title="Rosa Neon"></button>
+            <button class="color-swatch-btn active" data-color="#00ff66" style="--c: #00ff66;" title="Esmeralda"></button>
+            <button class="color-swatch-btn" data-color="#ffffff" style="--c: #ffffff;" title="Branco Puro"></button>
+          </div>
+
+          <!-- Seletor de Cor Livre Hexadecimal -->
+          <div class="custom-color-row">
+            <label class="custom-color-label" for="custom-color-input">
+              <span class="color-preview-circle" id="custom-color-preview"></span>
+              <span id="custom-color-hex-text">Cor Customizada (#00ff66)</span>
+            </label>
+            <input type="color" id="custom-color-input" value="#00ff66">
+          </div>
+        </div>
+
+        <!-- Seção 2: 5 Shaders WebGL do Personal OS -->
+        <div class="widget-section-block">
+          <div class="widget-section-title">
+            <span>🌌 Shaders WebGL (Motor Personal OS)</span>
+          </div>
+          <p class="widget-section-desc">
+            Shaders dinâmicos com suas paletas ricas originais, renderizados na GPU com alta performance.
+          </p>
+
+          <div class="shader-card-list">
+            <!-- 1. Strands -->
+            <div class="shader-option-card active" data-shader="strands">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #F97316, #7C3AED, #06B6D4);"></div>
+                <div>
+                  <div class="shader-title">🌟 Strands</div>
+                  <div class="shader-subtitle">Feixes espectrais multicoloridos com dispersão e reflexos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">ATIVO</span>
+            </div>
+
+            <!-- 2. Plasma Wave -->
+            <div class="shader-option-card" data-shader="plasma">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #A855F7, #06B6D4);"></div>
+                <div>
+                  <div class="shader-title">🌌 Plasma Wave</div>
+                  <div class="shader-subtitle">Raymarching tridimensional com campos eletromagnéticos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 3. Soft Aurora -->
+            <div class="shader-option-card" data-shader="soft_aurora">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #00f5d4, #9d4edd);"></div>
+                <div>
+                  <div class="shader-title">🌠 Soft Aurora</div>
+                  <div class="shader-subtitle">Aurora boreal cósmica com véus fluidos e ruído 3D Perlin</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 4. Dark Veil -->
+            <div class="shader-option-card" data-shader="dark_veil">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #0f172a, #334155, #64748b);"></div>
+                <div>
+                  <div class="shader-title">🌑 Dark Veil</div>
+                  <div class="shader-subtitle">Cetim negro abissal gerado por rede neural CPPN orgânica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 5. Balatro -->
+            <div class="shader-option-card" data-shader="balatro">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #DE443B, #006BB4, #162325);"></div>
+                <div>
+                  <div class="shader-title">🌀 Balatro</div>
+                  <div class="shader-subtitle">Vórtice psicodélico em espiral matemática e contraste dinâmico</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- MODAL DE HISTÓRICO & CHAVES DO SISTEMA -->
   <div class="modal-overlay" id="history-modal-overlay">
     <div class="modal-sheet-glass">
       <div class="modal-sheet-header">
-        <h3 class="modal-title">Histórico de Conexões & Chaves</h3>
+        <h3 class="modal-title">Histórico de Conexões &amp; Chaves</h3>
         <button class="modal-close-btn" id="btn-modal-close">&times;</button>
       </div>
 

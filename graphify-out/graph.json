@@ -17,45 +17,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br",
-      "label": "br",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": "br",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k",
-      "label": "K",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": "k",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr",
-      "label": "kr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": "kr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ks",
       "label": "ks",
       "_callable": true,
@@ -65,19 +26,6 @@
       "community_name": "ks",
       "file_type": "code",
       "norm_label": "ks",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr",
-      "label": "nr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": "nr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -93,19 +41,6 @@
       "norm_label": ".x()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zr",
-      "label": "zr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": "zr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_fs",
@@ -145,6 +80,19 @@
       "norm_label": "pt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xn",
+      "label": "xn",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "pt",
+      "file_type": "code",
+      "norm_label": "xn",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L269"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_zi",
@@ -212,19 +160,6 @@
       "source_location": "L213"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_or",
-      "label": "or",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "or",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_st",
       "label": "St",
       "_callable": true,
@@ -260,19 +195,6 @@
       "community_name": "W",
       "file_type": "code",
       "norm_label": "w",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr",
-      "label": "cr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": "cr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -316,19 +238,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_er",
-      "label": "er",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ke",
-      "file_type": "code",
-      "norm_label": "er",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ke",
       "label": "ke",
       "_callable": true,
@@ -364,6 +273,19 @@
       "community_name": ".addAttribute",
       "file_type": "code",
       "norm_label": "_r",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt",
+      "label": "Lt",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "lt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -405,6 +327,19 @@
       "norm_label": "localbinder",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
       "source_location": "L24"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
+      "label": "AndroidBridge",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": "androidbridge",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L15"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity",
@@ -472,15 +407,28 @@
       "source_location": "L10"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt",
-      "label": "Lt",
+      "id": "app_src_main_assets_web_js_ogl_cr",
+      "label": "cr",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": "lt",
+      "norm_label": "cr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_er",
+      "label": "er",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": "er",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -563,30 +511,30 @@
       "source_location": "L22"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
-      "label": "AndroidBridge",
+      "id": "app_src_main_assets_web_js_ogl_or",
+      "label": "or",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "AndroidBridge",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": "androidbridge",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L15"
+      "norm_label": "or",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_xn",
-      "label": "xn",
+      "id": "app_src_main_assets_web_js_ogl_zt",
+      "label": "zt",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 38,
-      "community_name": ".constructor",
+      "community": 37,
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": "xn",
+      "norm_label": "zt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L269"
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_u",
@@ -693,15 +641,67 @@
       "source_location": "L198"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_br",
+      "label": "br",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "br",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_gt",
       "label": "gt",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "gt",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k",
+      "label": "K",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "k",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr",
+      "label": "kr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "kr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr",
+      "label": "nr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "nr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -712,24 +712,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "rn",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_zt",
-      "label": "zt",
+      "id": "app_src_main_assets_web_js_ogl_zr",
+      "label": "zr",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
-      "norm_label": "zt",
+      "norm_label": "zr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ji",
@@ -903,18 +903,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_he",
-      "label": "he()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "_",
-      "file_type": "code",
-      "norm_label": "he()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_inverse",
       "label": ".inverse()",
       "_callable": true,
@@ -1083,18 +1071,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_sub",
-      "label": ".sub()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "_",
-      "file_type": "code",
-      "norm_label": ".sub()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_toarray",
       "label": ".toArray()",
       "_callable": true,
@@ -1167,54 +1143,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br_addpass",
-      "label": ".addPass()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".addpass()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_resize",
-      "label": ".resize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".resize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ge",
       "label": "ge()",
       "_callable": true,
@@ -1225,102 +1153,6 @@
       "norm_label": "ge()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L11"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_traverse",
-      "label": ".traverse()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".traverse()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k_setsize",
-      "label": ".setSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".setsize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
-      "label": ".setSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".setsize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
-      "label": ".bindFramebuffer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".bindframebuffer()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ks_disable",
@@ -1563,42 +1395,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_nr_addpass",
-      "label": ".addPass()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".addpass()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_x_applystate",
       "label": ".applyState()",
       "_callable": true,
@@ -1705,18 +1501,6 @@
       "norm_label": ".use()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L11"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zr_update",
-      "label": ".update()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".update()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_bi",
@@ -2015,6 +1799,18 @@
       "community_name": "pt",
       "file_type": "code",
       "norm_label": "vi()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_w_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "pt",
+      "file_type": "code",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2487,42 +2283,6 @@
       "source_location": "L213"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_or_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or_resize",
-      "label": ".resize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".resize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or_updategeometry",
-      "label": ".updateGeometry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updategeometry()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_st_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -2531,6 +2291,30 @@
       "community_name": "W",
       "file_type": "code",
       "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
+      "label": ".frustumIntersectsMesh()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".frustumintersectsmesh()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
+      "label": ".frustumIntersectsSphere()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".frustumintersectssphere()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2607,6 +2391,30 @@
       "source_location": "L198"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
+      "label": ".getMaxScaleOnAxis()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".getmaxscaleonaxis()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ui",
+      "label": "ui()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 12,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": "ui()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_un_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -2617,18 +2425,6 @@
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L232"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_w_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_w_draw",
@@ -2667,42 +2463,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_castmouse",
-      "label": ".castMouse()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".castmouse()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
-      "label": ".getBarycoord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".getbarycoord()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectbounds",
       "label": ".intersectBounds()",
       "_callable": true,
@@ -2715,18 +2475,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_intersectbox",
-      "label": ".intersectBox()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".intersectbox()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectmeshes",
       "label": ".intersectMeshes()",
       "_callable": true,
@@ -2735,54 +2483,6 @@
       "community_name": ".intersectMeshes",
       "file_type": "code",
       "norm_label": ".intersectmeshes()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr_intersectsphere",
-      "label": ".intersectSphere()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".intersectsphere()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
-      "label": ".intersectTriangle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".intersecttriangle()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ee",
-      "label": "Ee()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": "ee()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ke_dot",
-      "label": ".dot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".dot()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2821,18 +2521,6 @@
       "norm_label": ".scalerotatematrix4()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_unproject",
-      "label": ".unproject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".unproject()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_st_updatefrustum",
@@ -2967,18 +2655,6 @@
       "source_location": "L32"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ke_fromarray",
-      "label": ".fromArray()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": ".update",
-      "file_type": "code",
-      "norm_label": ".fromarray()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_rr_addanimation",
       "label": ".addAnimation()",
       "_callable": true,
@@ -3011,6 +2687,18 @@
       "community_name": ".update",
       "file_type": "code",
       "norm_label": ".createbones()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_rr_createbonetexture",
+      "label": ".createBoneTexture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": ".update",
+      "file_type": "code",
+      "norm_label": ".createbonetexture()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L32"
     },
@@ -3219,6 +2907,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_cr_castmouse",
+      "label": ".castMouse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".castmouse()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_er_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -3227,30 +2927,6 @@
       "community_name": "ke",
       "file_type": "code",
       "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_er_gettangentat",
-      "label": ".getTangentAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ke",
-      "file_type": "code",
-      "norm_label": ".gettangentat()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_er_updatelength",
-      "label": ".updateLength()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ke",
-      "file_type": "code",
-      "norm_label": ".updatelength()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3279,6 +2955,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ke_fromarray",
+      "label": ".fromArray()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".fromarray()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ke_normalize",
       "label": ".normalize()",
       "_callable": true,
@@ -3287,6 +2975,18 @@
       "community_name": "ke",
       "file_type": "code",
       "norm_label": ".normalize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ke_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3339,6 +3039,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_st_unproject",
+      "label": ".unproject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".unproject()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_we",
       "label": "we()",
       "_callable": true,
@@ -3359,6 +3071,30 @@
       "community_name": "ke",
       "file_type": "code",
       "norm_label": "xe()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xn_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L269"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ye",
+      "label": "ye()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "ye()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3639,14 +3375,74 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ke_set",
-      "label": ".set()",
+      "id": "app_src_main_assets_web_js_ogl_he",
+      "label": "he()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": ".set()",
+      "norm_label": "he()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt_getcatmullrompoints",
+      "label": "._getCatmullRomPoints()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "._getcatmullrompoints()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt_getcubicbezierpoints",
+      "label": "._getCubicBezierPoints()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "._getcubicbezierpoints()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt_getpoints",
+      "label": ".getPoints()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".getpoints()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_lt_getquadraticbezierpoints",
+      "label": "._getQuadraticBezierPoints()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "._getquadraticbezierpoints()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3687,6 +3483,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ot_getlength",
+      "label": ".getLength()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".getlength()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ot_gettiltat",
       "label": ".getTiltAt()",
       "_callable": true,
@@ -3711,40 +3519,16 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
-      "label": ".frustumIntersectsMesh()",
+      "id": "app_src_main_assets_web_js_ogl_sub",
+      "label": ".sub()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": ".frustumintersectsmesh()",
+      "norm_label": ".sub()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
-      "label": ".frustumIntersectsSphere()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".frustumintersectssphere()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
-      "label": ".getMaxScaleOnAxis()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".getmaxscaleonaxis()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_u_set",
@@ -3759,38 +3543,26 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ui",
-      "label": "ui()",
+      "id": "app_src_main_assets_web_js_ogl_ur",
+      "label": "ur()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": "ui()",
+      "norm_label": "ur()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_v_set",
-      "label": ".set()",
+      "id": "app_src_main_assets_web_js_ogl_v_scale",
+      "label": ".scale()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": ".set()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ye",
-      "label": "ye()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": "ye()",
+      "norm_label": ".scale()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3961,6 +3733,174 @@
       "norm_label": ".getservice()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
       "source_location": "L25"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_allowdebugging",
+      "label": ".allowDebugging()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".allowdebugging()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L102"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_clearallkeys",
+      "label": ".clearAllKeys()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".clearallkeys()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L114"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_clearhistory",
+      "label": ".clearHistory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".clearhistory()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L125"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_copytoclipboard",
+      "label": ".copyToClipboard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".copytoclipboard()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L133"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_denydebugging",
+      "label": ".denyDebugging()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".denydebugging()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L108"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getactiveconnections",
+      "label": ".getActiveConnections()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getactiveconnections()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L49"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getadbstatus",
+      "label": ".getAdbStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getadbstatus()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L19"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getauthorizedkeys",
+      "label": ".getAuthorizedKeys()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getauthorizedkeys()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L87"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getconnectionhistory",
+      "label": ".getConnectionHistory()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getconnectionhistory()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L120"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getrecentcommands",
+      "label": ".getRecentCommands()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getrecentcommands()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L69"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getsafebottom",
+      "label": ".getSafeBottom()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getsafebottom()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L167"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getsafetop",
+      "label": ".getSafeTop()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".getsafetop()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L164"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_togglewirelessadb",
+      "label": ".toggleWirelessAdb()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".togglewirelessadb()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L38"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_vibrate",
+      "label": ".vibrate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AdbSentinelService",
+      "file_type": "code",
+      "norm_label": ".vibrate()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L145"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview",
@@ -4191,6 +4131,18 @@
       "source_location": "L284"
     },
     {
+      "id": "app_src_main_assets_web_js_app_applyaccentcolor",
+      "label": "applyAccentColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "applyaccentcolor()",
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L69"
+    },
+    {
       "id": "app_src_main_assets_web_js_app_escapehtml",
       "label": "escapeHtml()",
       "_callable": true,
@@ -4200,7 +4152,7 @@
       "file_type": "code",
       "norm_label": "escapehtml()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L358"
+      "source_location": "L488"
     },
     {
       "id": "app_src_main_assets_web_js_app_fetchactivedevices",
@@ -4212,7 +4164,7 @@
       "file_type": "code",
       "norm_label": "fetchactivedevices()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L104"
+      "source_location": "L300"
     },
     {
       "id": "app_src_main_assets_web_js_app_fetchadbstatus",
@@ -4224,7 +4176,19 @@
       "file_type": "code",
       "norm_label": "fetchadbstatus()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L91"
+      "source_location": "L288"
+    },
+    {
+      "id": "app_src_main_assets_web_js_app_hextorgb",
+      "label": "hexToRgb()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "hextorgb()",
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L56"
     },
     {
       "id": "app_src_main_assets_web_js_app_loadhistorymodaldata",
@@ -4236,7 +4200,7 @@
       "file_type": "code",
       "norm_label": "loadhistorymodaldata()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L282"
+      "source_location": "L415"
     },
     {
       "id": "app_src_main_assets_web_js_app_renderactivedevices",
@@ -4248,19 +4212,19 @@
       "file_type": "code",
       "norm_label": "renderactivedevices()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L116"
+      "source_location": "L312"
     },
     {
-      "id": "app_src_main_assets_web_js_app_setupshader",
-      "label": "setupShader()",
+      "id": "app_src_main_assets_web_js_app_updateshadercardsui",
+      "label": "updateShaderCardsUi()",
       "_callable": true,
       "_origin": "ast",
       "community": 21,
       "community_name": "app.js",
       "file_type": "code",
-      "norm_label": "setupshader()",
+      "norm_label": "updateshadercardsui()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L37"
+      "source_location": "L129"
     },
     {
       "id": "app_src_main_assets_web_js_app_updateuiwithstatus",
@@ -4272,7 +4236,43 @@
       "file_type": "code",
       "norm_label": "updateuiwithstatus()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L67"
+      "source_location": "L264"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_cr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
+      "label": ".getBarycoord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".getbarycoord()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_cr_intersectbox",
+      "label": ".intersectBox()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".intersectbox()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectplane",
@@ -4287,86 +4287,86 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt_constructor",
-      "label": ".constructor()",
+      "id": "app_src_main_assets_web_js_ogl_cr_intersectsphere",
+      "label": ".intersectSphere()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".constructor()",
+      "norm_label": ".intersectsphere()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt_getcatmullrompoints",
-      "label": "._getCatmullRomPoints()",
+      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
+      "label": ".intersectTriangle()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": "._getcatmullrompoints()",
+      "norm_label": ".intersecttriangle()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt_getcubicbezierpoints",
-      "label": "._getCubicBezierPoints()",
+      "id": "app_src_main_assets_web_js_ogl_ee",
+      "label": "Ee()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": "._getcubicbezierpoints()",
+      "norm_label": "ee()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt_getpoints",
-      "label": ".getPoints()",
+      "id": "app_src_main_assets_web_js_ogl_er_gettangentat",
+      "label": ".getTangentAt()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".getpoints()",
+      "norm_label": ".gettangentat()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_lt_getquadraticbezierpoints",
-      "label": "._getQuadraticBezierPoints()",
+      "id": "app_src_main_assets_web_js_ogl_er_updatelength",
+      "label": ".updateLength()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": "._getquadraticbezierpoints()",
+      "norm_label": ".updatelength()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ur",
-      "label": "ur()",
+      "id": "app_src_main_assets_web_js_ogl_ke_dot",
+      "label": ".dot()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": "ur()",
+      "norm_label": ".dot()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_v_scale",
-      "label": ".scale()",
+      "id": "app_src_main_assets_web_js_ogl_v_cross",
+      "label": ".cross()",
       "_callable": true,
       "_origin": "ast",
       "community": 22,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".scale()",
+      "norm_label": ".cross()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -5019,18 +5019,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ot_getlength",
-      "label": ".getLength()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".getlength()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_pr",
       "label": "pr()",
       "_callable": true,
@@ -5051,18 +5039,6 @@
       "community_name": "ar",
       "file_type": "code",
       "norm_label": "ut()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_v_cross",
-      "label": ".cross()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".cross()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -5256,7 +5232,7 @@
       "file_type": "code",
       "norm_label": "createshader()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L136"
+      "source_location": "L323"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initshader",
@@ -5268,7 +5244,7 @@
       "file_type": "code",
       "norm_label": "initshader()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L148"
+      "source_location": "L335"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initshader_render",
@@ -5280,7 +5256,7 @@
       "file_type": "code",
       "norm_label": "render()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L231"
+      "source_location": "L411"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initshader_resize",
@@ -5292,221 +5268,161 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L219"
+      "source_location": "L399"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_allowdebugging",
-      "label": ".allowDebugging()",
+      "id": "app_src_main_assets_web_js_ogl_ie",
+      "label": "Ie()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "AndroidBridge",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".allowdebugging()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L102"
+      "norm_label": "ie()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_clearallkeys",
-      "label": ".clearAllKeys()",
+      "id": "app_src_main_assets_web_js_ogl_ne",
+      "label": "Ne()",
       "_callable": true,
       "_origin": "ast",
       "community": 37,
-      "community_name": "AndroidBridge",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".clearallkeys()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L114"
+      "norm_label": "ne()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_clearhistory",
-      "label": ".clearHistory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".clearhistory()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L125"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_copytoclipboard",
-      "label": ".copyToClipboard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".copytoclipboard()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L133"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_denydebugging",
-      "label": ".denyDebugging()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".denydebugging()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L108"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getactiveconnections",
-      "label": ".getActiveConnections()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getactiveconnections()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L49"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getadbstatus",
-      "label": ".getAdbStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getadbstatus()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L19"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getauthorizedkeys",
-      "label": ".getAuthorizedKeys()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getauthorizedkeys()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L87"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getconnectionhistory",
-      "label": ".getConnectionHistory()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getconnectionhistory()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L120"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getrecentcommands",
-      "label": ".getRecentCommands()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getrecentcommands()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L69"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getsafebottom",
-      "label": ".getSafeBottom()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getsafebottom()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L167"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getsafetop",
-      "label": ".getSafeTop()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".getsafetop()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L164"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_togglewirelessadb",
-      "label": ".toggleWirelessAdb()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".togglewirelessadb()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L38"
-    },
-    {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_vibrate",
-      "label": ".vibrate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "AndroidBridge",
-      "file_type": "code",
-      "norm_label": ".vibrate()",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L145"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_xn_constructor",
+      "id": "app_src_main_assets_web_js_ogl_or_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 38,
-      "community_name": ".constructor",
+      "community": 37,
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L269"
+      "source_location": "L116"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_e",
-      "label": "_e()",
+      "id": "app_src_main_assets_web_js_ogl_or_resize",
+      "label": ".resize()",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
-      "community_name": ".multiply",
+      "community": 37,
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": "_e()",
+      "norm_label": ".resize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L116"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_or_updategeometry",
+      "label": ".updateGeometry()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".updategeometry()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L116"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt_b",
+      "label": ".b()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".b()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_u_multiply",
-      "label": ".multiply()",
+      "id": "app_src_main_assets_web_js_ogl_zt_constructor",
+      "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
-      "community_name": ".multiply",
+      "community": 37,
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".multiply()",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_yi",
-      "label": "yi()",
+      "id": "app_src_main_assets_web_js_ogl_zt_copy",
+      "label": ".copy()",
       "_callable": true,
       "_origin": "ast",
-      "community": 39,
-      "community_name": ".multiply",
+      "community": 37,
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": "yi()",
+      "norm_label": ".copy()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".set()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_computeboundingbox",
+      "label": ".computeBoundingBox()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": ".computeBoundingSphere",
+      "file_type": "code",
+      "norm_label": ".computeboundingbox()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_computeboundingsphere",
+      "label": ".computeBoundingSphere()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": ".computeBoundingSphere",
+      "file_type": "code",
+      "norm_label": ".computeboundingsphere()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_getposition",
+      "label": ".getPosition()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": ".computeBoundingSphere",
+      "file_type": "code",
+      "norm_label": ".getposition()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_v_divide",
+      "label": ".divide()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": ".computeBoundingSphere",
+      "file_type": "code",
+      "norm_label": ".divide()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -5543,6 +5459,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "di()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_e",
+      "label": "_e()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "_e()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -5823,6 +5751,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_u_multiply",
+      "label": ".multiply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".multiply()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_u_rotate",
       "label": ".rotate()",
       "_callable": true,
@@ -5951,6 +5891,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "xi()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_yi",
+      "label": "yi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "yi()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6279,18 +6231,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_rr_createbonetexture",
-      "label": ".createBoneTexture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".createbonetexture()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_sn_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -6380,9 +6320,57 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "be()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_addpass",
+      "label": ".addPass()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".addpass()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_resize",
+      "label": ".resize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".resize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6392,33 +6380,105 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ie",
-      "label": "Ie()",
+      "id": "app_src_main_assets_web_js_ogl_it_traverse",
+      "label": ".traverse()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
-      "norm_label": "ie()",
+      "norm_label": ".traverse()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ne",
-      "label": "Ne()",
+      "id": "app_src_main_assets_web_js_ogl_k_constructor",
+      "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
-      "norm_label": "ne()",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
+      "label": ".bindFramebuffer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".bindframebuffer()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6428,11 +6488,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "nn()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_addpass",
+      "label": ".addPass()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".addpass()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_rn_constructor",
@@ -6440,7 +6536,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -6452,7 +6548,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "l()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -6464,7 +6560,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".getscaling()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -6476,7 +6572,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -6488,7 +6584,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "h()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -6500,47 +6596,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "l()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L59"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_zt_b",
-      "label": ".b()",
+      "id": "app_src_main_assets_web_js_ogl_zr_update",
+      "label": ".update()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
-      "norm_label": ".b()",
+      "norm_label": ".update()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_copy",
-      "label": ".copy()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".copy()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_zt_r",
@@ -6548,47 +6620,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "zt",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".r()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_set",
-      "label": ".set()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".set()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_computeboundingbox",
-      "label": ".computeBoundingBox()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "V",
-      "file_type": "code",
-      "norm_label": ".computeboundingbox()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_computeboundingsphere",
-      "label": ".computeBoundingSphere()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "V",
-      "file_type": "code",
-      "norm_label": ".computeboundingsphere()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_de",
@@ -6601,18 +6637,6 @@
       "norm_label": "de()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_getposition",
-      "label": ".getPosition()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "V",
-      "file_type": "code",
-      "norm_label": ".getposition()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ji_constructor",
@@ -6699,18 +6723,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_v_divide",
-      "label": ".divide()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "V",
-      "file_type": "code",
-      "norm_label": ".divide()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_v_dot",
       "label": ".dot()",
       "_callable": true,
@@ -6791,6 +6803,18 @@
       "community_name": "V",
       "file_type": "code",
       "norm_label": ".normalize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_v_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "V",
+      "file_type": "code",
+      "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -8054,6 +8078,18 @@
   ],
   "links": [
     {
+      "source": "app_src_main_assets_web_js_app_applyaccentcolor",
+      "target": "app_src_main_assets_web_js_app_hextorgb",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_assets_web_js_app_fetchactivedevices",
       "target": "app_src_main_assets_web_js_app_renderactivedevices",
       "relation": "calls",
@@ -8062,7 +8098,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L109",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -8074,7 +8110,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L96",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -8086,7 +8122,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L310",
+      "source_location": "L441",
       "weight": 1.0
     },
     {
@@ -8098,7 +8134,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L141",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -13546,7 +13582,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L185",
+      "source_location": "L372",
       "weight": 1.0
     },
     {
@@ -14942,57 +14978,13 @@
     },
     {
       "source": "app_src_main_assets_web_js_app",
-      "target": "app_src_main_assets_web_js_app_fetchactivedevices",
+      "target": "app_src_main_assets_web_js_app_updateshadercardsui",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L104",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_app",
-      "target": "app_src_main_assets_web_js_app_renderactivedevices",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L116",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_app",
-      "target": "app_src_main_assets_web_js_app_loadhistorymodaldata",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L282",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_app",
-      "target": "app_src_main_assets_web_js_app_escapehtml",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L358",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_app",
-      "target": "app_src_main_assets_web_js_app_setupshader",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L37",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -15003,7 +14995,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L67",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -15014,7 +15006,73 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L91",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_fetchactivedevices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_renderactivedevices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_loadhistorymodaldata",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L415",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_escapehtml",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L488",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_hextorgb",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_applyaccentcolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -16697,7 +16755,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L136",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -16708,7 +16766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L148",
+      "source_location": "L335",
       "weight": 1.0
     },
     {
@@ -21881,7 +21939,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L226",
+      "source_location": "L406",
       "weight": 1.0
     },
     {
@@ -21893,7 +21951,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L241",
+      "source_location": "L421",
       "weight": 1.0
     },
     {
@@ -21946,5 +22004,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8d4a22d0ea032382ef45075dce30e7976ae80ecc"
+  "built_at_commit": "43878be0b04acd92bad9b76cbb3a7d29a1e700bb"
 }
