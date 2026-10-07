@@ -30,21 +30,25 @@ else
     exit 1
 fi
 
-DEVICE_ID=$(adb devices | grep -w "device" | head -n 1 | awk '{print $1}')
+DEVICE_ID="${DEVICE:-192.168.15.22:5555}"
 
 if [ -n "$DEVICE_ID" ]; then
     echo "=========================================================="
-    echo "📲 Instalando no dispositivo ativo: $DEVICE_ID..."
+    echo "📲 Instalando no dispositivo oficial: $DEVICE_ID (Usuário 0)..."
     echo "=========================================================="
-    adb -s "$DEVICE_ID" install -r "$FINAL_APK"
+    adb -s "$DEVICE_ID" install --user 0 -r "$FINAL_APK"
+
+    echo "🧹 Garantindo remoção de perfis secundários..."
+    adb -s "$DEVICE_ID" shell pm uninstall --user 10 com.mateuscelestino.adbsentinel 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell pm uninstall --user 95 com.mateuscelestino.adbsentinel 2>/dev/null || true
 
     echo "🔐 Concedendo permissões profundas de telemetria do SO..."
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.READ_LOGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.WRITE_SECURE_SETTINGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.DUMP 2>/dev/null || true
 
-    echo "🚀 Iniciando ADB Glass Sentinel..."
-    adb -s "$DEVICE_ID" shell am start -n com.mateuscelestino.adbsentinel/.MainActivity
+    echo "🚀 Iniciando ADB Glass Sentinel no Usuário 0..."
+    adb -s "$DEVICE_ID" shell am start --user 0 -n com.mateuscelestino.adbsentinel/.MainActivity
     echo "=========================================================="
     echo "✨ App iniciado com sucesso com acesso profundo ao SO!"
     echo "=========================================================="

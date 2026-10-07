@@ -66,6 +66,18 @@ class MainActivity : AppCompatActivity() {
         startAndBindService()
         setupCommandStreamToUi()
 
+        onBackPressedDispatcher.addCallback(this, object : androidx.activity.OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                webView.evaluateJavascript("window.handleAndroidBack ? window.handleAndroidBack() : false") { result ->
+                    if (result != "true") {
+                        isEnabled = false
+                        onBackPressedDispatcher.onBackPressed()
+                        isEnabled = true
+                    }
+                }
+            }
+        })
+
         // Carrega via host seguro https://appassets.androidplatform.net
         webView.loadUrl("https://appassets.androidplatform.net/assets/web/index.html")
     }

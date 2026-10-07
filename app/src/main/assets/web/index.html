@@ -95,6 +95,7 @@
           </div>
         </div>
         <div class="terminal-actions">
+          <button class="term-btn-icon" id="btn-term-fullscreen" title="Visualização em Tela Cheia">⛶ TELA CHEIA</button>
           <button class="term-btn-icon" id="btn-term-pause">PAUSAR</button>
           <button class="term-btn-icon" id="btn-term-clear">LIMPAR</button>
         </div>
@@ -261,6 +262,80 @@
         <button class="btn-glass-action auth" id="btn-clear-history">Limpar Histórico</button>
         <button class="btn-glass-action deny" id="btn-revoke-all-keys">Revogar Todas as Chaves</button>
       </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       TERMINAL FULLSCREEN ULTRA LIGHT GLASS
+       Visualização Expandida • Translucidez Pura • Blur de Fundo
+       ========================================================= -->
+  <div class="terminal-fullscreen-overlay" id="terminal-fullscreen-overlay">
+    <div class="terminal-fullscreen-glass-container">
+
+      <!-- Header Ultra Light Glass -->
+      <header class="term-fs-header">
+        <div class="term-fs-header-left">
+          <div class="terminal-lights">
+            <span class="term-light red"></span>
+            <span class="term-light yellow"></span>
+            <span class="term-light green"></span>
+          </div>
+          <div class="term-fs-title-col">
+            <div class="term-fs-title-row">
+              <span class="term-fs-title">ADB SHELL LIVE INSPECTOR</span>
+              <span class="term-fs-mode-tag">ULTRA LIGHT GLASS</span>
+            </div>
+            <div class="term-fs-subtitle">Fluxo Contínuo &bull; Background WebGL Translúcido</div>
+          </div>
+        </div>
+
+        <div class="term-fs-header-right">
+          <div class="terminal-live-badge">
+            <span class="live-dot-pulse"></span>
+            <span>AO VIVO</span>
+          </div>
+          <span class="term-fs-counter-badge" id="term-fs-counter">0 COMANDOS</span>
+          <button class="term-btn-icon" id="btn-term-fs-pause">PAUSAR</button>
+          <button class="term-btn-icon" id="btn-term-fs-clear">LIMPAR</button>
+          <button class="term-fs-close-btn" id="btn-term-fs-close" title="Reduzir para Card">&times;</button>
+        </div>
+      </header>
+
+      <!-- Barra de Ferramentas / Filtro Ultra Light Glass -->
+      <div class="term-fs-toolbar">
+        <div class="term-fs-filter-chips">
+          <button class="term-filter-chip active" data-filter="all">TODOS</button>
+          <button class="term-filter-chip" data-filter="shell">SHELL</button>
+          <button class="term-filter-chip" data-filter="priv">PRIVILEGIADO</button>
+        </div>
+        <div class="term-fs-search-box">
+          <span class="term-search-icon">🔍</span>
+          <input type="text" id="term-fs-search-input" placeholder="Filtrar por comando ou IP..." />
+          <button class="term-search-clear-btn" id="btn-term-fs-search-clear" style="display: none;">&times;</button>
+        </div>
+      </div>
+
+      <!-- Viewport de Comandos Fullscreen Ultra Light Glass -->
+      <div class="terminal-fullscreen-viewport" id="terminal-fullscreen-viewport">
+        <div class="terminal-empty-msg" id="terminal-fs-empty-msg">
+          &gt; Modo Fullscreen Ultra Light Glass ativado.<br>
+          &gt; Escutando comandos shell recebidos pelo adbd...<br>
+          &gt; Background WebGL visível e elegante com blur de fundo.
+        </div>
+      </div>
+
+      <!-- Rodapé com Info do Host & Cópia Rápida -->
+      <footer class="term-fs-footer">
+        <div class="term-fs-footer-info">
+          <span>HOST: <b id="term-fs-host-ip">192.168.15.23</b></span>
+          <span class="term-fs-dot">&bull;</span>
+          <span>PORTA: <b>5555</b></span>
+          <span class="term-fs-dot">&bull;</span>
+          <span>ESTADO: <b style="color: var(--terminal-green);">AUDITANDO SHELL</b></span>
+        </div>
+        <button class="term-btn-icon" id="btn-term-fs-copy-all">COPIAR TUDO</button>
+      </footer>
+
     </div>
   </div>
 
