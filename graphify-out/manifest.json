@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791384532.3599749,
-    "seen": 1791386027.081015,
-    "ast_hash": "7c02ab055200c988b4172188005d31f5",
+    "mtime": 1791399674.4136815,
+    "seen": 1791399697.401218,
+    "ast_hash": "ef9a5c4df3ceb76e04ba9a14bd592576",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791345030.281016,
-    "seen": 1791346236.328204,
-    "ast_hash": "90df409a2a541047b5492edc10034ad2",
+    "mtime": 1791388149.5483968,
+    "seen": 1791395886.770747,
+    "ast_hash": "86b31425332fd34ac4ec9694750711d6",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "build_and_install.sh": {
-    "mtime": 1791301098.1266909,
-    "seen": 1791302083.349804,
-    "ast_hash": "ae6f2f6cd47dbd4ab8f35278e9d80e4d",
+    "mtime": 1791395818.0659304,
+    "seen": 1791395886.77075,
+    "ast_hash": "dbd8357643e9fba8e0c6152ce2c3f815",
     "semantic_hash": ""
   },
   "gradlew": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791384250.5694292,
-    "seen": 1791386027.0810292,
-    "ast_hash": "528d82c3df40cf0eb8807feb49b89baa",
+    "mtime": 1791389185.77235,
+    "seen": 1791395886.770753,
+    "ast_hash": "e74c5fa95685bf3264933f09c0e6e3bb",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -117,6 +117,42 @@
     "mtime": 1791346323.0991683,
     "seen": 1791386027.081032,
     "ast_hash": "849a6150f119bfec40ee93d8a821b973",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/background_widget.png": {
+    "mtime": 1791386115.801374,
+    "seen": 1791395886.770754,
+    "ast_hash": "be2d783f9139a3e21090d8ebfacd43ed",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/fullscreen_open.png": {
+    "mtime": 1791389034.051938,
+    "seen": 1791395886.770756,
+    "ast_hash": "15283aa0d9d0e15269e16722e9c5b1d1",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/fullscreen_terminal.png": {
+    "mtime": 1791388831.8902292,
+    "seen": 1791395886.7707572,
+    "ast_hash": "fc16b6e95b89740cd3e1b6411901d867",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/main_with_fs_btn.png": {
+    "mtime": 1791388626.198032,
+    "seen": 1791395886.770758,
+    "ast_hash": "a7ae3c2351fab82d98f8b8806d08cca0",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/realtime_smooth_terminal.png": {
+    "mtime": 1791386115.8053243,
+    "seen": 1791395886.7707598,
+    "ast_hash": "ebaa895e0b0424468dd6906943b7ac25",
+    "semantic_hash": ""
+  },
+  "docs/screenshots/screen_now.png": {
+    "mtime": 1791388918.238774,
+    "seen": 1791395886.770762,
+    "ast_hash": "3709a329b8bae2c2d5c82e9fc00da8f6",
     "semantic_hash": ""
   }
 }

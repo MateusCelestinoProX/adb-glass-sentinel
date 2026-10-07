@@ -24,11 +24,25 @@
   const activeCountBadge = document.getElementById('active-count-badge');
   const activeDevicesContainer = document.getElementById('active-devices-container');
 
-  // Elementos do Terminal de Comandos
+  // Elementos do Terminal de Comandos (Card & Fullscreen Ultra Light Glass)
   const terminalViewport = document.getElementById('terminal-viewport');
   const terminalEmptyMsg = document.getElementById('terminal-empty-msg');
   const btnTermPause = document.getElementById('btn-term-pause');
   const btnTermClear = document.getElementById('btn-term-clear');
+  const btnTermFullscreen = document.getElementById('btn-term-fullscreen');
+
+  const termFsOverlay = document.getElementById('terminal-fullscreen-overlay');
+  const termFsViewport = document.getElementById('terminal-fullscreen-viewport');
+  const termFsEmptyMsg = document.getElementById('terminal-fs-empty-msg');
+  const btnTermFsClose = document.getElementById('btn-term-fs-close');
+  const btnTermFsPause = document.getElementById('btn-term-fs-pause');
+  const btnTermFsClear = document.getElementById('btn-term-fs-clear');
+  const btnTermFsCopyAll = document.getElementById('btn-term-fs-copy-all');
+  const termFsCounter = document.getElementById('term-fs-counter');
+  const termFsHostIp = document.getElementById('term-fs-host-ip');
+  const termFsSearchInput = document.getElementById('term-fs-search-input');
+  const btnTermFsSearchClear = document.getElementById('btn-term-fs-search-clear');
+  const termFilterChips = document.querySelectorAll('.term-filter-chip');
 
   // Elementos do Dock Inferior
   const dockBtnBackground = document.getElementById('dock-btn-background');
@@ -187,9 +201,62 @@
   });
 
   // =========================================================================
-  // 4. TERMINAL ADB EM TEMPO REAL (Zero Tremor • Letras Verdes • Alta Fluidez)
+  // 4. TERMINAL ADB EM TEMPO REAL (Card & Fullscreen Ultra Light Glass)
   // =========================================================================
   const seenCommandIds = new Set();
+  const allReceivedCommands = [];
+  let activeFilter = 'all';
+  let activeSearchTerm = '';
+
+  function doesCommandMatchFilter(event) {
+    if (activeFilter === 'shell' && event.serviceType && event.serviceType !== 'SHELL') {
+      return false;
+    }
+    if (activeFilter === 'priv' && !event.isPrivileged) {
+      return false;
+    }
+    if (activeSearchTerm) {
+      const term = activeSearchTerm.toLowerCase();
+      const cmdMatch = (event.command || '').toLowerCase().includes(term);
+      const ipMatch = (event.clientIp || '').toLowerCase().includes(term);
+      if (!cmdMatch && !ipMatch) return false;
+    }
+    return true;
+  }
+
+  function createLogCardElement(event, isFullscreen = false) {
+    const row = document.createElement('div');
+    const privClass = event.isPrivileged ? ' privileged' : '';
+    const badgeText = event.clientIp || '192.168.15.23';
+
+    if (isFullscreen) {
+      row.className = `term-fs-log-row${privClass}`;
+      row.dataset.id = event.id || `${event.timestamp}_${event.command}`;
+      row.dataset.service = event.serviceType || 'SHELL';
+      row.dataset.privileged = event.isPrivileged ? 'true' : 'false';
+      row.innerHTML = `
+        <div class="term-fs-log-meta">
+          <span class="log-time">${escapeHtml(event.timestamp)}</span>
+          <span class="log-ip-badge">IP: ${escapeHtml(badgeText)}</span>
+          <span>[${escapeHtml(event.serviceType || 'SHELL')}]</span>
+          ${event.isPrivileged ? '<span class="host-type-tag" style="color: var(--accent-red); border-color: var(--accent-red);">ROOT/PRIV</span>' : ''}
+        </div>
+        <div class="term-fs-log-cmd${privClass}">$ ${escapeHtml(event.command)}</div>
+      `;
+    } else {
+      row.className = `terminal-log-row${privClass}`;
+      row.dataset.id = event.id || `${event.timestamp}_${event.command}`;
+      row.innerHTML = `
+        <div class="log-meta-line">
+          <span class="log-time">${escapeHtml(event.timestamp)}</span>
+          <span class="log-ip-badge">IP: ${escapeHtml(badgeText)}</span>
+          <span>[${escapeHtml(event.serviceType || 'SHELL')}]</span>
+        </div>
+        <div class="log-cmd-line${privClass}">$ ${escapeHtml(event.command)}</div>
+      `;
+    }
+    return row;
+  }
 
   window.onAdbCommandReceived = function (event) {
     if (isPaused) return;
@@ -199,64 +266,242 @@
     const cmdKey = event.id || `${event.timestamp}_${event.command}`;
     if (seenCommandIds.has(cmdKey)) return;
     seenCommandIds.add(cmdKey);
+    allReceivedCommands.unshift(event);
 
+    // Esconde placeholders vazios
     if (terminalEmptyMsg && terminalEmptyMsg.style.display !== 'none') {
       terminalEmptyMsg.style.display = 'none';
     }
+    if (termFsEmptyMsg && termFsEmptyMsg.style.display !== 'none') {
+      termFsEmptyMsg.style.display = 'none';
+    }
 
-    const row = document.createElement('div');
-    row.className = 'terminal-log-row';
-    row.dataset.id = cmdKey;
+    // 1. Inserção no Viewport Padrão (Card)
+    const rowMini = createLogCardElement(event, false);
+    terminalViewport.prepend(rowMini);
 
-    const privClass = event.isPrivileged ? ' privileged' : '';
-    const badgeText = event.clientIp || '192.168.15.23';
-
-    row.innerHTML = `
-      <div class="log-meta-line">
-        <span class="log-time">${escapeHtml(event.timestamp)}</span>
-        <span class="log-ip-badge">IP: ${escapeHtml(badgeText)}</span>
-        <span>[${escapeHtml(event.serviceType || 'SHELL')}]</span>
-      </div>
-      <div class="log-cmd-line${privClass}">$ ${escapeHtml(event.command)}</div>
-    `;
-
-    // Inserção suave no topo sem interferir na rolagem ou causar tremor
-    terminalViewport.prepend(row);
-
-    // Limita linhas no DOM para estabilidade perpétua a 120 FPS
     while (terminalViewport.children.length > 80) {
-      const lastChild = terminalViewport.lastChild;
-      if (lastChild && lastChild.dataset && lastChild.dataset.id) {
-        seenCommandIds.delete(lastChild.dataset.id);
+      const last = terminalViewport.lastChild;
+      if (last && last.dataset && last.dataset.id) {
+        seenCommandIds.delete(last.dataset.id);
       }
-      terminalViewport.removeChild(lastChild);
+      terminalViewport.removeChild(last);
+    }
+
+    // 2. Inserção no Viewport Fullscreen (Ultra Light Glass)
+    if (termFsViewport) {
+      const rowFs = createLogCardElement(event, true);
+      if (!doesCommandMatchFilter(event)) {
+        rowFs.style.display = 'none';
+      }
+      termFsViewport.prepend(rowFs);
+
+      while (termFsViewport.children.length > 150) {
+        termFsViewport.removeChild(termFsViewport.lastChild);
+      }
+    }
+
+    // Atualiza contador de comandos
+    if (termFsCounter) {
+      termFsCounter.textContent = `${allReceivedCommands.length} COMANDOS`;
+    }
+    if (event.clientIp && termFsHostIp) {
+      termFsHostIp.textContent = event.clientIp;
     }
   };
 
-  btnTermPause.addEventListener('click', () => {
+  // Funções de Controle de Tela Cheia
+  function openFullscreenTerminal() {
+    if (!termFsOverlay) return;
+    document.body.style.overflow = 'hidden';
+    if (termFsViewport) {
+      termFsViewport.scrollTop = 0;
+    }
+    termFsOverlay.classList.add('open');
+    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+      window.AndroidBridge.vibrate(15);
+    }
+  }
+
+  function closeFullscreenTerminal() {
+    if (!termFsOverlay) return;
+    document.body.style.overflow = '';
+    termFsOverlay.classList.remove('open');
+    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+      window.AndroidBridge.vibrate(10);
+    }
+  }
+
+  if (btnTermFullscreen) {
+    btnTermFullscreen.addEventListener('click', openFullscreenTerminal);
+  }
+
+  if (btnTermFsClose) {
+    btnTermFsClose.addEventListener('click', closeFullscreenTerminal);
+  }
+
+  // Toggle de Pausa sincronizado entre Card e Fullscreen
+  function togglePauseState() {
     isPaused = !isPaused;
-    btnTermPause.textContent = isPaused ? 'RETOMAR' : 'PAUSAR';
+    const txt = isPaused ? 'RETOMAR' : 'PAUSAR';
+    btnTermPause.textContent = txt;
+    if (btnTermFsPause) btnTermFsPause.textContent = txt;
+
+    const amber = 'var(--accent-amber)';
     if (isPaused) {
-      btnTermPause.style.color = 'var(--accent-amber)';
-      btnTermPause.style.borderColor = 'var(--accent-amber)';
+      btnTermPause.style.color = amber;
+      btnTermPause.style.borderColor = amber;
+      if (btnTermFsPause) {
+        btnTermFsPause.style.color = amber;
+        btnTermFsPause.style.borderColor = amber;
+      }
     } else {
       btnTermPause.style.color = '';
       btnTermPause.style.borderColor = '';
+      if (btnTermFsPause) {
+        btnTermFsPause.style.color = '';
+        btnTermFsPause.style.borderColor = '';
+      }
     }
-  });
 
-  btnTermClear.addEventListener('click', () => {
+    if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+      window.AndroidBridge.vibrate(15);
+    }
+  }
+
+  btnTermPause.addEventListener('click', togglePauseState);
+  if (btnTermFsPause) {
+    btnTermFsPause.addEventListener('click', togglePauseState);
+  }
+
+  // Limpeza de logs sincronizada
+  function clearLogsState() {
     seenCommandIds.clear();
+    allReceivedCommands.length = 0;
+
     terminalViewport.innerHTML = `
       <div class="terminal-empty-msg" id="terminal-empty-msg">
         &gt; Terminal limpo. Escutando novos comandos shell em tempo real...<br>
         &gt; Letras verdes terminal green com IP de origem ativo.
       </div>
     `;
+
+    if (termFsViewport) {
+      termFsViewport.innerHTML = `
+        <div class="terminal-empty-msg" id="terminal-fs-empty-msg">
+          &gt; Modo Fullscreen Ultra Light Glass ativo.<br>
+          &gt; Escutando comandos shell recebidos pelo adbd...<br>
+          &gt; Background WebGL visível e elegante com blur de fundo.
+        </div>
+      `;
+    }
+
+    if (termFsCounter) {
+      termFsCounter.textContent = '0 COMANDOS';
+    }
+
     if (window.AndroidBridge && window.AndroidBridge.vibrate) {
       window.AndroidBridge.vibrate(20);
     }
+  }
+
+  btnTermClear.addEventListener('click', clearLogsState);
+  if (btnTermFsClear) {
+    btnTermFsClear.addEventListener('click', clearLogsState);
+  }
+
+  // Copiar todos os logs para a área de transferência
+  if (btnTermFsCopyAll) {
+    btnTermFsCopyAll.addEventListener('click', () => {
+      if (allReceivedCommands.length === 0) return;
+      const text = allReceivedCommands.map((c) =>
+        `[${c.timestamp}] IP:${c.clientIp || '192.168.15.23'} [${c.serviceType || 'SHELL'}] $ ${c.command}`
+      ).join('\n');
+
+      if (window.AndroidBridge && window.AndroidBridge.copyToClipboard) {
+        window.AndroidBridge.copyToClipboard(text);
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+
+      const origText = btnTermFsCopyAll.textContent;
+      btnTermFsCopyAll.textContent = 'COPIADO!';
+      btnTermFsCopyAll.style.color = 'var(--terminal-green)';
+      btnTermFsCopyAll.style.borderColor = 'var(--terminal-green)';
+      setTimeout(() => {
+        btnTermFsCopyAll.textContent = origText;
+        btnTermFsCopyAll.style.color = '';
+        btnTermFsCopyAll.style.borderColor = '';
+      }, 1500);
+    });
+  }
+
+  // Filtros rápidos por Chip
+  termFilterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      termFilterChips.forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeFilter = chip.dataset.filter || 'all';
+      applyFullscreenFilters();
+      if (window.AndroidBridge && window.AndroidBridge.vibrate) {
+        window.AndroidBridge.vibrate(10);
+      }
+    });
   });
+
+  // Busca em tempo real no Fullscreen
+  if (termFsSearchInput) {
+    termFsSearchInput.addEventListener('input', (e) => {
+      activeSearchTerm = (e.target.value || '').trim();
+      if (btnTermFsSearchClear) {
+        btnTermFsSearchClear.style.display = activeSearchTerm ? 'block' : 'none';
+      }
+      applyFullscreenFilters();
+    });
+  }
+
+  if (btnTermFsSearchClear) {
+    btnTermFsSearchClear.addEventListener('click', () => {
+      if (termFsSearchInput) termFsSearchInput.value = '';
+      activeSearchTerm = '';
+      btnTermFsSearchClear.style.display = 'none';
+      applyFullscreenFilters();
+    });
+  }
+
+  function applyFullscreenFilters() {
+    if (!termFsViewport) return;
+    const rows = termFsViewport.querySelectorAll('.term-fs-log-row');
+    rows.forEach((row) => {
+      const service = row.dataset.service || 'SHELL';
+      const isPriv = row.dataset.privileged === 'true';
+      const text = row.textContent.toLowerCase();
+
+      let show = true;
+      if (activeFilter === 'shell' && service !== 'SHELL') show = false;
+      if (activeFilter === 'priv' && !isPriv) show = false;
+      if (activeSearchTerm && !text.includes(activeSearchTerm.toLowerCase())) show = false;
+
+      row.style.display = show ? 'flex' : 'none';
+    });
+  }
+
+  // Handler nativo de voltar (Android Back)
+  window.handleAndroidBack = function () {
+    if (termFsOverlay && termFsOverlay.classList.contains('open')) {
+      closeFullscreenTerminal();
+      return true;
+    }
+    if (bgWidgetOverlay && bgWidgetOverlay.classList.contains('open')) {
+      bgWidgetOverlay.classList.remove('open');
+      return true;
+    }
+    if (historyModalOverlay && historyModalOverlay.classList.contains('open')) {
+      historyModalOverlay.classList.remove('open');
+      return true;
+    }
+    return false;
+  };
 
   // =========================================================================
   // 5. STATUS DO ADB & DISPOSITIVOS CONECTADOS (IP Mandatório)
