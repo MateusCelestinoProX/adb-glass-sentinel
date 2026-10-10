@@ -20,13 +20,17 @@ class AndroidBridge(
     fun getAdbStatus(): String {
         val enabled = AdbSystemController.isWirelessAdbEnabled(activity)
         val wifiIp = AdbSocketTracker.getDeviceWifiIp()
-        val connections = AdbSocketTracker.scanActiveConnections()
+        val connections = if (enabled) AdbSocketTracker.scanActiveConnections(activity) else emptyList()
         val established = connections.firstOrNull { it.state == "ESTABLISHED" }
+        val adbdState = AdbSystemController.getSystemProperty("init.svc.adbd", if (enabled) "running" else "stopped")
+
+        val activePort = established?.localPort ?: AdbSocketTracker.getActiveAdbPort()
 
         val obj = JSONObject().apply {
             put("wirelessEnabled", enabled)
+            put("adbdState", adbdState)
             put("wifiIp", wifiIp)
-            put("port", 5555)
+            put("port", if (activePort > 0) activePort else 5555)
             put("activeConnectionCount", connections.count { it.state == "ESTABLISHED" })
             put("connectedHostIp", established?.remoteIp ?: "")
             put("connectedHostPort", established?.remotePort ?: 0)
@@ -37,18 +41,20 @@ class AndroidBridge(
 
     @JavascriptInterface
     fun toggleWirelessAdb(enable: Boolean): Boolean {
-        vibrate(30)
+        vibrate(35)
         val result = if (enable) {
             AdbSystemController.enableWirelessAdb(activity)
         } else {
             AdbSystemController.disableWirelessAdb(activity)
         }
+        activity.sentinelService?.onAdbToggled(enable)
         return result
     }
 
     @JavascriptInterface
     fun getActiveConnections(): String {
-        val list = AdbSocketTracker.scanActiveConnections()
+        val enabled = AdbSystemController.isWirelessAdbEnabled(activity)
+        val list = if (enabled) AdbSocketTracker.scanActiveConnections(activity) else emptyList()
         val array = JSONArray()
         list.forEach { conn ->
             val obj = JSONObject().apply {
@@ -74,6 +80,10 @@ class AndroidBridge(
             val obj = JSONObject().apply {
                 put("id", cmd.id)
                 put("timestamp", cmd.timestamp)
+                put("dateFormatted", cmd.dateFormatted)
+                put("timeFormatted", cmd.timeFormatted)
+                put("millisFormatted", cmd.millisFormatted)
+                put("epochMs", cmd.epochMs)
                 put("command", cmd.command)
                 put("clientIp", cmd.clientIp)
                 put("serviceType", cmd.serviceType)
@@ -86,7 +96,7 @@ class AndroidBridge(
 
     @JavascriptInterface
     fun getAuthorizedKeys(): String {
-        val keys = AdbSystemController.getAuthorizedKeys()
+        val keys = AdbSystemController.getAuthorizedKeys(activity)
         val array = JSONArray()
         keys.forEach { k ->
             val obj = JSONObject().apply {
@@ -108,13 +118,17 @@ class AndroidBridge(
     @JavascriptInterface
     fun denyDebugging(): Boolean {
         vibrate(60)
-        return AdbSystemController.denyDebugging()
+        val res = AdbSystemController.denyDebugging()
+        AdbSocketTracker.clearActiveConnectionsCache()
+        return res
     }
 
     @JavascriptInterface
     fun clearAllKeys(): Boolean {
         vibrate(80)
-        return AdbSystemController.clearDebuggingKeys()
+        val res = AdbSystemController.clearDebuggingKeys()
+        AdbSocketTracker.clearActiveConnectionsCache()
+        return res
     }
 
     @JavascriptInterface

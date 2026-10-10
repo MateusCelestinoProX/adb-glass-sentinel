@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791399674.4136815,
-    "seen": 1791399697.401218,
-    "ast_hash": "ef9a5c4df3ceb76e04ba9a14bd592576",
+    "mtime": 1791675510.7012002,
+    "seen": 1791676024.311306,
+    "ast_hash": "c576d79db3ce9c3e4575cc86efd4aa80",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -24,39 +24,39 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
-    "mtime": 1791344663.1524694,
-    "seen": 1791346236.3281999,
-    "ast_hash": "b6b364ef3c512e2d3008a701cb1da02e",
+    "mtime": 1791505951.8596509,
+    "seen": 1791506502.371496,
+    "ast_hash": "6b8e65d60e4dd3afc8500bce1f00125c",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1791344839.4756079,
-    "seen": 1791346236.328201,
-    "ast_hash": "7d199f135e3bc392db9242af13359b76",
+    "mtime": 1791506033.2269535,
+    "seen": 1791506502.371496,
+    "ast_hash": "02c949fcd6fbe385088829bf53693c51",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
-    "mtime": 1791301588.833654,
-    "seen": 1791302083.3497999,
-    "ast_hash": "fde25000943981ebbe03fed98701f899",
+    "mtime": 1791675447.235845,
+    "seen": 1791676024.311311,
+    "ast_hash": "7e327c8df574035c1cce0858722d9e94",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSystemController.kt": {
-    "mtime": 1791300875.879173,
-    "seen": 1791302083.349801,
-    "ast_hash": "5c852e3c47b5425f7418861dfbd5afce",
+    "mtime": 1791675393.1655192,
+    "seen": 1791676024.311312,
+    "ast_hash": "57d3eb88aaf89d169ae078c83fe80540",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt": {
-    "mtime": 1791300906.0839367,
-    "seen": 1791302083.349801,
-    "ast_hash": "0dcf8c8c8afa26168ef9d9fed3ad80db",
+    "mtime": 1791675472.304867,
+    "seen": 1791676024.311313,
+    "ast_hash": "ba63db07049bc82d6128f12b325b9a9e",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791388149.5483968,
-    "seen": 1791395886.770747,
-    "ast_hash": "86b31425332fd34ac4ec9694750711d6",
+    "mtime": 1791506071.6517866,
+    "seen": 1791506502.3715,
+    "ast_hash": "4ed3e3a290524dd4b29291d3b48af9f0",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "build_and_install.sh": {
-    "mtime": 1791395818.0659304,
-    "seen": 1791395886.77075,
-    "ast_hash": "dbd8357643e9fba8e0c6152ce2c3f815",
+    "mtime": 1791675545.502785,
+    "seen": 1791676024.311316,
+    "ast_hash": "8106b59a2fc1f72edd6b09b26d26b2dd",
     "semantic_hash": ""
   },
   "gradlew": {
@@ -84,15 +84,15 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791389185.77235,
-    "seen": 1791395886.770753,
-    "ast_hash": "e74c5fa95685bf3264933f09c0e6e3bb",
+    "mtime": 1791506180.9753819,
+    "seen": 1791506502.3715048,
+    "ast_hash": "d3ab5a532b5f0d1e5b5357bea1f2c9c9",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
-    "mtime": 1791344593.7993293,
-    "seen": 1791346236.328191,
-    "ast_hash": "5fb0a6d745da6706bea574f23c087587",
+    "mtime": 1791675349.8566873,
+    "seen": 1791676024.3113,
+    "ast_hash": "e0abf363f8b930b1f075855a2dfc53f3",
     "semantic_hash": ""
   },
   "README.md": {
@@ -153,6 +153,30 @@
     "mtime": 1791388918.238774,
     "seen": 1791395886.770762,
     "ast_hash": "3709a329b8bae2c2d5c82e9fc00da8f6",
+    "semantic_hash": ""
+  },
+  "current_screen.png": {
+    "mtime": 1791674657.775666,
+    "seen": 1791676024.31132,
+    "ast_hash": "031fb9e71c213b5f8700d0103f3ae893",
+    "semantic_hash": ""
+  },
+  "screen_clean.png": {
+    "mtime": 1791675948.9617243,
+    "seen": 1791676024.31133,
+    "ast_hash": "7542dcb5dd80146dfbbf96bde40fb423",
+    "semantic_hash": ""
+  },
+  "screen_fixed.png": {
+    "mtime": 1791675875.3809657,
+    "seen": 1791676024.31133,
+    "ast_hash": "fae444d90ffa76d0243c9f2c14061d67",
+    "semantic_hash": ""
+  },
+  "screen_main.png": {
+    "mtime": 1791675905.4313629,
+    "seen": 1791676024.311331,
+    "ast_hash": "b896d6a640a509dd0431d62c05043eda",
     "semantic_hash": ""
   }
 }

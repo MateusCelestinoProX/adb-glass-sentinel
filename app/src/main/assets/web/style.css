@@ -1,6 +1,6 @@
 /* ==========================================================================
    ADB GLASS SENTINEL — Liquid Glassmorphism & Cyber Security System
-   Obsidian Dark • Custom Dynamic Accent • Green Phosphor Terminal • WebGL 60FPS
+   Obsidian Dark • Dynamic System & Terminal Accent • WebGL 60FPS
    ========================================================================== */
 
 :root {
@@ -10,17 +10,19 @@
   --bg-deep: #05070c;
   --bg-surface: #0a0e17;
 
-  /* Cor Primária da Interface (Customizável pelo Usuário via Widget) */
+  /* Cor Primária do Sistema & Terminal (Customizável pelo Usuário via Widget) */
   --accent-primary: #00ff66;
   --accent-primary-glow: rgba(0, 255, 102, 0.45);
   --accent-primary-soft: rgba(0, 255, 102, 0.14);
   --accent-primary-border: rgba(0, 255, 102, 0.38);
 
-  /* Identidade Imutável do Terminal de Comandos ADB (Verde Fósforo Hacker) */
-  --terminal-green: #00ff66;
-  --terminal-green-glow: rgba(0, 255, 102, 0.45);
-  --terminal-green-dim: rgba(0, 255, 102, 0.12);
-  --terminal-green-border: rgba(0, 255, 102, 0.3);
+  /* Variáveis do Terminal sincronizadas dinamicamente com a Cor Principal */
+  --terminal-green: var(--accent-primary);
+  --terminal-green-glow: var(--accent-primary-glow);
+  --terminal-green-dim: var(--accent-primary-soft);
+  --terminal-green-border: var(--accent-primary-border);
+  --terminal-accent-bg: rgba(0, 255, 102, 0.07);
+  --terminal-row-bg: rgba(0, 255, 102, 0.04);
 
   --accent-red: #ff1037;
   --accent-red-glow: rgba(255, 16, 55, 0.45);
@@ -224,6 +226,7 @@ html, body {
   transition: background 0.3s ease;
 }
 
+. status-dot.inactive,
 .header-status-badge.inactive .status-dot {
   background: var(--accent-red);
   box-shadow: 0 0 8px var(--accent-red);
@@ -255,17 +258,17 @@ html, body {
 
 .toggle-dial-container {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 144px;
+  height: 144px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .toggle-dial-container:active {
-  transform: scale(0.96);
+  transform: scale(0.93);
 }
 
 .dial-svg-ring {
@@ -289,32 +292,34 @@ html, body {
   stroke-dasharray: 364.4;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  transition: stroke 0.3s, stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s;
+  transition: stroke 0.3s, stroke-dashoffset 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s;
   filter: drop-shadow(0 0 10px var(--accent-primary-glow));
 }
 
 .dial-progress.inactive {
   stroke: var(--accent-red);
-  stroke-dashoffset: 280;
+  stroke-dashoffset: 275;
   filter: drop-shadow(0 0 8px var(--accent-red-glow));
 }
 
 .dial-center-btn {
-  width: 108px;
-  height: 108px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.75) 100%);
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.09) 0%, rgba(0, 0, 0, 0.78) 100%);
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+  gap: 1px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dial-icon {
   font-size: 22px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .dial-state-text {
@@ -328,6 +333,14 @@ html, body {
 
 .dial-state-text.inactive {
   color: var(--accent-red);
+}
+
+.dial-sub-hint {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.4px;
+  margin-top: 2px;
 }
 
 .endpoint-info-pill {
@@ -361,6 +374,10 @@ html, body {
 .endpoint-port {
   color: var(--accent-primary);
   transition: color 0.3s ease;
+}
+
+.endpoint-port.inactive {
+  color: var(--accent-red);
 }
 
 .copy-badge {
@@ -421,6 +438,7 @@ html, body {
   border-radius: var(--radius-md);
   padding: 10px 12px;
   margin-bottom: 6px;
+  transition: border-color 0.3s ease;
 }
 
 .active-host-box:last-child {
@@ -444,10 +462,11 @@ html, body {
   font-size: 9px;
   padding: 2px 6px;
   border-radius: 4px;
-  background: rgba(0, 240, 255, 0.15);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary-border);
   font-family: var(--font-mono);
+  transition: all 0.3s ease;
 }
 
 .host-bottom-row {
@@ -501,22 +520,23 @@ html, body {
 }
 
 /* =========================================================
-   CARD 3: SUPER GLASS BOX TERMINAL (Phosphor Green Letters)
+   CARD 3: SUPER GLASS BOX TERMINAL (Dynamic System Accent)
    ESTABILIDADE ABSOLUTA: Zero Tremor • Zero Flickeo • Zero Blur Mutation
    ========================================================= */
 .terminal-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: rgba(8, 14, 22, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 14, 22, 0.42);
+  border: 1px solid var(--accent-primary-border);
   backdrop-filter: blur(16px) saturate(170%);
   -webkit-backdrop-filter: blur(16px) saturate(170%);
   border-radius: var(--radius-lg);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   overflow: hidden;
   contain: paint layout;
   transform: translateZ(0);
+  transition: border-color 0.3s ease;
 }
 
 .terminal-header {
@@ -524,8 +544,9 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  background: rgba(0, 255, 102, 0.06);
-  border-bottom: 1px solid rgba(0, 255, 102, 0.2);
+  background: var(--terminal-accent-bg);
+  border-bottom: 1px solid var(--accent-primary-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .terminal-title-group {
@@ -546,56 +567,62 @@ html, body {
 }
 .term-light.red { background: #ff5f56; }
 .term-light.yellow { background: #ffbd2e; }
-.term-light.green { background: #27c93f; }
+.term-light.green { background: var(--accent-primary); box-shadow: 0 0 6px var(--accent-primary); }
 
 .terminal-label {
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
-  color: var(--terminal-green);
+  color: var(--accent-primary);
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .terminal-live-badge {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(0, 255, 102, 0.12);
-  border: 1px solid rgba(0, 255, 102, 0.3);
-  padding: 1px 6px;
+  background: var(--accent-primary-soft);
+  border: 1px solid var(--accent-primary-border);
+  padding: 2px 7px;
   border-radius: var(--radius-pill);
   font-size: 8.5px;
   font-family: var(--font-mono);
   font-weight: 700;
-  color: var(--terminal-green);
+  color: var(--accent-primary);
   letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.terminal-live-badge.flash {
+  filter: brightness(1.45);
+  box-shadow: 0 0 12px var(--accent-primary-glow);
 }
 
 .live-dot-pulse {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #00ff66;
-  box-shadow: 0 0 8px #00ff66;
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
   animation: liveBeaconPulse 1.4s infinite ease-in-out;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes liveBeaconPulse {
   0%, 100% {
     transform: scale(1);
     opacity: 1;
-    box-shadow: 0 0 6px #00ff66;
   }
   50% {
-    transform: scale(1.3);
-    opacity: 0.6;
-    box-shadow: 0 0 10px #00ff66;
+    transform: scale(1.35);
+    opacity: 0.55;
   }
 }
 
 .terminal-actions {
   display: flex;
-  gap: 6px;
+  gap: 5px;
 }
 
 .term-btn-icon {
@@ -603,99 +630,200 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--text-muted);
   border-radius: 5px;
-  padding: 3px 8px;
-  font-size: 10px;
+  padding: 3px 7px;
+  font-size: 9.5px;
   font-family: var(--font-mono);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .term-btn-icon:hover, .term-btn-icon:active {
-  background: rgba(0, 255, 102, 0.15);
-  color: var(--terminal-green);
-  border-color: var(--terminal-green);
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
-/* Viewport em Fluxo Natural e Suave (Sem Column-Reverse para eliminar tremores) */
+/* Barra Intuitiva de Data e Hora no Shell Glass Terminal */
+.terminal-datetime-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.38);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.term-dt-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.term-dt-icon {
+  font-size: 10px;
+}
+
+.term-clock-mono {
+  color: var(--accent-primary);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease;
+}
+
+.term-dt-sep {
+  opacity: 0.3;
+}
+
+.term-dt-last {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Viewport em Fluxo Natural e Suave */
 .terminal-box-viewport {
   position: relative;
-  height: 220px;
+  height: 230px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 10px;
   font-family: var(--font-mono);
   font-size: 11px;
   line-height: 1.45;
-  color: var(--terminal-green);
-  text-shadow: 0 0 6px rgba(0, 255, 102, 0.45);
+  color: var(--accent-primary);
+  text-shadow: 0 0 6px var(--accent-primary-glow);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  background: radial-gradient(circle at center, rgba(0, 255, 102, 0.02) 0%, rgba(2, 4, 8, 0.30) 100%);
+  gap: 7px;
+  background: radial-gradient(circle at center, var(--terminal-row-bg) 0%, rgba(2, 4, 8, 0.34) 100%);
   overscroll-behavior: contain;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Animação Suave e Elegante de Novos Comandos (Zero Tremor Horizontal) */
+/* Animação Suave e Elegante de Novos Comandos */
 @keyframes cmdGentleSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(-8px);
-    background: rgba(0, 255, 102, 0.18);
+    transform: translateY(-6px);
+    background: var(--accent-primary-soft);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    background: rgba(0, 255, 102, 0.035);
+    background: var(--terminal-row-bg);
   }
 }
 
 .terminal-log-row {
   display: flex;
   flex-direction: column;
-  border-left: 2px solid rgba(0, 255, 102, 0.45);
-  padding: 5px 8px;
-  background: rgba(0, 255, 102, 0.035);
-  border-radius: 0 4px 4px 0;
-  animation: cmdGentleSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  gap: 4px;
+  border-left: 2.5px solid var(--accent-primary);
+  padding: 6px 9px;
+  background: var(--terminal-row-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0 6px 6px 0;
+  animation: cmdGentleSlideIn 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.terminal-log-row.privileged {
+  border-left-color: var(--accent-amber);
 }
 
 .log-meta-line {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 9.5px;
-  color: rgba(255, 255, 255, 0.55);
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.65);
+  text-shadow: none;
 }
 
-.log-time {
-  color: #38bdf8;
-}
-
-.log-ip-badge {
-  background: rgba(0, 255, 102, 0.15);
-  color: var(--terminal-green);
+/* Pílulas Intuitivas de Data e Hora em Cada Comando */
+.log-time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
   padding: 1px 5px;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 255, 102, 0.3);
+  border-radius: 4px;
   font-weight: 600;
 }
 
+.log-time-pill small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.log-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.log-rel-time {
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 8.5px;
+  padding: 0 3px;
+  opacity: 0.9;
+}
+
+.log-ip-badge {
+  background: var(--accent-primary-soft);
+  color: var(--accent-primary);
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--accent-primary-border);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.log-service-tag {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 8.5px;
+  margin-left: auto;
+}
+
 .log-cmd-line {
-  color: var(--terminal-green);
+  color: var(--accent-primary);
+  text-shadow: 0 0 6px var(--accent-primary-glow);
   word-break: break-all;
   white-space: pre-wrap;
-  margin-top: 2px;
-  font-weight: 500;
+  margin-top: 1px;
+  font-weight: 600;
+  font-size: 11px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .log-cmd-line.privileged {
   color: #fbbf24;
-  text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.55);
 }
 
 .terminal-empty-msg {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.38);
+  text-shadow: none;
   text-align: center;
   margin: auto;
   font-style: italic;
@@ -1061,7 +1189,7 @@ html, body {
 
 /* =========================================================
    TERMINAL FULLSCREEN ULTRA LIGHT GLASS
-   Transparência Cristalina • Blur Líquido • Fundo WebGL Visível
+   Transparência Cristalina • Blur Líquido • Cor Dinâmica do Sistema
    ========================================================= */
 .terminal-fullscreen-overlay {
   position: fixed;
@@ -1075,7 +1203,7 @@ html, body {
   transform: scale(0.97) translateY(14px);
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(0, 0, 0, 0.15); /* Permite ao shader brilhar com total nitidez */
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .terminal-fullscreen-overlay.open {
@@ -1090,7 +1218,7 @@ html, body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 40%, rgba(10, 18, 30, 0.28) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--accent-primary-border);
   backdrop-filter: blur(28px) saturate(200%) brightness(1.04);
   -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.04);
   border-radius: var(--radius-xl);
@@ -1105,8 +1233,8 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--terminal-accent-bg);
+  border-bottom: 1px solid var(--accent-primary-border);
   backdrop-filter: blur(12px);
   gap: 10px;
 }
@@ -1142,17 +1270,17 @@ html, body {
   font-size: 8.5px;
   padding: 2px 6px;
   border-radius: var(--radius-pill);
-  background: rgba(0, 255, 102, 0.15);
-  border: 1px solid rgba(0, 255, 102, 0.35);
-  color: var(--terminal-green);
+  background: var(--accent-primary-soft);
+  border: 1px solid var(--accent-primary-border);
+  color: var(--accent-primary);
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
 .term-fs-subtitle {
   font-family: var(--font-mono);
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .term-fs-header-right {
@@ -1202,7 +1330,7 @@ html, body {
   justify-content: space-between;
   gap: 8px;
   padding: 8px 14px;
-  background: rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.18);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -1224,9 +1352,9 @@ html, body {
 }
 
 .term-filter-chip.active {
-  background: rgba(0, 255, 102, 0.16);
-  border-color: var(--terminal-green);
-  color: var(--terminal-green);
+  background: var(--accent-primary-soft);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
   font-weight: 700;
 }
 
@@ -1239,7 +1367,7 @@ html, body {
   border-radius: var(--radius-pill);
   padding: 3px 10px;
   flex: 1;
-  max-width: 200px;
+  max-width: 210px;
 }
 
 .term-search-icon {
@@ -1279,7 +1407,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.08); /* Extremamente suave para visualização máxima do shader WebGL */
+  background: rgba(0, 0, 0, 0.08);
   overscroll-behavior: contain;
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
@@ -1289,12 +1417,12 @@ html, body {
 .term-fs-log-row {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 10px;
-  background: rgba(0, 255, 102, 0.04);
+  gap: 5px;
+  padding: 9px 11px;
+  background: var(--terminal-row-bg);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  border-left: 3px solid var(--terminal-green);
-  border-radius: 6px;
+  border-left: 3px solid var(--accent-primary);
+  border-radius: 7px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   animation: cmdGentleSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -1302,32 +1430,33 @@ html, body {
 }
 
 .term-fs-log-row.privileged {
-  border-left-color: var(--accent-red);
-  background: rgba(255, 16, 55, 0.05);
+  border-left-color: var(--accent-amber);
+  background: rgba(251, 191, 36, 0.06);
 }
 
 .term-fs-log-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
   font-size: 9.5px;
   font-family: var(--font-mono);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .term-fs-log-cmd {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--terminal-green);
-  text-shadow: 0 0 8px rgba(0, 255, 102, 0.55);
+  color: var(--accent-primary);
+  text-shadow: 0 0 8px var(--accent-primary-glow);
   word-break: break-all;
   line-height: 1.4;
 }
 
 .term-fs-log-cmd.privileged {
-  color: #ff5f7e;
-  text-shadow: 0 0 8px rgba(255, 16, 55, 0.5);
+  color: #fbbf24;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.55);
 }
 
 /* Footer Fullscreen Ultra Light Glass */

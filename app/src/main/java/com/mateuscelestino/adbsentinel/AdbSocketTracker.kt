@@ -1,8 +1,8 @@
 package com.mateuscelestino.adbsentinel
 
+import android.content.Context
 import android.util.Log
 import org.json.JSONArray
-import org.json.JSONObject
 import java.io.File
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -23,52 +23,115 @@ object AdbSocketTracker {
     private const val TAG = "AdbSocketTracker"
     private const val ADB_PORT_HEX = "15B3" // 5555 em hex
 
+    @Volatile
+    private var cachedConnections: List<AdbConnection> = emptyList()
+    @Volatile
+    private var lastScanTimestamp: Long = 0L
+
+    @Volatile
+    private var cachedWifiIp: String = "192.168.15.22"
+    @Volatile
+    private var lastWifiIpTimestamp: Long = 0L
+
+    @Volatile
+    private var lastDumpsysTimestamp: Long = 0L
+
+    @Volatile
+    private var detectedAdbPort: Int = 5555
+
+    fun getActiveAdbPort(): Int = detectedAdbPort
+
     /**
-     * Retorna a lista de conexões ativas na porta ADB (5555) e conexões USB
+     * Limpa imediatamente o cache de conexões ativas (usado ao desligar o ADB)
      */
-    fun scanActiveConnections(): List<AdbConnection> {
+    fun clearActiveConnectionsCache() {
+        cachedConnections = emptyList()
+        lastScanTimestamp = System.currentTimeMillis()
+    }
+
+    /**
+     * Retorna o IP do cliente ativo direto da memória RAM (0ms, zero I/O)
+     * Usado pelo AdbLogStreamer em cada linha de comando sem bloquear
+     */
+    fun getCachedClientIp(): String {
+        val active = cachedConnections.firstOrNull { it.state == "ESTABLISHED" }
+        return active?.remoteIp?.takeIf { it.isNotBlank() } ?: "192.168.15.23"
+    }
+
+    /**
+     * Retorna a lista de conexões ativas com cache inteligente de alta performance
+     */
+    fun scanActiveConnections(context: Context? = null, forceRefresh: Boolean = false): List<AdbConnection> {
+        // Se o daemon adbd está parado ou o ADB foi desativado, não há conexões ativas
+        if (context != null && !AdbSystemController.isWirelessAdbEnabled(context)) {
+            cachedConnections = emptyList()
+            return emptyList()
+        }
+        val adbdState = AdbSystemController.getSystemProperty("init.svc.adbd", "running")
+        if (adbdState.equals("stopped", ignoreCase = true)) {
+            cachedConnections = emptyList()
+            return emptyList()
+        }
+
+        val now = System.currentTimeMillis()
+        if (!forceRefresh && (now - lastScanTimestamp) < 900L) {
+            return cachedConnections
+        }
+
         val connections = mutableListOf<AdbConnection>()
 
-        // 1. Tentar ler do daemon de baixo nível /data/local/tmp/adb_active.json
-        val daemonFile = File("/data/local/tmp/adb_active.json")
-        if (daemonFile.exists() && daemonFile.canRead()) {
-            try {
-                val text = daemonFile.readText().trim()
-                if (text.isNotEmpty() && text.startsWith("[")) {
-                    val arr = JSONArray(text)
-                    for (i in 0 until arr.length()) {
-                        val obj = arr.getJSONObject(i)
-                        connections.add(
-                            AdbConnection(
-                                id = obj.optString("id"),
-                                localIp = "127.0.0.1",
-                                localPort = obj.optInt("localPort", 5555),
-                                remoteIp = obj.optString("remoteIp"),
-                                remotePort = obj.optInt("remotePort", 0),
-                                state = obj.optString("state", "ESTABLISHED"),
-                                uid = 2000,
-                                connectionType = obj.optString("type", "WIRELESS")
+        // 1. Tentar ler do arquivo compartilhado do app ou do daemon /data/local/tmp/adb_active.json
+        val candidateFiles = mutableListOf<File>()
+        context?.getExternalFilesDir(null)?.let { extDir ->
+            candidateFiles.add(File(extDir, "adb_active.json"))
+        }
+        candidateFiles.add(File("/data/local/tmp/adb_active.json"))
+
+        for (daemonFile in candidateFiles) {
+            if (daemonFile.exists() && daemonFile.canRead()) {
+                try {
+                    val text = daemonFile.readText().trim()
+                    if (text.isNotEmpty() && text.startsWith("[")) {
+                        val arr = JSONArray(text)
+                        for (i in 0 until arr.length()) {
+                            val obj = arr.getJSONObject(i)
+                            connections.add(
+                                AdbConnection(
+                                    id = obj.optString("id"),
+                                    localIp = cachedWifiIp,
+                                    localPort = obj.optInt("localPort", 5555),
+                                    remoteIp = obj.optString("remoteIp"),
+                                    remotePort = obj.optInt("remotePort", 0),
+                                    state = obj.optString("state", "ESTABLISHED"),
+                                    uid = 2000,
+                                    connectionType = obj.optString("type", "WIRELESS")
+                                )
                             )
-                        )
+                        }
+                        if (connections.isNotEmpty()) {
+                            cachedConnections = connections
+                            lastScanTimestamp = now
+                            return connections
+                        }
                     }
-                    if (connections.isNotEmpty()) {
-                        return connections
-                    }
+                } catch (e: Exception) {
+                    Log.v(TAG, "Falha ao ler ${daemonFile.name}: ${e.message}")
                 }
-            } catch (e: Exception) {
-                Log.v(TAG, "Falha ao ler adb_active.json: ${e.message}")
             }
         }
 
-        // 2. Fallback: Ler /proc/net/tcp6 e /proc/net/tcp se acessível
+        // 2. Fallback rápido em /proc/net/tcp6 e /proc/net/tcp (leitura em memória procfs)
         parseProcNetFile(File("/proc/net/tcp6"), isIpv6 = true, connections)
         parseProcNetFile(File("/proc/net/tcp"), isIpv6 = false, connections)
 
-        // 3. Fallback: Se dumpsys adb diz que está conectado e não achou sockets:
-        if (connections.isEmpty() || connections.none { it.state == "ESTABLISHED" }) {
+        // 3. Fallback controlado com rate-limit (máximo 1x a cada 12s) para não gerar overhead de processos
+        if (connections.none { it.state == "ESTABLISHED" } && (now - lastDumpsysTimestamp) > 12000L) {
+            lastDumpsysTimestamp = now
             checkDumpsysAndArp(connections)
         }
 
+        cachedConnections = connections
+        lastScanTimestamp = now
         return connections
     }
 
@@ -91,13 +154,17 @@ object AdbSocketTracker {
                             val localPortHex = localParts[1]
                             val remotePortHex = remoteParts[1]
 
-                            if (localPortHex.equals(ADB_PORT_HEX, ignoreCase = true) || remotePortHex.equals(ADB_PORT_HEX, ignoreCase = true)) {
+                            if (uid == 2000 || localPortHex.equals(ADB_PORT_HEX, ignoreCase = true) || remotePortHex.equals(ADB_PORT_HEX, ignoreCase = true)) {
                                 val localPort = localPortHex.toIntOrNull(16) ?: 5555
                                 val remotePort = remotePortHex.toIntOrNull(16) ?: 0
 
                                 val localIp = decodeIpAddress(localParts[0], isIpv6)
                                 val remoteIp = decodeIpAddress(remoteParts[0], isIpv6)
                                 val stateStr = decodeSocketState(stateHex)
+
+                                if (stateStr == "ESTABLISHED" && localPort > 0) {
+                                    detectedAdbPort = localPort
+                                }
 
                                 val id = "$remoteIp:$remotePort"
                                 if (output.none { it.id == id && it.state == stateStr }) {
@@ -182,7 +249,6 @@ object AdbSocketTracker {
             val process = Runtime.getRuntime().exec("dumpsys adb")
             val outputText = process.inputStream.bufferedReader().use { it.readText() }
             if (outputText.contains("connected_to_adb=true")) {
-                // Tenta achar o IP de rede através da tabela ARP
                 var detectedIp = "192.168.15.23"
                 val arp = File("/proc/net/arp")
                 if (arp.exists() && arp.canRead()) {
@@ -199,10 +265,10 @@ object AdbSocketTracker {
                 output.add(
                     AdbConnection(
                         id = "$detectedIp:5555",
-                        localIp = "192.168.15.22",
+                        localIp = getDeviceWifiIp(),
                         localPort = 5555,
                         remoteIp = detectedIp,
-                        remotePort = 56652,
+                        remotePort = 5555,
                         state = "ESTABLISHED",
                         uid = 2000,
                         connectionType = "WIRELESS"
@@ -215,16 +281,22 @@ object AdbSocketTracker {
     }
 
     fun getDeviceWifiIp(): String {
+        val now = System.currentTimeMillis()
+        if ((now - lastWifiIpTimestamp) < 8000L && cachedWifiIp.isNotEmpty()) {
+            return cachedWifiIp
+        }
         try {
             val interfaces = NetworkInterface.getNetworkInterfaces()
-            while (interfaces.hasMoreElements()) {
+            while (interfaces != null && interfaces.hasMoreElements()) {
                 val iface = interfaces.nextElement()
                 if (iface.isUp && !iface.isLoopback && (iface.name.contains("wlan") || iface.name.contains("eth") || iface.name.contains("ap"))) {
                     val addresses = iface.inetAddresses
                     while (addresses.hasMoreElements()) {
                         val addr = addresses.nextElement()
                         if (!addr.isLoopbackAddress && addr.hostAddress?.contains(".") == true) {
-                            return addr.hostAddress ?: "127.0.0.1"
+                            cachedWifiIp = addr.hostAddress ?: "192.168.15.22"
+                            lastWifiIpTimestamp = now
+                            return cachedWifiIp
                         }
                     }
                 }
@@ -232,6 +304,7 @@ object AdbSocketTracker {
         } catch (e: Exception) {
             Log.e(TAG, "Erro ao obter IP Wi-Fi: ${e.message}")
         }
-        return "192.168.15.22"
+        lastWifiIpTimestamp = now
+        return cachedWifiIp
     }
 }

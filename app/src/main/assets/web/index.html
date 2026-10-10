@@ -46,7 +46,7 @@
 
     <!-- Card 1: Toggle Wireless ADB (Dial Ring de Vidro) -->
     <section class="sentinel-main-card">
-      <div class="toggle-dial-container" id="toggle-dial-btn" title="Alternar Wireless ADB">
+      <div class="toggle-dial-container" id="toggle-dial-btn" title="Toque para Ativar ou Parar o Sistema ADB">
         <svg class="dial-svg-ring" viewBox="0 0 140 140">
           <circle class="dial-track" cx="70" cy="70" r="58" />
           <circle class="dial-progress" id="dial-progress-ring" cx="70" cy="70" r="58" />
@@ -54,13 +54,14 @@
         <div class="dial-center-btn">
           <span class="dial-icon" id="dial-icon-emoji">⚡</span>
           <span class="dial-state-text" id="dial-state-label">WIRELESS ON</span>
+          <span class="dial-sub-hint" id="dial-sub-hint">TOQUE P/ PARAR</span>
         </div>
       </div>
 
       <!-- Pílula do Endpoint com Copiar -->
       <div class="endpoint-info-pill" id="endpoint-pill" title="Toque para copiar endpoint">
         <span class="endpoint-label">ENDPOINT:</span>
-        <span class="endpoint-ip" id="endpoint-ip-label">192.168.15.22</span><span class="endpoint-port">:5555</span>
+        <span class="endpoint-ip" id="endpoint-ip-label">192.168.15.22</span><span class="endpoint-port" id="endpoint-port-label">:5555</span>
         <span class="copy-badge">COPIAR</span>
       </div>
     </section>
@@ -79,7 +80,7 @@
       </div>
     </section>
 
-    <!-- Card 3: SUPER GLASS BOX TERMINAL (Phosphor Green Letters • Zero Flickeo) -->
+    <!-- Card 3: SUPER GLASS BOX TERMINAL (Dynamic System Accent • Zero Flickeo) -->
     <section class="terminal-card">
       <div class="terminal-header">
         <div class="terminal-title-group">
@@ -89,9 +90,9 @@
             <span class="term-light green"></span>
           </div>
           <span class="terminal-label">ADB SHELL LIVE INSPECTOR</span>
-          <div class="terminal-live-badge">
+          <div class="terminal-live-badge" id="terminal-live-badge">
             <span class="live-dot-pulse"></span>
-            <span>REAL-TIME</span>
+            <span id="terminal-live-text">REAL-TIME</span>
           </div>
         </div>
         <div class="terminal-actions">
@@ -101,11 +102,28 @@
         </div>
       </div>
 
+      <!-- Barra Intuitiva de Data, Hora Ao Vivo e Último Pulso do Terminal -->
+      <div class="terminal-datetime-bar">
+        <div class="term-dt-item">
+          <span class="term-dt-icon">📅</span>
+          <span id="term-live-date">HOJE, --/--/----</span>
+        </div>
+        <span class="term-dt-sep">&bull;</span>
+        <div class="term-dt-item">
+          <span class="term-dt-icon">🕒</span>
+          <span id="term-live-clock" class="term-clock-mono">--:--:--</span>
+        </div>
+        <span class="term-dt-sep">&bull;</span>
+        <div class="term-dt-item term-dt-last">
+          <span id="term-last-cmd-time">Aguardando eventos...</span>
+        </div>
+      </div>
+
       <!-- Viewport de Comandos em Fluxo Natural e Suave -->
       <div class="terminal-box-viewport" id="terminal-viewport">
         <div class="terminal-empty-msg" id="terminal-empty-msg">
-          &gt; Escutando comandos shell recebidos pelo adbd...<br>
-          &gt; IP de origem e payload serão impressos em verde em tempo real.
+          &gt; Escutando comandos shell recebidos pelo adbd em tempo real...<br>
+          &gt; Data, horário exato, IP de origem e payload sincronizados com a cor do sistema.
         </div>
       </div>
     </section>
@@ -132,20 +150,20 @@
       <div class="modal-sheet-header">
         <div>
           <h3 class="modal-title">Widget de Background &amp; Visual</h3>
-          <span class="modal-subtitle">Personalize a estética e o motor gráfico WebGL</span>
+          <span class="modal-subtitle">Personalize a estética, o terminal e o motor gráfico WebGL</span>
         </div>
         <button class="modal-close-btn" id="btn-bg-modal-close">&times;</button>
       </div>
 
       <div class="modal-scrollable-content">
 
-        <!-- Seção 1: Cor Principal da Interface -->
+        <!-- Seção 1: Cor Principal da Interface & Terminal -->
         <div class="widget-section-block">
           <div class="widget-section-title">
-            <span>✨ Cor Principal da Interface</span>
+            <span>✨ Cor Principal do Sistema &amp; Terminal</span>
           </div>
           <p class="widget-section-desc">
-            Escolha a cor dos cards, anéis e detalhes da interface. (O terminal de comandos ADB mantém suas letras verdes estilo hacker).
+            Escolha a cor principal do sistema. Todos os cards, anéis, badges e as cores do Shell Glass Terminal se adaptam instantaneamente.
           </p>
 
           <!-- Paleta de Cores de Acento -->
@@ -285,12 +303,14 @@
               <span class="term-fs-title">ADB SHELL LIVE INSPECTOR</span>
               <span class="term-fs-mode-tag">ULTRA LIGHT GLASS</span>
             </div>
-            <div class="term-fs-subtitle">Fluxo Contínuo &bull; Background WebGL Translúcido</div>
+            <div class="term-fs-subtitle">
+              <span id="term-fs-live-datetime">📅 HOJE • 🕒 --:--:--</span>
+            </div>
           </div>
         </div>
 
         <div class="term-fs-header-right">
-          <div class="terminal-live-badge">
+          <div class="terminal-live-badge" id="term-fs-live-badge">
             <span class="live-dot-pulse"></span>
             <span>AO VIVO</span>
           </div>
@@ -310,7 +330,7 @@
         </div>
         <div class="term-fs-search-box">
           <span class="term-search-icon">🔍</span>
-          <input type="text" id="term-fs-search-input" placeholder="Filtrar por comando ou IP..." />
+          <input type="text" id="term-fs-search-input" placeholder="Filtrar por comando, data, hora ou IP..." />
           <button class="term-search-clear-btn" id="btn-term-fs-search-clear" style="display: none;">&times;</button>
         </div>
       </div>
@@ -319,8 +339,8 @@
       <div class="terminal-fullscreen-viewport" id="terminal-fullscreen-viewport">
         <div class="terminal-empty-msg" id="terminal-fs-empty-msg">
           &gt; Modo Fullscreen Ultra Light Glass ativado.<br>
-          &gt; Escutando comandos shell recebidos pelo adbd...<br>
-          &gt; Background WebGL visível e elegante com blur de fundo.
+          &gt; Escutando comandos shell recebidos pelo adbd em tempo real...<br>
+          &gt; Cores sincronizadas com o tema principal e carimbo intuitivo de data/hora.
         </div>
       </div>
 
@@ -331,7 +351,7 @@
           <span class="term-fs-dot">&bull;</span>
           <span>PORTA: <b>5555</b></span>
           <span class="term-fs-dot">&bull;</span>
-          <span>ESTADO: <b style="color: var(--terminal-green);">AUDITANDO SHELL</b></span>
+          <span>ESTADO: <b id="term-fs-audit-state" style="color: var(--accent-primary);">AUDITANDO SHELL</b></span>
         </div>
         <button class="term-btn-icon" id="btn-term-fs-copy-all">COPIAR TUDO</button>
       </footer>

@@ -32,7 +32,7 @@ fi
 
 DEVICE_ID="${DEVICE:-192.168.15.22:5555}"
 
-if [ -n "$DEVICE_ID" ]; then
+if adb devices | grep -q "$DEVICE_ID"; then
     echo "=========================================================="
     echo "📲 Instalando no dispositivo oficial: $DEVICE_ID (Usuário 0)..."
     echo "=========================================================="
@@ -46,12 +46,22 @@ if [ -n "$DEVICE_ID" ]; then
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.READ_LOGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.WRITE_SECURE_SETTINGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.DUMP 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell dumpsys deviceidle whitelist +com.mateuscelestino.adbsentinel 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell cmd appops set com.mateuscelestino.adbsentinel RUN_IN_BACKGROUND allow 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell settings put global adb_enabled 1 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell settings put global adb_wifi_enabled 1 2>/dev/null || true
+
+    echo "⚡ Atualizando e iniciando Daemon Kernel ADB Sentinel..."
+    adb -s "$DEVICE_ID" push adb_sentinel_daemon.sh /data/local/tmp/adb_sentinel_daemon.sh
+    adb -s "$DEVICE_ID" shell "chmod 755 /data/local/tmp/adb_sentinel_daemon.sh && pkill -f adb_sentinel_daemon.sh 2>/dev/null || true"
+    adb -s "$DEVICE_ID" shell "setsid /system/bin/sh /data/local/tmp/adb_sentinel_daemon.sh >/dev/null 2>&1 < /dev/null &"
 
     echo "🚀 Iniciando ADB Glass Sentinel no Usuário 0..."
+    adb -s "$DEVICE_ID" shell am force-stop com.mateuscelestino.adbsentinel
     adb -s "$DEVICE_ID" shell am start --user 0 -n com.mateuscelestino.adbsentinel/.MainActivity
     echo "=========================================================="
     echo "✨ App iniciado com sucesso com acesso profundo ao SO!"
     echo "=========================================================="
 else
-    echo "⚠️ Nenhum dispositivo com status 'device' conectado via ADB."
+    echo "⚠️ Dispositivo $DEVICE_ID não está conectado no momento. O APK $FINAL_APK está pronto para instalação!"
 fi

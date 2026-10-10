@@ -29,6 +29,7 @@ class AdbSentinelService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        AdbLogStreamer.initContext(this)
         createNotificationChannel()
         startForeground(NOTIFICATION_ID, buildForegroundNotification("Sentinel Ativo: Monitorando Porta 5555"))
         startMonitoring()
@@ -38,60 +39,60 @@ class AdbSentinelService : Service() {
         return START_STICKY
     }
 
+    fun onAdbToggled(enabled: Boolean) {
+        if (enabled) {
+            updateNotification("Sentinel Ativo: Monitorando Porta 5555")
+            AdbLogStreamer.startStreaming(this)
+        } else {
+            updateNotification("Sistema ADB Parado (Protegido pelo Sentinel)")
+        }
+    }
+
     private fun startMonitoring() {
         if (isRunning) return
         isRunning = true
 
-        ensureDaemonRunning()
-
         // 1. Inicia streamer de logs em tempo real
-        AdbLogStreamer.startStreaming()
+        AdbLogStreamer.startStreaming(this)
 
-        // 2. Loop de verificação de sockets a cada 1.5s
+        // 2. Loop assíncrono leve de verificação de sockets a cada 1.5s
         serviceScope.launch {
             var lastConnectedIp: String? = null
-            var iterCount = 0
+            var lastEnabledState: Boolean? = null
 
             while (isActive && isRunning) {
                 try {
-                    if (++iterCount % 8 == 0) {
-                        ensureDaemonRunning()
-                    }
-
-                    val connections = AdbSocketTracker.scanActiveConnections()
-                    val established = connections.firstOrNull { it.state == "ESTABLISHED" }
-
-                    if (established != null) {
-                        val currentIp = established.remoteIp
-                        if (currentIp != lastConnectedIp && currentIp != "0.0.0.0" && currentIp != "127.0.0.1") {
-                            lastConnectedIp = currentIp
-                            recordConnectionHistory(established)
-                            updateNotification("Conexão ADB Ativa: IP $currentIp")
+                    val enabled = AdbSystemController.isWirelessAdbEnabled(this@AdbSentinelService)
+                    if (!enabled) {
+                        if (lastEnabledState != false) {
+                            lastEnabledState = false
+                            lastConnectedIp = null
+                            AdbSocketTracker.clearActiveConnectionsCache()
+                            updateNotification("Sistema ADB Parado (Protegido pelo Sentinel)")
                         }
-                    } else if (lastConnectedIp != null) {
-                        lastConnectedIp = null
-                        updateNotification("Wireless ADB Aguardando Conexões...")
+                    } else {
+                        val connections = AdbSocketTracker.scanActiveConnections(this@AdbSentinelService, forceRefresh = true)
+                        val established = connections.firstOrNull { it.state == "ESTABLISHED" }
+
+                        if (established != null) {
+                            val currentIp = established.remoteIp
+                            if (currentIp != lastConnectedIp && currentIp != "0.0.0.0" && currentIp != "127.0.0.1") {
+                                lastConnectedIp = currentIp
+                                lastEnabledState = true
+                                recordConnectionHistory(established)
+                                updateNotification("Conexão ADB Ativa: IP $currentIp")
+                            }
+                        } else if (lastConnectedIp != null || lastEnabledState != true) {
+                            lastConnectedIp = null
+                            lastEnabledState = true
+                            updateNotification("Wireless ADB Aguardando Conexões...")
+                        }
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Erro no loop de sockets: ${e.message}")
                 }
                 delay(1500)
             }
-        }
-    }
-
-    private fun ensureDaemonRunning() {
-        serviceScope.launch(Dispatchers.IO) {
-            try {
-                val script = java.io.File("/data/local/tmp/adb_sentinel_daemon.sh")
-                if (script.exists()) {
-                    val proc = Runtime.getRuntime().exec(arrayOf("sh", "-c", "ps -A | grep -v grep | grep adb_sentinel_daemon"))
-                    val isAlive = proc.inputStream.bufferedReader().use { it.readText() }.trim().isNotEmpty()
-                    if (!isAlive) {
-                        Runtime.getRuntime().exec(arrayOf("sh", "-c", "chmod 755 /data/local/tmp/adb_sentinel_daemon.sh && ( /system/bin/sh /data/local/tmp/adb_sentinel_daemon.sh >/dev/null 2>&1 & )"))
-                    }
-                }
-            } catch (ignored: Exception) {}
         }
     }
 

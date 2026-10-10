@@ -28,6 +28,29 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var assetLoader: WebViewAssetLoader
 
+    private val commandStreamListener: (AdbShellCommandEvent) -> Unit = { event ->
+        runOnUiThread {
+            try {
+                val obj = JSONObject().apply {
+                    put("id", event.id)
+                    put("timestamp", event.timestamp)
+                    put("dateFormatted", event.dateFormatted)
+                    put("timeFormatted", event.timeFormatted)
+                    put("millisFormatted", event.millisFormatted)
+                    put("epochMs", event.epochMs)
+                    put("command", event.command)
+                    put("clientIp", event.clientIp)
+                    put("serviceType", event.serviceType)
+                    put("isPrivileged", event.isPrivileged)
+                }
+                val jsonStr = JSONObject.quote(obj.toString())
+                webView.evaluateJavascript("window.onAdbCommandReceived && window.onAdbCommandReceived(JSON.parse($jsonStr));", null)
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Erro streaming UI: ${e.message}")
+            }
+        }
+    }
+
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
             val binder = service as? AdbSentinelService.LocalBinder
@@ -45,6 +68,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AdbLogStreamer.initContext(this)
 
         // Configuração de tela borda a borda
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -117,6 +141,7 @@ class MainActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 injectSafeInsets()
+                webView.evaluateJavascript("window.syncRecentCommands && window.syncRecentCommands();", null)
             }
         }
     }
@@ -164,35 +189,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupCommandStreamToUi() {
-        AdbLogStreamer.addListener { event ->
-            runOnUiThread {
-                try {
-                    val obj = JSONObject().apply {
-                        put("id", event.id)
-                        put("timestamp", event.timestamp)
-                        put("command", event.command)
-                        put("clientIp", event.clientIp)
-                        put("serviceType", event.serviceType)
-                        put("isPrivileged", event.isPrivileged)
-                    }
-                    val jsonStr = JSONObject.quote(obj.toString())
-                    webView.evaluateJavascript("window.onAdbCommandReceived && window.onAdbCommandReceived(JSON.parse($jsonStr));", null)
-                } catch (e: Exception) {
-                    Log.e("MainActivity", "Erro streaming UI: ${e.message}")
-                }
-            }
-        }
+        AdbLogStreamer.addListener(commandStreamListener)
     }
 
     override fun onResume() {
         super.onResume()
-        AdbLogStreamer.startStreaming()
+        AdbLogStreamer.startStreaming(this)
         injectSafeInsets()
         webView.evaluateJavascript("window.syncRecentCommands && window.syncRecentCommands();", null)
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        AdbLogStreamer.removeListener(commandStreamListener)
         if (isServiceBound) {
             unbindService(serviceConnection)
             isServiceBound = false

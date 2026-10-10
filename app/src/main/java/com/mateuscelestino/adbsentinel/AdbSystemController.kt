@@ -5,8 +5,8 @@ import android.os.IBinder
 import android.os.Parcel
 import android.provider.Settings
 import android.util.Log
-import org.json.JSONArray
-import org.json.JSONObject
+import java.io.File
+import java.lang.reflect.Method
 
 data class AuthorizedKeyInfo(
     val keyId: String,
@@ -26,6 +26,44 @@ object AdbSystemController {
     private const val TRANSACTION_ALLOW_WIRELESS = 4
     private const val TRANSACTION_DENY_WIRELESS = 5
 
+    // Reflexão cacheada para leitura instantânea (0ms, sem fork de processos)
+    private val systemPropertiesGetMethod: Method? by lazy {
+        try {
+            val clazz = Class.forName("android.os.SystemProperties")
+            clazz.getMethod("get", String::class.java, String::class.java)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    // Estado otimista de transição para evitar flicker imediato após clique
+    @Volatile
+    private var optimisticAdbState: Boolean? = null
+    @Volatile
+    private var lastToggleTimestamp: Long = 0L
+
+    // Cache de chaves autorizadas para evitar chamadas repetidas ao dumpsys
+    @Volatile
+    private var cachedKeys: List<AuthorizedKeyInfo> = emptyList()
+    @Volatile
+    private var lastKeysFetchTime: Long = 0L
+
+    /**
+     * Lê propriedade do sistema via memória compartilhada (libc) em 0ms sem criar processo
+     */
+    fun getSystemProperty(key: String, defaultValue: String = ""): String {
+        return try {
+            val method = systemPropertiesGetMethod
+            if (method != null) {
+                (method.invoke(null, key, defaultValue) as? String)?.trim() ?: defaultValue
+            } else {
+                defaultValue
+            }
+        } catch (e: Exception) {
+            defaultValue
+        }
+    }
+
     /**
      * Obtém o serviço "adb" através do IBinder do sistema via reflexão
      */
@@ -44,11 +82,7 @@ object AdbSystemController {
      * Executa chamada IPC de baixo nível ao IAdbManager
      */
     private fun callAdbTransaction(code: Int, writeData: ((Parcel) -> Unit)? = null): Boolean {
-        val binder = getAdbBinder()
-        if (binder == null) {
-            Log.w(TAG, "Binder do adb nulo. Tentando via shell execution.")
-            return false
-        }
+        val binder = getAdbBinder() ?: return false
 
         val data = Parcel.obtain()
         val reply = Parcel.obtain()
@@ -56,7 +90,12 @@ object AdbSystemController {
             data.writeInterfaceToken("android.debug.IAdbManager")
             writeData?.invoke(data)
             val success = binder.transact(code, data, reply, 0)
-            reply.readException()
+            try {
+                reply.readException()
+            } catch (se: SecurityException) {
+                Log.w(TAG, "IAdbManager requer MANAGE_DEBUGGING: ${se.message}")
+                return false
+            }
             success
         } catch (e: Exception) {
             Log.e(TAG, "Erro na transação AIDL code=$code: ${e.message}")
@@ -68,71 +107,113 @@ object AdbSystemController {
     }
 
     /**
-     * Verifica se o Wireless ADB está ativo (porta 5555 ou adb_wifi_enabled)
+     * Verifica de forma instantânea (0ms, sem fork) se o sistema ADB está ativo
      */
     fun isWirelessAdbEnabled(context: Context): Boolean {
-        // 1. Checa a property TCP port
+        val now = System.currentTimeMillis()
+        val optimistic = optimisticAdbState
+        if (optimistic != null && (now - lastToggleTimestamp) < 2500L) {
+            return optimistic
+        }
+
+        // 1. Verifica o estado real do daemon adbd via SystemProperties (instantâneo)
+        val adbdState = getSystemProperty("init.svc.adbd", "")
+        if (adbdState.equals("stopped", ignoreCase = true)) {
+            return false
+        }
+
+        // 2. Verifica Settings.Global (adb_enabled e adb_wifi_enabled)
+        var adbEnabled = false
+        var adbWifiEnabled = false
         try {
-            val process = Runtime.getRuntime().exec("getprop service.adb.tcp.port")
-            val portStr = process.inputStream.bufferedReader().use { it.readText().trim() }
-            if (portStr == "5555" || (portStr.toIntOrNull() ?: -1) > 0) return true
+            adbEnabled = Settings.Global.getInt(context.contentResolver, Settings.Global.ADB_ENABLED, 0) == 1
         } catch (ignored: Exception) {}
 
-        // 2. Checa Settings.Global adb_wifi_enabled
         try {
-            val setting = Settings.Global.getInt(context.contentResolver, "adb_wifi_enabled", 0)
-            if (setting == 1) return true
+            adbWifiEnabled = Settings.Global.getInt(context.contentResolver, "adb_wifi_enabled", 0) == 1
         } catch (ignored: Exception) {}
 
-        // 3. Checa socket ativo no /proc/net/tcp
-        val active = AdbSocketTracker.scanActiveConnections()
-        return active.any { it.state == "LISTEN" && it.localPort == 5555 }
+        if (!adbEnabled && !adbWifiEnabled) {
+            return false
+        }
+
+        return true
     }
 
     /**
-     * Ativa o Wireless ADB (Porta 5555)
+     * Ativa o Sistema ADB / Wireless ADB (Porta 5555)
      */
     fun enableWirelessAdb(context: Context): Boolean {
+        optimisticAdbState = true
+        lastToggleTimestamp = System.currentTimeMillis()
         var success = false
+
+        // 1. Ativa imediatamente via Settings.Global (usando WRITE_SECURE_SETTINGS)
         try {
-            // Tenta via Settings.Global com WRITE_SECURE_SETTINGS
+            Settings.Global.putInt(context.contentResolver, Settings.Global.ADB_ENABLED, 1)
+            success = true
+        } catch (e: Exception) {
+            Log.w(TAG, "Falha ao ativar ADB_ENABLED: ${e.message}")
+        }
+
+        try {
             Settings.Global.putInt(context.contentResolver, "adb_wifi_enabled", 1)
             success = true
         } catch (e: Exception) {
-            Log.w(TAG, "Settings.Global putInt falhou: ${e.message}")
+            Log.w(TAG, "Falha ao ativar adb_wifi_enabled: ${e.message}")
         }
 
-        // Tenta também via comando shell / setprop se permissão disponível
-        try {
-            Runtime.getRuntime().exec(arrayOf("sh", "-c", "setprop service.adb.tcp.port 5555; stop adbd 2>/dev/null; start adbd 2>/dev/null"))
-            success = true
-        } catch (e: Exception) {
-            Log.w(TAG, "Shell setprop falhou: ${e.message}")
+        // 2. Sinaliza arquivo de controle para o daemon shell e executa fallback assíncrono
+        writeDaemonControlCommand(context, "ENABLE")
+
+        Thread {
+            try {
+                callAdbTransaction(TRANSACTION_ALLOW_WIRELESS) { data ->
+                    data.writeInt(1)
+                    data.writeString("")
+                }
+                Runtime.getRuntime().exec(
+                    arrayOf("sh", "-c", "setprop service.adb.tcp.port 5555 2>/dev/null; start adbd 2>/dev/null")
+                )
+            } catch (ignored: Exception) {}
+        }.apply {
+            isDaemon = true
+            start()
         }
 
         return success
     }
 
     /**
-     * Desativa o Wireless ADB
+     * Pausa ou redefine o monitoramento do Sentinel sem derrubar o ADB do Android
      */
     fun disableWirelessAdb(context: Context): Boolean {
-        var success = false
-        try {
-            Settings.Global.putInt(context.contentResolver, "adb_wifi_enabled", 0)
-            success = true
-        } catch (e: Exception) {
-            Log.w(TAG, "Settings.Global desativação falhou: ${e.message}")
-        }
+        optimisticAdbState = false
+        lastToggleTimestamp = System.currentTimeMillis()
 
+        // SALVA-GUARDA PERMANENTE:
+        // Mantém Settings.Global.ADB_ENABLED sempre 1 para NUNCA derrubar o serviço ADB do usuário
         try {
-            Runtime.getRuntime().exec(arrayOf("sh", "-c", "setprop service.adb.tcp.port -1; stop adbd 2>/dev/null; start adbd 2>/dev/null"))
-            success = true
-        } catch (e: Exception) {
-            Log.w(TAG, "Shell desativação setprop falhou: ${e.message}")
-        }
+            Settings.Global.putInt(context.contentResolver, Settings.Global.ADB_ENABLED, 1)
+        } catch (ignored: Exception) {}
 
-        return success
+        // 2. Limpa conexões ativas em memória imediatamente
+        AdbSocketTracker.clearActiveConnectionsCache()
+
+        // 3. Sinaliza arquivo de controle para o daemon shell
+        writeDaemonControlCommand(context, "DISABLE")
+
+        return true
+    }
+
+    private fun writeDaemonControlCommand(context: Context, cmd: String) {
+        try {
+            val extDir = context.getExternalFilesDir(null)
+            if (extDir != null) {
+                if (!extDir.exists()) extDir.mkdirs()
+                File(extDir, "adb_control.cmd").writeText("$cmd\n")
+            }
+        } catch (ignored: Exception) {}
     }
 
     /**
@@ -145,7 +226,6 @@ object AdbSystemController {
         }
         if (aidlSuccess) return true
 
-        // Fallback via service call adb 1 i32 <always> s16 <key>
         return try {
             val alwaysInt = if (alwaysAllow) 1 else 0
             val process = Runtime.getRuntime().exec(arrayOf("service", "call", "adb", "1", "i32", alwaysInt.toString(), "s16", publicKey))
@@ -174,6 +254,7 @@ object AdbSystemController {
      * Limpa e revoga todas as autorizações de chaves ADB do dispositivo
      */
     fun clearDebuggingKeys(): Boolean {
+        cachedKeys = emptyList()
         val aidlSuccess = callAdbTransaction(TRANSACTION_CLEAR_KEYS)
         if (aidlSuccess) return true
 
@@ -186,18 +267,31 @@ object AdbSystemController {
     }
 
     /**
-     * Analisa dumpsys adb para extrair chaves públicas autorizadas
+     * Analisa dumpsys adb (ou cache do daemon) para extrair chaves públicas autorizadas
      */
-    fun getAuthorizedKeys(): List<AuthorizedKeyInfo> {
+    fun getAuthorizedKeys(context: Context? = null): List<AuthorizedKeyInfo> {
+        val now = System.currentTimeMillis()
+        if (cachedKeys.isNotEmpty() && (now - lastKeysFetchTime) < 8000L) {
+            return cachedKeys
+        }
+
         val list = mutableListOf<AuthorizedKeyInfo>()
         try {
-            val process = Runtime.getRuntime().exec("dumpsys adb")
-            val text = process.inputStream.bufferedReader().use { it.readText() }
+            // Tenta primeiro ler de arquivo de cache gerado pelo daemon se existir
+            val extKeyFile = context?.getExternalFilesDir(null)?.let { File(it, "adb_keys.txt") }
+            val tmpKeyFile = File("/data/local/tmp/adb_keys.txt")
+            val rawText = when {
+                extKeyFile != null && extKeyFile.exists() && extKeyFile.canRead() -> extKeyFile.readText()
+                tmpKeyFile.exists() && tmpKeyFile.canRead() -> tmpKeyFile.readText()
+                else -> {
+                    val process = Runtime.getRuntime().exec("dumpsys adb")
+                    process.inputStream.bufferedReader().use { it.readText() }
+                }
+            }
 
-            // Procura user_keys
-            val userKeysIndex = text.indexOf("user_keys=")
+            val userKeysIndex = rawText.indexOf("user_keys=")
             if (userKeysIndex != -1) {
-                val block = text.substring(userKeysIndex + "user_keys=".length)
+                val block = rawText.substring(userKeysIndex + "user_keys=".length)
                 val line = block.substringBefore("\n").trim()
                 if (line.isNotEmpty()) {
                     val parts = line.split("\\s+".toRegex())
@@ -213,10 +307,8 @@ object AdbSystemController {
                 }
             }
 
-            // Keystore parsing
-            if (text.contains("adbKey")) {
-                val lines = text.lines()
-                lines.forEach { l ->
+            if (rawText.contains("adbKey")) {
+                rawText.lines().forEach { l ->
                     if (l.contains("@") && !l.contains("user_keys=")) {
                         val comment = l.trim().substringAfterLast(" ").ifEmpty { "Host Autorizado" }
                         if (list.none { it.comment == comment }) {
@@ -232,7 +324,12 @@ object AdbSystemController {
                 }
             }
         } catch (e: Exception) {
-            Log.e(TAG, "Erro ao obter dumpsys adb: ${e.message}")
+            Log.e(TAG, "Erro ao obter chaves ADB: ${e.message}")
+        }
+
+        if (list.isNotEmpty()) {
+            cachedKeys = list
+            lastKeysFetchTime = now
         }
         return list
     }
