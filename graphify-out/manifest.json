@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791675510.7012002,
-    "seen": 1791676024.311306,
-    "ast_hash": "c576d79db3ce9c3e4575cc86efd4aa80",
+    "mtime": 1791841883.6855133,
+    "seen": 1791842003.13857,
+    "ast_hash": "3b905919bf54df2c466baa20ad44731f",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/shaders.js": {
-    "mtime": 1791384179.5208201,
-    "seen": 1791386027.081017,
-    "ast_hash": "dfbeb863938c065431951dda13c5c4c6",
+    "mtime": 1791841799.840121,
+    "seen": 1791842003.1385732,
+    "ast_hash": "750cc81e2fd67d465fe8a0167bf9d29c",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791506180.9753819,
-    "seen": 1791506502.3715048,
-    "ast_hash": "d3ab5a532b5f0d1e5b5357bea1f2c9c9",
+    "mtime": 1791841865.2595775,
+    "seen": 1791842003.1385841,
+    "ast_hash": "3dbabf21dd9bef9d823046dd190f67fb",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -153,30 +153,6 @@
     "mtime": 1791388918.238774,
     "seen": 1791395886.770762,
     "ast_hash": "3709a329b8bae2c2d5c82e9fc00da8f6",
-    "semantic_hash": ""
-  },
-  "current_screen.png": {
-    "mtime": 1791674657.775666,
-    "seen": 1791676024.31132,
-    "ast_hash": "031fb9e71c213b5f8700d0103f3ae893",
-    "semantic_hash": ""
-  },
-  "screen_clean.png": {
-    "mtime": 1791675948.9617243,
-    "seen": 1791676024.31133,
-    "ast_hash": "7542dcb5dd80146dfbbf96bde40fb423",
-    "semantic_hash": ""
-  },
-  "screen_fixed.png": {
-    "mtime": 1791675875.3809657,
-    "seen": 1791676024.31133,
-    "ast_hash": "fae444d90ffa76d0243c9f2c14061d67",
-    "semantic_hash": ""
-  },
-  "screen_main.png": {
-    "mtime": 1791675905.4313629,
-    "seen": 1791676024.311331,
-    "ast_hash": "b896d6a640a509dd0431d62c05043eda",
     "semantic_hash": ""
   }
 }

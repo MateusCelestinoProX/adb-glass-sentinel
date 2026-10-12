@@ -278,11 +278,25 @@
   setInterval(updateRelativeTimestampsInDom, 3000);
 
   // =========================================================================
-  // 3. GESTÃO DOS 5 SHADERS WEBGL DO PERSONAL OS
+  // 3. GESTÃO DOS 34 SHADERS WEBGL CANÔNICOS DO PERSONAL OS
   // =========================================================================
+  const CANONICAL_SHADERS = [
+    'softaurora', 'particles', 'ghostfibers', 'plasmawave', 'strands',
+    'siderays', 'beams', 'floatinglines', 'silk', 'radar',
+    'ripplegrid', 'pixelblast', 'magicrings', 'gridscan', 'liquidchrome',
+    'linewaves', 'ferrofluid', 'dither', 'darkveil', 'webthreads',
+    'topography', 'balatro', 'faultyterminal', 'morphslider', 'antigravity',
+    'aurora', 'letterglitch', 'plasma', 'liquidether', 'orb',
+    'prism', 'prismaticburst', 'lightning', 'evileye'
+  ];
+
   function updateShaderCardsUi(selectedShader) {
+    if (selectedShader === 'soft_aurora') selectedShader = 'softaurora';
+    if (selectedShader === 'dark_veil') selectedShader = 'darkveil';
     shaderOptionCards.forEach((card) => {
-      const type = card.dataset.shader;
+      let type = card.dataset.shader;
+      if (type === 'soft_aurora') type = 'softaurora';
+      if (type === 'dark_veil') type = 'darkveil';
       const tag = card.querySelector('.shader-status-tag');
       if (type === selectedShader) {
         card.classList.add('active');
@@ -302,9 +316,13 @@
         localStorage.setItem('adb_sentinel_shader', activeShader);
         updateShaderCardsUi(activeShader);
 
-        const ctn = document.getElementById('bg-webgl-container');
-        if (ctn && window.initShader) {
-          window.initShader(ctn, activeShader);
+        if (typeof window.renderShader === 'function') {
+          window.renderShader(activeShader);
+        } else {
+          const ctn = document.getElementById('bg-webgl-container');
+          if (ctn && window.initShader) {
+            window.initShader(ctn, activeShader);
+          }
         }
 
         if (window.AndroidBridge && window.AndroidBridge.vibrate) {
