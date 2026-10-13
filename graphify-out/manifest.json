@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791506071.6517866,
-    "seen": 1791506502.3715,
-    "ast_hash": "4ed3e3a290524dd4b29291d3b48af9f0",
+    "mtime": 1791894440.7476308,
+    "seen": 1791894807.387659,
+    "ast_hash": "b3f05a0d11d3752e17f609f9c084a6a7",
     "semantic_hash": ""
   },
   "build.gradle.kts": {

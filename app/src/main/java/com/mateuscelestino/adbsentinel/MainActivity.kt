@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         webView = WebView(this).apply {
-            setBackgroundColor(Color.parseColor("#05070C"))
+            setBackgroundColor(Color.TRANSPARENT)
             setLayerType(View.LAYER_TYPE_HARDWARE, null)
         }
         setContentView(webView)
