@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1792633027.607895,
-    "seen": 1792634674.8327239,
-    "ast_hash": "633ca4b0f4db0fb7da466a5ced979ecc",
+    "mtime": 1792640578.626257,
+    "seen": 1792640644.045017,
+    "ast_hash": "cdc1439cbbf903e6de1f54f9dfa6fdfe",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1792635294.8720884,
-    "seen": 1792636189.4908748,
-    "ast_hash": "2b314bd799fad429b8b9adb4ac23563b",
+    "mtime": 1792640466.719458,
+    "seen": 1792640644.0450208,
+    "ast_hash": "2ef53bb845bb356495b08f7c641568a5",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt": {
-    "mtime": 1792632414.3904502,
-    "seen": 1792634674.832732,
-    "ast_hash": "57970281dadaebe750c3a7a6b4c60b40",
+    "mtime": 1792640495.52671,
+    "seen": 1792640644.045024,
+    "ast_hash": "7211312608afaa5c2ceb11a439e4729e",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1792632949.5793402,
-    "seen": 1792634674.832741,
-    "ast_hash": "7af95c64f00bf6213f8cb8ab7f5ec82f",
+    "mtime": 1792640522.12929,
+    "seen": 1792640644.045033,
+    "ast_hash": "afa938c5dd4cca297813019aa66ba6ce",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {
-    "mtime": 1792632360.1447508,
-    "seen": 1792634674.832735,
-    "ast_hash": "a749c134612377070cde8d732db03792",
+    "mtime": 1792640478.888492,
+    "seen": 1792640644.045027,
+    "ast_hash": "924bf1eb2ff2d8af41f27757ecb74998",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/WebcamStreamServer.kt": {

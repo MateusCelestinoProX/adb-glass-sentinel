@@ -61,6 +61,19 @@ object SamsungDeXController {
         return results.toString()
     }
 
+    /**
+     * Encerra o Samsung DeX através de broadcast e desativa o servidor de input
+     */
+    fun exitDeX(context: Context) {
+        try {
+            val dexIntent = Intent("com.sec.android.desktopmode.action.STOP_DESKTOP_MODE").apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.sendBroadcast(dexIntent)
+        } catch (ignored: Exception) {}
+        stopInputServer()
+    }
+
     @Synchronized
     fun startInputServer(): Boolean {
         if (isInputServerRunning) return true

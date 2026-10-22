@@ -59,6 +59,7 @@
             <intent-filter>
                 <action android:name="com.mateuscelestino.adbsentinel.START_SERVERS" />
                 <action android:name="com.mateuscelestino.adbsentinel.STOP_SERVERS" />
+                <action android:name="com.mateuscelestino.adbsentinel.KILL_ALL" />
             </intent-filter>
         </service>
 

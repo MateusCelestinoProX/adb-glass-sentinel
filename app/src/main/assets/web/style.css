@@ -1593,6 +1593,33 @@ html, body {
   color: #fff;
 }
 
+.eco-kill-all-btn {
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(239, 68, 68, 0.6);
+  color: #ff5555;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+}
+
+.eco-kill-all-btn:hover {
+  background: rgba(239, 68, 68, 0.35);
+  border-color: #ef4444;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.6);
+  transform: scale(1.02);
+}
+
+.eco-kill-all-btn:active {
+  transform: scale(0.95);
+  background: rgba(239, 68, 68, 0.6);
+}
+
 .eco-toggle-btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.25);

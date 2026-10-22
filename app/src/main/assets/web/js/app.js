@@ -1229,6 +1229,24 @@
     });
   }
 
+  const btnKillAll = document.getElementById('btn-kill-all');
+  if (btnKillAll) {
+    btnKillAll.addEventListener('click', () => {
+      const confirmKill = confirm('Deseja encerrar TODOS os processos (Câmera, Áudio, DeX e Conexões) no Celular e no Mac?');
+      if (confirmKill) {
+        if (window.AndroidBridge && window.AndroidBridge.killAll) {
+          window.AndroidBridge.killAll();
+          if (ecoStatusBadge) {
+            ecoStatusBadge.textContent = 'FINALIZADO';
+            ecoStatusBadge.style.background = 'rgba(239, 68, 68, 0.25)';
+            ecoStatusBadge.style.color = '#ef4444';
+          }
+        }
+        syncEcosystemStatus();
+      }
+    });
+  }
+
   fetchAdbStatus();
   fetchActiveDevices();
   syncEcosystemStatus();

@@ -253,6 +253,41 @@ class AndroidBridge(
     }
 
     @JavascriptInterface
+    fun killAll(): String {
+        vibrate(120)
+        // 1. Notifica o MacAeroHub no Mac (porta 8084) para encerrar processos no Mac
+        Thread {
+            try {
+                val conns = AdbSocketTracker.scanActiveConnections(activity)
+                val established = conns.firstOrNull { it.state == "ESTABLISHED" }
+                val macIp = established?.remoteIp
+                if (!macIp.isNullOrEmpty() && macIp != "127.0.0.1" && macIp != "0.0.0.0") {
+                    val url = java.net.URL("http://$macIp:8084/killall")
+                    val conn = url.openConnection() as java.net.HttpURLConnection
+                    conn.connectTimeout = 800
+                    conn.readTimeout = 800
+                    conn.requestMethod = "GET"
+                    conn.responseCode
+                    conn.disconnect()
+                }
+            } catch (ignored: Exception) {}
+        }.start()
+
+        // 2. Encerra todos os servidores de ecossistema multimídia e DeX no Android
+        WebcamStreamServer.stop()
+        AudioStreamManager.stopMicServer()
+        AudioStreamManager.stopSpeakerServer()
+        SamsungDeXController.stopInputServer()
+        SamsungDeXController.exitDeX(activity)
+
+        // 3. Encerra o serviço em segundo plano
+        activity.sentinelService?.stopEcosystemServers()
+        activity.sentinelService?.stopSelf()
+
+        return "ALL_KILLED"
+    }
+
+    @JavascriptInterface
     fun forceRestartAdbTcp5555(): Boolean {
         vibrate(40)
         return try {

@@ -38,8 +38,16 @@ class AdbSentinelService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val action = intent?.action
-        if (action == "com.mateuscelestino.adbsentinel.STOP_SERVERS") {
+        if (action == "com.mateuscelestino.adbsentinel.STOP_SERVERS" || action == "com.mateuscelestino.adbsentinel.KILL_ALL") {
             stopEcosystemServers()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                stopForeground(STOP_FOREGROUND_REMOVE)
+            } else {
+                @Suppress("DEPRECATION")
+                stopForeground(true)
+            }
+            stopSelf()
+            return START_NOT_STICKY
         } else {
             startEcosystemServers()
         }
