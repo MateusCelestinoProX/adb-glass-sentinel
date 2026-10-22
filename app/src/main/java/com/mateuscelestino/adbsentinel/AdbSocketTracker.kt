@@ -307,4 +307,26 @@ object AdbSocketTracker {
         lastWifiIpTimestamp = now
         return cachedWifiIp
     }
+
+    fun getTailscaleIp(): String {
+        try {
+            val interfaces = NetworkInterface.getNetworkInterfaces()
+            while (interfaces != null && interfaces.hasMoreElements()) {
+                val iface = interfaces.nextElement()
+                if (iface.isUp && (iface.name.contains("tun") || iface.name.contains("tailscale"))) {
+                    val addresses = iface.inetAddresses
+                    while (addresses.hasMoreElements()) {
+                        val addr = addresses.nextElement()
+                        val host = addr.hostAddress ?: ""
+                        if (host.startsWith("100.")) {
+                            return host
+                        }
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro ao obter IP Tailscale: ${e.message}")
+        }
+        return ""
+    }
 }

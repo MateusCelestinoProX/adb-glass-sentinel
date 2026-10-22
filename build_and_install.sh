@@ -8,8 +8,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk@17/17.0.20.1/libexec/openjdk.jdk/Contents/Home"
-export ANDROID_HOME="/opt/homebrew/share/android-commandlinetools"
-export BUILD_TOOLS="/opt/homebrew/share/android-commandlinetools/build-tools/35.0.0"
+if [ -d "/Users/mcp/Library/Android/sdk" ]; then
+    export ANDROID_HOME="/Users/mcp/Library/Android/sdk"
+else
+    export ANDROID_HOME="/opt/homebrew/share/android-commandlinetools"
+fi
+export BUILD_TOOLS="$ANDROID_HOME/build-tools/35.0.0"
 export PATH="$JAVA_HOME/bin:$BUILD_TOOLS:$PATH"
 
 echo "=========================================================="
@@ -30,7 +34,10 @@ else
     exit 1
 fi
 
-DEVICE_ID="${DEVICE:-192.168.15.22:5555}"
+DEVICE_ID="${DEVICE:-$(adb devices | grep -E 'device$' | head -n 1 | awk '{print $1}')}"
+if [ -z "$DEVICE_ID" ]; then
+    DEVICE_ID="192.168.18.16:5555"
+fi
 
 if adb devices | grep -q "$DEVICE_ID"; then
     echo "=========================================================="
@@ -46,6 +53,8 @@ if adb devices | grep -q "$DEVICE_ID"; then
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.READ_LOGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.WRITE_SECURE_SETTINGS 2>/dev/null || true
     adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.DUMP 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.CAMERA 2>/dev/null || true
+    adb -s "$DEVICE_ID" shell pm grant com.mateuscelestino.adbsentinel android.permission.RECORD_AUDIO 2>/dev/null || true
     adb -s "$DEVICE_ID" shell dumpsys deviceidle whitelist +com.mateuscelestino.adbsentinel 2>/dev/null || true
     adb -s "$DEVICE_ID" shell cmd appops set com.mateuscelestino.adbsentinel RUN_IN_BACKGROUND allow 2>/dev/null || true
     adb -s "$DEVICE_ID" shell settings put global adb_enabled 1 2>/dev/null || true

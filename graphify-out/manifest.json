@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1791841883.6855133,
-    "seen": 1791842003.13857,
-    "ast_hash": "3b905919bf54df2c466baa20ad44731f",
+    "mtime": 1792633027.607895,
+    "seen": 1792634674.8327239,
+    "ast_hash": "633ca4b0f4db0fb7da466a5ced979ecc",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -30,15 +30,15 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1791506033.2269535,
-    "seen": 1791506502.371496,
-    "ast_hash": "02c949fcd6fbe385088829bf53693c51",
+    "mtime": 1792635294.8720884,
+    "seen": 1792636189.4908748,
+    "ast_hash": "2b314bd799fad429b8b9adb4ac23563b",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
-    "mtime": 1791675447.235845,
-    "seen": 1791676024.311311,
-    "ast_hash": "7e327c8df574035c1cce0858722d9e94",
+    "mtime": 1792632385.7352655,
+    "seen": 1792634674.83273,
+    "ast_hash": "030dc239a17831f3a5c15c479304b2ea",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSystemController.kt": {
@@ -48,15 +48,15 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt": {
-    "mtime": 1791675472.304867,
-    "seen": 1791676024.311313,
-    "ast_hash": "ba63db07049bc82d6128f12b325b9a9e",
+    "mtime": 1792632414.3904502,
+    "seen": 1792634674.832732,
+    "ast_hash": "57970281dadaebe750c3a7a6b4c60b40",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1791894440.7476308,
-    "seen": 1791894807.387659,
-    "ast_hash": "b3f05a0d11d3752e17f609f9c084a6a7",
+    "mtime": 1792635304.985248,
+    "seen": 1792636189.49088,
+    "ast_hash": "862715a632f99c118c513ed7312afe17",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "build_and_install.sh": {
-    "mtime": 1791675545.502785,
-    "seen": 1791676024.311316,
-    "ast_hash": "8106b59a2fc1f72edd6b09b26d26b2dd",
+    "mtime": 1792632692.9938076,
+    "seen": 1792634674.8327382,
+    "ast_hash": "8645d9bafbf4ba8a41b62d02c21132a2",
     "semantic_hash": ""
   },
   "gradlew": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1791841865.2595775,
-    "seen": 1791842003.1385841,
-    "ast_hash": "3dbabf21dd9bef9d823046dd190f67fb",
+    "mtime": 1792632949.5793402,
+    "seen": 1792634674.832741,
+    "ast_hash": "7af95c64f00bf6213f8cb8ab7f5ec82f",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -153,6 +153,24 @@
     "mtime": 1791388918.238774,
     "seen": 1791395886.770762,
     "ast_hash": "3709a329b8bae2c2d5c82e9fc00da8f6",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt": {
+    "mtime": 1792635801.9181502,
+    "seen": 1792636189.490879,
+    "ast_hash": "60c0007ba6c0f4d1af49a63508e18d0d",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {
+    "mtime": 1792632360.1447508,
+    "seen": 1792634674.832735,
+    "ast_hash": "a749c134612377070cde8d732db03792",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/com/mateuscelestino/adbsentinel/WebcamStreamServer.kt": {
+    "mtime": 1792635270.3933713,
+    "seen": 1792636189.4908822,
+    "ast_hash": "cebd9a07f1a39b2cddedfafa22b66ac1",
     "semantic_hash": ""
   }
 }

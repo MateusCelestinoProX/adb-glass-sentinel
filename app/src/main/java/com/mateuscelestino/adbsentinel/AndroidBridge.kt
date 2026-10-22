@@ -180,4 +180,86 @@ class AndroidBridge(
 
     @JavascriptInterface
     fun getSafeBottom(): Float = maxOf(activity.lastSafeBottomDp, 20f)
+
+    @JavascriptInterface
+    fun getEcosystemStatus(): String {
+        val wifiIp = AdbSocketTracker.getDeviceWifiIp()
+        val tailscaleIp = AdbSocketTracker.getTailscaleIp()
+        val activePort = AdbSocketTracker.getActiveAdbPort()
+
+        val obj = JSONObject().apply {
+            put("wifiIp", wifiIp)
+            put("tailscaleIp", tailscaleIp)
+            put("adbPort", activePort)
+            put("adbConnectLocal", "adb connect $wifiIp:$activePort")
+            put("adbConnectTailscale", if (tailscaleIp.isNotEmpty()) "adb connect $tailscaleIp:5555" else "")
+            put("isWebcamRunning", WebcamStreamServer.isRunning)
+            put("webcamFacing", WebcamStreamServer.currentFacing)
+            put("webcamPort", WebcamStreamServer.PORT)
+            put("webcamLocalUrl", "http://$wifiIp:${WebcamStreamServer.PORT}/video")
+            put("webcamTailscaleUrl", if (tailscaleIp.isNotEmpty()) "http://$tailscaleIp:${WebcamStreamServer.PORT}/video" else "")
+            put("isMicRunning", AudioStreamManager.isMicRunning)
+            put("micPort", AudioStreamManager.MIC_PORT)
+            put("micLocalUrl", "http://$wifiIp:${AudioStreamManager.MIC_PORT}/mic.wav")
+            put("isSpeakerRunning", AudioStreamManager.isSpeakerRunning)
+            put("speakerPort", AudioStreamManager.SPEAKER_PORT)
+            put("speakerLocalUrl", "http://$wifiIp:${AudioStreamManager.SPEAKER_PORT}/stream")
+            put("isDeXInputRunning", SamsungDeXController.isInputServerRunning)
+            put("dexInputPort", SamsungDeXController.REMOTE_INPUT_PORT)
+        }
+        return obj.toString()
+    }
+
+    @JavascriptInterface
+    fun toggleWebcam(enable: Boolean, facing: String): String {
+        vibrate(30)
+        return if (enable) {
+            val ok = WebcamStreamServer.start(activity, facing)
+            if (ok) "STARTED" else "ERROR"
+        } else {
+            WebcamStreamServer.stop()
+            "STOPPED"
+        }
+    }
+
+    @JavascriptInterface
+    fun toggleMicStream(enable: Boolean): String {
+        vibrate(30)
+        return if (enable) {
+            val ok = AudioStreamManager.startMicServer(activity)
+            if (ok) "STARTED" else "ERROR"
+        } else {
+            AudioStreamManager.stopMicServer()
+            "STOPPED"
+        }
+    }
+
+    @JavascriptInterface
+    fun toggleSpeakerReceiver(enable: Boolean): String {
+        vibrate(30)
+        return if (enable) {
+            val ok = AudioStreamManager.startSpeakerServer(activity)
+            if (ok) "STARTED" else "ERROR"
+        } else {
+            AudioStreamManager.stopSpeakerServer()
+            "STOPPED"
+        }
+    }
+
+    @JavascriptInterface
+    fun launchSamsungDeX(): String {
+        vibrate(50)
+        return SamsungDeXController.activateDeX(activity)
+    }
+
+    @JavascriptInterface
+    fun forceRestartAdbTcp5555(): Boolean {
+        vibrate(40)
+        return try {
+            Runtime.getRuntime().exec(arrayOf("sh", "-c", "setprop service.adb.tcp.port 5555 && stop adbd && start adbd"))
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
 }

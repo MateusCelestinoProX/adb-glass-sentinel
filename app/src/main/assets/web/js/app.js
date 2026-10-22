@@ -1023,8 +1023,215 @@
     }
   };
 
+  // =========================================================================
+  // MAC ECOSYSTEM STUDIO CONTROLLERS
+  // =========================================================================
+  const btnFixAdb5555 = document.getElementById('btn-fix-adb-5555');
+  const btnCopyTailscale = document.getElementById('btn-copy-tailscale');
+  const tailscaleStatus = document.getElementById('eco-tailscale-status');
+  const tailscaleCmdText = document.getElementById('tailscale-cmd-text');
+
+  const btnToggleWebcam = document.getElementById('btn-toggle-webcam');
+  const selectWebcamFacing = document.getElementById('select-webcam-facing');
+  const webcamUrlBox = document.getElementById('webcam-url-box');
+  const webcamUrlText = document.getElementById('webcam-url-text');
+  const btnCopyWebcam = document.getElementById('btn-copy-webcam');
+
+  const btnToggleMic = document.getElementById('btn-toggle-mic');
+  const micUrlBox = document.getElementById('mic-url-box');
+  const micUrlText = document.getElementById('mic-url-text');
+  const btnCopyMic = document.getElementById('btn-copy-mic');
+
+  const btnToggleSpeaker = document.getElementById('btn-toggle-speaker');
+  const speakerUrlBox = document.getElementById('speaker-url-box');
+  const speakerUrlText = document.getElementById('speaker-url-text');
+  const btnCopySpeaker = document.getElementById('btn-copy-speaker');
+
+  const btnActivateDeX = document.getElementById('btn-activate-dex');
+  const btnDexCmdCopy = document.getElementById('btn-dex-cmd-copy');
+  const dexInfoText = document.getElementById('dex-info-text');
+
+  function syncEcosystemStatus() {
+    if (!window.AndroidBridge || !window.AndroidBridge.getEcosystemStatus) return;
+    try {
+      const data = JSON.parse(window.AndroidBridge.getEcosystemStatus());
+
+      // Tailscale
+      if (data.tailscaleIp) {
+        if (tailscaleStatus) {
+          tailscaleStatus.textContent = `Tailscale Conectado: ${data.tailscaleIp}`;
+          tailscaleStatus.style.color = '#38bdf8';
+        }
+        if (tailscaleCmdText) tailscaleCmdText.textContent = data.adbConnectTailscale;
+      } else {
+        if (tailscaleStatus) {
+          tailscaleStatus.textContent = 'Tailscale desconectado ou em standby';
+          tailscaleStatus.style.color = 'var(--text-dim)';
+        }
+        if (tailscaleCmdText) tailscaleCmdText.textContent = data.adbConnectLocal;
+      }
+
+      // Webcam
+      if (data.isWebcamRunning) {
+        if (btnToggleWebcam) {
+          btnToggleWebcam.textContent = 'PARAR';
+          btnToggleWebcam.classList.add('active');
+        }
+        if (webcamUrlBox) webcamUrlBox.style.display = 'flex';
+        if (webcamUrlText) webcamUrlText.textContent = data.webcamLocalUrl;
+      } else {
+        if (btnToggleWebcam) {
+          btnToggleWebcam.textContent = 'INICIAR';
+          btnToggleWebcam.classList.remove('active');
+        }
+        if (webcamUrlBox) webcamUrlBox.style.display = 'none';
+      }
+
+      // Mic
+      if (data.isMicRunning) {
+        if (btnToggleMic) {
+          btnToggleMic.textContent = 'PARAR';
+          btnToggleMic.classList.add('active');
+        }
+        if (micUrlBox) micUrlBox.style.display = 'flex';
+        if (micUrlText) micUrlText.textContent = data.micLocalUrl;
+      } else {
+        if (btnToggleMic) {
+          btnToggleMic.textContent = 'INICIAR';
+          btnToggleMic.classList.remove('active');
+        }
+        if (micUrlBox) micUrlBox.style.display = 'none';
+      }
+
+      // Speaker
+      if (data.isSpeakerRunning) {
+        if (btnToggleSpeaker) {
+          btnToggleSpeaker.textContent = 'PARAR';
+          btnToggleSpeaker.classList.add('active');
+        }
+        if (speakerUrlBox) speakerUrlBox.style.display = 'flex';
+        if (speakerUrlText) speakerUrlText.textContent = data.speakerLocalUrl;
+      } else {
+        if (btnToggleSpeaker) {
+          btnToggleSpeaker.textContent = 'INICIAR';
+          btnToggleSpeaker.classList.remove('active');
+        }
+        if (speakerUrlBox) speakerUrlBox.style.display = 'none';
+      }
+
+      // DeX
+      if (data.isDeXInputRunning && dexInfoText) {
+        dexInfoText.textContent = `Servidor Ativo na porta ${data.dexInputPort}`;
+      }
+    } catch (e) {
+      console.error('Erro sync ecosystem', e);
+    }
+  }
+
+  if (btnFixAdb5555) {
+    btnFixAdb5555.addEventListener('click', () => {
+      if (window.AndroidBridge && window.AndroidBridge.forceRestartAdbTcp5555) {
+        const ok = window.AndroidBridge.forceRestartAdbTcp5555();
+        btnFixAdb5555.textContent = ok ? 'PORTA FIXADA' : 'FALHOU';
+        setTimeout(() => { btnFixAdb5555.textContent = 'FIXAR 5555'; }, 2000);
+      }
+    });
+  }
+
+  if (btnCopyTailscale) {
+    btnCopyTailscale.addEventListener('click', () => {
+      if (window.AndroidBridge && tailscaleCmdText) {
+        window.AndroidBridge.copyToClipboard(tailscaleCmdText.textContent);
+        btnCopyTailscale.textContent = 'COPIADO!';
+        setTimeout(() => { btnCopyTailscale.textContent = 'COPIAR'; }, 1500);
+      }
+    });
+  }
+
+  if (btnToggleWebcam) {
+    btnToggleWebcam.addEventListener('click', () => {
+      if (!window.AndroidBridge) return;
+      const willEnable = btnToggleWebcam.textContent === 'INICIAR';
+      const facing = selectWebcamFacing ? selectWebcamFacing.value : 'BACK';
+      window.AndroidBridge.toggleWebcam(willEnable, facing);
+      setTimeout(syncEcosystemStatus, 300);
+    });
+  }
+
+  if (btnCopyWebcam) {
+    btnCopyWebcam.addEventListener('click', () => {
+      if (window.AndroidBridge && webcamUrlText) {
+        window.AndroidBridge.copyToClipboard(webcamUrlText.textContent);
+        btnCopyWebcam.textContent = 'COPIADO!';
+        setTimeout(() => { btnCopyWebcam.textContent = 'COPIAR URL'; }, 1500);
+      }
+    });
+  }
+
+  if (btnToggleMic) {
+    btnToggleMic.addEventListener('click', () => {
+      if (!window.AndroidBridge) return;
+      const willEnable = btnToggleMic.textContent === 'INICIAR';
+      window.AndroidBridge.toggleMicStream(willEnable);
+      setTimeout(syncEcosystemStatus, 300);
+    });
+  }
+
+  if (btnCopyMic) {
+    btnCopyMic.addEventListener('click', () => {
+      if (window.AndroidBridge && micUrlText) {
+        window.AndroidBridge.copyToClipboard(micUrlText.textContent);
+        btnCopyMic.textContent = 'COPIADO!';
+        setTimeout(() => { btnCopyMic.textContent = 'COPIAR'; }, 1500);
+      }
+    });
+  }
+
+  if (btnToggleSpeaker) {
+    btnToggleSpeaker.addEventListener('click', () => {
+      if (!window.AndroidBridge) return;
+      const willEnable = btnToggleSpeaker.textContent === 'INICIAR';
+      window.AndroidBridge.toggleSpeakerReceiver(willEnable);
+      setTimeout(syncEcosystemStatus, 300);
+    });
+  }
+
+  if (btnCopySpeaker) {
+    btnCopySpeaker.addEventListener('click', () => {
+      if (window.AndroidBridge && speakerUrlText) {
+        window.AndroidBridge.copyToClipboard(speakerUrlText.textContent);
+        btnCopySpeaker.textContent = 'COPIADO!';
+        setTimeout(() => { btnCopySpeaker.textContent = 'COPIAR'; }, 1500);
+      }
+    });
+  }
+
+  if (btnActivateDeX) {
+    btnActivateDeX.addEventListener('click', () => {
+      if (window.AndroidBridge && window.AndroidBridge.launchSamsungDeX) {
+        window.AndroidBridge.launchSamsungDeX();
+        btnActivateDeX.textContent = 'DEX INICIADO';
+        setTimeout(() => { btnActivateDeX.textContent = 'ATIVAR DEX'; }, 3000);
+        setTimeout(syncEcosystemStatus, 300);
+      }
+    });
+  }
+
+  if (btnDexCmdCopy) {
+    btnDexCmdCopy.addEventListener('click', () => {
+      if (window.AndroidBridge) {
+        const ip = tailscaleCmdText ? (tailscaleCmdText.textContent.split(' ')[2]?.split(':')[0] || '192.168.18.16') : '192.168.18.16';
+        const scriptCmd = `python3 mac_dex_controller.py --ip ${ip}`;
+        window.AndroidBridge.copyToClipboard(scriptCmd);
+        btnDexCmdCopy.textContent = 'COPIADO!';
+        setTimeout(() => { btnDexCmdCopy.textContent = 'COPIAR SCRIPT'; }, 1500);
+      }
+    });
+  }
+
   fetchAdbStatus();
   fetchActiveDevices();
+  syncEcosystemStatus();
   window.syncRecentCommands();
 
   // Loop de sincronização contínua em tempo real (0ms de custo via cache em RAM no Kotlin)
@@ -1036,6 +1243,7 @@
   setInterval(() => {
     fetchAdbStatus();
     fetchActiveDevices();
+    syncEcosystemStatus();
   }, 1800);
 
   // Escuta insets para atualizar safe area

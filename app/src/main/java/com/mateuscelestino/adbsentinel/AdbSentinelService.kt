@@ -31,12 +31,74 @@ class AdbSentinelService : Service() {
         super.onCreate()
         AdbLogStreamer.initContext(this)
         createNotificationChannel()
-        startForeground(NOTIFICATION_ID, buildForegroundNotification("Sentinel Ativo: Monitorando Porta 5555"))
+        startForegroundSafely("Sentinel & Ecossistema Mac Ativo: Monitorando Porta 5555")
         startMonitoring()
+        startEcosystemServers()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        val action = intent?.action
+        if (action == "com.mateuscelestino.adbsentinel.STOP_SERVERS") {
+            stopEcosystemServers()
+        } else {
+            startEcosystemServers()
+        }
         return START_STICKY
+    }
+
+    fun startEcosystemServers() {
+        try {
+            WebcamStreamServer.start(applicationContext, "BACK")
+            Log.i(TAG, "WebcamStreamServer ativado na porta 8080.")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro iniciando Webcam: ${e.message}")
+        }
+
+        try {
+            AudioStreamManager.startMicServer(applicationContext)
+            Log.i(TAG, "AudioStreamManager (Mic) ativado na porta 8081.")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro iniciando Mic: ${e.message}")
+        }
+
+        try {
+            AudioStreamManager.startSpeakerServer(applicationContext)
+            Log.i(TAG, "AudioStreamManager (Speaker) ativado na porta 8082.")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro iniciando Speaker: ${e.message}")
+        }
+
+        try {
+            SamsungDeXController.startInputServer()
+            Log.i(TAG, "SamsungDeXController ativado na porta 8083.")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro iniciando DeX Input: ${e.message}")
+        }
+    }
+
+    fun stopEcosystemServers() {
+        WebcamStreamServer.stop()
+        AudioStreamManager.stopMicServer()
+        AudioStreamManager.stopSpeakerServer()
+        SamsungDeXController.stopInputServer()
+    }
+
+    private fun startForegroundSafely(text: String) {
+        val notification = buildForegroundNotification(text)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            var fgsType = android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
+            }
+            try {
+                startForeground(NOTIFICATION_ID, notification, fgsType)
+            } catch (e: Exception) {
+                Log.w(TAG, "Aviso ao iniciar FGS com tipos multimídia: ${e.message}, tentando fallback básico")
+                startForeground(NOTIFICATION_ID, notification)
+            }
+        } else {
+            startForeground(NOTIFICATION_ID, notification)
+        }
     }
 
     fun onAdbToggled(enabled: Boolean) {

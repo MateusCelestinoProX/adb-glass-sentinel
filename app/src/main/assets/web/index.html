@@ -66,6 +66,111 @@
       </div>
     </section>
 
+    <!-- Card 1.5: MAC ECOSYSTEM STATION (Webcam, Mic/Speaker, DeX & Tailscale Remote) -->
+    <section class="disclosure-card mac-ecosystem-card">
+      <div class="section-header-row">
+        <h2 class="section-title">
+          <span>💻 Mac Ecosystem Studio</span>
+        </h2>
+        <span class="section-count-badge" id="eco-status-badge">PRONTO</span>
+      </div>
+
+      <!-- Tailscale & Global ADB Tunnel -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🌐</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Tailscale & ADB Global</span>
+              <span class="eco-desc" id="eco-tailscale-status">Detectando IP Tailnet...</span>
+            </div>
+          </div>
+          <button class="eco-action-btn" id="btn-fix-adb-5555" title="Fixa a porta 5555">FIXAR 5555</button>
+        </div>
+        <div class="eco-link-box" id="tailscale-connect-box">
+          <span class="eco-cmd" id="tailscale-cmd-text">adb connect 100.107.180.88:5555</span>
+          <button class="eco-copy-btn" id="btn-copy-tailscale">COPIAR</button>
+        </div>
+      </div>
+
+      <!-- Webcam HD Streamer (Android -> Mac) -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">📷</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Android HD Webcam</span>
+              <span class="eco-desc">Stream MJPEG p/ Safari, Chrome, OBS e QuickTime</span>
+            </div>
+          </div>
+          <div class="eco-controls-group">
+            <select class="eco-select" id="select-webcam-facing">
+              <option value="BACK">Traseira</option>
+              <option value="FRONT">Frontal</option>
+            </select>
+            <button class="eco-toggle-btn" id="btn-toggle-webcam">INICIAR</button>
+          </div>
+        </div>
+        <div class="eco-link-box" id="webcam-url-box" style="display: none;">
+          <span class="eco-cmd" id="webcam-url-text">http://192.168.18.16:8080/video</span>
+          <button class="eco-copy-btn" id="btn-copy-webcam">COPIAR URL</button>
+        </div>
+      </div>
+
+      <!-- Áudio Bidirecional (Microfone & Caixa de Som) -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🎙️</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Microfone HD (Celular ➔ Mac)</span>
+              <span class="eco-desc">Áudio PCM 48kHz na porta 8081</span>
+            </div>
+          </div>
+          <button class="eco-toggle-btn" id="btn-toggle-mic">INICIAR</button>
+        </div>
+        <div class="eco-link-box" id="mic-url-box" style="display: none;">
+          <span class="eco-cmd" id="mic-url-text">http://192.168.18.16:8081/mic.wav</span>
+          <button class="eco-copy-btn" id="btn-copy-mic">COPIAR</button>
+        </div>
+      </div>
+
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🔊</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Caixa de Som (Mac ➔ Celular)</span>
+              <span class="eco-desc">Toca áudio do Mac no celular na porta 8082</span>
+            </div>
+          </div>
+          <button class="eco-toggle-btn" id="btn-toggle-speaker">INICIAR</button>
+        </div>
+        <div class="eco-link-box" id="speaker-url-box" style="display: none;">
+          <span class="eco-cmd" id="speaker-url-text">http://192.168.18.16:8082/stream</span>
+          <button class="eco-copy-btn" id="btn-copy-speaker">COPIAR</button>
+        </div>
+      </div>
+
+      <!-- Samsung DeX & Controle Remoto do Mac -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🖥️</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Samsung DeX & Controle Mac</span>
+              <span class="eco-desc">Ativação do DeX + Controle via Teclado e Trackpad</span>
+            </div>
+          </div>
+          <button class="eco-action-btn primary" id="btn-activate-dex">ATIVAR DEX</button>
+        </div>
+        <div class="eco-link-box">
+          <span class="eco-cmd" id="dex-info-text">Servidor Remoto Mac: Porta 8083</span>
+          <button class="eco-copy-btn" id="btn-dex-cmd-copy">COPIAR SCRIPT</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Card 2: Dispositivos Conectados (IP Mandatório) -->
     <section class="disclosure-card">
       <div class="section-header-row">

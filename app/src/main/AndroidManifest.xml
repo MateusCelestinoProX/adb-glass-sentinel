@@ -7,14 +7,23 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <!-- Recursos de Multimídia: Câmera (Webcam Mac) e Áudio (Mic/Speaker Mac) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
     <!-- Acesso de Baixo Nível & Telemetria do Sistema (Concedidos via ADB) -->
     <uses-permission android:name="android.permission.READ_LOGS" tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.DUMP" tools:ignore="ProtectedPermissions" />
 
-    <!-- Notificações e Segundo Plano Contínuo -->
+    <!-- Notificações e Segundo Plano Contínuo (Compatível com Android 14/15 One UI) -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -42,11 +51,15 @@
 
         <service
             android:name=".AdbSentinelService"
-            android:exported="false"
-            android:foregroundServiceType="specialUse">
+            android:exported="true"
+            android:foregroundServiceType="camera|microphone|specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="ADB connection and security telemetry monitoring" />
+            <intent-filter>
+                <action android:name="com.mateuscelestino.adbsentinel.START_SERVERS" />
+                <action android:name="com.mateuscelestino.adbsentinel.STOP_SERVERS" />
+            </intent-filter>
         </service>
 
     </application>

@@ -56,7 +56,8 @@ class MainActivity : AppCompatActivity() {
             val binder = service as? AdbSentinelService.LocalBinder
             sentinelService = binder?.getService()
             isServiceBound = true
-            Log.i("MainActivity", "AdbSentinelService conectado.")
+            sentinelService?.startEcosystemServers()
+            Log.i("MainActivity", "AdbSentinelService conectado e servidores iniciados.")
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
