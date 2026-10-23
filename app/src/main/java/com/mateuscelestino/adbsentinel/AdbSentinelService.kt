@@ -34,6 +34,24 @@ class AdbSentinelService : Service() {
         startForegroundSafely("Sentinel & Ecossistema Mac Ativo: Monitorando Porta 5555")
         startMonitoring()
         startEcosystemServers()
+        restoreGoodLockModules()
+    }
+
+    private fun restoreGoodLockModules() {
+        serviceScope.launch {
+            try {
+                Runtime.getRuntime().exec(arrayOf("sh", "-c", "pm enable com.samsung.android.soundassistant 2>/dev/null && pm enable com.samsung.android.sidegesturepad 2>/dev/null"))
+                val soundIntent = packageManager.getLaunchIntentForPackage("com.samsung.android.soundassistant")
+                if (soundIntent != null) {
+                    soundIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(soundIntent)
+                    delay(500)
+                    Runtime.getRuntime().exec(arrayOf("sh", "-c", "input keyevent 3"))
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "Aviso restauracao Good Lock: ${e.message}")
+            }
+        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

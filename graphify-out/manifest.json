@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1792640466.719458,
-    "seen": 1792640644.0450208,
-    "ast_hash": "2ef53bb845bb356495b08f7c641568a5",
+    "mtime": 1792783071.200945,
+    "seen": 1792783265.395815,
+    "ast_hash": "979c1b26e1ee8b2a3aba99167c1cb460",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
-    "mtime": 1791675349.8566873,
-    "seen": 1791676024.3113,
-    "ast_hash": "e0abf363f8b930b1f075855a2dfc53f3",
+    "mtime": 1792783086.5811343,
+    "seen": 1792783265.395802,
+    "ast_hash": "cd77b02d56a36c0b0f42dfb94bd7b0ac",
     "semantic_hash": ""
   },
   "README.md": {
@@ -171,6 +171,12 @@
     "mtime": 1792635270.3933713,
     "seen": 1792636189.4908822,
     "ast_hash": "cebd9a07f1a39b2cddedfafa22b66ac1",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/com/mateuscelestino/adbsentinel/BootReceiver.kt": {
+    "mtime": 1792783018.6668053,
+    "seen": 1792783265.3958201,
+    "ast_hash": "8769c8d54e801efde3dd56372fe01cf4",
     "semantic_hash": ""
   }
 }
