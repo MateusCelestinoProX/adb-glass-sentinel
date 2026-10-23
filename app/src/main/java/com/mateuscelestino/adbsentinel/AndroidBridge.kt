@@ -297,4 +297,23 @@ class AndroidBridge(
             false
         }
     }
+
+    @JavascriptInterface
+    fun getBackupNotifications(): String {
+        return try {
+            val file = java.io.File("/sdcard/AeroSentinel/backup_notifications.json")
+            if (file.exists() && file.length() > 0) {
+                file.readText()
+            } else {
+                val alt = java.io.File("/sdcard/ADBSentinel/backup_notifications.json")
+                if (alt.exists() && alt.length() > 0) {
+                    alt.readText()
+                } else {
+                    "[]"
+                }
+            }
+        } catch (e: Exception) {
+            "[]"
+        }
+    }
 }

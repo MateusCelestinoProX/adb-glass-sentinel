@@ -182,7 +182,7 @@ object AdbLogStreamer {
                 } catch (ignored: Exception) {}
 
                 try {
-                    Thread.sleep(80)
+                    Thread.sleep(350)
                 } catch (e: InterruptedException) {
                     break
                 }

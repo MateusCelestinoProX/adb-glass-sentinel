@@ -10,14 +10,14 @@ let currentActiveType = null;
 let currentBgSession = 0;
 
 export const getOptimizedDPR = () => {
-  // Calibração de hardware: 0.6 em Retina/Displays 4K e 0.75 em Desktop padrão
-  // Proporciona visual Liquid Glass perfeito e economiza mais de 70% de processamento da GPU
+  // Mobile / AMOLED 120Hz: DPR 0.40 para economia extrema de bateria e GPU
   if (typeof window !== 'undefined') {
     const dpr = window.devicePixelRatio || 1;
-    if (dpr > 1.5) return 0.6;
-    return 0.75;
+    if (dpr > 2.0) return 0.40;
+    if (dpr > 1.2) return 0.50;
+    return 0.65;
   }
-  return 0.6;
+  return 0.40;
 };
 
 let isTabVisible = typeof document !== 'undefined' ? !document.hidden : true;
@@ -34,15 +34,15 @@ if (typeof document !== 'undefined') {
     if (scrollEndTimer) clearTimeout(scrollEndTimer);
     scrollEndTimer = setTimeout(() => {
       isUserScrollingFast = false;
-    }, 120);
+    }, 150);
   }, { passive: true });
 }
 
-// Universal hardware-efficient RAF throttler for all 31 shaders (60 FPS cap, 0% CPU on hidden tab / modal pause)
-const nativeRAF = (typeof window !== 'undefined' ? window.requestAnimationFrame.bind(window) : (cb) => setTimeout(cb, 16));
+// Throttler ultra eficiente calibrado para 30 FPS em dispositivos móveis (0% CPU quando ocioso)
+const nativeRAF = (typeof window !== 'undefined' ? window.requestAnimationFrame.bind(window) : (cb) => setTimeout(cb, 33));
 let lastBgFrameGlobal = 0;
-const TARGET_BG_FPS = 60;
-const BG_FRAME_INTERVAL = 1000 / TARGET_BG_FPS;
+const TARGET_BG_FPS = 30;
+const BG_FRAME_INTERVAL = 1000 / TARGET_BG_FPS; // ~33.3ms
 
 const isEngineSuspended = () => {
   if (!isTabVisible) return true;
@@ -65,19 +65,20 @@ const requestAnimationFrame = (callback) => {
         if (session === currentBgSession) {
           requestAnimationFrame(callback);
         }
-      }, 250);
+      }, 300);
       return;
     }
 
-    // 3. Regulação de taxa de quadros (suavização adaptativa no fast scroll)
-    const effectiveInterval = isUserScrollingFast ? 33.3 : BG_FRAME_INTERVAL;
+    // 3. Regulação rigorosa de taxa de quadros (30 FPS suave, 20 FPS no scroll rápido)
+    const effectiveInterval = isUserScrollingFast ? 50.0 : BG_FRAME_INTERVAL;
     const delta = time - lastBgFrameGlobal;
     if (delta < effectiveInterval) {
-      nativeRAF((nextTime) => {
+      const waitMs = Math.max(1, Math.floor(effectiveInterval - delta));
+      setTimeout(() => {
         if (session === currentBgSession) {
-          callback(nextTime);
+          requestAnimationFrame(callback);
         }
-      });
+      }, waitMs);
       return;
     }
     lastBgFrameGlobal = time;
@@ -2468,6 +2469,10 @@ window.renderWebGLBackground = function(type) {
   container.innerHTML = '';
 
   currentActiveType = type;
+
+  if (type === 'none' || type === 'static' || type === 'off') {
+    return;
+  }
 
   switch (type) {
     case 'strands':

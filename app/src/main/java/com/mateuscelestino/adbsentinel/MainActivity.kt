@@ -192,8 +192,16 @@ class MainActivity : AppCompatActivity() {
         AdbLogStreamer.addListener(commandStreamListener)
     }
 
+    override fun onPause() {
+        super.onPause()
+        webView.onPause()
+        webView.evaluateJavascript("window.__PAUSE_WEBGL_SHADERS__ = true;", null)
+    }
+
     override fun onResume() {
         super.onResume()
+        webView.onResume()
+        webView.evaluateJavascript("window.__PAUSE_WEBGL_SHADERS__ = false;", null)
         AdbLogStreamer.startStreaming(this)
         injectSafeInsets()
         webView.evaluateJavascript("window.syncRecentCommands && window.syncRecentCommands();", null)

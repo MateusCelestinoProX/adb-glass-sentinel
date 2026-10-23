@@ -23,7 +23,7 @@ echo "=========================================================="
 ./gradlew assembleRelease
 
 APK_PATH="app/build/outputs/apk/release/app-release.apk"
-FINAL_APK="AdbGlassSentinel_v1.0.0.apk"
+FINAL_APK="AeroSentinel_v1.0.0.apk"
 
 if [ -f "$APK_PATH" ]; then
     cp "$APK_PATH" "$FINAL_APK"

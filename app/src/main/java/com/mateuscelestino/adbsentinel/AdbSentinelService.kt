@@ -246,14 +246,23 @@ class AdbSentinelService : Service() {
         val notification = buildForegroundNotification(text)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             var fgsType = android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
+            if (activeResources.contains("MIC") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
+            }
+            if (activeResources.contains("CAM") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
             }
             try {
                 startForeground(NOTIFICATION_ID, notification, fgsType)
             } catch (e: Exception) {
-                Log.w(TAG, "Aviso ao iniciar FGS com tipos multimídia: ${e.message}, tentando fallback básico")
-                startForeground(NOTIFICATION_ID, notification)
+                Log.w(TAG, "Aviso ao iniciar FGS com fgsType: ${e.message}, tentando specialUse exclusivo")
+                try {
+                    startForeground(NOTIFICATION_ID, notification, android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+                } catch (e2: Exception) {
+                    try {
+                        startForeground(NOTIFICATION_ID, notification)
+                    } catch (ignored: Exception) {}
+                }
             }
         } else {
             startForeground(NOTIFICATION_ID, notification)
