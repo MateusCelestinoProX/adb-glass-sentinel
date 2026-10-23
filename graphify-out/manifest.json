@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1792783071.200945,
-    "seen": 1792783265.395815,
-    "ast_hash": "979c1b26e1ee8b2a3aba99167c1cb460",
+    "mtime": 1792787597.528067,
+    "seen": 1792788472.755601,
+    "ast_hash": "8a95bd664e7d72fbf0d48c85ad66acf3",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
-    "mtime": 1792635304.985248,
-    "seen": 1792636189.49088,
-    "ast_hash": "862715a632f99c118c513ed7312afe17",
+    "mtime": 1792787357.7990851,
+    "seen": 1792788472.7556071,
+    "ast_hash": "07572d87c99e369e32e2ff2da0839151",
     "semantic_hash": ""
   },
   "build.gradle.kts": {
@@ -177,6 +177,12 @@
     "mtime": 1792783018.6668053,
     "seen": 1792783265.3958201,
     "ast_hash": "8769c8d54e801efde3dd56372fe01cf4",
+    "semantic_hash": ""
+  },
+  "app/src/main/java/com/mateuscelestino/adbsentinel/SentinelSecurityAlertActivity.kt": {
+    "mtime": 1792787256.4953134,
+    "seen": 1792788472.755609,
+    "ast_hash": "8dc9f44faaf209e982d167d0123c9bfd",
     "semantic_hash": ""
   }
 }

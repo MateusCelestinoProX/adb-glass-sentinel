@@ -50,6 +50,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".SentinelSecurityAlertActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AdbSentinel"
+            android:excludeFromRecents="true" />
+
         <service
             android:name=".AdbSentinelService"
             android:exported="true"
@@ -58,6 +65,10 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="ADB connection and security telemetry monitoring" />
             <intent-filter>
+                <action android:name="com.mateuscelestino.adbsentinel.REQUEST_RESOURCE" />
+                <action android:name="com.mateuscelestino.adbsentinel.START_RESOURCE" />
+                <action android:name="com.mateuscelestino.adbsentinel.STOP_RESOURCE" />
+                <action android:name="com.mateuscelestino.adbsentinel.STOP_ALL_RESOURCES" />
                 <action android:name="com.mateuscelestino.adbsentinel.START_SERVERS" />
                 <action android:name="com.mateuscelestino.adbsentinel.STOP_SERVERS" />
                 <action android:name="com.mateuscelestino.adbsentinel.KILL_ALL" />
