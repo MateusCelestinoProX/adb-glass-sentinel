@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1792794250.7411518,
-    "seen": 1792797231.812793,
-    "ast_hash": "d6252045717fd2101c7cfdd4f95611aa",
+    "mtime": 1792871364.4518142,
+    "seen": 1792871382.9506729,
+    "ast_hash": "5cb2d85c342622ca407911143c55cfc0",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt": {
-    "mtime": 1792635801.9181502,
-    "seen": 1792636189.490879,
-    "ast_hash": "60c0007ba6c0f4d1af49a63508e18d0d",
+    "mtime": 1792877989.1672497,
+    "seen": 1792878536.2955892,
+    "ast_hash": "fb8963ffb0a9d1d73a7d40614773c5fc",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {
@@ -168,9 +168,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/WebcamStreamServer.kt": {
-    "mtime": 1792635270.3933713,
-    "seen": 1792636189.4908822,
-    "ast_hash": "cebd9a07f1a39b2cddedfafa22b66ac1",
+    "mtime": 1792877946.5823982,
+    "seen": 1792878536.295594,
+    "ast_hash": "8fdff18fb417689e9502152dd4c7f669",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/BootReceiver.kt": {

@@ -206,7 +206,7 @@ object WebcamStreamServer {
 
         val width = 1280
         val height = 720
-        imageReader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 3).apply {
+        imageReader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 2).apply {
             setOnImageAvailableListener({ reader ->
                 val image = reader.acquireLatestImage() ?: return@setOnImageAvailableListener
                 try {
@@ -249,10 +249,19 @@ object WebcamStreamServer {
         val readerSurface = imageReader?.surface ?: return
 
         try {
-            val builder = device.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW).apply {
+            val builder = device.createCaptureRequest(CameraDevice.TEMPLATE_RECORD).apply {
                 addTarget(readerSurface)
-                set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
+                set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO)
+                set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_VIDEO)
                 set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON)
+                set(CaptureRequest.CONTROL_AWB_MODE, CaptureRequest.CONTROL_AWB_MODE_AUTO)
+                set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, android.util.Range(30, 30))
+                set(CaptureRequest.JPEG_QUALITY, 85.toByte())
+                set(CaptureRequest.NOISE_REDUCTION_MODE, CaptureRequest.NOISE_REDUCTION_MODE_FAST)
+                set(CaptureRequest.EDGE_MODE, CaptureRequest.EDGE_MODE_FAST)
+                set(CaptureRequest.COLOR_CORRECTION_MODE, CaptureRequest.COLOR_CORRECTION_MODE_FAST)
+                set(CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE, CaptureRequest.LENS_OPTICAL_STABILIZATION_MODE_ON)
+                set(CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE, CaptureRequest.CONTROL_VIDEO_STABILIZATION_MODE_ON)
 
                 applyZoom(this, currentZoom)
 
@@ -402,6 +411,8 @@ object WebcamStreamServer {
 
     private fun handleClient(socket: Socket) {
         try {
+            socket.tcpNoDelay = true
+            socket.sendBufferSize = 65536
             val input = socket.getInputStream()
             val reader = input.bufferedReader()
             val requestLine = reader.readLine() ?: return

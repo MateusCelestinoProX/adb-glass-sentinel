@@ -241,6 +241,13 @@ object AudioStreamManager {
 
             var offset = 0
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT")) {
+                if (preview.contains("/test") || preview.contains("/beep")) {
+                    playTestTone()
+                    val resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\nBeep Played\n"
+                    out.write(resp.toByteArray(Charsets.UTF_8))
+                    out.flush()
+                    return
+                }
                 if (preview.startsWith("GET")) {
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 15\r\nConnection: close\r\n\r\nSpeaker Online\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
@@ -277,5 +284,39 @@ object AudioStreamManager {
             } catch (ignored: Exception) {}
             try { socket.close() } catch (ignored: Exception) {}
         }
+    }
+
+    fun playTestTone() {
+        Thread {
+            try {
+                val sampleRate = 48000
+                val durationMs = 350
+                val numSamples = (sampleRate * durationMs) / 1000
+                val samples = ShortArray(numSamples)
+                val freq = 880.0 // A5 pleasant chime
+                for (i in 0 until numSamples) {
+                    val angle = 2.0 * Math.PI * i / (sampleRate / freq)
+                    val envelope = Math.sin(Math.PI * i / numSamples)
+                    samples[i] = (Math.sin(angle) * 26000 * envelope).toInt().toShort()
+                }
+                val stereo = ShortArray(numSamples * 2)
+                for (i in 0 until numSamples) {
+                    stereo[i * 2] = samples[i]
+                    stereo[i * 2 + 1] = samples[i]
+                }
+                val track = AudioTrack.Builder()
+                    .setAudioAttributes(AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
+                    .setAudioFormat(AudioFormat.Builder().setSampleRate(sampleRate).setChannelMask(AudioFormat.CHANNEL_OUT_STEREO).setEncoding(AudioFormat.ENCODING_PCM_16BIT).build())
+                    .setBufferSizeInBytes(stereo.size * 2)
+                    .setTransferMode(AudioTrack.MODE_STATIC)
+                    .build()
+                track.write(stereo, 0, stereo.size)
+                track.play()
+                Thread.sleep(durationMs.toLong() + 100)
+                track.release()
+            } catch (e: Exception) {
+                Log.e(TAG, "Erro playTestTone: ${e.message}")
+            }
+        }.start()
     }
 }
