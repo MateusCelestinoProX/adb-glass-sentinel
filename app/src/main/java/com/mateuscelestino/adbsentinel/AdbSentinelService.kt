@@ -165,6 +165,12 @@ class AdbSentinelService : Service() {
 
         when (resource) {
             "CAMERA", "WEBCAM" -> {
+                try {
+                    val activityIntent = Intent(applicationContext, MainActivity::class.java).apply {
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                    }
+                    startActivity(activityIntent)
+                } catch (ignored: Exception) {}
                 WebcamStreamServer.start(applicationContext, "BACK")
                 activeResources.add("CAMERA")
                 Log.i(TAG, "🟢 Câmera Traseira HD autorizada e iniciada na porta 8080.")
