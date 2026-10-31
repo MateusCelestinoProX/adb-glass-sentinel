@@ -281,16 +281,16 @@ object AudioStreamManager {
     private fun handleSpeakerClient(socket: Socket) {
         var activeTrack: AudioTrack? = null
         try {
-            // Eleva prioridade da thread para áudio urgente em tempo real
             try {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
             } catch (ignored: Exception) {}
 
             socket.tcpNoDelay = true
-            socket.receiveBufferSize = 4096
-            socket.sendBufferSize = 4096
+            socket.receiveBufferSize = 65536
+            socket.sendBufferSize = 65536
 
             val minBufSize = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
+            val bufferCapacity = maxOf(minBufSize * 2, 19200) // ~100ms de buffer elástico
 
             val audioAttributes = AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -306,7 +306,7 @@ object AudioStreamManager {
             val trackBuilder = AudioTrack.Builder()
                 .setAudioAttributes(audioAttributes)
                 .setAudioFormat(audioFormat)
-                .setBufferSizeInBytes(minBufSize)
+                .setBufferSizeInBytes(bufferCapacity)
                 .setTransferMode(AudioTrack.MODE_STREAM)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -316,24 +316,22 @@ object AudioStreamManager {
             val track = trackBuilder.build()
             activeTrack = track
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                val targetFrames = minBufSize / 4
-                track.setBufferSizeInFrames(targetFrames)
-            }
-
-            val input = socket.getInputStream()
-            val headerBuffer = ByteArray(1024)
-
+            val rawInput = socket.getInputStream()
             val out = socket.getOutputStream()
-            val firstByte = input.read()
+
+            // Lê primeiros bytes para verificar se é requisição HTTP (status/ping/chime)
+            val peekBuf = ByteArray(256)
+            val firstByte = rawInput.read()
             if (firstByte == -1) return
 
-            headerBuffer[0] = firstByte.toByte()
-            val initialRead = input.read(headerBuffer, 1, minOf(headerBuffer.size - 1, 512))
-            val totalInitial = if (initialRead > 0) initialRead + 1 else 1
-            val preview = String(headerBuffer, 0, totalInitial)
+            peekBuf[0] = firstByte.toByte()
+            val peekLen = if (rawInput.available() > 0) {
+                1 + rawInput.read(peekBuf, 1, minOf(rawInput.available(), peekBuf.size - 1))
+            } else {
+                1
+            }
+            val preview = String(peekBuf, 0, peekLen, Charsets.US_ASCII)
 
-            var offset = 0
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT") || preview.startsWith("HEAD")) {
                 if (preview.contains("/test") || preview.contains("/beep") || preview.contains("/chime")) {
                     playTestTone()
@@ -348,42 +346,50 @@ object AudioStreamManager {
                     out.flush()
                     return
                 }
-                val headerEnd = preview.indexOf("\r\n\r\n")
-                if (headerEnd != -1) {
-                    offset = headerEnd + 4
-                }
+            }
+
+            // Stream contínuo de áudio PCM de alta fidelidade
+            // Encadeia ByteArrayInputStream dos bytes lidos com o socket input para preservar 100% dos dados
+            val combinedInput = java.io.SequenceInputStream(
+                java.io.ByteArrayInputStream(peekBuf, 0, peekLen),
+                rawInput
+            )
+            val dataIn = java.io.DataInputStream(java.io.BufferedInputStream(combinedInput, 65536))
+
+            // Chunk de 1920 bytes = 480 frames = exatamente 10ms a 48kHz stereo 16-bit
+            val chunk = ByteArray(1920)
+            var totalFramesWritten = 0L
+
+            // Pré-roll de 40ms (4 chunks = 7680 bytes) para amortecer qualquer oscilação inicial de rede
+            var prerollChunks = 0
+            while (isSpeakerRunning && socket.isConnected && !socket.isClosed && prerollChunks < 4) {
+                dataIn.readFully(chunk)
+                track.write(chunk, 0, chunk.size, AudioTrack.WRITE_BLOCKING)
+                totalFramesWritten += 480
+                prerollChunks++
             }
 
             track.play()
 
-            if (offset < totalInitial) {
-                track.write(headerBuffer, offset, totalInitial - offset)
-            }
-
-            // Buffers de 960 bytes (240 frames = 5ms de áudio 48kHz stereo) para latência imperceptível
-            val streamBuffer = ByteArray(960)
-            var totalFramesWritten = 0L
-
+            // Loop de reprodução contínua em tempo real
             while (isSpeakerRunning && socket.isConnected && !socket.isClosed) {
-                val bytesRead = input.read(streamBuffer, 0, streamBuffer.size)
-                if (bytesRead <= 0) break
+                dataIn.readFully(chunk)
 
-                val frames = bytesRead / 4
-                totalFramesWritten += frames
-
-                // Monitoramento de atraso em tempo real (purge de jitter para sincronia exata com o Mac)
                 val head = track.playbackHeadPosition.toLong() and 0xFFFFFFFFL
-                val queuedFrames = totalFramesWritten - head
-                val queuedMs = (queuedFrames * 1000) / SAMPLE_RATE
-
-                if (queuedMs > 30) {
-                    track.pause()
-                    track.flush()
-                    totalFramesWritten = 0L
-                    track.play()
+                var queuedFrames = totalFramesWritten - head
+                if (queuedFrames < 0) {
+                    totalFramesWritten = head
+                    queuedFrames = 0
                 }
 
-                track.write(streamBuffer, 0, bytesRead, AudioTrack.WRITE_NON_BLOCKING)
+                // Sincronia acústica exata (<80ms): descarta 1 chunk apenas se a fila acumular mais de 120ms
+                if (queuedFrames > 5760) { // 5760 frames = 120ms
+                    // Skip sem cortar a trilha do hardware
+                    continue
+                }
+
+                track.write(chunk, 0, chunk.size, AudioTrack.WRITE_BLOCKING)
+                totalFramesWritten += 480
             }
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de alto-falante desconectado: ${e.message}")
