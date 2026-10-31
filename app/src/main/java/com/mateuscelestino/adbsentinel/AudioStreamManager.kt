@@ -440,7 +440,7 @@ object AudioStreamManager {
             socket.sendBufferSize = 65536
 
             val minBufSize = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
-            val bufferCapacity = maxOf(minBufSize * 2, 24576) // ~128ms de buffer elástico total
+            val bufferCapacity = maxOf(minBufSize * 2, 19200) // ~100ms de buffer elástico
 
             val audioAttributes = AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -467,9 +467,9 @@ object AudioStreamManager {
             activeTrack = track
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                // Buffer de hardware fixado em 3840 frames (~80ms): Golden ratio que absorve jitter sem qualquer delay perceptível
+                // Buffer de hardware fixado em 2304 frames (~48ms) para sincronia labial perfeita (lip-sync de filme)
                 try {
-                    track.setBufferSizeInFrames(3840)
+                    track.setBufferSizeInFrames(2304)
                 } catch (ignored: Exception) {}
             }
 
@@ -530,13 +530,12 @@ object AudioStreamManager {
                 }
             }
 
+            track.play()
+
             // Stream contínuo de áudio PCM de alta fidelidade
             val streamBuffer = ByteArray(4096)
             var remainder = 0
             var totalFramesWritten = 0L
-            var isPlaybackStarted = false
-            var prebufferedBytes = 0
-            val PREBUFFER_TARGET = 7680 // ~40ms de pré-hidratação para zero-underrun no startup
 
             if (totalPeek > 0) {
                 val validPeek = totalPeek - (totalPeek % 4)
@@ -544,7 +543,6 @@ object AudioStreamManager {
                     applySoftwareBooster(peekBuf, 0, validPeek)
                     track.write(peekBuf, 0, validPeek)
                     totalFramesWritten += (validPeek / 4)
-                    prebufferedBytes += validPeek
                 }
                 remainder = totalPeek - validPeek
                 if (remainder > 0) {
@@ -571,8 +569,8 @@ object AudioStreamManager {
                         queued = 0
                     }
 
-                    // Se a fila na placa de som ultrapassar 120ms (5760 frames), drena suavemente com micro-fade
-                    if (queued > 5760) {
+                    // Se a fila na placa de som ultrapassar 65ms (3120 frames), drena suavemente com micro-fade
+                    if (queued > 3120) {
                         val skipBytes = minOf(validBytes, 1920) // drena 10ms
                         val writeBytes = validBytes - skipBytes
                         if (writeBytes > 0) {
@@ -584,12 +582,6 @@ object AudioStreamManager {
                     } else {
                         applySoftwareBooster(streamBuffer, 0, validBytes)
                         track.write(streamBuffer, 0, validBytes)
-                    }
-
-                    prebufferedBytes += validBytes
-                    if (!isPlaybackStarted && prebufferedBytes >= PREBUFFER_TARGET) {
-                        track.play()
-                        isPlaybackStarted = true
                     }
                 }
 
