@@ -106,14 +106,20 @@ object AudioStreamManager {
     }
 
     /**
-     * Aplica amplificação PCM 16-bit com Soft-Clipping Analógico Hiperbólico
+     * Aplica amplificação PCM 16-bit com Soft-Knee Analógico C1 Contínuo de Estúdio
      * - Multiplica as amostras estéreo com precisão
-     * - Aplica saturação hiperbólica suave tanh(boosted * 0.95) em picos > 0.65
-     * - Garante zero estalos digitais e diálogos nítidos em filmes
+     * - Continuidade C1 rigorosa: zero degraus, zero saltos, zero chiado ou buzzing
+     * - Até 70% de amplitude (0.70): 100% linear e transparente
+     * - Acima de 70%: compressão assintótica suave knee + margin * tanh((x - knee)/margin)
+     * - Garante som quente, potente e cristalino em filmes sem estourar o sinal
      */
     fun applySoftwareBooster(buffer: ByteArray, offset: Int, length: Int) {
         val gain = softwareBoosterGain
         if (gain <= 1.01f) return
+
+        val knee = 0.70f
+        val margin = 0.30f
+        val invMargin = 1.0f / 0.30f
 
         var i = offset
         val end = offset + length
@@ -125,10 +131,15 @@ object AudioStreamManager {
 
             val boosted = normSample * gain
             val absVal = Math.abs(boosted)
-            val outVal = if (absVal < 0.65f) {
-                boosted
+
+            val outVal: Float
+            if (absVal <= knee) {
+                outVal = boosted
             } else {
-                Math.tanh((boosted * 0.95f).toDouble()).toFloat()
+                val sign = if (boosted > 0f) 1.0f else -1.0f
+                val excess = (absVal - knee) * invMargin
+                val compressed = knee + margin * Math.tanh(excess.toDouble()).toFloat()
+                outVal = sign * compressed
             }
 
             val clamped = outVal.coerceIn(-1.0f, 1.0f)

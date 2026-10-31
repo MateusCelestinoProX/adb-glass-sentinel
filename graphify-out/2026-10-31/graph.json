@@ -43,6 +43,32 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ds",
+      "label": "Ds()",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": "ds()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it",
+      "label": "it",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": "it",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_z",
       "label": ".z()",
       "_callable": true,
@@ -82,6 +108,71 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_on",
+      "label": "on",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": "on",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L213"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_pn",
+      "label": "pn",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": "pn",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L247"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_un",
+      "label": "un",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": "un",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L232"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_w",
+      "label": "W",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": "w",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fs",
+      "label": "Fs()",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": "fs()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_xn",
       "label": "xn",
       "_callable": true,
@@ -93,6 +184,19 @@
       "norm_label": "xn",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L269"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_er",
+      "label": "er",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "er",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ke",
@@ -130,19 +234,6 @@
       "community_name": ".addAttribute",
       "file_type": "code",
       "norm_label": "_r",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_er",
-      "label": "er",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": ".sub",
-      "file_type": "code",
-      "norm_label": "er",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -244,22 +335,9 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 20,
-      "community_name": "zt",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": "or",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt",
-      "label": "zt",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": "zt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -290,6 +368,19 @@
       "source_location": "L11"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_st",
+      "label": "St",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": "st",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ar",
       "label": "ar",
       "_callable": true,
@@ -316,19 +407,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ot",
-      "label": "Ot",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": "ot",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_yr",
       "label": "yr",
       "_callable": true,
@@ -338,6 +416,19 @@
       "community_name": "ar",
       "file_type": "code",
       "norm_label": "yr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ot",
+      "label": "Ot",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "ot",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -446,6 +537,19 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_br",
+      "label": "br",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": "br",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_en",
       "label": "en",
       "_callable": true,
@@ -468,6 +572,45 @@
       "community_name": "q",
       "file_type": "code",
       "norm_label": "gr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k",
+      "label": "K",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": "k",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr",
+      "label": "kr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": "kr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr",
+      "label": "nr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": "nr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -498,17 +641,17 @@
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br",
-      "label": "br",
+      "id": "app_src_main_assets_web_js_ogl_zr",
+      "label": "zr",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
+      "community": 43,
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": "br",
+      "norm_label": "zr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_gt",
@@ -517,63 +660,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": "gt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_k",
-      "label": "K",
+      "id": "app_src_main_assets_web_js_ogl_rn",
+      "label": "rn",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": "k",
+      "norm_label": "rn",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt",
+      "label": "zt",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": "zt",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr",
-      "label": "kr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": "kr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr",
-      "label": "nr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": "nr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zr",
-      "label": "zr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": "zr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ji",
@@ -660,7 +777,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": ".normalize",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": "tr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -686,37 +803,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": "cs",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ds",
-      "label": "Ds()",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "ds()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fs",
-      "label": "Fs()",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "fs()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_is",
@@ -725,63 +816,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": "is",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it",
-      "label": "it",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "it",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_on",
-      "label": "on",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "on",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L213"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_pn",
-      "label": "pn",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "pn",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L247"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_rn",
-      "label": "rn",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "rn",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_rr",
@@ -790,48 +829,9 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": "rr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st",
-      "label": "St",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "st",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_un",
-      "label": "un",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "un",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L232"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_w",
-      "label": "W",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "w",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -964,18 +964,6 @@
       "community_name": "_",
       "file_type": "code",
       "norm_label": ".fromarray()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_he",
-      "label": "he()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "_",
-      "file_type": "code",
-      "norm_label": "he()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L7"
     },
@@ -1148,18 +1136,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_sub",
-      "label": ".sub()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "_",
-      "file_type": "code",
-      "norm_label": ".sub()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_toarray",
       "label": ".toArray()",
       "_callable": true,
@@ -1242,18 +1218,6 @@
       "norm_label": "ge()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L11"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
-      "label": ".bindFramebuffer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ks",
-      "file_type": "code",
-      "norm_label": ".bindframebuffer()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ks_disable",
@@ -1602,6 +1566,150 @@
       "norm_label": ".use()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L11"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ds_addfrustumcull",
+      "label": ".addFrustumCull()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".addfrustumcull()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ds_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ds_removefrustumcull",
+      "label": ".removeFrustumCull()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".removefrustumcull()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_addchild",
+      "label": ".addChild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".addchild()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_decompose",
+      "label": ".decompose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".decompose()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_lookat",
+      "label": ".lookAt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".lookat()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_removechild",
+      "label": ".removeChild()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".removechild()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_setparent",
+      "label": ".setParent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".setparent()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_updatematrix",
+      "label": ".updateMatrix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".updatematrix()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_updatematrixworld",
+      "label": ".updateMatrixWorld()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".updatematrixworld()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ke_toarray",
+      "label": ".toArray()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".toarray()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tn_parsenodes",
+      "label": ".parseNodes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "it",
+      "file_type": "code",
+      "norm_label": ".parsenodes()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_gs",
@@ -2096,16 +2204,184 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_on_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L213"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_pn_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L247"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_un_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L232"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_w_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 12,
-      "community_name": "pt",
+      "community": 13,
+      "community_name": "W",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_w_draw",
+      "label": ".draw()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".draw()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_w_onafterrender",
+      "label": ".onAfterRender()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".onafterrender()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_w_onbeforerender",
+      "label": ".onBeforeRender()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".onbeforerender()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fs_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fs_createbonetexture",
+      "label": ".createBoneTexture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".createbonetexture()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fs_draw",
+      "label": ".draw()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".draw()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fs_updateuniforms",
+      "label": ".updateUniforms()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".updateuniforms()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_pn_draw",
+      "label": ".draw()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".draw()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L247"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_pt_getnormalmatrix",
+      "label": ".getNormalMatrix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".getnormalmatrix()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_rr_draw",
+      "label": ".draw()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".draw()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xn_draw",
+      "label": ".draw()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "Fs",
+      "file_type": "code",
+      "norm_label": ".draw()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L269"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_fr_m_v",
@@ -2300,6 +2576,18 @@
       "source_location": "L269"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_zt_g",
+      "label": ".g()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "sr",
+      "file_type": "code",
+      "norm_label": ".g()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_er_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -2312,52 +2600,40 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_fr",
-      "label": "fr()",
+      "id": "app_src_main_assets_web_js_ogl_er_gettangentat",
+      "label": ".getTangentAt()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ke",
       "file_type": "code",
-      "norm_label": "fr()",
+      "norm_label": ".gettangentat()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_fr_a",
-      "label": "A()",
+      "id": "app_src_main_assets_web_js_ogl_er_lastpoint",
+      "label": ".lastPoint()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ke",
       "file_type": "code",
-      "norm_label": "a()",
+      "norm_label": ".lastpoint()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_fr_e",
-      "label": "E()",
+      "id": "app_src_main_assets_web_js_ogl_er_updatelength",
+      "label": ".updateLength()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ke",
       "file_type": "code",
-      "norm_label": "e()",
+      "norm_label": ".updatelength()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fr_m",
-      "label": "m()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "ke",
-      "file_type": "code",
-      "norm_label": "m()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ke_constructor",
@@ -2372,14 +2648,14 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ke_copy",
-      "label": ".copy()",
+      "id": "app_src_main_assets_web_js_ogl_ke_normalize",
+      "label": ".normalize()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ke",
       "file_type": "code",
-      "norm_label": ".copy()",
+      "norm_label": ".normalize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2432,14 +2708,14 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_xe",
-      "label": "xe()",
+      "id": "app_src_main_assets_web_js_ogl_we",
+      "label": "we()",
       "_callable": true,
       "_origin": "ast",
       "community": 16,
       "community_name": "ke",
       "file_type": "code",
-      "norm_label": "xe()",
+      "norm_label": "we()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2720,6 +2996,18 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
+      "label": ".getBarycoord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".getbarycoord()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectplane",
       "label": ".intersectPlane()",
       "_callable": true,
@@ -2732,38 +3020,38 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_er_gettangentat",
-      "label": ".getTangentAt()",
+      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
+      "label": ".intersectTriangle()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".gettangentat()",
+      "norm_label": ".intersecttriangle()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_er_lastpoint",
-      "label": ".lastPoint()",
+      "id": "app_src_main_assets_web_js_ogl_ee",
+      "label": "Ee()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".lastpoint()",
+      "norm_label": "ee()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_er_updatelength",
-      "label": ".updateLength()",
+      "id": "app_src_main_assets_web_js_ogl_ke_dot",
+      "label": ".dot()",
       "_callable": true,
       "_origin": "ast",
       "community": 19,
       "community_name": ".sub",
       "file_type": "code",
-      "norm_label": ".updatelength()",
+      "norm_label": ".dot()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2933,7 +3221,7 @@
       "file_type": "code",
       "norm_label": ".forcerestartadbtcp5555()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L272"
+      "source_location": "L292"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getactiveconnections",
@@ -2981,7 +3269,7 @@
       "file_type": "code",
       "norm_label": ".getbackupnotifications()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L283"
+      "source_location": "L303"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getconnectionhistory",
@@ -3044,6 +3332,18 @@
       "source_location": "L178"
     },
     {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getspeakerbooster",
+      "label": ".getSpeakerBooster()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AndroidBridge",
+      "file_type": "code",
+      "norm_label": ".getspeakerbooster()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L240"
+    },
+    {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_killall",
       "label": ".killAll()",
       "_callable": true,
@@ -3053,7 +3353,7 @@
       "file_type": "code",
       "norm_label": ".killall()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L238"
+      "source_location": "L258"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_launchsamsungdex",
@@ -3065,7 +3365,31 @@
       "file_type": "code",
       "norm_label": ".launchsamsungdex()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L232"
+      "source_location": "L252"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_maximizespeakervolume",
+      "label": ".maximizeSpeakerVolume()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AndroidBridge",
+      "file_type": "code",
+      "norm_label": ".maximizespeakervolume()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L245"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_setspeakerbooster",
+      "label": ".setSpeakerBooster()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AndroidBridge",
+      "file_type": "code",
+      "norm_label": ".setspeakerbooster()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L233"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_togglemicstream",
@@ -3077,7 +3401,7 @@
       "file_type": "code",
       "norm_label": ".togglemicstream()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L208"
+      "source_location": "L209"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_togglespeakerreceiver",
@@ -3089,7 +3413,7 @@
       "file_type": "code",
       "norm_label": ".togglespeakerreceiver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L220"
+      "source_location": "L221"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_togglewirelessadb",
@@ -3356,36 +3680,12 @@
       "source_location": "L104"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ie",
-      "label": "Ie()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": "ie()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ne",
-      "label": "Ne()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": "ne()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_or_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 20,
-      "community_name": "zt",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -3397,7 +3697,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 20,
-      "community_name": "zt",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": ".resize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -3409,71 +3709,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 20,
-      "community_name": "zt",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": ".updategeometry()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L116"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_b",
-      "label": ".b()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".b()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_copy",
-      "label": ".copy()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".copy()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_g",
-      "label": ".g()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".g()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zt_set",
-      "label": ".set()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "zt",
-      "file_type": "code",
-      "norm_label": ".set()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_app_applyaccentcolor",
@@ -3689,7 +3929,7 @@
       "file_type": "code",
       "norm_label": "renderbackupnotifications()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1326"
+      "source_location": "L1393"
     },
     {
       "id": "app_src_main_assets_web_js_app_syncecosystemstatus",
@@ -3714,6 +3954,18 @@
       "norm_label": "togglepausestate()",
       "source_file": "app/src/main/assets/web/js/app.js",
       "source_location": "L540"
+    },
+    {
+      "id": "app_src_main_assets_web_js_app_updateboosterui",
+      "label": "updateBoosterUi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "app.js",
+      "file_type": "code",
+      "norm_label": "updateboosterui()",
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L1204"
     },
     {
       "id": "app_src_main_assets_web_js_app_updaterelativetimestampsindom",
@@ -4100,6 +4352,90 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_st_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
+      "label": ".frustumIntersectsMesh()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".frustumintersectsmesh()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
+      "label": ".frustumIntersectsSphere()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".frustumintersectssphere()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_lookat",
+      "label": ".lookAt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".lookat()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_orthographic",
+      "label": ".orthographic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".orthographic()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_perspective",
+      "label": ".perspective()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".perspective()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_updateprojectionmatrix",
+      "label": ".updateProjectionMatrix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "St",
+      "file_type": "code",
+      "norm_label": ".updateprojectionmatrix()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_oe",
       "label": "oe()",
       "_callable": true,
@@ -4460,30 +4796,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ot_clone",
-      "label": ".clone()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".clone()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ot_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ot_getlength",
       "label": ".getLength()",
       "_callable": true,
@@ -4492,18 +4804,6 @@
       "community_name": "ar",
       "file_type": "code",
       "norm_label": ".getlength()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ot_gettiltat",
-      "label": ".getTiltAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".gettiltat()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -4652,6 +4952,18 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_he",
+      "label": "he()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "he()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ke_set",
       "label": ".set()",
       "_callable": true,
@@ -4660,6 +4972,30 @@
       "community_name": ".copy",
       "file_type": "code",
       "norm_label": ".set()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ot_clone",
+      "label": ".clone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".clone()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ot_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -4676,76 +5012,28 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ri",
-      "label": "ri()",
+      "id": "app_src_main_assets_web_js_ogl_ot_gettiltat",
+      "label": ".getTiltAt()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": "ri()",
+      "norm_label": ".gettiltat()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
-      "label": ".frustumIntersectsMesh()",
+      "id": "app_src_main_assets_web_js_ogl_sub",
+      "label": ".sub()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": ".frustumintersectsmesh()",
+      "norm_label": ".sub()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
-      "label": ".frustumIntersectsSphere()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".frustumintersectssphere()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
-      "label": ".getMaxScaleOnAxis()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".getmaxscaleonaxis()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_u_set",
-      "label": ".set()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".set()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ui",
-      "label": "ui()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": "ui()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_v_set",
@@ -6140,18 +6428,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_e",
-      "label": "_e()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": "_e()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_gi",
       "label": "gi()",
       "_callable": true,
@@ -6184,6 +6460,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "ii()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_it_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6256,6 +6544,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "re()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ri",
+      "label": "ri()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "ri()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6380,6 +6680,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
+      "label": ".getMaxScaleOnAxis()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".getmaxscaleonaxis()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_u_gettranslation",
       "label": ".getTranslation()",
       "_callable": true,
@@ -6428,18 +6740,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_u_multiply",
-      "label": ".multiply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": ".multiply()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_u_rotate",
       "label": ".rotate()",
       "_callable": true,
@@ -6460,6 +6760,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": ".scale()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_u_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6560,6 +6872,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ui",
+      "label": "ui()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "ui()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_xi",
       "label": "xi()",
       "_callable": true,
@@ -6568,18 +6892,6 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "xi()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_yi",
-      "label": "yi()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": "yi()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6593,7 +6905,19 @@
       "file_type": "code",
       "norm_label": ".acquirelocks()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L91"
+      "source_location": "L166"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "label": ".applySoftwareBooster()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".applysoftwarebooster()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L114"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_createwavheader",
@@ -6605,7 +6929,19 @@
       "file_type": "code",
       "norm_label": ".createwavheader()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L247"
+      "source_location": "L322"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
+      "label": ".getBoosterGainPercent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".getboostergainpercent()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L82"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
@@ -6617,7 +6953,7 @@
       "file_type": "code",
       "norm_label": ".handlemicclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L174"
+      "source_location": "L249"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
@@ -6629,7 +6965,7 @@
       "file_type": "code",
       "norm_label": ".handlespeakerclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L321"
+      "source_location": "L397"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_maximizedevicevolume",
@@ -6641,7 +6977,7 @@
       "file_type": "code",
       "norm_label": ".maximizedevicevolume()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L68"
+      "source_location": "L143"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
@@ -6653,7 +6989,7 @@
       "file_type": "code",
       "norm_label": ".playtesttone()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L500"
+      "source_location": "L579"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_releaselocksifidle",
@@ -6665,7 +7001,7 @@
       "file_type": "code",
       "norm_label": ".releaselocksifidle()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L113"
+      "source_location": "L188"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
@@ -6677,7 +7013,19 @@
       "file_type": "code",
       "norm_label": ".setboostergain()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L54"
+      "source_location": "L93"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergainpercent",
+      "label": ".setBoosterGainPercent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".setboostergainpercent()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L57"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
@@ -6689,7 +7037,7 @@
       "file_type": "code",
       "norm_label": ".startmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L130"
+      "source_location": "L205"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
@@ -6701,7 +7049,7 @@
       "file_type": "code",
       "norm_label": ".startspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L275"
+      "source_location": "L350"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
@@ -6713,7 +7061,7 @@
       "file_type": "code",
       "norm_label": ".stopmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L162"
+      "source_location": "L237"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
@@ -6725,7 +7073,43 @@
       "file_type": "code",
       "norm_label": ".stopspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L309"
+      "source_location": "L385"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_e",
+      "label": "_e()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": ".multiply",
+      "file_type": "code",
+      "norm_label": "_e()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_u_multiply",
+      "label": ".multiply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": ".multiply",
+      "file_type": "code",
+      "norm_label": ".multiply()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_yi",
+      "label": "yi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": ".multiply",
+      "file_type": "code",
+      "norm_label": "yi()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_as_constructor",
@@ -6750,6 +7134,54 @@
       "norm_label": ".parsebuffer()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_addpass",
+      "label": ".addPass()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".addpass()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_resize",
+      "label": ".resize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".resize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_en_constructor",
@@ -6872,6 +7304,18 @@
       "source_location": "L198"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_it_traverse",
+      "label": ".traverse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".traverse()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_k_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -6882,6 +7326,54 @@
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ks_activetexture",
@@ -6896,6 +7388,30 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
+      "label": ".bindFramebuffer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".bindframebuffer()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ks_getextension",
       "label": ".getExtension()",
       "_callable": true,
@@ -6906,6 +7422,42 @@
       "norm_label": ".getextension()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_addpass",
+      "label": ".addPass()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".addpass()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nr_render",
+      "label": ".render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L97"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_pt_translate",
@@ -7064,62 +7616,50 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_zr_update",
+      "label": ".update()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".update()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L59"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ke_copy",
+      "label": ".copy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".copy()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xe",
+      "label": "xe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "xe()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_be",
       "label": "be()",
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": "be()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_addpass",
-      "label": ".addPass()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".addpass()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_resize",
-      "label": ".resize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".resize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -7129,119 +7669,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_it_traverse",
-      "label": ".traverse()",
+      "id": "app_src_main_assets_web_js_ogl_ie",
+      "label": "Ie()",
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".traverse()",
+      "norm_label": "ie()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_k_setsize",
-      "label": ".setSize()",
+      "id": "app_src_main_assets_web_js_ogl_ne",
+      "label": "Ne()",
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".setsize()",
+      "norm_label": "ne()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
+      "id": "app_src_main_assets_web_js_ogl_rn_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
-      "label": ".setSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".setsize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr_addpass",
-      "label": ".addPass()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".addpass()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nr_render",
-      "label": ".render()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".render()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L97"
+      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_rn_constructor_l",
@@ -7249,7 +7717,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": "l()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7261,7 +7729,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".getscaling()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7273,7 +7741,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7285,7 +7753,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": "h()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7297,23 +7765,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": "l()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L59"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_zr_update",
-      "label": ".update()",
+      "id": "app_src_main_assets_web_js_ogl_zt_b",
+      "label": ".b()",
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
-      "norm_label": ".update()",
+      "norm_label": ".b()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt_copy",
+      "label": ".copy()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".copy()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_zt_r",
@@ -7321,9 +7813,21 @@
       "_callable": true,
       "_origin": "ast",
       "community": 46,
-      "community_name": "K",
+      "community_name": "zt",
       "file_type": "code",
       "norm_label": ".r()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zt_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -7496,6 +8000,18 @@
       "source_location": "L518"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_cr_castmouse",
+      "label": ".castMouse()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".castmouse()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_cr_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -7504,18 +8020,6 @@
       "community_name": ".intersectMeshes",
       "file_type": "code",
       "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
-      "label": ".getBarycoord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".getbarycoord()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -7568,42 +8072,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
-      "label": ".intersectTriangle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".intersecttriangle()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ee",
-      "label": "Ee()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": "ee()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ke_dot",
-      "label": ".dot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".dot()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ki",
       "label": "ki()",
       "_callable": true,
@@ -7628,6 +8096,90 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_st_project",
+      "label": ".project()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".project()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_unproject",
+      "label": ".unproject()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".unproject()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_updatefrustum",
+      "label": ".updateFrustum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".updatefrustum()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_updatematrixworld",
+      "label": ".updateMatrixWorld()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".updatematrixworld()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tn_parselights",
+      "label": ".parseLights()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".parselights()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_transformdirection",
+      "label": ".transformDirection()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".transformdirection()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_v_applymatrix4",
+      "label": ".applyMatrix4()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 50,
+      "community_name": ".intersectMeshes",
+      "file_type": "code",
+      "norm_label": ".applymatrix4()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_v_distance",
       "label": ".distance()",
       "_callable": true,
@@ -7650,6 +8202,54 @@
       "norm_label": ".inverse()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fr",
+      "label": "fr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "tn",
+      "file_type": "code",
+      "norm_label": "fr()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fr_a",
+      "label": "A()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "tn",
+      "file_type": "code",
+      "norm_label": "a()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fr_e",
+      "label": "E()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "tn",
+      "file_type": "code",
+      "norm_label": "e()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fr_m",
+      "label": "m()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "tn",
+      "file_type": "code",
+      "norm_label": "m()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ns",
@@ -7904,60 +8504,12 @@
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_castmouse",
-      "label": ".castMouse()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".castmouse()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ke_normalize",
-      "label": ".normalize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".normalize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_unproject",
-      "label": ".unproject()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".unproject()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_tn_parselights",
-      "label": ".parseLights()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".parselights()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_tr_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": ".normalize",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7969,7 +8521,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": ".normalize",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": "r()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -7981,45 +8533,9 @@
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": ".normalize",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": "v()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_transformdirection",
-      "label": ".transformDirection()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".transformdirection()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_v_applymatrix4",
-      "label": ".applyMatrix4()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": ".applymatrix4()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_we",
-      "label": "we()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": ".normalize",
-      "file_type": "code",
-      "norm_label": "we()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -8305,7 +8821,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8317,7 +8833,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".cubicsplineinterpolate()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8329,93 +8845,9 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".update()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ds_addfrustumcull",
-      "label": ".addFrustumCull()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".addfrustumcull()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ds_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ds_removefrustumcull",
-      "label": ".removeFrustumCull()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".removefrustumcull()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fs_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fs_createbonetexture",
-      "label": ".createBoneTexture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".createbonetexture()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fs_draw",
-      "label": ".draw()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".draw()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_fs_updateuniforms",
-      "label": ".updateUniforms()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updateuniforms()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
     },
@@ -8425,7 +8857,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8437,107 +8869,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".update()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_addchild",
-      "label": ".addChild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".addchild()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_decompose",
-      "label": ".decompose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".decompose()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_lookat",
-      "label": ".lookAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".lookat()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_removechild",
-      "label": ".removeChild()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".removechild()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_setparent",
-      "label": ".setParent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".setparent()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_updatematrix",
-      "label": ".updateMatrix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updatematrix()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_updatematrixworld",
-      "label": ".updateMatrixWorld()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updatematrixworld()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ke_fromarray",
@@ -8545,83 +8881,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".fromarray()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ke_toarray",
-      "label": ".toArray()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".toarray()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_on_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L213"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_pn_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L247"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_pn_draw",
-      "label": ".draw()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".draw()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L247"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_pt_getnormalmatrix",
-      "label": ".getNormalMatrix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".getnormalmatrix()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_rn_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_rr_addanimation",
@@ -8629,7 +8893,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".addanimation()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8641,7 +8905,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8653,7 +8917,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".createbones()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8665,21 +8929,9 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".createbonetexture()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_rr_draw",
-      "label": ".draw()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".draw()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L32"
     },
@@ -8689,131 +8941,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".update()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_lookat",
-      "label": ".lookAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".lookat()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_orthographic",
-      "label": ".orthographic()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".orthographic()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_perspective",
-      "label": ".perspective()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".perspective()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_project",
-      "label": ".project()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".project()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_updatefrustum",
-      "label": ".updateFrustum()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updatefrustum()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_updatematrixworld",
-      "label": ".updateMatrixWorld()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updatematrixworld()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_updateprojectionmatrix",
-      "label": ".updateProjectionMatrix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updateprojectionmatrix()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_tn_parsenodes",
-      "label": ".parseNodes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".parsenodes()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_un_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L232"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_v_lerp",
@@ -8821,59 +8953,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".lerp()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_w_draw",
-      "label": ".draw()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".draw()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_w_onafterrender",
-      "label": ".onAfterRender()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".onafterrender()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_w_onbeforerender",
-      "label": ".onBeforeRender()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".onbeforerender()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_xn_draw",
-      "label": ".draw()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".draw()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L269"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ys",
@@ -8881,7 +8965,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": "ys()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -8893,7 +8977,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 9,
-      "community_name": "W",
+      "community_name": ".update",
       "file_type": "code",
       "norm_label": ".slerp()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -10130,7 +10214,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1365",
+      "source_location": "L1432",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app_syncecosystemstatus",
+      "target": "app_src_main_assets_web_js_app_updateboosterui",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L1102",
       "weight": 1.0
     },
     {
@@ -17642,7 +17738,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L274",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
@@ -17714,7 +17810,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L240",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -17726,7 +17822,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L234",
+      "source_location": "L254",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_maximizespeakervolume",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_vibrate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L247",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_setspeakerbooster",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_vibrate",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -17738,7 +17858,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L210",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -17750,7 +17870,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L222",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -17774,7 +17894,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L179",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -17786,7 +17906,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L220",
+      "source_location": "L295",
       "weight": 1.0
     },
     {
@@ -17798,7 +17918,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L369",
+      "source_location": "L445",
       "weight": 1.0
     },
     {
@@ -17810,7 +17930,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L383",
+      "source_location": "L459",
       "weight": 1.0
     },
     {
@@ -17822,7 +17942,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L396",
+      "source_location": "L472",
       "weight": 1.0
     },
     {
@@ -17834,7 +17954,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L403",
+      "source_location": "L479",
       "weight": 1.0
     },
     {
@@ -17846,7 +17966,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L410",
+      "source_location": "L486",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L510",
       "weight": 1.0
     },
     {
@@ -17858,7 +17990,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L133",
+      "source_location": "L208",
       "weight": 1.0
     },
     {
@@ -17870,7 +18002,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L135",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -17882,7 +18014,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L144",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -17894,7 +18026,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L157",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L354",
       "weight": 1.0
     },
     {
@@ -17906,7 +18050,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L279",
+      "source_location": "L355",
       "weight": 1.0
     },
     {
@@ -17918,7 +18062,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L280",
+      "source_location": "L356",
       "weight": 1.0
     },
     {
@@ -17930,7 +18074,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L282",
+      "source_location": "L358",
       "weight": 1.0
     },
     {
@@ -17942,7 +18086,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L291",
+      "source_location": "L367",
       "weight": 1.0
     },
     {
@@ -17954,7 +18098,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L304",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -17966,7 +18110,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L170",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -17978,7 +18122,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L317",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -18571,6 +18715,42 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_serversocket",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "powermanager",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "wifimanager",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_context",
       "relation": "references",
       "_origin": "ast",
@@ -18590,43 +18770,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_serversocket",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "powermanager",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "wifimanager",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L89",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -19451,7 +19595,31 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L91",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "target": "bytearray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_context",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -19463,7 +19631,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L174",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -19475,7 +19643,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L321",
+      "source_location": "L397",
       "weight": 1.0
     },
     {
@@ -19487,7 +19655,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L68",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergainpercent",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_context",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -19499,7 +19679,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L130",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -19511,7 +19691,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L275",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -19691,7 +19871,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L247",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -19910,13 +20090,24 @@
     },
     {
       "source": "app_src_main_assets_web_js_app",
+      "target": "app_src_main_assets_web_js_app_updateboosterui",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/app.js",
+      "source_location": "L1204",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_app",
       "target": "app_src_main_assets_web_js_app_renderbackupnotifications",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1326",
+      "source_location": "L1393",
       "weight": 1.0
     },
     {
@@ -27682,7 +27873,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L208",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -27693,7 +27884,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L220",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_setspeakerbooster",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_getspeakerbooster",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge_maximizespeakervolume",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -27704,7 +27928,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L232",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -27715,7 +27939,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L238",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -27726,7 +27950,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L272",
+      "source_location": "L292",
       "weight": 1.0
     },
     {
@@ -27737,7 +27961,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt",
-      "source_location": "L283",
+      "source_location": "L303",
       "weight": 1.0
     },
     {
@@ -27786,112 +28010,13 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_releaselocksifidle",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L113",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L162",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L174",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_createwavheader",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L247",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L275",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L309",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L321",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L500",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L54",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -27902,7 +28027,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L68",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -27913,7 +28038,139 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L91",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_releaselocksifidle",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_createwavheader",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L385",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergainpercent",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L579",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -28581,5 +28838,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c2a854943d65397e85a0474e4ef45f78456826bc"
+  "built_at_commit": "65c2b73c1857ff610c3840134378d3e19835245f"
 }
