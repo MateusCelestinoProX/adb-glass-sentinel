@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt": {
-    "mtime": 1793476378.2583013,
-    "seen": 1793476745.296266,
-    "ast_hash": "0e5ffa896e1adc5bbee5484a419c9807",
+    "mtime": 1793480542.2460465,
+    "seen": 1793480697.765911,
+    "ast_hash": "faa7d6279e93c18cea56c7d21428b578",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSocketTracker.kt": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt": {
-    "mtime": 1793476595.3007922,
-    "seen": 1793476745.2962701,
-    "ast_hash": "5d46a032bb539e83cdd6d006dda81775",
+    "mtime": 1793480139.8587813,
+    "seen": 1793480697.7659159,
+    "ast_hash": "1bd0527125cb2886958ffe8fc545fb11",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {

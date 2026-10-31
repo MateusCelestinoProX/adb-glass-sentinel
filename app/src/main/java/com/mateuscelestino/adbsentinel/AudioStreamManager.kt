@@ -281,8 +281,16 @@ object AudioStreamManager {
     private fun handleSpeakerClient(socket: Socket) {
         var activeTrack: AudioTrack? = null
         try {
+            // Eleva prioridade da thread para áudio urgente em tempo real
+            try {
+                android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
+            } catch (ignored: Exception) {}
+
+            socket.tcpNoDelay = true
+            socket.receiveBufferSize = 4096
+            socket.sendBufferSize = 4096
+
             val minBufSize = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
-            val bufferSize = maxOf(minBufSize * 2, 8192)
 
             val audioAttributes = AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -298,7 +306,7 @@ object AudioStreamManager {
             val trackBuilder = AudioTrack.Builder()
                 .setAudioAttributes(audioAttributes)
                 .setAudioFormat(audioFormat)
-                .setBufferSizeInBytes(bufferSize)
+                .setBufferSizeInBytes(minBufSize)
                 .setTransferMode(AudioTrack.MODE_STREAM)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -308,17 +316,22 @@ object AudioStreamManager {
             val track = trackBuilder.build()
             activeTrack = track
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                val targetFrames = minBufSize / 4
+                track.setBufferSizeInFrames(targetFrames)
+            }
+
             val input = socket.getInputStream()
-            val buffer = ByteArray(bufferSize)
+            val headerBuffer = ByteArray(1024)
 
             val out = socket.getOutputStream()
             val firstByte = input.read()
             if (firstByte == -1) return
 
-            buffer[0] = firstByte.toByte()
-            val initialRead = input.read(buffer, 1, minOf(buffer.size - 1, 512))
+            headerBuffer[0] = firstByte.toByte()
+            val initialRead = input.read(headerBuffer, 1, minOf(headerBuffer.size - 1, 512))
             val totalInitial = if (initialRead > 0) initialRead + 1 else 1
-            val preview = String(buffer, 0, totalInitial)
+            val preview = String(headerBuffer, 0, totalInitial)
 
             var offset = 0
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT") || preview.startsWith("HEAD")) {
@@ -344,14 +357,33 @@ object AudioStreamManager {
             track.play()
 
             if (offset < totalInitial) {
-                track.write(buffer, offset, totalInitial - offset)
+                track.write(headerBuffer, offset, totalInitial - offset)
             }
 
-            var bytesRead: Int
+            // Buffers de 960 bytes (240 frames = 5ms de áudio 48kHz stereo) para latência imperceptível
+            val streamBuffer = ByteArray(960)
+            var totalFramesWritten = 0L
+
             while (isSpeakerRunning && socket.isConnected && !socket.isClosed) {
-                bytesRead = input.read(buffer, 0, buffer.size)
+                val bytesRead = input.read(streamBuffer, 0, streamBuffer.size)
                 if (bytesRead <= 0) break
-                track.write(buffer, 0, bytesRead)
+
+                val frames = bytesRead / 4
+                totalFramesWritten += frames
+
+                // Monitoramento de atraso em tempo real (purge de jitter para sincronia exata com o Mac)
+                val head = track.playbackHeadPosition.toLong() and 0xFFFFFFFFL
+                val queuedFrames = totalFramesWritten - head
+                val queuedMs = (queuedFrames * 1000) / SAMPLE_RATE
+
+                if (queuedMs > 30) {
+                    track.pause()
+                    track.flush()
+                    totalFramesWritten = 0L
+                    track.play()
+                }
+
+                track.write(streamBuffer, 0, bytesRead, AudioTrack.WRITE_NON_BLOCKING)
             }
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de alto-falante desconectado: ${e.message}")

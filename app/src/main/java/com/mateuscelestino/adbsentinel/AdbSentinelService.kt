@@ -74,13 +74,13 @@ class AdbSentinelService : Service() {
         Log.d(TAG, "onStartCommand action=$action resource=$resource requester=$requester")
 
         when (action) {
+            null, "", "com.mateuscelestino.adbsentinel.START_SERVERS" -> {
+                startResource("SPEAKER")
+                startResource("MIC")
+            }
             ACTION_REQUEST_RESOURCE, ACTION_START_RESOURCE -> {
                 // Inicia imediatamente sem bloquear em caixas de diálogo
                 startResource(resource)
-            }
-            "com.mateuscelestino.adbsentinel.START_SERVERS" -> {
-                startResource("SPEAKER")
-                startResource("MIC")
             }
             ACTION_STOP_RESOURCE -> {
                 stopResource(resource)
