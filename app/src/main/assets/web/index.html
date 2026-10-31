@@ -112,55 +112,14 @@
         </div>
       </div>
 
-      <!-- Webcam HD Streamer (Android -> Mac) -->
-      <div class="eco-feature-box">
-        <div class="eco-feature-header">
-          <div class="eco-title-group">
-            <span class="eco-icon">📷</span>
-            <div class="eco-text-col">
-              <span class="eco-name">Android HD Webcam</span>
-              <span class="eco-desc">Stream MJPEG p/ Safari, Chrome, OBS e QuickTime</span>
-            </div>
-          </div>
-          <div class="eco-controls-group">
-            <select class="eco-select" id="select-webcam-facing">
-              <option value="BACK">Traseira</option>
-              <option value="FRONT">Frontal</option>
-            </select>
-            <button class="eco-toggle-btn" id="btn-toggle-webcam">INICIAR</button>
-          </div>
-        </div>
-        <div class="eco-link-box" id="webcam-url-box" style="display: none;">
-          <span class="eco-cmd" id="webcam-url-text">http://192.168.18.16:8080/video</span>
-          <button class="eco-copy-btn" id="btn-copy-webcam">COPIAR URL</button>
-        </div>
-      </div>
-
-      <!-- Áudio Bidirecional (Microfone & Caixa de Som) -->
-      <div class="eco-feature-box">
-        <div class="eco-feature-header">
-          <div class="eco-title-group">
-            <span class="eco-icon">🎙️</span>
-            <div class="eco-text-col">
-              <span class="eco-name">Microfone HD (Celular ➔ Mac)</span>
-              <span class="eco-desc">Áudio PCM 48kHz na porta 8081</span>
-            </div>
-          </div>
-          <button class="eco-toggle-btn" id="btn-toggle-mic">INICIAR</button>
-        </div>
-        <div class="eco-link-box" id="mic-url-box" style="display: none;">
-          <span class="eco-cmd" id="mic-url-text">http://192.168.18.16:8081/mic.wav</span>
-          <button class="eco-copy-btn" id="btn-copy-mic">COPIAR</button>
-        </div>
-      </div>
-
+      <!-- Áudio Profissional p/ macOS (Caixa de Som & Microfone) -->
       <div class="eco-feature-box">
         <div class="eco-feature-header">
           <div class="eco-title-group">
             <span class="eco-icon">🔊</span>
             <div class="eco-text-col">
               <span class="eco-name">Caixa de Som (Mac ➔ Celular)</span>
-              <span class="eco-desc">Toca áudio do Mac no celular na porta 8082</span>
+              <span class="eco-desc">Toca o som do MacBook nos alto-falantes estéreo do S22 Ultra (Porta 8082)</span>
             </div>
           </div>
           <button class="eco-toggle-btn" id="btn-toggle-speaker">INICIAR</button>
@@ -168,6 +127,23 @@
         <div class="eco-link-box" id="speaker-url-box" style="display: none;">
           <span class="eco-cmd" id="speaker-url-text">http://192.168.18.16:8082/stream</span>
           <button class="eco-copy-btn" id="btn-copy-speaker">COPIAR</button>
+        </div>
+      </div>
+
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🎙️</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Microfone HD (Celular ➔ Mac)</span>
+              <span class="eco-desc">Transmite captação com cancelamento de ruído p/ Mac na porta 8081</span>
+            </div>
+          </div>
+          <button class="eco-toggle-btn" id="btn-toggle-mic">INICIAR</button>
+        </div>
+        <div class="eco-link-box" id="mic-url-box" style="display: none;">
+          <span class="eco-cmd" id="mic-url-text">http://192.168.18.16:8081/mic.wav</span>
+          <button class="eco-copy-btn" id="btn-copy-mic">COPIAR</button>
         </div>
       </div>
 

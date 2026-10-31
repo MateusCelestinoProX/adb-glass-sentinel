@@ -17,12 +17,16 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.concurrent.ConcurrentHashMap
 
+/**
+ * 🛡️ AdbSentinelService — Serviço Central de Telemetria e Hub de Áudio do AeroSentinel
+ * Fornece áudio cristalino sob demanda (Caixa de Som e Microfone) entre o macOS e o Galaxy S22 Ultra.
+ */
 class AdbSentinelService : Service() {
     private val binder = LocalBinder()
     private val serviceScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private var isRunning = false
 
-    // Estado dos recursos sob demanda (OFF por padrão)
+    // Estado dos recursos ativos sob demanda
     private val activeResources = ConcurrentHashMap.newKeySet<String>()
 
     inner class LocalBinder : Binder() {
@@ -35,10 +39,15 @@ class AdbSentinelService : Service() {
         super.onCreate()
         AdbLogStreamer.initContext(this)
         createNotificationChannels()
-        startForegroundSafely("Sentinel: Recursos Compartilhados OFF (Zero-Trust Ativo)")
+        startForegroundSafely("AeroSentinel: Pronto (Caixa de Som & Mic sob demanda)")
         startMonitoring()
-        // NOTA DE SEGURANÇA: Recursos de Câmera, Áudio e DeX iniciam rigorosamente OFF por padrão
         restoreGoodLockModules()
+
+        // Inicializa servidores de áudio de alta performance (prontos para receber conexões instantâneas)
+        AudioStreamManager.startSpeakerServer(applicationContext)
+        AudioStreamManager.startMicServer(applicationContext)
+        activeResources.add("SPEAKER")
+        activeResources.add("MIC")
     }
 
     private fun restoreGoodLockModules() {
@@ -61,19 +70,19 @@ class AdbSentinelService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val action = intent?.action
         val resource = intent?.getStringExtra(EXTRA_RESOURCE_KEY)?.uppercase() ?: ""
-        val requester = intent?.getStringExtra(EXTRA_REQUESTER_KEY) ?: "MacAeroHub (MacBook Pro)"
+        val requester = intent?.getStringExtra(EXTRA_REQUESTER_KEY) ?: "AeroSentinel Mac"
+        Log.d(TAG, "onStartCommand action=$action resource=$resource requester=$requester")
 
         when (action) {
-            ACTION_REQUEST_RESOURCE -> {
-                // Dispara alerta visual completo no Android (Notificação Heads-up + Diálogo)
-                showResourceAccessAlert(resource, requester)
-            }
-            ACTION_START_RESOURCE -> {
-                // Inicia exclusivamente o recurso aprovado
+            ACTION_REQUEST_RESOURCE, ACTION_START_RESOURCE -> {
+                // Inicia imediatamente sem bloquear em caixas de diálogo
                 startResource(resource)
             }
+            "com.mateuscelestino.adbsentinel.START_SERVERS" -> {
+                startResource("SPEAKER")
+                startResource("MIC")
+            }
             ACTION_STOP_RESOURCE -> {
-                // Desativa o recurso solicitado
                 stopResource(resource)
             }
             ACTION_STOP_ALL_RESOURCES, "com.mateuscelestino.adbsentinel.STOP_SERVERS" -> {
@@ -95,100 +104,24 @@ class AdbSentinelService : Service() {
     }
 
     /**
-     * 🚨 Exibe um alerta de segurança completamente visível quando o Mac solicita acesso
-     */
-    fun showResourceAccessAlert(resource: String, requester: String) {
-        val resourceTitle = when (resource) {
-            "CAMERA", "WEBCAM" -> "Câmera Traseira HD (Porta 8080)"
-            "MIC", "MICROPHONE" -> "Microfone de Estúdio (Porta 8081)"
-            "SPEAKER", "AUDIO" -> "Alto-falante do Celular (Porta 8082)"
-            "DEX", "DESKTOP" -> "Samsung DeX & Touchpad (Porta 8083)"
-            else -> resource
-        }
-
-        // 1. Notificação Heads-Up de Alta Prioridade com Ações Rápidas
-        val manager = getSystemService(NotificationManager::class.java)
-
-        // Intent de Autorização
-        val allowIntent = Intent(this, AdbSentinelService::class.java).apply {
-            action = ACTION_START_RESOURCE
-            putExtra(EXTRA_RESOURCE_KEY, resource)
-        }
-        val allowPending = PendingIntent.getService(
-            this, 101, allowIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-
-        // Intent de Negação
-        val denyIntent = Intent(this, AdbSentinelService::class.java).apply {
-            action = ACTION_STOP_RESOURCE
-            putExtra(EXTRA_RESOURCE_KEY, resource)
-        }
-        val denyPending = PendingIntent.getService(
-            this, 102, denyIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-
-        val alertNotification = NotificationCompat.Builder(this, CHANNEL_SECURITY_ALERT_ID)
-            .setContentTitle("🚨 SOLICITAÇÃO DE ACESSO REMOTO")
-            .setContentText("$requester solicitou acesso a: $resourceTitle")
-            .setSmallIcon(R.drawable.ic_launcher)
-            .setPriority(NotificationCompat.PRIORITY_MAX)
-            .setCategory(NotificationCompat.CATEGORY_ALARM)
-            .setAutoCancel(true)
-            .addAction(android.R.drawable.ic_delete, "NEGAR", denyPending)
-            .addAction(android.R.drawable.ic_menu_camera, "AUTORIZAR", allowPending)
-            .setVibrate(longArrayOf(0, 150, 100, 150))
-            .build()
-
-        manager.notify(NOTIFICATION_ALERT_ID, alertNotification)
-
-        // 2. Abre a tela de diálogo visual completa na tela do celular
-        try {
-            val dialogIntent = Intent(this, SentinelSecurityAlertActivity::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                putExtra(SentinelSecurityAlertActivity.EXTRA_RESOURCE, resource)
-                putExtra(SentinelSecurityAlertActivity.EXTRA_REQUESTER, requester)
-            }
-            startActivity(dialogIntent)
-        } catch (e: Exception) {
-            Log.e(TAG, "Erro ao abrir SentinelSecurityAlertActivity: ${e.message}")
-        }
-    }
-
-    /**
-     * Inicia pontualmente o recurso requisitado sob demanda
+     * Inicia pontualmente o recurso requisitado sob demanda imediatamente
      */
     fun startResource(resource: String) {
-        val manager = getSystemService(NotificationManager::class.java)
-        manager.cancel(NOTIFICATION_ALERT_ID) // Limpa o alerta pendente
-
         when (resource) {
-            "CAMERA", "WEBCAM" -> {
-                try {
-                    val activityIntent = Intent(applicationContext, MainActivity::class.java).apply {
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                    }
-                    startActivity(activityIntent)
-                } catch (ignored: Exception) {}
-                WebcamStreamServer.start(applicationContext, "BACK")
-                activeResources.add("CAMERA")
-                Log.i(TAG, "🟢 Câmera Traseira HD autorizada e iniciada na porta 8080.")
-            }
             "MIC", "MICROPHONE" -> {
                 AudioStreamManager.startMicServer(applicationContext)
                 activeResources.add("MIC")
-                Log.i(TAG, "🟢 Microfone autorizado e iniciado na porta 8081.")
+                Log.i(TAG, "🟢 Microfone iniciado imediatamente na porta 8081.")
             }
             "SPEAKER", "AUDIO" -> {
                 AudioStreamManager.startSpeakerServer(applicationContext)
                 activeResources.add("SPEAKER")
-                Log.i(TAG, "🟢 Alto-falante autorizado e iniciado na porta 8082.")
+                Log.i(TAG, "🟢 Alto-falante iniciado imediatamente na porta 8082.")
             }
             "DEX", "DESKTOP" -> {
                 SamsungDeXController.startInputServer()
                 activeResources.add("DEX")
-                Log.i(TAG, "🟢 Samsung DeX Input autorizado e iniciado na porta 8083.")
+                Log.i(TAG, "🟢 Samsung DeX Input iniciado na porta 8083.")
             }
         }
         updateStatusNotification()
@@ -198,15 +131,7 @@ class AdbSentinelService : Service() {
      * Interrompe um recurso específico
      */
     fun stopResource(resource: String) {
-        val manager = getSystemService(NotificationManager::class.java)
-        manager.cancel(NOTIFICATION_ALERT_ID)
-
         when (resource) {
-            "CAMERA", "WEBCAM" -> {
-                WebcamStreamServer.stop()
-                activeResources.remove("CAMERA")
-                Log.i(TAG, "🔴 Câmera desligada.")
-            }
             "MIC", "MICROPHONE" -> {
                 AudioStreamManager.stopMicServer()
                 activeResources.remove("MIC")
@@ -230,21 +155,20 @@ class AdbSentinelService : Service() {
      * Desliga todos os recursos compartilhados (retorna ao estado seguro OFF)
      */
     fun stopAllResources() {
-        WebcamStreamServer.stop()
         AudioStreamManager.stopMicServer()
         AudioStreamManager.stopSpeakerServer()
         SamsungDeXController.stopInputServer()
         activeResources.clear()
-        Log.i(TAG, "🛡️ Todos os recursos compartilhados foram desligados (OFF).")
+        Log.i(TAG, "🛡️ Todos os recursos de áudio e DeX foram desligados.")
         updateStatusNotification()
     }
 
     private fun updateStatusNotification() {
         if (activeResources.isEmpty()) {
-            updateNotification("Sentinel: Recursos Compartilhados OFF (Zero-Trust Ativo)")
+            updateNotification("AeroSentinel: Pronto (Caixa de Som & Mic sob demanda)")
         } else {
             val list = activeResources.joinToString(", ")
-            updateNotification("🔴 RECURSO EM USO ($list) autorizado pelo usuário")
+            updateNotification("🟢 Áudio Ativo no Mac ($list)")
         }
     }
 
@@ -255,13 +179,9 @@ class AdbSentinelService : Service() {
             if (activeResources.contains("MIC") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
             }
-            if (activeResources.contains("CAM") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_CAMERA
-            }
             try {
                 startForeground(NOTIFICATION_ID, notification, fgsType)
             } catch (e: Exception) {
-                Log.w(TAG, "Aviso ao iniciar FGS com fgsType: ${e.message}, tentando specialUse exclusivo")
                 try {
                     startForeground(NOTIFICATION_ID, notification, android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
                 } catch (e2: Exception) {
@@ -277,10 +197,10 @@ class AdbSentinelService : Service() {
 
     fun onAdbToggled(enabled: Boolean) {
         if (enabled) {
-            updateNotification("Sentinel Ativo: Recursos Compartilhados OFF por Padrão")
+            updateNotification("AeroSentinel: Conexão Wireless Ativa")
             AdbLogStreamer.startStreaming(this)
         } else {
-            updateNotification("Sistema ADB Parado (Protegido pelo Sentinel)")
+            updateNotification("AeroSentinel: Wireless ADB Pausado")
         }
     }
 
@@ -304,7 +224,7 @@ class AdbSentinelService : Service() {
                             lastEnabledState = false
                             lastConnectedIp = null
                             AdbSocketTracker.clearActiveConnectionsCache()
-                            updateNotification("Sistema ADB Parado (Protegido pelo Sentinel)")
+                            updateNotification("AeroSentinel: Sistema ADB Pausado")
                         }
                     } else {
                         val connections = AdbSocketTracker.scanActiveConnections(this@AdbSentinelService, forceRefresh = true)
@@ -316,7 +236,7 @@ class AdbSentinelService : Service() {
                                 lastConnectedIp = currentIp
                                 lastEnabledState = true
                                 recordConnectionHistory(established)
-                                updateNotification("Conexão ADB: $currentIp (Recursos: ${if (activeResources.isEmpty()) "OFF" else activeResources.joinToString()})")
+                                updateNotification("Conexão Mac: $currentIp (Áudio: ${if (activeResources.isEmpty()) "OFF" else activeResources.joinToString()})")
                             }
                         } else if (lastConnectedIp != null || lastEnabledState != true) {
                             lastConnectedIp = null
@@ -377,27 +297,15 @@ class AdbSentinelService : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val manager = getSystemService(NotificationManager::class.java)
 
-            // 1. Canal do Serviço Sentinel (Baixa prioridade, contínuo)
+            // Canal do Serviço Sentinel (Baixa prioridade, contínuo)
             val monitorChannel = NotificationChannel(
                 CHANNEL_ID,
-                "ADB Sentinel Monitor",
+                "AeroSentinel Audio & Hub",
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
-                description = "Monitoramento e status de recursos de segurança"
+                description = "Monitoramento e controle de áudio e conexões do Mac"
             }
             manager.createNotificationChannel(monitorChannel)
-
-            // 2. Canal de Alertas de Segurança (Alta prioridade, Heads-up popup e som)
-            val alertChannel = NotificationChannel(
-                CHANNEL_SECURITY_ALERT_ID,
-                "Alertas de Acesso Remoto",
-                NotificationManager.IMPORTANCE_HIGH
-            ).apply {
-                description = "Solicitações de ativação de câmera, microfone e controle remoto"
-                enableVibration(true)
-                vibrationPattern = longArrayOf(0, 150, 100, 150)
-            }
-            manager.createNotificationChannel(alertChannel)
         }
     }
 
@@ -409,7 +317,7 @@ class AdbSentinelService : Service() {
         )
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("ADB Glass Sentinel")
+            .setContentTitle("AeroSentinel")
             .setContentText(contentText)
             .setSmallIcon(R.drawable.ic_launcher)
             .setContentIntent(pendingIntent)
@@ -434,9 +342,7 @@ class AdbSentinelService : Service() {
     companion object {
         private const val TAG = "AdbSentinelService"
         private const val CHANNEL_ID = "adb_sentinel_channel"
-        private const val CHANNEL_SECURITY_ALERT_ID = "adb_sentinel_security_alert"
         private const val NOTIFICATION_ID = 5555
-        private const val NOTIFICATION_ALERT_ID = 5556
 
         const val ACTION_REQUEST_RESOURCE = "com.mateuscelestino.adbsentinel.REQUEST_RESOURCE"
         const val ACTION_START_RESOURCE = "com.mateuscelestino.adbsentinel.START_RESOURCE"

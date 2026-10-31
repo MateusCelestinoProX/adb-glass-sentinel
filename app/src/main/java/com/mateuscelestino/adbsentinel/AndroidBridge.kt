@@ -193,11 +193,6 @@ class AndroidBridge(
             put("adbPort", activePort)
             put("adbConnectLocal", "adb connect $wifiIp:$activePort")
             put("adbConnectTailscale", if (tailscaleIp.isNotEmpty()) "adb connect $tailscaleIp:5555" else "")
-            put("isWebcamRunning", WebcamStreamServer.isRunning)
-            put("webcamFacing", WebcamStreamServer.currentFacing)
-            put("webcamPort", WebcamStreamServer.PORT)
-            put("webcamLocalUrl", "http://$wifiIp:${WebcamStreamServer.PORT}/video")
-            put("webcamTailscaleUrl", if (tailscaleIp.isNotEmpty()) "http://$tailscaleIp:${WebcamStreamServer.PORT}/video" else "")
             put("isMicRunning", AudioStreamManager.isMicRunning)
             put("micPort", AudioStreamManager.MIC_PORT)
             put("micLocalUrl", "http://$wifiIp:${AudioStreamManager.MIC_PORT}/mic.wav")
@@ -208,18 +203,6 @@ class AndroidBridge(
             put("dexInputPort", SamsungDeXController.REMOTE_INPUT_PORT)
         }
         return obj.toString()
-    }
-
-    @JavascriptInterface
-    fun toggleWebcam(enable: Boolean, facing: String): String {
-        vibrate(30)
-        return if (enable) {
-            val ok = WebcamStreamServer.start(activity, facing)
-            if (ok) "STARTED" else "ERROR"
-        } else {
-            WebcamStreamServer.stop()
-            "STOPPED"
-        }
     }
 
     @JavascriptInterface
@@ -255,7 +238,7 @@ class AndroidBridge(
     @JavascriptInterface
     fun killAll(): String {
         vibrate(120)
-        // 1. Notifica o MacAeroHub no Mac (porta 8084) para encerrar processos no Mac
+        // 1. Notifica o AeroSentinel no Mac (porta 8084) para encerrar processos no Mac
         Thread {
             try {
                 val conns = AdbSocketTracker.scanActiveConnections(activity)
@@ -273,8 +256,7 @@ class AndroidBridge(
             } catch (ignored: Exception) {}
         }.start()
 
-        // 2. Encerra todos os servidores de ecossistema multimídia e DeX no Android
-        WebcamStreamServer.stop()
+        // 2. Encerra todos os servidores de ecossistema de áudio e DeX no Android
         AudioStreamManager.stopMicServer()
         AudioStreamManager.stopSpeakerServer()
         SamsungDeXController.stopInputServer()

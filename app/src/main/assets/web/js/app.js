@@ -1031,12 +1031,6 @@
   const tailscaleStatus = document.getElementById('eco-tailscale-status');
   const tailscaleCmdText = document.getElementById('tailscale-cmd-text');
 
-  const btnToggleWebcam = document.getElementById('btn-toggle-webcam');
-  const selectWebcamFacing = document.getElementById('select-webcam-facing');
-  const webcamUrlBox = document.getElementById('webcam-url-box');
-  const webcamUrlText = document.getElementById('webcam-url-text');
-  const btnCopyWebcam = document.getElementById('btn-copy-webcam');
-
   const btnToggleMic = document.getElementById('btn-toggle-mic');
   const micUrlBox = document.getElementById('mic-url-box');
   const micUrlText = document.getElementById('mic-url-text');
@@ -1069,22 +1063,6 @@
           tailscaleStatus.style.color = 'var(--text-dim)';
         }
         if (tailscaleCmdText) tailscaleCmdText.textContent = data.adbConnectLocal;
-      }
-
-      // Webcam
-      if (data.isWebcamRunning) {
-        if (btnToggleWebcam) {
-          btnToggleWebcam.textContent = 'PARAR';
-          btnToggleWebcam.classList.add('active');
-        }
-        if (webcamUrlBox) webcamUrlBox.style.display = 'flex';
-        if (webcamUrlText) webcamUrlText.textContent = data.webcamLocalUrl;
-      } else {
-        if (btnToggleWebcam) {
-          btnToggleWebcam.textContent = 'INICIAR';
-          btnToggleWebcam.classList.remove('active');
-        }
-        if (webcamUrlBox) webcamUrlBox.style.display = 'none';
       }
 
       // Mic
@@ -1144,26 +1122,6 @@
         window.AndroidBridge.copyToClipboard(tailscaleCmdText.textContent);
         btnCopyTailscale.textContent = 'COPIADO!';
         setTimeout(() => { btnCopyTailscale.textContent = 'COPIAR'; }, 1500);
-      }
-    });
-  }
-
-  if (btnToggleWebcam) {
-    btnToggleWebcam.addEventListener('click', () => {
-      if (!window.AndroidBridge) return;
-      const willEnable = btnToggleWebcam.textContent === 'INICIAR';
-      const facing = selectWebcamFacing ? selectWebcamFacing.value : 'BACK';
-      window.AndroidBridge.toggleWebcam(willEnable, facing);
-      setTimeout(syncEcosystemStatus, 300);
-    });
-  }
-
-  if (btnCopyWebcam) {
-    btnCopyWebcam.addEventListener('click', () => {
-      if (window.AndroidBridge && webcamUrlText) {
-        window.AndroidBridge.copyToClipboard(webcamUrlText.textContent);
-        btnCopyWebcam.textContent = 'COPIADO!';
-        setTimeout(() => { btnCopyWebcam.textContent = 'COPIAR URL'; }, 1500);
       }
     });
   }
