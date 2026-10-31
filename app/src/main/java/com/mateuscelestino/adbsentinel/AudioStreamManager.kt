@@ -195,6 +195,8 @@ object AudioStreamManager {
 
     private var wakeLock: PowerManager.WakeLock? = null
     private var wifiLock: WifiManager.WifiLock? = null
+    private var audioManager: AudioManager? = null
+    private var audioFocusRequest: android.media.AudioFocusRequest? = null
 
     @Synchronized
     private fun acquireLocks(context: Context) {
@@ -208,9 +210,38 @@ object AudioStreamManager {
             }
             if (wifiLock == null) {
                 val wm = context.applicationContext.getSystemService(Context.WIFI_SERVICE) as? WifiManager
-                wifiLock = wm?.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, "AeroSentinel:AudioStreamWifiLock")?.apply {
+                val mode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    WifiManager.WIFI_MODE_FULL_LOW_LATENCY
+                } else {
+                    @Suppress("DEPRECATION")
+                    WifiManager.WIFI_MODE_FULL_HIGH_PERF
+                }
+                wifiLock = wm?.createWifiLock(mode, "AeroSentinel:AudioStreamWifiLock")?.apply {
                     setReferenceCounted(false)
                     acquire()
+                }
+            }
+
+            // Solicita foco de áudio prioritário para impedir suspensão pelo PowerHAL / AudioFlinger em background
+            if (audioManager == null) {
+                audioManager = context.applicationContext.getSystemService(Context.AUDIO_SERVICE) as? AudioManager
+            }
+            audioManager?.let { am ->
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    val attrs = AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_MEDIA)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                        .build()
+                    val req = android.media.AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
+                        .setAudioAttributes(attrs)
+                        .setAcceptsDelayedFocusGain(true)
+                        .setOnAudioFocusChangeListener { /* Mantém stream contínuo */ }
+                        .build()
+                    audioFocusRequest = req
+                    am.requestAudioFocus(req)
+                } else {
+                    @Suppress("DEPRECATION")
+                    am.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN)
                 }
             }
         } catch (e: Exception) {
@@ -226,6 +257,16 @@ object AudioStreamManager {
                 wakeLock = null
                 if (wifiLock?.isHeld == true) wifiLock?.release()
                 wifiLock = null
+
+                audioManager?.let { am ->
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && audioFocusRequest != null) {
+                        am.abandonAudioFocusRequest(audioFocusRequest!!)
+                        audioFocusRequest = null
+                    } else {
+                        @Suppress("DEPRECATION")
+                        am.abandonAudioFocus(null)
+                    }
+                }
             } catch (e: Exception) {
                 Log.w(TAG, "Aviso ao liberar locks: ${e.message}")
             }
@@ -440,11 +481,12 @@ object AudioStreamManager {
             socket.sendBufferSize = 65536
 
             val minBufSize = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
-            val bufferCapacity = maxOf(minBufSize * 2, 19200) // ~100ms de buffer elástico
+            val bufferCapacity = maxOf(minBufSize * 2, 24576) // ~128ms de buffer elástico
 
             val audioAttributes = AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
                 .build()
 
             val audioFormat = AudioFormat.Builder()
@@ -467,9 +509,10 @@ object AudioStreamManager {
             activeTrack = track
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                // Buffer de hardware fixado em 2304 frames (~48ms) para sincronia labial perfeita (lip-sync de filme)
+                // Buffer de hardware fixado em 3360 frames (~70ms):
+                // Folga que absorve jitter natural de Wi-Fi sem bloquear a thread de socket e com lip-sync de filme imperceptível (<50ms)
                 try {
-                    track.setBufferSizeInFrames(2304)
+                    track.setBufferSizeInFrames(3360)
                 } catch (ignored: Exception) {}
             }
 
@@ -536,6 +579,7 @@ object AudioStreamManager {
             val streamBuffer = ByteArray(4096)
             var remainder = 0
             var totalFramesWritten = 0L
+            var sustainedHighQueueCount = 0
 
             if (totalPeek > 0) {
                 val validPeek = totalPeek - (totalPeek % 4)
@@ -569,17 +613,28 @@ object AudioStreamManager {
                         queued = 0
                     }
 
-                    // Se a fila na placa de som ultrapassar 65ms (3120 frames), drena suavemente com micro-fade
-                    if (queued > 3120) {
-                        val skipBytes = minOf(validBytes, 1920) // drena 10ms
+                    // Histerese inteligente zero-glitch:
+                    // O jitter natural do Wi-Fi flutua na faixa de 20ms a 60ms sem atraso acumulado real.
+                    // O dreno só deve agir se a fila permanecer acima de 4320 frames (~90ms) por mais de 15 chunks seguidos (>300ms contínuos).
+                    if (queued > 4320) {
+                        sustainedHighQueueCount++
+                    } else if (queued < 3360) {
+                        sustainedHighQueueCount = 0
+                    }
+
+                    if (sustainedHighQueueCount > 15) {
+                        // Drift cumulativo prolongado: drena suavemente 960 bytes (~5ms) com micro-fade
+                        val skipBytes = minOf(validBytes, 960)
                         val writeBytes = validBytes - skipBytes
                         if (writeBytes > 0) {
-                            applyFadeIn(streamBuffer, skipBytes, 48)
+                            applyFadeIn(streamBuffer, skipBytes, 64)
                             applySoftwareBooster(streamBuffer, skipBytes, writeBytes)
                             track.write(streamBuffer, skipBytes, writeBytes)
                         }
                         totalFramesWritten -= (skipBytes / 4)
+                        sustainedHighQueueCount = 5
                     } else {
+                        // Reprodução contínua sem nenhum corte de fase -> ZERO GLITCH
                         applySoftwareBooster(streamBuffer, 0, validBytes)
                         track.write(streamBuffer, 0, validBytes)
                     }

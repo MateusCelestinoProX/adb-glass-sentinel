@@ -179,6 +179,9 @@ class AdbSentinelService : Service() {
             if (activeResources.contains("MIC") && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
             }
+            if (activeResources.contains("SPEAKER")) {
+                fgsType = fgsType or android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
+            }
             try {
                 startForeground(NOTIFICATION_ID, notification, fgsType)
             } catch (e: Exception) {
