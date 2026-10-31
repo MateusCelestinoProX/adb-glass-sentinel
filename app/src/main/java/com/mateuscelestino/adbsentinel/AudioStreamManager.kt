@@ -325,12 +325,10 @@ object AudioStreamManager {
             if (firstByte == -1) return
 
             peekBuf[0] = firstByte.toByte()
-            val peekLen = if (rawInput.available() > 0) {
-                1 + rawInput.read(peekBuf, 1, minOf(rawInput.available(), peekBuf.size - 1))
-            } else {
-                1
-            }
-            val preview = String(peekBuf, 0, peekLen, Charsets.US_ASCII)
+            val available = rawInput.available()
+            val extraRead = if (available > 0) rawInput.read(peekBuf, 1, minOf(available, peekBuf.size - 1)) else 0
+            val totalPeek = 1 + maxOf(0, extraRead)
+            val preview = String(peekBuf, 0, totalPeek, Charsets.US_ASCII)
 
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT") || preview.startsWith("HEAD")) {
                 if (preview.contains("/test") || preview.contains("/beep") || preview.contains("/chime")) {
@@ -348,48 +346,40 @@ object AudioStreamManager {
                 }
             }
 
-            // Stream contínuo de áudio PCM de alta fidelidade
-            // Encadeia ByteArrayInputStream dos bytes lidos com o socket input para preservar 100% dos dados
-            val combinedInput = java.io.SequenceInputStream(
-                java.io.ByteArrayInputStream(peekBuf, 0, peekLen),
-                rawInput
-            )
-            val dataIn = java.io.DataInputStream(java.io.BufferedInputStream(combinedInput, 65536))
-
-            // Chunk de 1920 bytes = 480 frames = exatamente 10ms a 48kHz stereo 16-bit
-            val chunk = ByteArray(1920)
-            var totalFramesWritten = 0L
-
-            // Pré-roll de 40ms (4 chunks = 7680 bytes) para amortecer qualquer oscilação inicial de rede
-            var prerollChunks = 0
-            while (isSpeakerRunning && socket.isConnected && !socket.isClosed && prerollChunks < 4) {
-                dataIn.readFully(chunk)
-                track.write(chunk, 0, chunk.size, AudioTrack.WRITE_BLOCKING)
-                totalFramesWritten += 480
-                prerollChunks++
-            }
-
             track.play()
 
-            // Loop de reprodução contínua em tempo real
+            // Stream contínuo de áudio PCM de alta fidelidade
+            // Escreve os primeiros bytes se não forem HTTP (alinhados a 4 bytes para 16-bit stereo)
+            val streamBuffer = ByteArray(4096)
+            var remainder = 0
+
+            if (totalPeek > 0) {
+                val validPeek = totalPeek - (totalPeek % 4)
+                if (validPeek > 0) {
+                    track.write(peekBuf, 0, validPeek)
+                }
+                remainder = totalPeek - validPeek
+                if (remainder > 0) {
+                    System.arraycopy(peekBuf, validPeek, streamBuffer, 0, remainder)
+                }
+            }
+
+            // Loop de reprodução contínua em tempo real (bloqueante no socket e no AudioTrack)
             while (isSpeakerRunning && socket.isConnected && !socket.isClosed) {
-                dataIn.readFully(chunk)
+                val bytesRead = rawInput.read(streamBuffer, remainder, streamBuffer.size - remainder)
+                if (bytesRead <= 0) break
 
-                val head = track.playbackHeadPosition.toLong() and 0xFFFFFFFFL
-                var queuedFrames = totalFramesWritten - head
-                if (queuedFrames < 0) {
-                    totalFramesWritten = head
-                    queuedFrames = 0
+                val totalBytes = remainder + bytesRead
+                val validBytes = totalBytes - (totalBytes % 4)
+
+                if (validBytes > 0) {
+                    track.write(streamBuffer, 0, validBytes)
                 }
 
-                // Sincronia acústica exata (<80ms): descarta 1 chunk apenas se a fila acumular mais de 120ms
-                if (queuedFrames > 5760) { // 5760 frames = 120ms
-                    // Skip sem cortar a trilha do hardware
-                    continue
+                remainder = totalBytes - validBytes
+                if (remainder > 0) {
+                    System.arraycopy(streamBuffer, validBytes, streamBuffer, 0, remainder)
                 }
-
-                track.write(chunk, 0, chunk.size, AudioTrack.WRITE_BLOCKING)
-                totalFramesWritten += 480
             }
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de alto-falante desconectado: ${e.message}")
