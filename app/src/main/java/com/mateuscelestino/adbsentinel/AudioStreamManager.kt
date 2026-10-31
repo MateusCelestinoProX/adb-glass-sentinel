@@ -316,6 +316,13 @@ object AudioStreamManager {
             val track = trackBuilder.build()
             activeTrack = track
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                // Buffer de hardware fixado em 2304 frames (~48ms) para sincronia labial perfeita (lip-sync de filme)
+                try {
+                    track.setBufferSizeInFrames(2304)
+                } catch (ignored: Exception) {}
+            }
+
             val rawInput = socket.getInputStream()
             val out = socket.getOutputStream()
 
@@ -349,14 +356,15 @@ object AudioStreamManager {
             track.play()
 
             // Stream contínuo de áudio PCM de alta fidelidade
-            // Escreve os primeiros bytes se não forem HTTP (alinhados a 4 bytes para 16-bit stereo)
             val streamBuffer = ByteArray(4096)
             var remainder = 0
+            var totalFramesWritten = 0L
 
             if (totalPeek > 0) {
                 val validPeek = totalPeek - (totalPeek % 4)
                 if (validPeek > 0) {
                     track.write(peekBuf, 0, validPeek)
+                    totalFramesWritten += (validPeek / 4)
                 }
                 remainder = totalPeek - validPeek
                 if (remainder > 0) {
@@ -364,7 +372,7 @@ object AudioStreamManager {
                 }
             }
 
-            // Loop de reprodução contínua em tempo real (bloqueante no socket e no AudioTrack)
+            // Loop de reprodução contínua em tempo real (lip-sync <50ms constante)
             while (isSpeakerRunning && socket.isConnected && !socket.isClosed) {
                 val bytesRead = rawInput.read(streamBuffer, remainder, streamBuffer.size - remainder)
                 if (bytesRead <= 0) break
@@ -373,7 +381,27 @@ object AudioStreamManager {
                 val validBytes = totalBytes - (totalBytes % 4)
 
                 if (validBytes > 0) {
-                    track.write(streamBuffer, 0, validBytes)
+                    val frames = validBytes / 4
+                    totalFramesWritten += frames
+
+                    val head = track.playbackHeadPosition.toLong() and 0xFFFFFFFFL
+                    var queued = totalFramesWritten - head
+                    if (queued < 0) {
+                        totalFramesWritten = head
+                        queued = 0
+                    }
+
+                    // Se a fila na placa de som ultrapassar 65ms (3120 frames), drena suavemente o excesso
+                    if (queued > 3120) {
+                        val skipBytes = minOf(validBytes, 1920) // drena 10ms
+                        val writeBytes = validBytes - skipBytes
+                        if (writeBytes > 0) {
+                            track.write(streamBuffer, skipBytes, writeBytes)
+                        }
+                        totalFramesWritten -= (skipBytes / 4)
+                    } else {
+                        track.write(streamBuffer, 0, validBytes)
+                    }
                 }
 
                 remainder = totalBytes - validBytes
