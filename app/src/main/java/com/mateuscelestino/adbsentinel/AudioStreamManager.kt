@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioFormat
+import android.media.AudioManager
 import android.media.AudioRecord
 import android.media.AudioTrack
 import android.media.MediaRecorder
+import android.media.audiofx.LoudnessEnhancer
 import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.PowerManager
@@ -40,6 +42,42 @@ object AudioStreamManager {
     @Volatile
     var isSpeakerRunning = false
         private set
+
+    private var appContext: Context? = null
+
+    @Volatile
+    var currentBoosterGainMb: Int = 1200 // +12 dB de boost de hardware DSP por padrão
+
+    @Volatile
+    private var activeLoudnessEnhancer: LoudnessEnhancer? = null
+
+    @Synchronized
+    fun setBoosterGain(gainMb: Int) {
+        currentBoosterGainMb = gainMb.coerceIn(0, 3000)
+        try {
+            activeLoudnessEnhancer?.apply {
+                setTargetGain(currentBoosterGainMb)
+                enabled = currentBoosterGainMb > 0
+            }
+            Log.i(TAG, "🎚️ [AeroAudio] LoudnessEnhancer ajustado para ${currentBoosterGainMb} mB")
+        } catch (e: Exception) {
+            Log.w(TAG, "Erro ao ajustar LoudnessEnhancer: ${e.message}")
+        }
+    }
+
+    fun maximizeDeviceVolume(context: Context? = appContext) {
+        try {
+            val ctx = context ?: appContext ?: return
+            val am = ctx.getSystemService(Context.AUDIO_SERVICE) as? AudioManager
+            am?.let {
+                val max = it.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+                it.setStreamVolume(AudioManager.STREAM_MUSIC, max, 0)
+                Log.i(TAG, "🔊 [AeroAudio] Volume de mídia STREAM_MUSIC colocado no máximo ($max).")
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Erro ao ajustar volume do dispositivo: ${e.message}")
+        }
+    }
 
     private var micServerSocket: ServerSocket? = null
     private var micServerThread: Thread? = null
@@ -237,6 +275,8 @@ object AudioStreamManager {
     @Synchronized
     fun startSpeakerServer(context: Context): Boolean {
         if (isSpeakerRunning) return true
+        this.appContext = context.applicationContext
+        maximizeDeviceVolume(context)
         acquireLocks(context)
         try {
             speakerServerSocket = ServerSocket(SPEAKER_PORT).apply { reuseAddress = true }
@@ -280,6 +320,7 @@ object AudioStreamManager {
 
     private fun handleSpeakerClient(socket: Socket) {
         var activeTrack: AudioTrack? = null
+        var enhancer: LoudnessEnhancer? = null
         try {
             try {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
@@ -323,10 +364,22 @@ object AudioStreamManager {
                 } catch (ignored: Exception) {}
             }
 
+            // Ativa o DSP de Hardware LoudnessEnhancer do Snapdragon / Galaxy Ultra
+            try {
+                enhancer = LoudnessEnhancer(track.audioSessionId).apply {
+                    setTargetGain(currentBoosterGainMb)
+                    enabled = currentBoosterGainMb > 0
+                }
+                activeLoudnessEnhancer = enhancer
+                Log.i(TAG, "🔊 [AeroAudio] LoudnessEnhancer DSP ativado no sessionId ${track.audioSessionId} com ganho de ${currentBoosterGainMb}mB")
+            } catch (e: Exception) {
+                Log.w(TAG, "Aviso: LoudnessEnhancer não pôde ser ativado: ${e.message}")
+            }
+
             val rawInput = socket.getInputStream()
             val out = socket.getOutputStream()
 
-            // Lê primeiros bytes para verificar se é requisição HTTP (status/ping/chime)
+            // Lê primeiros bytes para verificar se é requisição HTTP (status/ping/chime/boost/maxvol)
             val peekBuf = ByteArray(256)
             val firstByte = rawInput.read()
             if (firstByte == -1) return
@@ -338,6 +391,21 @@ object AudioStreamManager {
             val preview = String(peekBuf, 0, totalPeek, Charsets.US_ASCII)
 
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT") || preview.startsWith("HEAD")) {
+                if (preview.contains("/boost")) {
+                    val gainParam = preview.substringAfter("gain=").substringBefore(" ").substringBefore("&").toIntOrNull() ?: 1200
+                    setBoosterGain(gainParam)
+                    val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"boost\":true,\"gainMb\":$currentBoosterGainMb}\n"
+                    out.write(resp.toByteArray(Charsets.UTF_8))
+                    out.flush()
+                    return
+                }
+                if (preview.contains("/maxvol")) {
+                    maximizeDeviceVolume()
+                    val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"maxvol\":true}\n"
+                    out.write(resp.toByteArray(Charsets.UTF_8))
+                    out.flush()
+                    return
+                }
                 if (preview.contains("/test") || preview.contains("/beep") || preview.contains("/chime")) {
                     playTestTone()
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\nBeep Played\n"
@@ -346,7 +414,7 @@ object AudioStreamManager {
                     return
                 }
                 if (preview.startsWith("GET /ping") || preview.startsWith("GET /status")) {
-                    val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"speaker\":true}\n"
+                    val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"speaker\":true,\"gainMb\":$currentBoosterGainMb}\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
                     out.flush()
                     return
@@ -412,6 +480,12 @@ object AudioStreamManager {
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de alto-falante desconectado: ${e.message}")
         } finally {
+            try {
+                enhancer?.release()
+            } catch (ignored: Exception) {}
+            if (activeLoudnessEnhancer == enhancer) {
+                activeLoudnessEnhancer = null
+            }
             try {
                 if (activeTrack?.playState == AudioTrack.PLAYSTATE_PLAYING) {
                     activeTrack.pause()
