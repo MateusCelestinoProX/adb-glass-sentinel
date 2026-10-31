@@ -1,7 +1,7 @@
 # Graph Report - adb-glass-sentinel  (2026-10-31)
 
 ## Corpus Check
-- 19 files · ~451,439 words
+- 19 files · ~451,515 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `65c2b73c`
+- Built from commit: `ef40b496`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

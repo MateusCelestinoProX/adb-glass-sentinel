@@ -1,16 +1,16 @@
 # Graph Report - adb-glass-sentinel  (2026-10-31)
 
 ## Corpus Check
-- 19 files · ~451,515 words
+- 19 files · ~451,687 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 838 nodes · 1618 edges · 48 communities (31 shown, 14 thin omitted)
+- 839 nodes · 1621 edges · 45 communities (31 shown, 11 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ef40b496`
+- Built from commit: `0a17d98f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -22,27 +22,26 @@
 - U
 - AdbLogStreamer
 - tn
-- .constructor
+- gr
 - V
-- .update
-- it
+- W
+- .getRenderList
 - .z
 - pt
-- W
-- Fs
+- q
+- .x
 - sr
 - ke
 - le
 - .addAttribute
 - .sub
-- .constructor
 - app.js
 - AdbSystemController
 - ct
 - zs
 - vt
 - build_and_install.sh
-- St
+- .frustumIntersectsMesh
 - gradlew
 - oe
 - ue
@@ -54,9 +53,7 @@
 - AdbSocketTracker
 - adb_sentinel_daemon.sh
 - AudioStreamManager
-- .multiply
-- q
-- .copy
+- K
 - zt
 - ji
 - .intersectMeshes
@@ -80,15 +77,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (48 total, 14 thin omitted)
+## Communities (45 total, 11 thin omitted)
 
 ### Community 0 - "_"
 Cohesion: 0.04
 Nodes (41): _, ae(), at, bs(), ce(), dt, Ei, Et (+33 more)
-
-### Community 1 - "ks"
-Cohesion: 0.10
-Nodes (3): ge(), ks, me()
 
 ### Community 2 - "AndroidBridge"
 Cohesion: 0.06
@@ -96,11 +89,11 @@ Nodes (17): AndroidBridge, MainActivity, WebChromeClient, WebViewClient, OnBackP
 
 ### Community 3 - "ar"
 Cohesion: 0.08
-Nodes (7): ar, dr(), kt(), mr, pr(), Ut(), yr
+Nodes (8): ar, dr(), kt(), mr, Ot, pr(), Ut(), yr
 
 ### Community 4 - "U"
 Cohesion: 0.05
-Nodes (17): ai(), ci(), di(), gi(), hi(), ii(), li(), mi() (+9 more)
+Nodes (17): ai(), ci(), di(), _e(), gi(), hi(), ii(), li() (+9 more)
 
 ### Community 5 - "AdbLogStreamer"
 Cohesion: 0.23
@@ -110,37 +103,37 @@ Nodes (4): AdbLogStreamer, AdbShellCommandEvent, Context, ParsedTimestampInfo
 Cohesion: 0.15
 Nodes (6): fr(), A(), E(), m(), ns(), tn
 
+### Community 7 - "gr"
+Cohesion: 0.29
+Nodes (3): As(), gr, Vr()
+
 ### Community 8 - "V"
-Cohesion: 0.09
+Cohesion: 0.11
 Nodes (3): De(), qi(), V
 
-### Community 9 - ".update"
-Cohesion: 0.16
-Nodes (4): cs, is, rr, Ys()
+### Community 9 - "W"
+Cohesion: 0.05
+Nodes (13): cs, Ds(), Fs(), is, it, on, or, pn (+5 more)
 
 ### Community 11 - ".z"
 Cohesion: 0.08
 Nodes (4): Gs(), Hs(), qs(), Xs()
 
 ### Community 12 - "pt"
-Cohesion: 0.11
-Nodes (8): bi(), _i(), pt, Se(), Si(), Ti(), vi(), zi()
+Cohesion: 0.07
+Nodes (10): bi(), en, _i(), pt, Se(), Si(), sn, Ti() (+2 more)
 
-### Community 13 - "W"
-Cohesion: 0.18
-Nodes (4): on, pn, un, W
+### Community 13 - "q"
+Cohesion: 0.27
+Nodes (3): p(), q, ze
 
 ### Community 15 - "sr"
 Cohesion: 0.16
-Nodes (11): v(), nn(), sr(), C(), et(), j(), L(), N() (+3 more)
+Nodes (9): nn(), sr(), C(), et(), L(), N(), tt(), xs() (+1 more)
 
 ### Community 16 - "ke"
-Cohesion: 0.21
-Nodes (3): er, ke, we()
-
-### Community 19 - ".sub"
-Cohesion: 0.25
-Nodes (3): Ee(), Lt, ur()
+Cohesion: 0.17
+Nodes (4): er, ke, we(), xe()
 
 ### Community 21 - "app.js"
 Cohesion: 0.12
@@ -171,8 +164,8 @@ Cohesion: 0.70
 Nodes (4): gradlew script, die(), save(), warn()
 
 ### Community 34 - ".copy"
-Cohesion: 0.20
-Nodes (3): he(), Ot, ye()
+Cohesion: 0.13
+Nodes (7): v(), he(), ri(), j(), tr, R(), ye()
 
 ### Community 35 - "shaders.js"
 Cohesion: 0.06
@@ -195,36 +188,40 @@ Cohesion: 0.25
 Nodes (3): AdbConnection, AdbSocketTracker, Context
 
 ### Community 41 - "AudioStreamManager"
-Cohesion: 0.21
+Cohesion: 0.20
 Nodes (8): AudioStreamManager, Context, ServerSocket, Socket, ByteArray, LoudnessEnhancer, PowerManager, WifiManager
 
-### Community 43 - "q"
-Cohesion: 0.05
-Nodes (13): As(), br, en, p(), gr, K, kr, nr (+5 more)
+### Community 43 - "K"
+Cohesion: 0.21
+Nodes (3): br, K, kr
 
 ### Community 46 - "zt"
 Cohesion: 0.14
 Nodes (9): be(), gt, Ie(), Ne(), rn, l(), h(), l() (+1 more)
 
+### Community 50 - ".intersectMeshes"
+Cohesion: 0.16
+Nodes (3): cr, Ee(), ki()
+
 ## Knowledge Gaps
 - **40 isolated node(s):** `adb_sentinel_daemon.sh script`, `fe`, `pe`, `Ei`, `J` (+35 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 198 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `_` connect `_` to `ks`, `ar`, `U`, `tn`, `.constructor`, `V`, `.update`, `it`, `.z`, `pt`, `W`, `Fs`, `sr`, `ke`, `le`, `.addAttribute`, `.sub`, `.constructor`, `ct`, `zs`, `vt`, `St`, `oe`, `ue`, `.copy`, `shaders.js`, `.multiply`, `q`, `.copy`, `zt`, `ji`, `.intersectMeshes`?**
-  _High betweenness centrality (0.447) - this node is a cross-community bridge._
-- **Why does `V` connect `V` to `_`, `.copy`, `ar`, `shaders.js`, `.update`, `zt`, `sr`, `ji`, `.intersectMeshes`, `.sub`, `.constructor`?**
+- **Why does `_` connect `_` to `ks`, `ar`, `U`, `tn`, `gr`, `V`, `W`, `.getRenderList`, `.z`, `pt`, `q`, `.x`, `sr`, `ke`, `le`, `.addAttribute`, `.sub`, `ct`, `zs`, `vt`, `.frustumIntersectsMesh`, `oe`, `ue`, `.copy`, `shaders.js`, `K`, `zt`, `ji`, `.intersectMeshes`?**
+  _High betweenness centrality (0.446) - this node is a cross-community bridge._
+- **Why does `V` connect `V` to `_`, `.copy`, `ar`, `shaders.js`, `W`, `zt`, `sr`, `ji`, `.intersectMeshes`, `.sub`, `.frustumIntersectsMesh`?**
   _High betweenness centrality (0.041) - this node is a cross-community bridge._
-- **Why does `ks` connect `ks` to `_`, `shaders.js`, `q`?**
+- **Why does `ks` connect `ks` to `_`, `shaders.js`, `.getRenderList`, `K`, `q`, `.x`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **What connects `adb_sentinel_daemon.sh script`, `fe`, `pe` to the rest of the system?**
   _40 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `_` be split into smaller, more focused modules?**
   _Cohesion score 0.041742286751361164 - nodes in this community are weakly interconnected._
-- **Should `ks` be split into smaller, more focused modules?**
-  _Cohesion score 0.09879032258064516 - nodes in this community are weakly interconnected._
 - **Should `AndroidBridge` be split into smaller, more focused modules?**
   _Cohesion score 0.056051587301587304 - nodes in this community are weakly interconnected._
+- **Should `ar` be split into smaller, more focused modules?**
+  _Cohesion score 0.0753045404208195 - nodes in this community are weakly interconnected._

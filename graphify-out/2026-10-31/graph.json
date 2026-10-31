@@ -6905,7 +6905,7 @@
       "file_type": "code",
       "norm_label": ".acquirelocks()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L166"
+      "source_location": "L177"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
@@ -6917,7 +6917,7 @@
       "file_type": "code",
       "norm_label": ".applysoftwarebooster()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L114"
+      "source_location": "L116"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_createwavheader",
@@ -6929,7 +6929,7 @@
       "file_type": "code",
       "norm_label": ".createwavheader()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L322"
+      "source_location": "L333"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
@@ -6953,7 +6953,7 @@
       "file_type": "code",
       "norm_label": ".handlemicclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L249"
+      "source_location": "L260"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
@@ -6965,7 +6965,7 @@
       "file_type": "code",
       "norm_label": ".handlespeakerclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L397"
+      "source_location": "L408"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_maximizedevicevolume",
@@ -6977,7 +6977,7 @@
       "file_type": "code",
       "norm_label": ".maximizedevicevolume()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L143"
+      "source_location": "L154"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
@@ -6989,7 +6989,7 @@
       "file_type": "code",
       "norm_label": ".playtesttone()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L579"
+      "source_location": "L590"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_releaselocksifidle",
@@ -7001,7 +7001,7 @@
       "file_type": "code",
       "norm_label": ".releaselocksifidle()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L188"
+      "source_location": "L199"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
@@ -7037,7 +7037,7 @@
       "file_type": "code",
       "norm_label": ".startmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L205"
+      "source_location": "L216"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
@@ -7049,7 +7049,7 @@
       "file_type": "code",
       "norm_label": ".startspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L350"
+      "source_location": "L361"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
@@ -7061,7 +7061,7 @@
       "file_type": "code",
       "norm_label": ".stopmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L237"
+      "source_location": "L248"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
@@ -7073,7 +7073,7 @@
       "file_type": "code",
       "norm_label": ".stopspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L385"
+      "source_location": "L396"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_e",
@@ -17894,7 +17894,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L254",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -17906,7 +17906,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L295",
+      "source_location": "L306",
       "weight": 1.0
     },
     {
@@ -17918,7 +17918,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L445",
+      "source_location": "L456",
       "weight": 1.0
     },
     {
@@ -17930,7 +17930,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L459",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -17942,7 +17942,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L472",
+      "source_location": "L483",
       "weight": 1.0
     },
     {
@@ -17954,7 +17954,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L479",
+      "source_location": "L490",
       "weight": 1.0
     },
     {
@@ -17966,7 +17966,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L486",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -17978,36 +17978,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L510",
+      "source_location": "L521",
       "weight": 1.0
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_acquirelocks",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L208",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_serversocket",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L210",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18019,6 +17995,30 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_serversocket",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
       "relation": "calls",
       "_origin": "ast",
@@ -18026,7 +18026,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L232",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -18038,7 +18038,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L354",
+      "source_location": "L365",
       "weight": 1.0
     },
     {
@@ -18050,7 +18050,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L355",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
@@ -18062,7 +18062,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L356",
+      "source_location": "L367",
       "weight": 1.0
     },
     {
@@ -18074,7 +18074,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L358",
+      "source_location": "L369",
       "weight": 1.0
     },
     {
@@ -18086,7 +18086,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L367",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -18098,7 +18098,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L380",
+      "source_location": "L391",
       "weight": 1.0
     },
     {
@@ -18110,7 +18110,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L245",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -18122,7 +18122,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L393",
+      "source_location": "L404",
       "weight": 1.0
     },
     {
@@ -18722,7 +18722,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L160",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -18734,7 +18734,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L163",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -18746,7 +18746,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L164",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -19595,7 +19595,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L166",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -19607,7 +19607,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L114",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -19631,7 +19631,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L249",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -19643,7 +19643,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L397",
+      "source_location": "L408",
       "weight": 1.0
     },
     {
@@ -19655,7 +19655,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L143",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -19679,7 +19679,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L205",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -19691,7 +19691,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L350",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -19871,7 +19871,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L322",
+      "source_location": "L333",
       "weight": 1.0
     },
     {
@@ -28016,7 +28016,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L114",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -28027,7 +28027,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L143",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -28038,7 +28038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L166",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -28049,7 +28049,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L188",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -28060,7 +28060,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L205",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -28071,7 +28071,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L237",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -28082,7 +28082,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L249",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -28093,7 +28093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L322",
+      "source_location": "L333",
       "weight": 1.0
     },
     {
@@ -28104,7 +28104,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L350",
+      "source_location": "L361",
       "weight": 1.0
     },
     {
@@ -28115,7 +28115,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L385",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -28126,7 +28126,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L397",
+      "source_location": "L408",
       "weight": 1.0
     },
     {
@@ -28148,7 +28148,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L579",
+      "source_location": "L590",
       "weight": 1.0
     },
     {
@@ -28838,5 +28838,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "65c2b73c1857ff610c3840134378d3e19835245f"
+  "built_at_commit": "ef40b496a76d102b425c91d2f82c9d2b11af6cea"
 }
