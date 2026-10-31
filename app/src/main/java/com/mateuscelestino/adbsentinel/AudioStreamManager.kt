@@ -46,14 +46,54 @@ object AudioStreamManager {
     private var appContext: Context? = null
 
     @Volatile
+    var softwareBoosterGain: Float = 1.8f // 180% (+4.8 dB) de ganho padrão
+
+    @Volatile
     var currentBoosterGainMb: Int = 1200 // +12 dB de boost de hardware DSP por padrão
 
     @Volatile
     private var activeLoudnessEnhancer: LoudnessEnhancer? = null
 
     @Synchronized
+    fun setBoosterGainPercent(percent: Int, context: Context? = appContext) {
+        val clampedPercent = percent.coerceIn(100, 350)
+        val gain = clampedPercent.toFloat() / 100.0f
+        softwareBoosterGain = gain
+        currentBoosterGainMb = ((gain - 1.0f) * 1200.0f).toInt().coerceIn(0, 3000)
+
+        try {
+            val ctx = context ?: appContext
+            ctx?.getSharedPreferences("aero_audio_prefs", Context.MODE_PRIVATE)
+                ?.edit()
+                ?.putInt("booster_percent", clampedPercent)
+                ?.apply()
+        } catch (ignored: Exception) {}
+
+        try {
+            activeLoudnessEnhancer?.apply {
+                setTargetGain(currentBoosterGainMb)
+                enabled = currentBoosterGainMb > 0
+            }
+        } catch (ignored: Exception) {}
+
+        Log.i(TAG, "🎚️ [AeroMobile] Amplificador ajustado para $clampedPercent% (${gain}x)")
+    }
+
+    fun getBoosterGainPercent(context: Context? = appContext): Int {
+        try {
+            val ctx = context ?: appContext
+            val saved = ctx?.getSharedPreferences("aero_audio_prefs", Context.MODE_PRIVATE)
+                ?.getInt("booster_percent", 180) ?: 180
+            softwareBoosterGain = saved.toFloat() / 100.0f
+            return saved
+        } catch (ignored: Exception) {}
+        return (softwareBoosterGain * 100).toInt()
+    }
+
+    @Synchronized
     fun setBoosterGain(gainMb: Int) {
         currentBoosterGainMb = gainMb.coerceIn(0, 3000)
+        softwareBoosterGain = 1.0f + (currentBoosterGainMb.toFloat() / 1200.0f)
         try {
             activeLoudnessEnhancer?.apply {
                 setTargetGain(currentBoosterGainMb)
@@ -62,6 +102,41 @@ object AudioStreamManager {
             Log.i(TAG, "🎚️ [AeroAudio] LoudnessEnhancer ajustado para ${currentBoosterGainMb} mB")
         } catch (e: Exception) {
             Log.w(TAG, "Erro ao ajustar LoudnessEnhancer: ${e.message}")
+        }
+    }
+
+    /**
+     * Aplica amplificação PCM 16-bit com Soft-Clipping Analógico Hiperbólico
+     * - Multiplica as amostras estéreo com precisão
+     * - Aplica saturação hiperbólica suave tanh(boosted * 0.95) em picos > 0.65
+     * - Garante zero estalos digitais e diálogos nítidos em filmes
+     */
+    fun applySoftwareBooster(buffer: ByteArray, offset: Int, length: Int) {
+        val gain = softwareBoosterGain
+        if (gain <= 1.01f) return
+
+        var i = offset
+        val end = offset + length
+        while (i + 1 < end) {
+            val low = buffer[i].toInt() and 0xFF
+            val high = buffer[i + 1].toInt()
+            val sample16 = ((high shl 8) or low).toShort()
+            val normSample = sample16.toFloat() / 32768.0f
+
+            val boosted = normSample * gain
+            val absVal = Math.abs(boosted)
+            val outVal = if (absVal < 0.65f) {
+                boosted
+            } else {
+                Math.tanh((boosted * 0.95f).toDouble()).toFloat()
+            }
+
+            val clamped = outVal.coerceIn(-1.0f, 1.0f)
+            val outInt16 = (clamped * 32767.0f).toInt().coerceIn(-32767, 32767)
+
+            buffer[i] = (outInt16 and 0xFF).toByte()
+            buffer[i + 1] = ((outInt16 shr 8) and 0xFF).toByte()
+            i += 2
         }
     }
 
@@ -276,6 +351,7 @@ object AudioStreamManager {
     fun startSpeakerServer(context: Context): Boolean {
         if (isSpeakerRunning) return true
         this.appContext = context.applicationContext
+        getBoosterGainPercent(context)
         maximizeDeviceVolume(context)
         acquireLocks(context)
         try {
@@ -431,6 +507,7 @@ object AudioStreamManager {
             if (totalPeek > 0) {
                 val validPeek = totalPeek - (totalPeek % 4)
                 if (validPeek > 0) {
+                    applySoftwareBooster(peekBuf, 0, validPeek)
                     track.write(peekBuf, 0, validPeek)
                     totalFramesWritten += (validPeek / 4)
                 }
@@ -464,10 +541,12 @@ object AudioStreamManager {
                         val skipBytes = minOf(validBytes, 1920) // drena 10ms
                         val writeBytes = validBytes - skipBytes
                         if (writeBytes > 0) {
+                            applySoftwareBooster(streamBuffer, skipBytes, writeBytes)
                             track.write(streamBuffer, skipBytes, writeBytes)
                         }
                         totalFramesWritten -= (skipBytes / 4)
                     } else {
+                        applySoftwareBooster(streamBuffer, 0, validBytes)
                         track.write(streamBuffer, 0, validBytes)
                     }
                 }

@@ -199,6 +199,7 @@ class AndroidBridge(
             put("isSpeakerRunning", AudioStreamManager.isSpeakerRunning)
             put("speakerPort", AudioStreamManager.SPEAKER_PORT)
             put("speakerLocalUrl", "http://$wifiIp:${AudioStreamManager.SPEAKER_PORT}/stream")
+            put("boosterGain", AudioStreamManager.getBoosterGainPercent(activity))
             put("isDeXInputRunning", SamsungDeXController.isInputServerRunning)
             put("dexInputPort", SamsungDeXController.REMOTE_INPUT_PORT)
         }
@@ -227,6 +228,25 @@ class AndroidBridge(
             AudioStreamManager.stopSpeakerServer()
             "STOPPED"
         }
+    }
+
+    @JavascriptInterface
+    fun setSpeakerBooster(percent: Int): String {
+        vibrate(25)
+        AudioStreamManager.setBoosterGainPercent(percent, activity)
+        return "OK"
+    }
+
+    @JavascriptInterface
+    fun getSpeakerBooster(): Int {
+        return AudioStreamManager.getBoosterGainPercent(activity)
+    }
+
+    @JavascriptInterface
+    fun maximizeSpeakerVolume(): String {
+        vibrate(40)
+        AudioStreamManager.maximizeDeviceVolume(activity)
+        return "MAX"
     }
 
     @JavascriptInterface

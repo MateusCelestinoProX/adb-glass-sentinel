@@ -1097,6 +1097,11 @@
         if (speakerUrlBox) speakerUrlBox.style.display = 'none';
       }
 
+      // Booster de Volume Mobile
+      if (data.boosterGain) {
+        updateBoosterUi(data.boosterGain);
+      }
+
       // DeX
       if (data.isDeXInputRunning && dexInfoText) {
         dexInfoText.textContent = `Servidor Ativo na porta ${data.dexInputPort}`;
@@ -1183,6 +1188,68 @@
         window.AndroidBridge.copyToClipboard(scriptCmd);
         btnDexCmdCopy.textContent = 'COPIADO!';
         setTimeout(() => { btnDexCmdCopy.textContent = 'COPIAR SCRIPT'; }, 1500);
+      }
+    });
+  }
+
+  // =========================================================
+  // BOOSTER DE VOLUME AERO MOBILE (Controles Touch & Presets)
+  // =========================================================
+  const boosterBadge = document.getElementById('booster-gain-badge');
+  const boosterValLabel = document.getElementById('booster-val-label');
+  const boosterSlider = document.getElementById('booster-slider-mobile');
+  const boosterPresetBtns = document.querySelectorAll('.booster-preset-btn');
+  const btnMaxVolumeMobile = document.getElementById('btn-max-volume-mobile');
+
+  function updateBoosterUi(gainPercent) {
+    const pct = parseInt(gainPercent, 10) || 180;
+    const db = ((pct - 100) / 100 * 6.0).toFixed(1);
+    const sign = db >= 0 ? '+' : '';
+    if (boosterBadge) {
+      boosterBadge.textContent = `${pct}% • ${sign}${db} dB`;
+    }
+    if (boosterValLabel) {
+      boosterValLabel.textContent = `${pct}%`;
+    }
+    if (boosterSlider && document.activeElement !== boosterSlider) {
+      boosterSlider.value = pct;
+    }
+    boosterPresetBtns.forEach(btn => {
+      const g = parseInt(btn.getAttribute('data-gain'), 10);
+      if (Math.abs(g - pct) < 10) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  boosterPresetBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const gain = parseInt(btn.getAttribute('data-gain'), 10);
+      if (window.AndroidBridge && window.AndroidBridge.setSpeakerBooster) {
+        window.AndroidBridge.setSpeakerBooster(gain);
+      }
+      updateBoosterUi(gain);
+    });
+  });
+
+  if (boosterSlider) {
+    boosterSlider.addEventListener('input', (e) => {
+      const gain = parseInt(e.target.value, 10);
+      if (window.AndroidBridge && window.AndroidBridge.setSpeakerBooster) {
+        window.AndroidBridge.setSpeakerBooster(gain);
+      }
+      updateBoosterUi(gain);
+    });
+  }
+
+  if (btnMaxVolumeMobile) {
+    btnMaxVolumeMobile.addEventListener('click', () => {
+      if (window.AndroidBridge && window.AndroidBridge.maximizeSpeakerVolume) {
+        window.AndroidBridge.maximizeSpeakerVolume();
+        btnMaxVolumeMobile.textContent = 'VOLUME MÁX (15)';
+        setTimeout(() => { btnMaxVolumeMobile.textContent = 'MAX 15/15'; }, 2000);
       }
     });
   }

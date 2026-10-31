@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1793475226.176423,
-    "seen": 1793476745.2962618,
-    "ast_hash": "b0cf496a4d07180b6d531f6214574035",
+    "mtime": 1793484950.7982023,
+    "seen": 1793485096.5185761,
+    "ast_hash": "38e9a93b94b6823c018e5fc45b99f7c0",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AndroidBridge.kt": {
-    "mtime": 1793475126.2438276,
-    "seen": 1793476745.296269,
-    "ast_hash": "8e3ea6d0711ff0e013f63ff6ef3301de",
+    "mtime": 1793484846.2357745,
+    "seen": 1793485096.518583,
+    "ast_hash": "41eb3bd797dfee51ead9158b6fe01c1b",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1793475160.3857367,
-    "seen": 1793476745.296278,
-    "ast_hash": "483c183804fcd2f7dc836a439b78fd6e",
+    "mtime": 1793484870.096066,
+    "seen": 1793485096.518591,
+    "ast_hash": "b676f3e3b4eecfb211b9ca237ef03042",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt": {
-    "mtime": 1793484058.494614,
-    "seen": 1793484549.7760189,
-    "ast_hash": "a59bb85d1f40b60c72574f6a9e8fc14d",
+    "mtime": 1793484824.0349228,
+    "seen": 1793485096.518584,
+    "ast_hash": "e33be5459df7e14eea0c6b3093c11cbd",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {
