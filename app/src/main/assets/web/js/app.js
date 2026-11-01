@@ -1261,10 +1261,11 @@
       if (confirmKill) {
         if (window.AndroidBridge && window.AndroidBridge.killAll) {
           window.AndroidBridge.killAll();
-          if (ecoStatusBadge) {
-            ecoStatusBadge.textContent = 'FINALIZADO';
-            ecoStatusBadge.style.background = 'rgba(239, 68, 68, 0.25)';
-            ecoStatusBadge.style.color = '#ef4444';
+          const ecoBadge = document.getElementById('eco-status-badge');
+          if (ecoBadge) {
+            ecoBadge.textContent = 'FINALIZADO';
+            ecoBadge.style.background = 'rgba(239, 68, 68, 0.25)';
+            ecoBadge.style.color = '#ef4444';
           }
         }
         syncEcosystemStatus();

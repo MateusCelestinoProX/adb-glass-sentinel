@@ -30,30 +30,56 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_br",
+      "label": "br",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "br",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k",
+      "label": "K",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "k",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr",
+      "label": "kr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": "kr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_nr",
       "label": "nr",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": "nr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zr",
-      "label": "zr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": ".getRenderList",
-      "file_type": "code",
-      "norm_label": "zr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_z",
@@ -108,28 +134,15 @@
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_zi",
-      "label": "zi()",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "pt",
-      "file_type": "code",
-      "norm_label": "zi()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_q",
-      "label": "q",
+      "id": "app_src_main_assets_web_js_ogl_or",
+      "label": "or",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "q",
+      "community_name": ".constructor",
       "file_type": "code",
-      "norm_label": "q",
+      "norm_label": "or",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -145,19 +158,6 @@
       "norm_label": ".x()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_xn",
-      "label": "xn",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "sr",
-      "file_type": "code",
-      "norm_label": "xn",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L269"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_er",
@@ -182,6 +182,19 @@
       "community_name": "ke",
       "file_type": "code",
       "norm_label": "ke",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tr",
+      "label": "tr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "tr",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -303,6 +316,19 @@
       "source_location": "L12"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_gr",
+      "label": "gr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": "gr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsystemcontroller_adbsystemcontroller",
       "label": "AdbSystemController",
       "_callable": true,
@@ -327,6 +353,19 @@
       "norm_label": "authorizedkeyinfo",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSystemController.kt",
       "source_location": "L11"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_as",
+      "label": "As()",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "As",
+      "file_type": "code",
+      "norm_label": "as()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ar",
@@ -355,19 +394,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ot",
-      "label": "Ot",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": "ot",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_yr",
       "label": "yr",
       "_callable": true,
@@ -381,17 +407,30 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_tr",
-      "label": "tr",
+      "id": "app_src_main_assets_web_js_ogl_ot",
+      "label": "Ot",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 34,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": "tr",
+      "norm_label": "ot",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xn",
+      "label": "xn",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": "xn",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L269"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_bootreceiver_bootreceiver",
@@ -472,6 +511,19 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "label": "AudioJitterBuffer",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": "audiojitterbuffer",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L498"
+    },
+    {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
       "label": "AudioStreamManager",
       "_callable": true,
@@ -485,43 +537,17 @@
       "source_location": "L28"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br",
-      "label": "br",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "label": "SpeakerAudioSession",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
+      "community": 41,
+      "community_name": "AudioStreamManager",
       "file_type": "code",
-      "norm_label": "br",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k",
-      "label": "K",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": "k",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr",
-      "label": "kr",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": "kr",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
+      "norm_label": "speakeraudiosession",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L597"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_gt",
@@ -548,6 +574,19 @@
       "norm_label": "rn",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zr",
+      "label": "zr",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": "zr",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_zt",
@@ -641,28 +680,28 @@
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_as",
-      "label": "As()",
+      "id": "app_src_main_assets_web_js_ogl_q",
+      "label": "q",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": "as()",
+      "norm_label": "q",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_gr",
-      "label": "gr",
+      "id": "app_src_main_assets_web_js_ogl_zi",
+      "label": "zi()",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": "gr",
+      "norm_label": "zi()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -756,19 +795,6 @@
       "norm_label": "on",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L213"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or",
-      "label": "or",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": "or",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_pn",
@@ -1448,14 +1474,50 @@
       "source_location": "L11"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_br_addpass",
+      "label": ".addPass()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".addpass()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_br_render",
       "label": ".render()",
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".render()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_br_resize",
+      "label": ".resize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".resize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -1465,11 +1527,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".traverse()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_k_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_kr_render",
@@ -1477,11 +1575,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".render()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
+      "label": ".setSize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".setsize()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L176"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
+      "label": ".bindFramebuffer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".bindframebuffer()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "K",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ks_getrenderlist",
@@ -1489,7 +1623,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".getrenderlist()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -1501,7 +1635,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".addpass()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -1513,7 +1647,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -1525,23 +1659,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 10,
-      "community_name": ".getRenderList",
+      "community_name": "K",
       "file_type": "code",
       "norm_label": ".render()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L97"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zr_update",
-      "label": ".update()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 10,
-      "community_name": ".getRenderList",
-      "file_type": "code",
-      "norm_label": ".update()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L59"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_gs",
@@ -2012,18 +2134,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_pt_scale",
-      "label": ".scale()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "pt",
-      "file_type": "code",
-      "norm_label": ".scale()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_pt_set",
       "label": ".set()",
       "_callable": true,
@@ -2168,112 +2278,40 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_fr_p",
-      "label": "p()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": "p()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_activetexture",
-      "label": ".activeTexture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".activetexture()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_getextension",
-      "label": ".getExtension()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".getextension()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_q_bind",
-      "label": ".bind()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".bind()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_q_buildplane",
-      "label": ".buildPlane()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".buildplane()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_q_constructor",
+      "id": "app_src_main_assets_web_js_ogl_or_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "q",
+      "community_name": ".constructor",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L116"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_q_update",
-      "label": ".update()",
+      "id": "app_src_main_assets_web_js_ogl_or_resize",
+      "label": ".resize()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "q",
+      "community_name": ".constructor",
       "file_type": "code",
-      "norm_label": ".update()",
+      "norm_label": ".resize()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L116"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ze",
-      "label": "ze",
+      "id": "app_src_main_assets_web_js_ogl_or_updategeometry",
+      "label": ".updateGeometry()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "q",
+      "community_name": ".constructor",
       "file_type": "code",
-      "norm_label": "ze",
+      "norm_label": ".updategeometry()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_zi_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "q",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "source_location": "L116"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ge",
@@ -2394,18 +2432,6 @@
       "norm_label": ".add()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_nn",
-      "label": "nn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "sr",
-      "file_type": "code",
-      "norm_label": "nn()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_sr",
@@ -2540,18 +2566,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_xn_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "sr",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L269"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_zt_g",
       "label": ".g()",
       "_callable": true,
@@ -2610,6 +2624,18 @@
       "norm_label": ".updatelength()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_fr_m_v",
+      "label": "v()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "v()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ke_constructor",
@@ -2692,6 +2718,42 @@
       "community_name": "ke",
       "file_type": "code",
       "norm_label": ".z()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tr_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tr_constructor_r",
+      "label": "R()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "r()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_tr_constructor_v",
+      "label": "v()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 16,
+      "community_name": "ke",
+      "file_type": "code",
+      "norm_label": "v()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -2996,6 +3058,18 @@
       "source_location": "L7"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
+      "label": ".getBarycoord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".getbarycoord()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectplane",
       "label": ".intersectPlane()",
       "_callable": true,
@@ -3004,6 +3078,42 @@
       "community_name": ".sub",
       "file_type": "code",
       "norm_label": ".intersectplane()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
+      "label": ".intersectTriangle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".intersecttriangle()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ee",
+      "label": "Ee()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": "ee()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ke_dot",
+      "label": ".dot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".dot()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3076,6 +3186,18 @@
       "community_name": ".sub",
       "file_type": "code",
       "norm_label": "ur()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_v_cross",
+      "label": ".cross()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": ".sub",
+      "file_type": "code",
+      "norm_label": ".cross()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -3632,6 +3754,66 @@
       "source_location": "L104"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_gr_clearcache",
+      "label": ".clearCache()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": ".clearcache()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_gr_getsupportedextensions",
+      "label": ".getSupportedExtensions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": ".getsupportedextensions()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_gr_load",
+      "label": ".load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": ".load()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_gr_loadimage",
+      "label": ".loadImage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": ".loadimage()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_gr_loadktx",
+      "label": ".loadKTX()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "gr",
+      "file_type": "code",
+      "norm_label": ".loadktx()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
       "id": "app_src_main_assets_web_js_app_applyaccentcolor",
       "label": "applyAccentColor()",
       "_callable": true,
@@ -3845,7 +4027,7 @@
       "file_type": "code",
       "norm_label": "renderbackupnotifications()",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1393"
+      "source_location": "L1394"
     },
     {
       "id": "app_src_main_assets_web_js_app_syncecosystemstatus",
@@ -4064,12 +4246,36 @@
       "source_location": "L209"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_as_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "As",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_as_parsebuffer",
+      "label": ".parseBuffer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "As",
+      "file_type": "code",
+      "norm_label": ".parsebuffer()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ct",
       "label": "ct()",
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": "ct()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -4081,7 +4287,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": ".distance()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -4093,7 +4299,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": "fi()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -4105,7 +4311,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": ".len()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -4117,7 +4323,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": ".decompose()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -4129,11 +4335,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": ".getrotation()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_vr",
+      "label": "Vr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "As",
+      "file_type": "code",
+      "norm_label": "vr()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_angle",
@@ -4268,86 +4486,38 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_computeboundingbox",
-      "label": ".computeBoundingBox()",
+      "id": "app_src_main_assets_web_js_ogl_e",
+      "label": "_e()",
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": ".frustumIntersectsMesh",
+      "community_name": ".multiply",
       "file_type": "code",
-      "norm_label": ".computeboundingbox()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_computeboundingsphere",
-      "label": ".computeBoundingSphere()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": ".frustumIntersectsMesh",
-      "file_type": "code",
-      "norm_label": ".computeboundingsphere()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_getposition",
-      "label": ".getPosition()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": ".frustumIntersectsMesh",
-      "file_type": "code",
-      "norm_label": ".getposition()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
-      "label": ".frustumIntersectsMesh()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": ".frustumIntersectsMesh",
-      "file_type": "code",
-      "norm_label": ".frustumintersectsmesh()",
+      "norm_label": "_e()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
-      "label": ".getMaxScaleOnAxis()",
+      "id": "app_src_main_assets_web_js_ogl_u_multiply",
+      "label": ".multiply()",
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": ".frustumIntersectsMesh",
+      "community_name": ".multiply",
       "file_type": "code",
-      "norm_label": ".getmaxscaleonaxis()",
+      "norm_label": ".multiply()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ui",
-      "label": "ui()",
+      "id": "app_src_main_assets_web_js_ogl_yi",
+      "label": "yi()",
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": ".frustumIntersectsMesh",
+      "community_name": ".multiply",
       "file_type": "code",
-      "norm_label": "ui()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_v_divide",
-      "label": ".divide()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 27,
-      "community_name": ".frustumIntersectsMesh",
-      "file_type": "code",
-      "norm_label": ".divide()",
+      "norm_label": "yi()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -4712,54 +4882,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ot_clone",
-      "label": ".clone()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".clone()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ot_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ot_getlength",
-      "label": ".getLength()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".getlength()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ot_gettiltat",
-      "label": ".getTiltAt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".gettiltat()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_pr",
       "label": "pr()",
       "_callable": true,
@@ -4780,18 +4902,6 @@
       "community_name": "ar",
       "file_type": "code",
       "norm_label": "ut()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_v_cross",
-      "label": ".cross()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ar",
-      "file_type": "code",
-      "norm_label": ".cross()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -4904,18 +5014,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_fr_m_v",
-      "label": "v()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": "v()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L32"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_he",
       "label": "he()",
       "_callable": true,
@@ -4940,6 +5038,30 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ot_clone",
+      "label": ".clone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".clone()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ot_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_ot_copy",
       "label": ".copy()",
       "_callable": true,
@@ -4952,26 +5074,50 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_ri",
-      "label": "ri()",
+      "id": "app_src_main_assets_web_js_ogl_ot_getlength",
+      "label": ".getLength()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": "ri()",
+      "norm_label": ".getlength()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_sr_j",
-      "label": "j()",
+      "id": "app_src_main_assets_web_js_ogl_ot_gettiltat",
+      "label": ".getTiltAt()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": ".copy",
       "file_type": "code",
-      "norm_label": "j()",
+      "norm_label": ".gettiltat()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectsmesh",
+      "label": ".frustumIntersectsMesh()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".frustumintersectsmesh()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
+      "label": ".frustumIntersectsSphere()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".frustumintersectssphere()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -4988,54 +5134,6 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_tr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_tr_constructor_r",
-      "label": "R()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": "r()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_tr_constructor_v",
-      "label": "v()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": "v()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_u_set",
-      "label": ".set()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": ".copy",
-      "file_type": "code",
-      "norm_label": ".set()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_v_set",
       "label": ".set()",
       "_callable": true,
@@ -5046,6 +5144,18 @@
       "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_xn_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": ".copy",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L269"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_ye",
@@ -6041,7 +6151,7 @@
       "file_type": "code",
       "norm_label": ".buildforegroundnotification()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L312"
+      "source_location": "L315"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_clearconnectionhistory",
@@ -6053,7 +6163,7 @@
       "file_type": "code",
       "norm_label": ".clearconnectionhistory()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L287"
+      "source_location": "L290"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_createnotificationchannels",
@@ -6065,7 +6175,7 @@
       "file_type": "code",
       "norm_label": ".createnotificationchannels()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L296"
+      "source_location": "L299"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_getconnectionhistoryjson",
@@ -6077,7 +6187,7 @@
       "file_type": "code",
       "norm_label": ".getconnectionhistoryjson()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L282"
+      "source_location": "L285"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onadbtoggled",
@@ -6089,7 +6199,7 @@
       "file_type": "code",
       "norm_label": ".onadbtoggled()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L198"
+      "source_location": "L201"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onbind",
@@ -6125,7 +6235,7 @@
       "file_type": "code",
       "norm_label": ".ondestroy()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L334"
+      "source_location": "L337"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onstartcommand",
@@ -6149,7 +6259,7 @@
       "file_type": "code",
       "norm_label": ".recordconnectionhistory()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L255"
+      "source_location": "L258"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_restoregoodlockmodules",
@@ -6185,7 +6295,7 @@
       "file_type": "code",
       "norm_label": ".startmonitoring()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L207"
+      "source_location": "L210"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_startresource",
@@ -6221,7 +6331,7 @@
       "file_type": "code",
       "norm_label": ".stopecosystemservers()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L292"
+      "source_location": "L295"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_stopresource",
@@ -6245,7 +6355,7 @@
       "file_type": "code",
       "norm_label": ".updatenotification()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L329"
+      "source_location": "L332"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_updatestatusnotification",
@@ -6428,18 +6538,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_e",
-      "label": "_e()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": "_e()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_gi",
       "label": "gi()",
       "_callable": true,
@@ -6472,18 +6570,6 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "ii()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_it_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6556,6 +6642,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": "re()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ri",
+      "label": "ri()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "ri()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6680,6 +6778,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_u_getmaxscaleonaxis",
+      "label": ".getMaxScaleOnAxis()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".getmaxscaleonaxis()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_u_gettranslation",
       "label": ".getTranslation()",
       "_callable": true,
@@ -6728,18 +6838,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_u_multiply",
-      "label": ".multiply()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
-      "file_type": "code",
-      "norm_label": ".multiply()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_u_rotate",
       "label": ".rotate()",
       "_callable": true,
@@ -6760,6 +6858,18 @@
       "community_name": "U",
       "file_type": "code",
       "norm_label": ".scale()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_u_set",
+      "label": ".set()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": ".set()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -6860,6 +6970,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_ui",
+      "label": "ui()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "U",
+      "file_type": "code",
+      "norm_label": "ui()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_xi",
       "label": "xi()",
       "_callable": true,
@@ -6872,16 +6994,52 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_yi",
-      "label": "yi()",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_availableframes",
+      "label": ".availableFrames()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "U",
+      "community": 41,
+      "community_name": "AudioStreamManager",
       "file_type": "code",
-      "norm_label": "yi()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "norm_label": ".availableframes()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L515"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_clear",
+      "label": ".clear()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".clear()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L507"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_readresampled",
+      "label": ".readResampled()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".readresampled()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L542"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_writebytes",
+      "label": ".writeBytes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".writebytes()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L519"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_acquirelocks",
@@ -6893,7 +7051,7 @@
       "file_type": "code",
       "norm_label": ".acquirelocks()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L199"
+      "source_location": "L268"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadein",
@@ -6905,7 +7063,19 @@
       "file_type": "code",
       "norm_label": ".applyfadein()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L157"
+      "source_location": "L198"
+    },
+    {
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadeout",
+      "label": ".applyFadeOut()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": ".applyfadeout()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L230"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
@@ -6917,7 +7087,7 @@
       "file_type": "code",
       "norm_label": ".applysoftwarebooster()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L116"
+      "source_location": "L124"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_createwavheader",
@@ -6929,7 +7099,7 @@
       "file_type": "code",
       "norm_label": ".createwavheader()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L355"
+      "source_location": "L463"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_getboostergainpercent",
@@ -6953,7 +7123,7 @@
       "file_type": "code",
       "norm_label": ".handlemicclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L282"
+      "source_location": "L390"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
@@ -6965,7 +7135,7 @@
       "file_type": "code",
       "norm_label": ".handlespeakerclient()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L430"
+      "source_location": "L828"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_maximizedevicevolume",
@@ -6977,7 +7147,7 @@
       "file_type": "code",
       "norm_label": ".maximizedevicevolume()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L176"
+      "source_location": "L243"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
@@ -6989,7 +7159,7 @@
       "file_type": "code",
       "norm_label": ".playtesttone()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L621"
+      "source_location": "L902"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_releaselocksifidle",
@@ -7001,7 +7171,7 @@
       "file_type": "code",
       "norm_label": ".releaselocksifidle()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L221"
+      "source_location": "L319"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
@@ -7037,7 +7207,7 @@
       "file_type": "code",
       "norm_label": ".startmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L238"
+      "source_location": "L346"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
@@ -7049,7 +7219,7 @@
       "file_type": "code",
       "norm_label": ".startspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L383"
+      "source_location": "L776"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopmicserver",
@@ -7061,7 +7231,7 @@
       "file_type": "code",
       "norm_label": ".stopmicserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L270"
+      "source_location": "L378"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
@@ -7073,115 +7243,31 @@
       "file_type": "code",
       "norm_label": ".stopspeakerserver()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L418"
+      "source_location": "L813"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br_addpass",
-      "label": ".addPass()",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "label": ".start()",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
+      "community": 41,
+      "community_name": "AudioStreamManager",
       "file_type": "code",
-      "norm_label": ".addpass()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "norm_label": ".start()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L608"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_br_constructor",
-      "label": ".constructor()",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
+      "label": ".stop()",
       "_callable": true,
       "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
+      "community": 41,
+      "community_name": "AudioStreamManager",
       "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_br_resize",
-      "label": ".resize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".resize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_k_setsize",
-      "label": ".setSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".setsize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_kr_setsize",
-      "label": ".setSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".setsize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L176"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_bindframebuffer",
-      "label": ".bindFramebuffer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".bindframebuffer()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ks_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "K",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
+      "norm_label": ".stop()",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L768"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_be",
@@ -7230,6 +7316,18 @@
       "norm_label": "ne()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_nn",
+      "label": "nn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": "nn()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L198"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_rn_constructor",
@@ -7300,6 +7398,18 @@
       "community_name": "zt",
       "file_type": "code",
       "norm_label": "l()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L59"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_zr_update",
+      "label": ".update()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "zt",
+      "file_type": "code",
+      "norm_label": ".update()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L59"
     },
@@ -7556,18 +7666,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_getbarycoord",
-      "label": ".getBarycoord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".getbarycoord()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_cr_intersectbounds",
       "label": ".intersectBounds()",
       "_callable": true,
@@ -7616,42 +7714,6 @@
       "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_cr_intersecttriangle",
-      "label": ".intersectTriangle()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".intersecttriangle()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ee",
-      "label": "Ee()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": "ee()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_ke_dot",
-      "label": ".dot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 50,
-      "community_name": ".intersectMeshes",
-      "file_type": "code",
-      "norm_label": ".dot()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L13"
-    },
-    {
       "id": "app_src_main_assets_web_js_ogl_ke_multiply",
       "label": ".multiply()",
       "_callable": true,
@@ -7688,14 +7750,14 @@
       "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_st_frustumintersectssphere",
-      "label": ".frustumIntersectsSphere()",
+      "id": "app_src_main_assets_web_js_ogl_sr_j",
+      "label": "j()",
       "_callable": true,
       "_origin": "ast",
       "community": 50,
       "community_name": ".intersectMeshes",
       "file_type": "code",
-      "norm_label": ".frustumintersectssphere()",
+      "norm_label": "j()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -8084,100 +8146,148 @@
       "source_location": "L198"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_as_constructor",
+      "id": "app_src_main_assets_web_js_ogl_fr_p",
+      "label": "p()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": "p()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L32"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_activetexture",
+      "label": ".activeTexture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".activetexture()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_ks_getextension",
+      "label": ".getExtension()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".getextension()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_pt_scale",
+      "label": ".scale()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".scale()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_q_bind",
+      "label": ".bind()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".bind()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_q_buildplane",
+      "label": ".buildPlane()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "q",
+      "file_type": "code",
+      "norm_label": ".buildplane()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_q_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_as_parsebuffer",
-      "label": ".parseBuffer()",
+      "id": "app_src_main_assets_web_js_ogl_q_update",
+      "label": ".update()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": ".parsebuffer()",
+      "norm_label": ".update()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_gr_clearcache",
-      "label": ".clearCache()",
+      "id": "app_src_main_assets_web_js_ogl_ze",
+      "label": "ze",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": ".clearcache()",
+      "norm_label": "ze",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_gr_getsupportedextensions",
-      "label": ".getSupportedExtensions()",
+      "id": "app_src_main_assets_web_js_ogl_zi_constructor",
+      "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
       "community": 7,
-      "community_name": "gr",
+      "community_name": "q",
       "file_type": "code",
-      "norm_label": ".getsupportedextensions()",
+      "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L13"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_gr_load",
-      "label": ".load()",
+      "id": "app_src_main_assets_web_js_ogl_computeboundingbox",
+      "label": ".computeBoundingBox()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
-      "community_name": "gr",
+      "community": 8,
+      "community_name": "V",
       "file_type": "code",
-      "norm_label": ".load()",
+      "norm_label": ".computeboundingbox()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L7"
     },
     {
-      "id": "app_src_main_assets_web_js_ogl_gr_loadimage",
-      "label": ".loadImage()",
+      "id": "app_src_main_assets_web_js_ogl_computeboundingsphere",
+      "label": ".computeBoundingSphere()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
-      "community_name": "gr",
+      "community": 8,
+      "community_name": "V",
       "file_type": "code",
-      "norm_label": ".loadimage()",
+      "norm_label": ".computeboundingsphere()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_gr_loadktx",
-      "label": ".loadKTX()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "gr",
-      "file_type": "code",
-      "norm_label": ".loadktx()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_vr",
-      "label": "Vr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "gr",
-      "file_type": "code",
-      "norm_label": "vr()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L198"
+      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_de",
@@ -8190,6 +8300,18 @@
       "norm_label": "de()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_getposition",
+      "label": ".getPosition()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "V",
+      "file_type": "code",
+      "norm_label": ".getposition()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L7"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_qi",
@@ -8260,6 +8382,18 @@
       "community_name": "V",
       "file_type": "code",
       "norm_label": ".copy()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
+      "id": "app_src_main_assets_web_js_ogl_v_divide",
+      "label": ".divide()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "V",
+      "file_type": "code",
+      "norm_label": ".divide()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L13"
     },
@@ -8564,6 +8698,18 @@
       "source_location": "L13"
     },
     {
+      "id": "app_src_main_assets_web_js_ogl_it_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "W",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "app/src/main/assets/web/js/ogl.js",
+      "source_location": "L13"
+    },
+    {
       "id": "app_src_main_assets_web_js_ogl_it_decompose",
       "label": ".decompose()",
       "_callable": true,
@@ -8670,42 +8816,6 @@
       "norm_label": ".constructor()",
       "source_file": "app/src/main/assets/web/js/ogl.js",
       "source_location": "L213"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or_resize",
-      "label": ".resize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".resize()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
-    },
-    {
-      "id": "app_src_main_assets_web_js_ogl_or_updategeometry",
-      "label": ".updateGeometry()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "W",
-      "file_type": "code",
-      "norm_label": ".updategeometry()",
-      "source_file": "app/src/main/assets/web/js/ogl.js",
-      "source_location": "L116"
     },
     {
       "id": "app_src_main_assets_web_js_ogl_pn_constructor",
@@ -9506,7 +9616,7 @@
       "label": "ve",
       "_origin": "ast",
       "community": 23,
-      "community_name": "ct",
+      "community_name": "As",
       "file_type": "code",
       "norm_label": "ve",
       "source_file": "app/src/main/assets/web/js/ogl.js",
@@ -9986,6 +10096,17 @@
       "source_location": "L1"
     },
     {
+      "id": "android",
+      "label": "android",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": "android",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager",
       "label": "AudioStreamManager.kt",
       "_origin": "ast",
@@ -10030,6 +10151,28 @@
       "source_location": ""
     },
     {
+      "id": "audiomanager",
+      "label": "AudioManager",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": "audiomanager",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "audiotrack",
+      "label": "AudioTrack",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": "audiotrack",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "bytearray",
       "label": "ByteArray",
       "_origin": "ast",
@@ -10059,6 +10202,17 @@
       "community_name": "AudioStreamManager",
       "file_type": "code",
       "norm_label": "powermanager",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "shortarray",
+      "label": "ShortArray",
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "AudioStreamManager",
+      "file_type": "code",
+      "norm_label": "shortarray",
       "source_file": "",
       "source_location": ""
     },
@@ -10226,7 +10380,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1432",
+      "source_location": "L1433",
       "weight": 1.0
     },
     {
@@ -17234,7 +17388,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L313",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -17246,7 +17400,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L200",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -17306,7 +17460,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L339",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -17354,7 +17508,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L261",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -17378,7 +17532,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L227",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -17390,7 +17544,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L238",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -17402,7 +17556,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L244",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -17438,7 +17592,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L293",
+      "source_location": "L296",
       "weight": 1.0
     },
     {
@@ -17462,7 +17616,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L331",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -17898,6 +18052,18 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "target": "shortarray",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L500",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
       "target": "bytearray",
       "relation": "calls",
@@ -17906,7 +18072,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L287",
+      "source_location": "L395",
       "weight": 1.0
     },
     {
@@ -17918,19 +18084,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L328",
+      "source_location": "L436",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
-      "target": "loudnessenhancer",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlemicclient",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L478",
+      "source_location": "L455",
       "weight": 1.0
     },
     {
@@ -17942,7 +18108,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L492",
+      "source_location": "L835",
       "weight": 1.0
     },
     {
@@ -17954,7 +18120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L505",
+      "source_location": "L856",
       "weight": 1.0
     },
     {
@@ -17966,7 +18132,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L512",
+      "source_location": "L864",
       "weight": 1.0
     },
     {
@@ -17978,31 +18144,67 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L519",
+      "source_location": "L872",
       "weight": 1.0
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L544",
+      "source_location": "L891",
       "weight": 1.0
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadein",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L579",
+      "source_location": "L892",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L894",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L903",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
+      "target": "shortarray",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L908",
       "weight": 1.0
     },
     {
@@ -18014,7 +18216,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L241",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -18026,7 +18228,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L243",
+      "source_location": "L351",
       "weight": 1.0
     },
     {
@@ -18038,7 +18240,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L252",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startmicserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -18050,7 +18264,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L265",
+      "source_location": "L373",
       "weight": 1.0
     },
     {
@@ -18062,7 +18276,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L387",
+      "source_location": "L780",
       "weight": 1.0
     },
     {
@@ -18074,7 +18288,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L388",
+      "source_location": "L781",
       "weight": 1.0
     },
     {
@@ -18086,7 +18300,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L389",
+      "source_location": "L782",
       "weight": 1.0
     },
     {
@@ -18098,7 +18312,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L391",
+      "source_location": "L784",
       "weight": 1.0
     },
     {
@@ -18110,7 +18324,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L400",
+      "source_location": "L795",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L795",
       "weight": 1.0
     },
     {
@@ -18122,7 +18348,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L413",
+      "source_location": "L808",
       "weight": 1.0
     },
     {
@@ -18134,7 +18360,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L278",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L816",
       "weight": 1.0
     },
     {
@@ -18146,7 +18384,127 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L426",
+      "source_location": "L824",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L603",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_writebytes",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L611",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "bytearray",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L631",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "loudnessenhancer",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L680",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "shortarray",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L692",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_availableframes",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L700",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_readresampled",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L740",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadein",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L743",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L747",
       "weight": 1.0
     },
     {
@@ -18746,7 +19104,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L193",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -18758,7 +19116,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L196",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -18770,7 +19128,31 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L197",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "audiomanager",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "android",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L266",
       "weight": 1.0
     },
     {
@@ -18795,6 +19177,30 @@
       "context": "field",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
       "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "target": "audiotrack",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L605",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "target": "loudnessenhancer",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L606",
       "weight": 1.0
     },
     {
@@ -19044,6 +19450,36 @@
       },
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/BootReceiver.kt",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager",
+      "target": "audiomanager",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "target_fqn": "android.media.AudioManager"
+      },
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager",
+      "target": "audiotrack",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "metadata": {
+        "target_fqn": "android.media.AudioTrack"
+      },
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -19523,7 +19959,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L255",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -19611,6 +20047,30 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_readresampled",
+      "target": "shortarray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_writebytes",
+      "target": "bytearray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L519",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_acquirelocks",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_kt_context",
       "relation": "references",
@@ -19619,7 +20079,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L199",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -19631,7 +20091,31 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L157",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadein",
+      "target": "shortarray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadeout",
+      "target": "shortarray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -19643,7 +20127,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L116",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
+      "target": "shortarray",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -19667,7 +20163,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L282",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -19679,7 +20175,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L430",
+      "source_location": "L828",
       "weight": 1.0
     },
     {
@@ -19691,7 +20187,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L176",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -19715,7 +20211,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L238",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -19727,7 +20223,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L383",
+      "source_location": "L776",
       "weight": 1.0
     },
     {
@@ -19859,7 +20355,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L312",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -19907,7 +20403,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L355",
+      "source_location": "L463",
       "weight": 1.0
     },
     {
@@ -20143,7 +20639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/app.js",
-      "source_location": "L1393",
+      "source_location": "L1394",
       "weight": 1.0
     },
     {
@@ -22905,6 +23401,28 @@
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
       "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L597",
       "weight": 1.0
     },
     {
@@ -27392,7 +27910,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L198",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -27403,7 +27921,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L207",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -27414,7 +27932,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L255",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -27425,7 +27943,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L282",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -27436,7 +27954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L287",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -27447,7 +27965,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L292",
+      "source_location": "L295",
       "weight": 1.0
     },
     {
@@ -27458,7 +27976,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L296",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -27469,7 +27987,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L312",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -27480,7 +27998,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L329",
+      "source_location": "L332",
       "weight": 1.0
     },
     {
@@ -27491,7 +28009,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L334",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -28045,6 +28563,50 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_clear",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_availableframes",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L515",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_writebytes",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L519",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiojitterbuffer_readresampled",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L542",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applysoftwarebooster",
       "relation": "method",
@@ -28052,7 +28614,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L116",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -28063,7 +28625,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L157",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_applyfadeout",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -28074,7 +28647,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L176",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -28085,7 +28658,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L199",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -28096,7 +28669,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L221",
+      "source_location": "L319",
       "weight": 1.0
     },
     {
@@ -28107,7 +28680,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L238",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -28118,7 +28691,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L270",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -28129,7 +28702,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L282",
+      "source_location": "L390",
       "weight": 1.0
     },
     {
@@ -28140,40 +28713,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L355",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L383",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L418",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L430",
+      "source_location": "L463",
       "weight": 1.0
     },
     {
@@ -28189,13 +28729,24 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_startspeakerserver",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
-      "source_location": "L621",
+      "source_location": "L776",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_stopspeakerserver",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L813",
       "weight": 1.0
     },
     {
@@ -28211,6 +28762,28 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_handlespeakerclient",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L828",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_playtesttone",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L902",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_audiostreammanager_setboostergain",
       "relation": "method",
       "_origin": "ast",
@@ -28218,6 +28791,28 @@
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
       "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L608",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_stop",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt",
+      "source_location": "L768",
       "weight": 1.0
     },
     {
@@ -28824,6 +29419,18 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_adblogstreamer_adblogstreamer_startstreaming",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsockettracker_adbsockettracker_decodeipaddress",
       "target": "bytearray",
       "relation": "calls",
@@ -28836,6 +29443,18 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsystemcontroller_adbsystemcontroller_enablewirelessadb",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSystemController.kt",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_androidbridge_androidbridge",
       "relation": "calls",
@@ -28845,6 +29464,18 @@
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
       "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_samsungdexcontroller_samsungdexcontroller_startinputserver",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_audiostreammanager_speakeraudiosession_start",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "call",
+      "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -28885,5 +29516,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0a17d98ffd83f405fd667b5588e1d510194ac368"
+  "built_at_commit": "bdad4db5a3318cd7ec4438cd5128f8bbc420bf62"
 }

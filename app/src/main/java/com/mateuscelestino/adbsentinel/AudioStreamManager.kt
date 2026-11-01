@@ -113,6 +113,14 @@ object AudioStreamManager {
      * - Acima de 70%: compressão assintótica suave knee + margin * tanh((x - knee)/margin)
      * - Garante som quente, potente e cristalino em filmes sem estourar o sinal
      */
+    /**
+     * Aplica amplificação PCM 16-bit com Soft-Knee Analógico C1 Contínuo de Estúdio
+     * - Multiplica as amostras estéreo com precisão
+     * - Continuidade C1 rigorosa: zero degraus, zero saltos, zero chiado ou buzzing
+     * - Até 70% de amplitude (0.70): 100% linear e transparente
+     * - Acima de 70%: compressão assintótica suave knee + margin * tanh((x - knee)/margin)
+     * - Garante som quente, potente e cristalino em filmes sem estourar o sinal
+     */
     fun applySoftwareBooster(buffer: ByteArray, offset: Int, length: Int) {
         val gain = softwareBoosterGain
         if (gain <= 1.01f) return
@@ -152,6 +160,39 @@ object AudioStreamManager {
     }
 
     /**
+     * Versão de ultra-alta performance em ShortArray (Zero Alocação no hot path)
+     */
+    fun applySoftwareBooster(samples: ShortArray, offset: Int, length: Int) {
+        val gain = softwareBoosterGain
+        if (gain <= 1.01f) return
+
+        val knee = 0.70f
+        val margin = 0.30f
+        val invMargin = 1.0f / 0.30f
+
+        val end = offset + length
+        for (i in offset until end) {
+            val sample = samples[i]
+            val normSample = sample.toFloat() / 32768.0f
+            val boosted = normSample * gain
+            val absVal = Math.abs(boosted)
+
+            val outVal: Float
+            if (absVal <= knee) {
+                outVal = boosted
+            } else {
+                val sign = if (boosted > 0f) 1.0f else -1.0f
+                val excess = (absVal - knee) * invMargin
+                val compressed = knee + margin * Math.tanh(excess.toDouble()).toFloat()
+                outVal = sign * compressed
+            }
+
+            val clamped = outVal.coerceIn(-1.0f, 1.0f)
+            samples[i] = (clamped * 32767.0f).toInt().coerceIn(-32767, 32767).toShort()
+        }
+    }
+
+    /**
      * Aplica micro-fade-in suave nas amostras para evitar estalos de descontinuidade de fase (glitch-free transition)
      */
     private fun applyFadeIn(buffer: ByteArray, offset: Int, samples: Int) {
@@ -170,6 +211,32 @@ object AudioStreamManager {
             val fadeRight = (right16 * factor).toInt().toShort()
             buffer[idx + 2] = (fadeRight.toInt() and 0xFF).toByte()
             buffer[idx + 3] = ((fadeRight.toInt() shr 8) and 0xFF).toByte()
+        }
+    }
+
+    private fun applyFadeIn(samples: ShortArray, offset: Int, frameCount: Int) {
+        val total = maxOf(1, frameCount)
+        for (f in 0 until total) {
+            val factor = f.toFloat() / total.toFloat()
+            val lIdx = offset + (f * 2)
+            val rIdx = lIdx + 1
+            if (rIdx < samples.size) {
+                samples[lIdx] = (samples[lIdx] * factor).toInt().toShort()
+                samples[rIdx] = (samples[rIdx] * factor).toInt().toShort()
+            }
+        }
+    }
+
+    private fun applyFadeOut(samples: ShortArray, offset: Int, frameCount: Int) {
+        val total = maxOf(1, frameCount)
+        for (f in 0 until total) {
+            val factor = 1.0f - (f.toFloat() / total.toFloat())
+            val lIdx = offset + (f * 2)
+            val rIdx = lIdx + 1
+            if (rIdx < samples.size) {
+                samples[lIdx] = (samples[lIdx] * factor).toInt().toShort()
+                samples[rIdx] = (samples[rIdx] * factor).toInt().toShort()
+            }
         }
     }
 
@@ -421,6 +488,291 @@ object AudioStreamManager {
     // -------------------------------------------------------------
     // 2. CAIXA DE SOM (Mac -> Galaxy Ultra na porta 8082)
     // -------------------------------------------------------------
+
+    /**
+     * Buffer Elástico Anti-Jitter Circular de Ultra-Baixa Latência (48kHz Estéreo 16-bit)
+     * - Desacopla 100% o socket de rede da thread de reprodução de áudio
+     * - Reamostragem micro-analógica contínua (zero cliques, zero cortes de fase)
+     * - Absorve variações de jitter Wi-Fi/Tailscale mantendo lip-sync <50ms constante
+     */
+    class AudioJitterBuffer(capacityFrames: Int = 96000) {
+        private val capacityShorts = capacityFrames * 2
+        private val buffer = ShortArray(capacityShorts)
+        private val lock = Any()
+
+        @Volatile private var writePos = 0
+        @Volatile private var readPos = 0
+        @Volatile private var countShorts = 0
+
+        fun clear() {
+            synchronized(lock) {
+                writePos = 0
+                readPos = 0
+                countShorts = 0
+            }
+        }
+
+        fun availableFrames(): Int {
+            return countShorts / 2
+        }
+
+        fun writeBytes(src: ByteArray, offset: Int, length: Int) {
+            val validBytes = length - (length % 4)
+            if (validBytes <= 0) return
+            val numShorts = validBytes / 2
+
+            synchronized(lock) {
+                var srcIdx = offset
+                for (s in 0 until numShorts) {
+                    val low = src[srcIdx].toInt() and 0xFF
+                    val high = src[srcIdx + 1].toInt()
+                    val sample = ((high shl 8) or low).toShort()
+                    srcIdx += 2
+
+                    buffer[writePos] = sample
+                    writePos = (writePos + 1) % capacityShorts
+                }
+                countShorts = minOf(capacityShorts, countShorts + numShorts)
+                if (countShorts == capacityShorts) {
+                    readPos = writePos // Se estourar 2s de buffer, avança para manter tempo real
+                }
+            }
+        }
+
+        fun readResampled(out: ShortArray, outOffset: Int, outFrames: Int, speedRatio: Float): Int {
+            synchronized(lock) {
+                val available = countShorts / 2
+                if (available < 2) return 0
+
+                val maxPossible = (available / maxOf(0.5f, speedRatio)).toInt()
+                val framesToGenerate = minOf(outFrames, maxPossible)
+                if (framesToGenerate <= 0) return 0
+
+                // Caminho ultra-rápido bit-perfect (1:1 direto sem interpolação)
+                if (Math.abs(speedRatio - 1.0f) < 0.0008f) {
+                    val shortsToRead = framesToGenerate * 2
+                    for (i in 0 until shortsToRead) {
+                        out[outOffset + i] = buffer[readPos]
+                        readPos = (readPos + 1) % capacityShorts
+                    }
+                    countShorts -= shortsToRead
+                    return framesToGenerate
+                }
+
+                // Interpolação analógica linear contínua por canal (L/R)
+                var fractionalSrcFrame = 0.0
+                for (f in 0 until framesToGenerate) {
+                    val frame0Idx = fractionalSrcFrame.toInt()
+                    val frac = (fractionalSrcFrame - frame0Idx).toFloat()
+
+                    val pos0 = (readPos + (frame0Idx * 2)) % capacityShorts
+                    val pos1 = (pos0 + 2) % capacityShorts
+
+                    val sL0 = buffer[pos0].toFloat()
+                    val sR0 = buffer[(pos0 + 1) % capacityShorts].toFloat()
+                    val sL1 = buffer[pos1].toFloat()
+                    val sR1 = buffer[(pos1 + 1) % capacityShorts].toFloat()
+
+                    val outL = (1.0f - frac) * sL0 + frac * sL1
+                    val outR = (1.0f - frac) * sR0 + frac * sR1
+
+                    out[outOffset + (f * 2)] = outL.toInt().coerceIn(-32768, 32767).toShort()
+                    out[outOffset + (f * 2) + 1] = outR.toInt().coerceIn(-32768, 32767).toShort()
+
+                    fractionalSrcFrame += speedRatio
+                }
+
+                val framesConsumed = minOf(available, Math.round(fractionalSrcFrame).toInt())
+                val shortsConsumed = framesConsumed * 2
+                readPos = (readPos + shortsConsumed) % capacityShorts
+                countShorts = maxOf(0, countShorts - shortsConsumed)
+
+                return framesToGenerate
+            }
+        }
+    }
+
+    private var activeSpeakerSession: SpeakerAudioSession? = null
+
+    private class SpeakerAudioSession(
+        val socket: Socket,
+        val initialPeek: ByteArray,
+        val initialPeekLen: Int
+    ) {
+        @Volatile var isRunning = true
+        val jitterBuffer = AudioJitterBuffer(96000)
+        var playerThread: Thread? = null
+        var track: AudioTrack? = null
+        var enhancer: LoudnessEnhancer? = null
+
+        fun start() {
+            // Se houver dados iniciais de áudio recebidos no peek
+            if (initialPeekLen > 0) {
+                jitterBuffer.writeBytes(initialPeek, 0, initialPeekLen)
+            }
+
+            // 1. Thread de Ingestão de Rede Asíncrona (Prioridade Máxima)
+            val ingestThread = Thread({
+                try {
+                    android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
+                } catch (ignored: Exception) {}
+
+                try {
+                    val rawInput = socket.getInputStream()
+                    val netBuffer = ByteArray(4096)
+                    while (isRunning && !socket.isClosed && socket.isConnected) {
+                        val read = rawInput.read(netBuffer, 0, netBuffer.size)
+                        if (read <= 0) break
+                        jitterBuffer.writeBytes(netBuffer, 0, read)
+                    }
+                } catch (e: Exception) {
+                    Log.v(TAG, "Ingestão de áudio finalizada: ${e.message}")
+                } finally {
+                    stop()
+                }
+            }, "AeroAudioIngestThread")
+            ingestThread.priority = Thread.MAX_PRIORITY
+            ingestThread.start()
+
+            // 2. Thread Dedicada de Reprodução com Resampler Anti-Jitter
+            playerThread = Thread({
+                try {
+                    android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
+                } catch (ignored: Exception) {}
+
+                val minBuf = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
+                val bufferCapacity = maxOf(minBuf * 2, 24576)
+
+                val audioAttrs = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
+                    .build()
+
+                val audioFormat = AudioFormat.Builder()
+                    .setSampleRate(SAMPLE_RATE)
+                    .setChannelMask(CHANNEL_OUT)
+                    .setEncoding(ENCODING)
+                    .build()
+
+                val trackBuilder = AudioTrack.Builder()
+                    .setAudioAttributes(audioAttrs)
+                    .setAudioFormat(audioFormat)
+                    .setBufferSizeInBytes(bufferCapacity)
+                    .setTransferMode(AudioTrack.MODE_STREAM)
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    trackBuilder.setPerformanceMode(AudioTrack.PERFORMANCE_MODE_LOW_LATENCY)
+                }
+
+                val localTrack = trackBuilder.build()
+                this.track = localTrack
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    // Buffer de hardware fixado em 2160 quadros (~45ms):
+                    // Lip-sync perfeito de estúdio sem acúmulo de atraso no hardware
+                    try {
+                        localTrack.setBufferSizeInFrames(2160)
+                    } catch (ignored: Exception) {}
+                }
+
+                try {
+                    val enh = LoudnessEnhancer(localTrack.audioSessionId).apply {
+                        setTargetGain(currentBoosterGainMb)
+                        enabled = currentBoosterGainMb > 0
+                    }
+                    this.enhancer = enh
+                    activeLoudnessEnhancer = enh
+                    Log.i(TAG, "🔊 [AeroAudio] LoudnessEnhancer DSP ativado no sessionId ${localTrack.audioSessionId} com ganho de ${currentBoosterGainMb}mB")
+                } catch (e: Exception) {
+                    Log.w(TAG, "LoudnessEnhancer indisponível: ${e.message}")
+                }
+
+                val chunkFrames = 240 // 5ms de áudio a 48kHz
+                val chunkShorts = ShortArray(chunkFrames * 2)
+                val targetCushionFrames = 2304 // ~48ms de ouro para lip-sync & estabilidade
+                val prebufferFrames = 1920 // ~40ms para iniciar com solidez
+
+                var isPrebuffering = true
+                var needsFadeIn = true
+
+                while (isRunning) {
+                    val available = jitterBuffer.availableFrames()
+
+                    if (isPrebuffering) {
+                        if (available >= prebufferFrames) {
+                            isPrebuffering = false
+                            needsFadeIn = true
+                            localTrack.play()
+                        } else {
+                            try { Thread.sleep(3) } catch (ignored: Exception) {}
+                            continue
+                        }
+                    }
+
+                    if (available < chunkFrames) {
+                        // Rede oscilou severamente (esgotamento momentâneo)
+                        // Limpa amostras com fade rápido para evitar estalos
+                        isPrebuffering = true
+                        java.util.Arrays.fill(chunkShorts, 0.toShort())
+                        localTrack.write(chunkShorts, 0, chunkShorts.size)
+                        try { Thread.sleep(4) } catch (ignored: Exception) {}
+                        continue
+                    }
+
+                    // Resampler elástico analógico:
+                    // Mantém o buffer centrado em 48ms de forma imperceptível aos ouvidos
+                    val diff = available - targetCushionFrames
+                    val speedRatio: Float = when {
+                        diff > 288 -> {
+                            // Fila subiu (>54ms): acelera suavemente de 1.002x a 1.012x para drenar atraso
+                            val excessRatio = minOf(0.012f, ((diff - 288).toFloat() / 48000.0f) * 0.18f)
+                            1.0f + excessRatio
+                        }
+                        diff < -288 -> {
+                            // Fila desceu (<42ms): freia suavemente de 0.995x a 0.998x para proteger contra queda
+                            val deficitRatio = minOf(0.008f, ((-diff - 288).toFloat() / 48000.0f) * 0.12f)
+                            1.0f - deficitRatio
+                        }
+                        else -> 1.0f
+                    }
+
+                    val generated = jitterBuffer.readResampled(chunkShorts, 0, chunkFrames, speedRatio)
+                    if (generated > 0) {
+                        if (needsFadeIn) {
+                            applyFadeIn(chunkShorts, 0, minOf(generated, 48))
+                            needsFadeIn = false
+                        }
+
+                        applySoftwareBooster(chunkShorts, 0, generated * 2)
+                        localTrack.write(chunkShorts, 0, generated * 2)
+                    }
+                }
+
+                try {
+                    if (localTrack.playState == AudioTrack.PLAYSTATE_PLAYING) {
+                        localTrack.pause()
+                        localTrack.flush()
+                    }
+                    localTrack.release()
+                } catch (ignored: Exception) {}
+                try { enhancer?.release() } catch (ignored: Exception) {}
+                if (activeLoudnessEnhancer == enhancer) {
+                    activeLoudnessEnhancer = null
+                }
+            }, "AeroAudioPlayerThread")
+            playerThread?.priority = Thread.MAX_PRIORITY
+            playerThread?.start()
+        }
+
+        fun stop() {
+            if (!isRunning) return
+            isRunning = false
+            try { socket.close() } catch (ignored: Exception) {}
+            playerThread?.interrupt()
+        }
+    }
+
     @Synchronized
     fun startSpeakerServer(context: Context): Boolean {
         if (isSpeakerRunning) return true
@@ -438,6 +790,8 @@ object AudioStreamManager {
                     try {
                         val client = speakerServerSocket?.accept() ?: break
                         client.tcpNoDelay = true
+                        client.receiveBufferSize = 131072
+                        client.sendBufferSize = 16384
                         Thread({ handleSpeakerClient(client) }, "AeroSpeakerClient-${client.inetAddress}").start()
                     } catch (e: Exception) {
                         if (isSpeakerRunning) Log.e(TAG, "Erro accept speaker: ${e.message}")
@@ -459,6 +813,9 @@ object AudioStreamManager {
     @Synchronized
     fun stopSpeakerServer() {
         isSpeakerRunning = false
+        try { activeSpeakerSession?.stop() } catch (ignored: Exception) {}
+        activeSpeakerSession = null
+
         try { speakerServerSocket?.close() } catch (ignored: Exception) {}
         speakerServerSocket = null
 
@@ -469,72 +826,22 @@ object AudioStreamManager {
     }
 
     private fun handleSpeakerClient(socket: Socket) {
-        var activeTrack: AudioTrack? = null
-        var enhancer: LoudnessEnhancer? = null
         try {
-            try {
-                android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO)
-            } catch (ignored: Exception) {}
-
-            socket.tcpNoDelay = true
-            socket.receiveBufferSize = 65536
-            socket.sendBufferSize = 65536
-
-            val minBufSize = AudioTrack.getMinBufferSize(SAMPLE_RATE, CHANNEL_OUT, ENCODING)
-            val bufferCapacity = maxOf(minBufSize * 2, 24576) // ~128ms de buffer elástico
-
-            val audioAttributes = AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_MEDIA)
-                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
-                .build()
-
-            val audioFormat = AudioFormat.Builder()
-                .setSampleRate(SAMPLE_RATE)
-                .setChannelMask(CHANNEL_OUT)
-                .setEncoding(ENCODING)
-                .build()
-
-            val trackBuilder = AudioTrack.Builder()
-                .setAudioAttributes(audioAttributes)
-                .setAudioFormat(audioFormat)
-                .setBufferSizeInBytes(bufferCapacity)
-                .setTransferMode(AudioTrack.MODE_STREAM)
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                trackBuilder.setPerformanceMode(AudioTrack.PERFORMANCE_MODE_LOW_LATENCY)
-            }
-
-            val track = trackBuilder.build()
-            activeTrack = track
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                // Buffer de hardware fixado em 3360 frames (~70ms):
-                // Folga que absorve jitter natural de Wi-Fi sem bloquear a thread de socket e com lip-sync de filme imperceptível (<50ms)
-                try {
-                    track.setBufferSizeInFrames(3360)
-                } catch (ignored: Exception) {}
-            }
-
-            // Ativa o DSP de Hardware LoudnessEnhancer do Snapdragon / Galaxy Ultra
-            try {
-                enhancer = LoudnessEnhancer(track.audioSessionId).apply {
-                    setTargetGain(currentBoosterGainMb)
-                    enabled = currentBoosterGainMb > 0
-                }
-                activeLoudnessEnhancer = enhancer
-                Log.i(TAG, "🔊 [AeroAudio] LoudnessEnhancer DSP ativado no sessionId ${track.audioSessionId} com ganho de ${currentBoosterGainMb}mB")
-            } catch (e: Exception) {
-                Log.w(TAG, "Aviso: LoudnessEnhancer não pôde ser ativado: ${e.message}")
-            }
-
             val rawInput = socket.getInputStream()
             val out = socket.getOutputStream()
 
-            // Lê primeiros bytes para verificar se é requisição HTTP (status/ping/chime/boost/maxvol)
+            // 1. Timeout inicial para detecção rápida de probes/testes de porta sem travar
+            socket.soTimeout = 2000
             val peekBuf = ByteArray(256)
-            val firstByte = rawInput.read()
-            if (firstByte == -1) return
+            val firstByte = try { rawInput.read() } catch (e: Exception) { -1 }
+
+            if (firstByte == -1) {
+                // Conexão de teste/probe (como testPort do Mac) -> fecha imediatamente SEM alocar hardware de áudio
+                try { socket.close() } catch (ignored: Exception) {}
+                return
+            }
+
+            socket.soTimeout = 0 // Remove timeout para streaming contínuo
 
             peekBuf[0] = firstByte.toByte()
             val available = rawInput.available()
@@ -542,6 +849,7 @@ object AudioStreamManager {
             val totalPeek = 1 + maxOf(0, extraRead)
             val preview = String(peekBuf, 0, totalPeek, Charsets.US_ASCII)
 
+            // 2. Comandos de Controle HTTP (atendidos sem instanciar AudioTrack)
             if (preview.startsWith("GET") || preview.startsWith("POST") || preview.startsWith("PUT") || preview.startsWith("HEAD")) {
                 if (preview.contains("/boost")) {
                     val gainParam = preview.substringAfter("gain=").substringBefore(" ").substringBefore("&").toIntOrNull() ?: 1200
@@ -549,6 +857,7 @@ object AudioStreamManager {
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"boost\":true,\"gainMb\":$currentBoosterGainMb}\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
                     out.flush()
+                    try { socket.close() } catch (ignored: Exception) {}
                     return
                 }
                 if (preview.contains("/maxvol")) {
@@ -556,6 +865,7 @@ object AudioStreamManager {
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"maxvol\":true}\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
                     out.flush()
+                    try { socket.close() } catch (ignored: Exception) {}
                     return
                 }
                 if (preview.contains("/test") || preview.contains("/beep") || preview.contains("/chime")) {
@@ -563,104 +873,28 @@ object AudioStreamManager {
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\nBeep Played\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
                     out.flush()
+                    try { socket.close() } catch (ignored: Exception) {}
                     return
                 }
                 if (preview.startsWith("GET /ping") || preview.startsWith("GET /status")) {
                     val resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nConnection: close\r\n\r\n{\"speaker\":true,\"gainMb\":$currentBoosterGainMb}\n"
                     out.write(resp.toByteArray(Charsets.UTF_8))
                     out.flush()
+                    try { socket.close() } catch (ignored: Exception) {}
                     return
                 }
             }
 
-            track.play()
-
-            // Stream contínuo de áudio PCM de alta fidelidade
-            val streamBuffer = ByteArray(4096)
-            var remainder = 0
-            var totalFramesWritten = 0L
-            var sustainedHighQueueCount = 0
-
-            if (totalPeek > 0) {
-                val validPeek = totalPeek - (totalPeek % 4)
-                if (validPeek > 0) {
-                    applySoftwareBooster(peekBuf, 0, validPeek)
-                    track.write(peekBuf, 0, validPeek)
-                    totalFramesWritten += (validPeek / 4)
-                }
-                remainder = totalPeek - validPeek
-                if (remainder > 0) {
-                    System.arraycopy(peekBuf, validPeek, streamBuffer, 0, remainder)
-                }
-            }
-
-            // Loop de reprodução contínua em tempo real (lip-sync <50ms constante)
-            while (isSpeakerRunning && socket.isConnected && !socket.isClosed) {
-                val bytesRead = rawInput.read(streamBuffer, remainder, streamBuffer.size - remainder)
-                if (bytesRead <= 0) break
-
-                val totalBytes = remainder + bytesRead
-                val validBytes = totalBytes - (totalBytes % 4)
-
-                if (validBytes > 0) {
-                    val frames = validBytes / 4
-                    totalFramesWritten += frames
-
-                    val head = track.playbackHeadPosition.toLong() and 0xFFFFFFFFL
-                    var queued = totalFramesWritten - head
-                    if (queued < 0) {
-                        totalFramesWritten = head
-                        queued = 0
-                    }
-
-                    // Histerese inteligente zero-glitch:
-                    // O jitter natural do Wi-Fi flutua na faixa de 20ms a 60ms sem atraso acumulado real.
-                    // O dreno só deve agir se a fila permanecer acima de 4320 frames (~90ms) por mais de 15 chunks seguidos (>300ms contínuos).
-                    if (queued > 4320) {
-                        sustainedHighQueueCount++
-                    } else if (queued < 3360) {
-                        sustainedHighQueueCount = 0
-                    }
-
-                    if (sustainedHighQueueCount > 15) {
-                        // Drift cumulativo prolongado: drena suavemente 960 bytes (~5ms) com micro-fade
-                        val skipBytes = minOf(validBytes, 960)
-                        val writeBytes = validBytes - skipBytes
-                        if (writeBytes > 0) {
-                            applyFadeIn(streamBuffer, skipBytes, 64)
-                            applySoftwareBooster(streamBuffer, skipBytes, writeBytes)
-                            track.write(streamBuffer, skipBytes, writeBytes)
-                        }
-                        totalFramesWritten -= (skipBytes / 4)
-                        sustainedHighQueueCount = 5
-                    } else {
-                        // Reprodução contínua sem nenhum corte de fase -> ZERO GLITCH
-                        applySoftwareBooster(streamBuffer, 0, validBytes)
-                        track.write(streamBuffer, 0, validBytes)
-                    }
-                }
-
-                remainder = totalBytes - validBytes
-                if (remainder > 0) {
-                    System.arraycopy(streamBuffer, validBytes, streamBuffer, 0, remainder)
-                }
+            // 3. FLUXO REAL DE STREAMING DE ÁUDIO PCM
+            // Se já houver uma sessão anterior ativa, finaliza de forma limpa para ceder vez à nova
+            synchronized(this) {
+                activeSpeakerSession?.stop()
+                val session = SpeakerAudioSession(socket, peekBuf, totalPeek)
+                activeSpeakerSession = session
+                session.start()
             }
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de alto-falante desconectado: ${e.message}")
-        } finally {
-            try {
-                enhancer?.release()
-            } catch (ignored: Exception) {}
-            if (activeLoudnessEnhancer == enhancer) {
-                activeLoudnessEnhancer = null
-            }
-            try {
-                if (activeTrack?.playState == AudioTrack.PLAYSTATE_PLAYING) {
-                    activeTrack.pause()
-                    activeTrack.flush()
-                }
-                activeTrack?.release()
-            } catch (ignored: Exception) {}
             try { socket.close() } catch (ignored: Exception) {}
         }
     }
