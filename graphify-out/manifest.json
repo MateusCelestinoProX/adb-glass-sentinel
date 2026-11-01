@@ -18,9 +18,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/shaders.js": {
-    "mtime": 1793474680.3803267,
-    "seen": 1793474734.0875788,
-    "ast_hash": "2785e9bfea651bc1945d2bac9fced193",
+    "mtime": 1793493083.38457,
+    "seen": 1793494643.3271081,
+    "ast_hash": "d5954b51b157ff3a55dad38431dc09d0",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AdbLogStreamer.kt": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/index.html": {
-    "mtime": 1793484870.096066,
-    "seen": 1793485096.518591,
-    "ast_hash": "b676f3e3b4eecfb211b9ca237ef03042",
+    "mtime": 1793493987.5889292,
+    "seen": 1793494643.327122,
+    "ast_hash": "969da54acd8b878b3a1fcfd688d5580e",
     "semantic_hash": ""
   },
   "adb_sentinel_daemon.sh": {

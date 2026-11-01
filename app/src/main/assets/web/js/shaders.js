@@ -10,8 +10,15 @@ let currentActiveType = null;
 let currentBgSession = 0;
 
 export const getOptimizedDPR = () => {
-  // Mobile / AMOLED 120Hz: DPR 0.40 para economia extrema de bateria e GPU
   if (typeof window !== 'undefined') {
+    const isMac = (navigator.platform && navigator.platform.toUpperCase().indexOf('MAC') >= 0) || 
+                  (navigator.userAgent && navigator.userAgent.toUpperCase().indexOf('MAC') >= 0);
+    if (isMac) {
+      // No Mac (Apple Silicon / Metal), DPR de 1.0 a 1.25 garante nitidez retiniana impecável sem sobrecarregar a GPU
+      const dpr = window.devicePixelRatio || 1;
+      return Math.min(1.25, Math.max(0.85, dpr * 0.65));
+    }
+    // Mobile / AMOLED 120Hz: DPR 0.40 para economia extrema de bateria e GPU
     const dpr = window.devicePixelRatio || 1;
     if (dpr > 2.0) return 0.40;
     if (dpr > 1.2) return 0.50;

@@ -5191,7 +5191,7 @@
       "file_type": "code",
       "norm_label": "buildstrandspalette()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L286"
+      "source_location": "L293"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_easepower2inout",
@@ -5203,7 +5203,7 @@
       "file_type": "code",
       "norm_label": "easepower2inout()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4254"
+      "source_location": "L4261"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_getactiveshader",
@@ -5215,7 +5215,7 @@
       "file_type": "code",
       "norm_label": "getactiveshader()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10169"
+      "source_location": "L10176"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_getoptimizeddpr",
@@ -5239,7 +5239,7 @@
       "file_type": "code",
       "norm_label": "hextorgb()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L426"
+      "source_location": "L433"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_hextorgbarr",
@@ -5251,7 +5251,7 @@
       "file_type": "code",
       "norm_label": "hextorgbarr()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4229"
+      "source_location": "L4236"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initantigravity",
@@ -5263,7 +5263,7 @@
       "file_type": "code",
       "norm_label": "initantigravity()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4434"
+      "source_location": "L4441"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initaurora",
@@ -5275,7 +5275,7 @@
       "file_type": "code",
       "norm_label": "initaurora()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4597"
+      "source_location": "L4604"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initbalatro",
@@ -5287,7 +5287,7 @@
       "file_type": "code",
       "norm_label": "initbalatro()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3500"
+      "source_location": "L3507"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initbalatro_hextovec4",
@@ -5299,7 +5299,7 @@
       "file_type": "code",
       "norm_label": "hextovec4()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3509"
+      "source_location": "L3516"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initbeams",
@@ -5311,7 +5311,7 @@
       "file_type": "code",
       "norm_label": "initbeams()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7232"
+      "source_location": "L7239"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initbeams_createstackedplanesbuffergeometry",
@@ -5323,7 +5323,7 @@
       "file_type": "code",
       "norm_label": "createstackedplanesbuffergeometry()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7373"
+      "source_location": "L7380"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initbeams_extendmaterial",
@@ -5335,7 +5335,7 @@
       "file_type": "code",
       "norm_label": "extendmaterial()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7334"
+      "source_location": "L7341"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initdarkveil",
@@ -5347,7 +5347,7 @@
       "file_type": "code",
       "norm_label": "initdarkveil()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2355"
+      "source_location": "L2362"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initdither",
@@ -5359,7 +5359,7 @@
       "file_type": "code",
       "norm_label": "initdither()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2169"
+      "source_location": "L2176"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initdither_resize",
@@ -5371,7 +5371,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2219"
+      "source_location": "L2226"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initevileye",
@@ -5383,7 +5383,7 @@
       "file_type": "code",
       "norm_label": "initevileye()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7000"
+      "source_location": "L7007"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initevileye_generatenoisetexture",
@@ -5395,7 +5395,7 @@
       "file_type": "code",
       "norm_label": "generatenoisetexture()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7021"
+      "source_location": "L7028"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initevileye_generatenoisetexture_hash",
@@ -5407,7 +5407,7 @@
       "file_type": "code",
       "norm_label": "hash()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7023"
+      "source_location": "L7030"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initevileye_generatenoisetexture_noise",
@@ -5419,7 +5419,7 @@
       "file_type": "code",
       "norm_label": "noise()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7028"
+      "source_location": "L7035"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initevileye_hextovec3",
@@ -5431,7 +5431,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7014"
+      "source_location": "L7021"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initfaultyterminal",
@@ -5443,7 +5443,7 @@
       "file_type": "code",
       "norm_label": "initfaultyterminal()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3678"
+      "source_location": "L3685"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initferrofluid",
@@ -5455,7 +5455,7 @@
       "file_type": "code",
       "norm_label": "initferrofluid()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L978"
+      "source_location": "L985"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initfloatinglines",
@@ -5467,7 +5467,7 @@
       "file_type": "code",
       "norm_label": "initfloatinglines()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7555"
+      "source_location": "L7562"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initfloatinglines_hextovec3",
@@ -5479,7 +5479,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7776"
+      "source_location": "L7783"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initghostfibers",
@@ -5491,7 +5491,7 @@
       "file_type": "code",
       "norm_label": "initghostfibers()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1770"
+      "source_location": "L1777"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initgridscan",
@@ -5503,7 +5503,7 @@
       "file_type": "code",
       "norm_label": "initgridscan()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9185"
+      "source_location": "L9192"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initgridscan_smoothdampvec2",
@@ -5515,7 +5515,7 @@
       "file_type": "code",
       "norm_label": "smoothdampvec2()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9218"
+      "source_location": "L9225"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initgridscan_srgbcolor",
@@ -5527,7 +5527,7 @@
       "file_type": "code",
       "norm_label": "srgbcolor()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9213"
+      "source_location": "L9220"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initletterglitch",
@@ -5539,7 +5539,7 @@
       "file_type": "code",
       "norm_label": "initletterglitch()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4743"
+      "source_location": "L4750"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlightning",
@@ -5551,7 +5551,7 @@
       "file_type": "code",
       "norm_label": "initlightning()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6838"
+      "source_location": "L6845"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves",
@@ -5563,7 +5563,7 @@
       "file_type": "code",
       "norm_label": "initlinewaves()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9838"
+      "source_location": "L9845"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves_handlemouseleave",
@@ -5575,7 +5575,7 @@
       "file_type": "code",
       "norm_label": "handlemouseleave()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9891"
+      "source_location": "L9898"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves_handlemousemove",
@@ -5587,7 +5587,7 @@
       "file_type": "code",
       "norm_label": "handlemousemove()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9880"
+      "source_location": "L9887"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves_hextovec3",
@@ -5599,7 +5599,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9856"
+      "source_location": "L9863"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves_resize",
@@ -5611,7 +5611,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10055"
+      "source_location": "L10062"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initlinewaves_update",
@@ -5623,7 +5623,7 @@
       "file_type": "code",
       "norm_label": "update()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10074"
+      "source_location": "L10081"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidchrome",
@@ -5635,7 +5635,7 @@
       "file_type": "code",
       "norm_label": "initliquidchrome()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9682"
+      "source_location": "L9689"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidchrome_handlemousemove",
@@ -5647,7 +5647,7 @@
       "file_type": "code",
       "norm_label": "handlemousemove()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9787"
+      "source_location": "L9794"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidchrome_handletouchmove",
@@ -5659,7 +5659,7 @@
       "file_type": "code",
       "norm_label": "handletouchmove()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9795"
+      "source_location": "L9802"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidchrome_resize",
@@ -5671,7 +5671,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9777"
+      "source_location": "L9784"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidchrome_update",
@@ -5683,7 +5683,7 @@
       "file_type": "code",
       "norm_label": "update()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9812"
+      "source_location": "L9819"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidether",
@@ -5695,7 +5695,7 @@
       "file_type": "code",
       "norm_label": "initliquidether()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5068"
+      "source_location": "L5075"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initliquidether_makepalettetexture",
@@ -5707,7 +5707,7 @@
       "file_type": "code",
       "norm_label": "makepalettetexture()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5097"
+      "source_location": "L5104"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initmagicrings",
@@ -5719,7 +5719,7 @@
       "file_type": "code",
       "norm_label": "initmagicrings()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8952"
+      "source_location": "L8959"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initmorphslider",
@@ -5731,7 +5731,7 @@
       "file_type": "code",
       "norm_label": "initmorphslider()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4258"
+      "source_location": "L4265"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initorb",
@@ -5743,7 +5743,7 @@
       "file_type": "code",
       "norm_label": "initorb()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6127"
+      "source_location": "L6134"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initorb_hextovec3",
@@ -5755,7 +5755,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6158"
+      "source_location": "L6165"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initorb_hsltorgb",
@@ -5767,7 +5767,7 @@
       "file_type": "code",
       "norm_label": "hsltorgb()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6136"
+      "source_location": "L6143"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initparticles",
@@ -5779,7 +5779,7 @@
       "file_type": "code",
       "norm_label": "initparticles()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1538"
+      "source_location": "L1545"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initpixelblast",
@@ -5791,7 +5791,7 @@
       "file_type": "code",
       "norm_label": "initpixelblast()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8639"
+      "source_location": "L8646"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initplasma",
@@ -5803,7 +5803,7 @@
       "file_type": "code",
       "norm_label": "initplasma()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4902"
+      "source_location": "L4909"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initplasmawave",
@@ -5815,7 +5815,7 @@
       "file_type": "code",
       "norm_label": "initplasmawave()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L697"
+      "source_location": "L704"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initplasmawave_resize",
@@ -5827,7 +5827,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L758"
+      "source_location": "L765"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initprism",
@@ -5839,7 +5839,7 @@
       "file_type": "code",
       "norm_label": "initprism()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6470"
+      "source_location": "L6477"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initprismaticburst",
@@ -5851,7 +5851,7 @@
       "file_type": "code",
       "norm_label": "initprismaticburst()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6658"
+      "source_location": "L6665"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar",
@@ -5863,7 +5863,7 @@
       "file_type": "code",
       "norm_label": "initradar()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8151"
+      "source_location": "L8158"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar_handlemouseleave",
@@ -5875,7 +5875,7 @@
       "file_type": "code",
       "norm_label": "handlemouseleave()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8290"
+      "source_location": "L8297"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar_handlemousemove",
@@ -5887,7 +5887,7 @@
       "file_type": "code",
       "norm_label": "handlemousemove()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8279"
+      "source_location": "L8286"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar_hextovec3",
@@ -5899,7 +5899,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8171"
+      "source_location": "L8178"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar_resize",
@@ -5911,7 +5911,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8323"
+      "source_location": "L8330"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initradar_update",
@@ -5923,7 +5923,7 @@
       "file_type": "code",
       "norm_label": "update()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8344"
+      "source_location": "L8351"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initripplegrid",
@@ -5935,7 +5935,7 @@
       "file_type": "code",
       "norm_label": "initripplegrid()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8384"
+      "source_location": "L8391"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initshader",
@@ -5947,7 +5947,7 @@
       "file_type": "code",
       "norm_label": "initshader()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10165"
+      "source_location": "L10172"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initsiderays",
@@ -5959,7 +5959,7 @@
       "file_type": "code",
       "norm_label": "initsiderays()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L440"
+      "source_location": "L447"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initsilk",
@@ -5971,7 +5971,7 @@
       "file_type": "code",
       "norm_label": "initsilk()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7984"
+      "source_location": "L7991"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initsoftaurora",
@@ -5983,7 +5983,7 @@
       "file_type": "code",
       "norm_label": "initsoftaurora()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1243"
+      "source_location": "L1250"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initsoftaurora_hextovec3",
@@ -5995,7 +5995,7 @@
       "file_type": "code",
       "norm_label": "hextovec3()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1262"
+      "source_location": "L1269"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initstrands",
@@ -6007,7 +6007,7 @@
       "file_type": "code",
       "norm_label": "initstrands()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L297"
+      "source_location": "L304"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initstrands_resize",
@@ -6019,7 +6019,7 @@
       "file_type": "code",
       "norm_label": "resize()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L371"
+      "source_location": "L378"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_inittopography",
@@ -6031,7 +6031,7 @@
       "file_type": "code",
       "norm_label": "inittopography()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3281"
+      "source_location": "L3288"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_initwebthreads",
@@ -6043,7 +6043,7 @@
       "file_type": "code",
       "norm_label": "initwebthreads()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3056"
+      "source_location": "L3063"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_isenginesuspended",
@@ -6055,7 +6055,7 @@
       "file_type": "code",
       "norm_label": "isenginesuspended()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L47"
+      "source_location": "L54"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_makemorphfallbacktexture",
@@ -6067,7 +6067,7 @@
       "file_type": "code",
       "norm_label": "makemorphfallbacktexture()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4236"
+      "source_location": "L4243"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_origintoflip",
@@ -6079,7 +6079,7 @@
       "file_type": "code",
       "norm_label": "origintoflip()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L431"
+      "source_location": "L438"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_prepferrocolors",
@@ -6091,7 +6091,7 @@
       "file_type": "code",
       "norm_label": "prepferrocolors()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L956"
+      "source_location": "L963"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_rendershader",
@@ -6103,7 +6103,7 @@
       "file_type": "code",
       "norm_label": "rendershader()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10154"
+      "source_location": "L10161"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_requestanimationframe",
@@ -6115,7 +6115,7 @@
       "file_type": "code",
       "norm_label": "requestanimationframe()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L56"
+      "source_location": "L63"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_runadaptiveanimation",
@@ -6127,7 +6127,7 @@
       "file_type": "code",
       "norm_label": "runadaptiveanimation()",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L89"
+      "source_location": "L96"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_bootreceiver_bootreceiver_onreceive",
@@ -9836,7 +9836,7 @@
       "file_type": "code",
       "norm_label": "morph_default_images",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4048"
+      "source_location": "L4055"
     },
     {
       "id": "app_src_main_assets_web_js_shaders_morph_transitions",
@@ -9847,7 +9847,7 @@
       "file_type": "code",
       "norm_label": "morph_transitions",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4046"
+      "source_location": "L4053"
     },
     {
       "id": "readme",
@@ -15876,7 +15876,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4516",
+      "source_location": "L4523",
       "weight": 1.0
     },
     {
@@ -15888,7 +15888,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4521",
+      "source_location": "L4528",
       "weight": 1.0
     },
     {
@@ -15900,7 +15900,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4674",
+      "source_location": "L4681",
       "weight": 1.0
     },
     {
@@ -15912,7 +15912,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4716",
+      "source_location": "L4723",
       "weight": 1.0
     },
     {
@@ -15924,7 +15924,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4722",
+      "source_location": "L4729",
       "weight": 1.0
     },
     {
@@ -15936,7 +15936,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3590",
+      "source_location": "L3597",
       "weight": 1.0
     },
     {
@@ -15948,7 +15948,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3637",
+      "source_location": "L3644",
       "weight": 1.0
     },
     {
@@ -15960,24 +15960,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7426",
+      "source_location": "L7433",
       "weight": 1.0
     },
     {
       "source": "app_src_main_assets_web_js_shaders_initbeams",
       "target": "app_src_main_assets_web_js_shaders_initlinewaves_resize",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7522",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders_initbeams",
-      "target": "app_src_main_assets_web_js_shaders_requestanimationframe",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15988,6 +15976,18 @@
       "weight": 1.0
     },
     {
+      "source": "app_src_main_assets_web_js_shaders_initbeams",
+      "target": "app_src_main_assets_web_js_shaders_requestanimationframe",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L7536",
+      "weight": 1.0
+    },
+    {
       "source": "app_src_main_assets_web_js_shaders_initdarkveil",
       "target": "app_src_main_assets_web_js_shaders_getoptimizeddpr",
       "relation": "calls",
@@ -15996,7 +15996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2365",
+      "source_location": "L2372",
       "weight": 1.0
     },
     {
@@ -16008,7 +16008,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2400",
+      "source_location": "L2407",
       "weight": 1.0
     },
     {
@@ -16020,7 +16020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2407",
+      "source_location": "L2414",
       "weight": 1.0
     },
     {
@@ -16032,7 +16032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2179",
+      "source_location": "L2186",
       "weight": 1.0
     },
     {
@@ -16044,7 +16044,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2241",
+      "source_location": "L2248",
       "weight": 1.0
     },
     {
@@ -16056,7 +16056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7121",
+      "source_location": "L7128",
       "weight": 1.0
     },
     {
@@ -16068,7 +16068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7172",
+      "source_location": "L7179",
       "weight": 1.0
     },
     {
@@ -16080,7 +16080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7187",
+      "source_location": "L7194",
       "weight": 1.0
     },
     {
@@ -16092,7 +16092,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7192",
+      "source_location": "L7199",
       "weight": 1.0
     },
     {
@@ -16104,7 +16104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3920",
+      "source_location": "L3927",
       "weight": 1.0
     },
     {
@@ -16116,7 +16116,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3973",
+      "source_location": "L3980",
       "weight": 1.0
     },
     {
@@ -16128,7 +16128,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3985",
+      "source_location": "L3992",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders_initferrofluid",
+      "target": "app_src_main_assets_web_js_shaders_getoptimizeddpr",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L1003",
       "weight": 1.0
     },
     {
@@ -16140,7 +16152,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1008",
+      "source_location": "L1015",
       "weight": 1.0
     },
     {
@@ -16152,7 +16164,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1054",
+      "source_location": "L1061",
       "weight": 1.0
     },
     {
@@ -16164,19 +16176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1080",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders_initferrofluid",
-      "target": "app_src_main_assets_web_js_shaders_getoptimizeddpr",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L996",
+      "source_location": "L1087",
       "weight": 1.0
     },
     {
@@ -16188,7 +16188,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7819",
+      "source_location": "L7826",
       "weight": 1.0
     },
     {
@@ -16200,7 +16200,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7869",
+      "source_location": "L7876",
       "weight": 1.0
     },
     {
@@ -16212,7 +16212,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7910",
+      "source_location": "L7917",
       "weight": 1.0
     },
     {
@@ -16224,7 +16224,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7942",
+      "source_location": "L7949",
       "weight": 1.0
     },
     {
@@ -16236,7 +16236,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1938",
+      "source_location": "L1945",
       "weight": 1.0
     },
     {
@@ -16248,7 +16248,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1980",
+      "source_location": "L1987",
       "weight": 1.0
     },
     {
@@ -16260,7 +16260,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1996",
+      "source_location": "L2003",
       "weight": 1.0
     },
     {
@@ -16272,7 +16272,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2004",
+      "source_location": "L2011",
       "weight": 1.0
     },
     {
@@ -16284,7 +16284,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9523",
+      "source_location": "L9530",
       "weight": 1.0
     },
     {
@@ -16296,7 +16296,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9602",
+      "source_location": "L9609",
       "weight": 1.0
     },
     {
@@ -16308,7 +16308,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9638",
+      "source_location": "L9645",
       "weight": 1.0
     },
     {
@@ -16320,7 +16320,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4809",
+      "source_location": "L4816",
       "weight": 1.0
     },
     {
@@ -16332,7 +16332,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4857",
+      "source_location": "L4864",
       "weight": 1.0
     },
     {
@@ -16344,7 +16344,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4867",
+      "source_location": "L4874",
       "weight": 1.0
     },
     {
@@ -16356,7 +16356,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6927",
+      "source_location": "L6934",
       "weight": 1.0
     },
     {
@@ -16368,7 +16368,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6963",
+      "source_location": "L6970",
       "weight": 1.0
     },
     {
@@ -16380,7 +16380,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6969",
+      "source_location": "L6976",
       "weight": 1.0
     },
     {
@@ -16392,7 +16392,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10094",
+      "source_location": "L10101",
       "weight": 1.0
     },
     {
@@ -16404,7 +16404,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9865",
+      "source_location": "L9872",
       "weight": 1.0
     },
     {
@@ -16416,7 +16416,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10076",
+      "source_location": "L10083",
       "weight": 1.0
     },
     {
@@ -16428,7 +16428,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9692",
+      "source_location": "L9699",
       "weight": 1.0
     },
     {
@@ -16440,7 +16440,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9821",
+      "source_location": "L9828",
       "weight": 1.0
     },
     {
@@ -16452,7 +16452,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9814",
+      "source_location": "L9821",
       "weight": 1.0
     },
     {
@@ -16464,7 +16464,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6109",
+      "source_location": "L6116",
       "weight": 1.0
     },
     {
@@ -16476,7 +16476,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9053",
+      "source_location": "L9060",
       "weight": 1.0
     },
     {
@@ -16488,7 +16488,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9102",
+      "source_location": "L9109",
       "weight": 1.0
     },
     {
@@ -16500,7 +16500,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9142",
+      "source_location": "L9149",
       "weight": 1.0
     },
     {
@@ -16512,7 +16512,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4276",
+      "source_location": "L4283",
       "weight": 1.0
     },
     {
@@ -16524,7 +16524,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4286",
+      "source_location": "L4293",
       "weight": 1.0
     },
     {
@@ -16536,7 +16536,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4342",
+      "source_location": "L4349",
       "weight": 1.0
     },
     {
@@ -16548,7 +16548,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4358",
+      "source_location": "L4365",
       "weight": 1.0
     },
     {
@@ -16560,7 +16560,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4378",
+      "source_location": "L4385",
       "weight": 1.0
     },
     {
@@ -16572,7 +16572,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4402",
+      "source_location": "L4409",
       "weight": 1.0
     },
     {
@@ -16584,7 +16584,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6351",
+      "source_location": "L6358",
       "weight": 1.0
     },
     {
@@ -16596,7 +16596,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6375",
+      "source_location": "L6382",
       "weight": 1.0
     },
     {
@@ -16608,7 +16608,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6390",
+      "source_location": "L6397",
       "weight": 1.0
     },
     {
@@ -16620,7 +16620,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6432",
+      "source_location": "L6439",
       "weight": 1.0
     },
     {
@@ -16632,7 +16632,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6174",
+      "source_location": "L6181",
       "weight": 1.0
     },
     {
@@ -16644,7 +16644,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1631",
+      "source_location": "L1638",
       "weight": 1.0
     },
     {
@@ -16656,7 +16656,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1656",
+      "source_location": "L1663",
       "weight": 1.0
     },
     {
@@ -16668,7 +16668,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1692",
+      "source_location": "L1699",
       "weight": 1.0
     },
     {
@@ -16680,7 +16680,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1724",
+      "source_location": "L1731",
       "weight": 1.0
     },
     {
@@ -16692,7 +16692,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8851",
+      "source_location": "L8858",
       "weight": 1.0
     },
     {
@@ -16704,7 +16704,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8928",
+      "source_location": "L8935",
       "weight": 1.0
     },
     {
@@ -16716,7 +16716,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4981",
+      "source_location": "L4988",
       "weight": 1.0
     },
     {
@@ -16728,7 +16728,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4998",
+      "source_location": "L5005",
       "weight": 1.0
     },
     {
@@ -16740,7 +16740,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5030",
+      "source_location": "L5037",
       "weight": 1.0
     },
     {
@@ -16752,7 +16752,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5036",
+      "source_location": "L5043",
       "weight": 1.0
     },
     {
@@ -16764,7 +16764,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L711",
+      "source_location": "L718",
       "weight": 1.0
     },
     {
@@ -16776,7 +16776,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L734",
+      "source_location": "L741",
       "weight": 1.0
     },
     {
@@ -16788,7 +16788,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L778",
+      "source_location": "L785",
       "weight": 1.0
     },
     {
@@ -16800,7 +16800,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6574",
+      "source_location": "L6581",
       "weight": 1.0
     },
     {
@@ -16812,7 +16812,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6621",
+      "source_location": "L6628",
       "weight": 1.0
     },
     {
@@ -16824,7 +16824,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6627",
+      "source_location": "L6634",
       "weight": 1.0
     },
     {
@@ -16836,7 +16836,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6764",
+      "source_location": "L6771",
       "weight": 1.0
     },
     {
@@ -16848,7 +16848,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6801",
+      "source_location": "L6808",
       "weight": 1.0
     },
     {
@@ -16860,7 +16860,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6807",
+      "source_location": "L6814",
       "weight": 1.0
     },
     {
@@ -16872,7 +16872,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8264",
+      "source_location": "L8271",
       "weight": 1.0
     },
     {
@@ -16884,7 +16884,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8310",
+      "source_location": "L8317",
       "weight": 1.0
     },
     {
@@ -16896,7 +16896,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8364",
+      "source_location": "L8371",
       "weight": 1.0
     },
     {
@@ -16908,7 +16908,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8346",
+      "source_location": "L8353",
       "weight": 1.0
     },
     {
@@ -16920,7 +16920,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8409",
+      "source_location": "L8416",
       "weight": 1.0
     },
     {
@@ -16932,7 +16932,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8535",
+      "source_location": "L8542",
       "weight": 1.0
     },
     {
@@ -16944,7 +16944,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8589",
+      "source_location": "L8596",
       "weight": 1.0
     },
     {
@@ -16956,7 +16956,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8603",
+      "source_location": "L8610",
       "weight": 1.0
     },
     {
@@ -16968,7 +16968,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10166",
+      "source_location": "L10173",
       "weight": 1.0
     },
     {
@@ -16980,7 +16980,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L454",
+      "source_location": "L461",
       "weight": 1.0
     },
     {
@@ -16992,7 +16992,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L529",
+      "source_location": "L536",
       "weight": 1.0
     },
     {
@@ -17004,7 +17004,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L534",
+      "source_location": "L541",
       "weight": 1.0
     },
     {
@@ -17016,7 +17016,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L563",
+      "source_location": "L570",
       "weight": 1.0
     },
     {
@@ -17028,7 +17028,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8084",
+      "source_location": "L8091",
       "weight": 1.0
     },
     {
@@ -17040,7 +17040,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8122",
+      "source_location": "L8129",
       "weight": 1.0
     },
     {
@@ -17052,7 +17052,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8127",
+      "source_location": "L8134",
       "weight": 1.0
     },
     {
@@ -17064,7 +17064,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1427",
+      "source_location": "L1434",
       "weight": 1.0
     },
     {
@@ -17076,7 +17076,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1451",
+      "source_location": "L1458",
       "weight": 1.0
     },
     {
@@ -17088,7 +17088,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1477",
+      "source_location": "L1484",
       "weight": 1.0
     },
     {
@@ -17100,7 +17100,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1502",
+      "source_location": "L1509",
       "weight": 1.0
     },
     {
@@ -17112,7 +17112,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L317",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -17124,7 +17124,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L335",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -17136,7 +17136,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L386",
+      "source_location": "L393",
       "weight": 1.0
     },
     {
@@ -17148,7 +17148,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3390",
+      "source_location": "L3397",
       "weight": 1.0
     },
     {
@@ -17160,7 +17160,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3419",
+      "source_location": "L3426",
       "weight": 1.0
     },
     {
@@ -17172,7 +17172,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3459",
+      "source_location": "L3466",
       "weight": 1.0
     },
     {
@@ -17184,7 +17184,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3171",
+      "source_location": "L3178",
       "weight": 1.0
     },
     {
@@ -17196,7 +17196,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3180",
+      "source_location": "L3187",
       "weight": 1.0
     },
     {
@@ -17208,7 +17208,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3243",
+      "source_location": "L3250",
       "weight": 1.0
     },
     {
@@ -17220,19 +17220,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders_runadaptiveanimation",
-      "target": "app_src_main_assets_web_js_shaders_isenginesuspended",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L100",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -17244,7 +17232,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L98",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders_runadaptiveanimation",
+      "target": "app_src_main_assets_web_js_shaders_isenginesuspended",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -18960,7 +18960,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3509",
+      "source_location": "L3516",
       "weight": 1.0
     },
     {
@@ -18972,7 +18972,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7334",
+      "source_location": "L7341",
       "weight": 1.0
     },
     {
@@ -18984,7 +18984,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7373",
+      "source_location": "L7380",
       "weight": 1.0
     },
     {
@@ -18996,7 +18996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7021",
+      "source_location": "L7028",
       "weight": 1.0
     },
     {
@@ -19008,7 +19008,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7028",
+      "source_location": "L7035",
       "weight": 1.0
     },
     {
@@ -19020,7 +19020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9213",
+      "source_location": "L9220",
       "weight": 1.0
     },
     {
@@ -19032,7 +19032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9218",
+      "source_location": "L9225",
       "weight": 1.0
     },
     {
@@ -19044,7 +19044,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9856",
+      "source_location": "L9863",
       "weight": 1.0
     },
     {
@@ -19056,7 +19056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5097",
+      "source_location": "L5104",
       "weight": 1.0
     },
     {
@@ -22564,7 +22564,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10154",
+      "source_location": "L10161",
       "weight": 1.0
     },
     {
@@ -22575,7 +22575,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10165",
+      "source_location": "L10172",
       "weight": 1.0
     },
     {
@@ -22586,7 +22586,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10169",
+      "source_location": "L10176",
       "weight": 1.0
     },
     {
@@ -22608,7 +22608,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1243",
+      "source_location": "L1250",
       "weight": 1.0
     },
     {
@@ -22619,7 +22619,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1538",
+      "source_location": "L1545",
       "weight": 1.0
     },
     {
@@ -22630,7 +22630,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1770",
+      "source_location": "L1777",
       "weight": 1.0
     },
     {
@@ -22641,7 +22641,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2169",
+      "source_location": "L2176",
       "weight": 1.0
     },
     {
@@ -22652,7 +22652,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2355",
+      "source_location": "L2362",
       "weight": 1.0
     },
     {
@@ -22663,7 +22663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L286",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -22674,7 +22674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L297",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
@@ -22685,7 +22685,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3056",
+      "source_location": "L3063",
       "weight": 1.0
     },
     {
@@ -22696,7 +22696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3281",
+      "source_location": "L3288",
       "weight": 1.0
     },
     {
@@ -22707,7 +22707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3500",
+      "source_location": "L3507",
       "weight": 1.0
     },
     {
@@ -22718,7 +22718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L3678",
+      "source_location": "L3685",
       "weight": 1.0
     },
     {
@@ -22729,7 +22729,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4046",
+      "source_location": "L4053",
       "weight": 1.0
     },
     {
@@ -22740,7 +22740,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4048",
+      "source_location": "L4055",
       "weight": 1.0
     },
     {
@@ -22751,7 +22751,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4229",
+      "source_location": "L4236",
       "weight": 1.0
     },
     {
@@ -22762,7 +22762,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4236",
+      "source_location": "L4243",
       "weight": 1.0
     },
     {
@@ -22773,7 +22773,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4254",
+      "source_location": "L4261",
       "weight": 1.0
     },
     {
@@ -22784,7 +22784,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4258",
+      "source_location": "L4265",
       "weight": 1.0
     },
     {
@@ -22795,7 +22795,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L426",
+      "source_location": "L433",
       "weight": 1.0
     },
     {
@@ -22806,18 +22806,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L431",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_initsiderays",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L440",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -22828,7 +22817,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4434",
+      "source_location": "L4441",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders",
+      "target": "app_src_main_assets_web_js_shaders_initsiderays",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -22839,18 +22839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4597",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_isenginesuspended",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L47",
+      "source_location": "L4604",
       "weight": 1.0
     },
     {
@@ -22861,7 +22850,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4743",
+      "source_location": "L4750",
       "weight": 1.0
     },
     {
@@ -22872,7 +22861,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L4902",
+      "source_location": "L4909",
       "weight": 1.0
     },
     {
@@ -22883,18 +22872,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L5068",
+      "source_location": "L5075",
       "weight": 1.0
     },
     {
       "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_requestanimationframe",
+      "target": "app_src_main_assets_web_js_shaders_isenginesuspended",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L56",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -22905,7 +22894,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6127",
+      "source_location": "L6134",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders",
+      "target": "app_src_main_assets_web_js_shaders_requestanimationframe",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -22916,7 +22916,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6470",
+      "source_location": "L6477",
       "weight": 1.0
     },
     {
@@ -22927,7 +22927,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6658",
+      "source_location": "L6665",
       "weight": 1.0
     },
     {
@@ -22938,18 +22938,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6838",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_initplasmawave",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L697",
+      "source_location": "L6845",
       "weight": 1.0
     },
     {
@@ -22960,7 +22949,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7000",
+      "source_location": "L7007",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders",
+      "target": "app_src_main_assets_web_js_shaders_initplasmawave",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L704",
       "weight": 1.0
     },
     {
@@ -22971,7 +22971,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7232",
+      "source_location": "L7239",
       "weight": 1.0
     },
     {
@@ -22982,7 +22982,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7555",
+      "source_location": "L7562",
       "weight": 1.0
     },
     {
@@ -22993,7 +22993,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7984",
+      "source_location": "L7991",
       "weight": 1.0
     },
     {
@@ -23004,7 +23004,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8151",
+      "source_location": "L8158",
       "weight": 1.0
     },
     {
@@ -23015,7 +23015,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8384",
+      "source_location": "L8391",
       "weight": 1.0
     },
     {
@@ -23026,18 +23026,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8639",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_runadaptiveanimation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L89",
+      "source_location": "L8646",
       "weight": 1.0
     },
     {
@@ -23048,7 +23037,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8952",
+      "source_location": "L8959",
       "weight": 1.0
     },
     {
@@ -23059,7 +23048,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9185",
+      "source_location": "L9192",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders",
+      "target": "app_src_main_assets_web_js_shaders_runadaptiveanimation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -23070,7 +23070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L956",
+      "source_location": "L963",
       "weight": 1.0
     },
     {
@@ -23081,18 +23081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9682",
-      "weight": 1.0
-    },
-    {
-      "source": "app_src_main_assets_web_js_shaders",
-      "target": "app_src_main_assets_web_js_shaders_initferrofluid",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L978",
+      "source_location": "L9689",
       "weight": 1.0
     },
     {
@@ -23103,7 +23092,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9838",
+      "source_location": "L9845",
+      "weight": 1.0
+    },
+    {
+      "source": "app_src_main_assets_web_js_shaders",
+      "target": "app_src_main_assets_web_js_shaders_initferrofluid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/src/main/assets/web/js/shaders.js",
+      "source_location": "L985",
       "weight": 1.0
     },
     {
@@ -23114,7 +23114,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2219",
+      "source_location": "L2226",
       "weight": 1.0
     },
     {
@@ -23125,7 +23125,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7014",
+      "source_location": "L7021",
       "weight": 1.0
     },
     {
@@ -23136,7 +23136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7023",
+      "source_location": "L7030",
       "weight": 1.0
     },
     {
@@ -23147,7 +23147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L7776",
+      "source_location": "L7783",
       "weight": 1.0
     },
     {
@@ -23158,7 +23158,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9777",
+      "source_location": "L9784",
       "weight": 1.0
     },
     {
@@ -23169,7 +23169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9787",
+      "source_location": "L9794",
       "weight": 1.0
     },
     {
@@ -23180,7 +23180,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9812",
+      "source_location": "L9819",
       "weight": 1.0
     },
     {
@@ -23191,7 +23191,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6136",
+      "source_location": "L6143",
       "weight": 1.0
     },
     {
@@ -23202,7 +23202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L6158",
+      "source_location": "L6165",
       "weight": 1.0
     },
     {
@@ -23213,7 +23213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L758",
+      "source_location": "L765",
       "weight": 1.0
     },
     {
@@ -23224,7 +23224,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8171",
+      "source_location": "L8178",
       "weight": 1.0
     },
     {
@@ -23235,7 +23235,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8279",
+      "source_location": "L8286",
       "weight": 1.0
     },
     {
@@ -23246,7 +23246,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8290",
+      "source_location": "L8297",
       "weight": 1.0
     },
     {
@@ -23257,7 +23257,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8323",
+      "source_location": "L8330",
       "weight": 1.0
     },
     {
@@ -23268,7 +23268,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8344",
+      "source_location": "L8351",
       "weight": 1.0
     },
     {
@@ -23279,7 +23279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L1262",
+      "source_location": "L1269",
       "weight": 1.0
     },
     {
@@ -23290,7 +23290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L371",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -29211,7 +29211,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L2227",
+      "source_location": "L2234",
       "weight": 1.0
     },
     {
@@ -29223,7 +29223,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10061",
+      "source_location": "L10068",
       "weight": 1.0
     },
     {
@@ -29235,7 +29235,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10066",
+      "source_location": "L10073",
       "weight": 1.0
     },
     {
@@ -29247,7 +29247,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10069",
+      "source_location": "L10076",
       "weight": 1.0
     },
     {
@@ -29259,7 +29259,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L10094",
+      "source_location": "L10101",
       "weight": 1.0
     },
     {
@@ -29271,7 +29271,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9783",
+      "source_location": "L9790",
       "weight": 1.0
     },
     {
@@ -29283,7 +29283,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9807",
+      "source_location": "L9814",
       "weight": 1.0
     },
     {
@@ -29295,7 +29295,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9808",
+      "source_location": "L9815",
       "weight": 1.0
     },
     {
@@ -29307,7 +29307,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9821",
+      "source_location": "L9828",
       "weight": 1.0
     },
     {
@@ -29319,7 +29319,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L9814",
+      "source_location": "L9821",
       "weight": 1.0
     },
     {
@@ -29331,7 +29331,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L769",
+      "source_location": "L776",
       "weight": 1.0
     },
     {
@@ -29343,7 +29343,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8330",
+      "source_location": "L8337",
       "weight": 1.0
     },
     {
@@ -29355,7 +29355,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8335",
+      "source_location": "L8342",
       "weight": 1.0
     },
     {
@@ -29367,7 +29367,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8338",
+      "source_location": "L8345",
       "weight": 1.0
     },
     {
@@ -29379,7 +29379,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8364",
+      "source_location": "L8371",
       "weight": 1.0
     },
     {
@@ -29391,7 +29391,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L8346",
+      "source_location": "L8353",
       "weight": 1.0
     },
     {
@@ -29403,7 +29403,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/src/main/assets/web/js/shaders.js",
-      "source_location": "L380",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -29516,5 +29516,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bdad4db5a3318cd7ec4438cd5128f8bbc420bf62"
+  "built_at_commit": "13c026ccde06683c45db3a6801df771de887d6b6"
 }

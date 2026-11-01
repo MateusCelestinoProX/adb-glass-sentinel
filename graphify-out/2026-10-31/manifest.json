@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/app.js": {
-    "mtime": 1793484950.7982023,
-    "seen": 1793485096.5185761,
-    "ast_hash": "38e9a93b94b6823c018e5fc45b99f7c0",
+    "mtime": 1793491103.374034,
+    "seen": 1793491328.824162,
+    "ast_hash": "274214ded7efdfd65306736653a875d3",
     "semantic_hash": ""
   },
   "app/src/main/assets/web/js/ogl.js": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/AudioStreamManager.kt": {
-    "mtime": 1793490107.7757182,
-    "seen": 1793490232.123948,
-    "ast_hash": "8bf1824ea6f9af985dbc5b367ad1f528",
+    "mtime": 1793490854.73125,
+    "seen": 1793491328.8241699,
+    "ast_hash": "de948593b0006e862dbf882869c4019a",
     "semantic_hash": ""
   },
   "app/src/main/java/com/mateuscelestino/adbsentinel/SamsungDeXController.kt": {
