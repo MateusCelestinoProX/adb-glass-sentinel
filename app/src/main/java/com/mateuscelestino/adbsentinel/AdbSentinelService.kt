@@ -41,6 +41,7 @@ class AdbSentinelService : Service() {
         createNotificationChannels()
         startForegroundSafely("AeroSentinel: Pronto (Caixa de Som & Mic sob demanda)")
         startMonitoring()
+        SentinelGuardian.start(this)
         restoreGoodLockModules()
 
         // Inicializa servidores de áudio de alta performance (prontos para receber conexões instantâneas)
@@ -338,6 +339,7 @@ class AdbSentinelService : Service() {
         super.onDestroy()
         isRunning = false
         serviceScope.cancel()
+        SentinelGuardian.stop()
         AdbLogStreamer.stopStreaming()
         stopAllResources()
     }

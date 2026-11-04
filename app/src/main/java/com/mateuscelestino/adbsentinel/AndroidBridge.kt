@@ -318,4 +318,9 @@ class AndroidBridge(
             "[]"
         }
     }
+
+    @JavascriptInterface
+    fun getThermalGuardianStatus(): String {
+        return SentinelGuardian.getGuardianStatsJson(activity)
+    }
 }

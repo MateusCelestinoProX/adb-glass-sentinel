@@ -265,6 +265,55 @@ object AudioStreamManager {
     private var audioManager: AudioManager? = null
     private var audioFocusRequest: android.media.AudioFocusRequest? = null
 
+    private val activeStreamingSessions = java.util.concurrent.atomic.AtomicInteger(0)
+
+    @Synchronized
+    private fun acquireStreamingLocks() {
+        val count = activeStreamingSessions.incrementAndGet()
+        val context = appContext ?: return
+        if (count == 1 || wakeLock == null || wakeLock?.isHeld != true) {
+            acquireLocks(context)
+        }
+    }
+
+    @Synchronized
+    private fun releaseStreamingLocks() {
+        val count = activeStreamingSessions.decrementAndGet()
+        if (count <= 0) {
+            activeStreamingSessions.set(0)
+            releaseLocksForce()
+        }
+    }
+
+    fun releaseLocksIfIdleExternal() {
+        if (activeStreamingSessions.get() <= 0) {
+            releaseLocksForce()
+        }
+    }
+
+    @Synchronized
+    fun releaseLocksForce() {
+        try {
+            if (wakeLock?.isHeld == true) wakeLock?.release()
+            wakeLock = null
+            if (wifiLock?.isHeld == true) wifiLock?.release()
+            wifiLock = null
+
+            audioManager?.let { am ->
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && audioFocusRequest != null) {
+                    am.abandonAudioFocusRequest(audioFocusRequest!!)
+                    audioFocusRequest = null
+                } else {
+                    @Suppress("DEPRECATION")
+                    am.abandonAudioFocus(null)
+                }
+            }
+            Log.i(TAG, "⚡ [AeroAudio] Locks de energia liberados para repouso profundo (Doze).")
+        } catch (e: Exception) {
+            Log.w(TAG, "Aviso ao liberar locks: ${e.message}")
+        }
+    }
+
     @Synchronized
     private fun acquireLocks(context: Context) {
         try {
@@ -272,7 +321,7 @@ object AudioStreamManager {
                 val pm = context.applicationContext.getSystemService(Context.POWER_SERVICE) as? PowerManager
                 wakeLock = pm?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "AeroSentinel:AudioStreamWakeLock")?.apply {
                     setReferenceCounted(false)
-                    acquire(24 * 60 * 60 * 1000L) // 24h max
+                    acquire(15 * 60 * 1000L) // 15 min safety timeout
                 }
             }
             if (wifiLock == null) {
@@ -319,24 +368,7 @@ object AudioStreamManager {
     @Synchronized
     private fun releaseLocksIfIdle() {
         if (!isMicRunning && !isSpeakerRunning) {
-            try {
-                if (wakeLock?.isHeld == true) wakeLock?.release()
-                wakeLock = null
-                if (wifiLock?.isHeld == true) wifiLock?.release()
-                wifiLock = null
-
-                audioManager?.let { am ->
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && audioFocusRequest != null) {
-                        am.abandonAudioFocusRequest(audioFocusRequest!!)
-                        audioFocusRequest = null
-                    } else {
-                        @Suppress("DEPRECATION")
-                        am.abandonAudioFocus(null)
-                    }
-                }
-            } catch (e: Exception) {
-                Log.w(TAG, "Aviso ao liberar locks: ${e.message}")
-            }
+            releaseLocksForce()
         }
     }
 
@@ -346,7 +378,7 @@ object AudioStreamManager {
     @Synchronized
     fun startMicServer(context: Context): Boolean {
         if (isMicRunning) return true
-        acquireLocks(context)
+        this.appContext = context.applicationContext
         try {
             micServerSocket = ServerSocket(MIC_PORT).apply { reuseAddress = true }
             isMicRunning = true
@@ -425,6 +457,7 @@ object AudioStreamManager {
             }
 
             record.startRecording()
+            acquireStreamingLocks()
 
             val header = "HTTP/1.1 200 OK\r\n" +
                     "Content-Type: audio/wav\r\n" +
@@ -450,6 +483,7 @@ object AudioStreamManager {
         } catch (e: Exception) {
             Log.v(TAG, "Cliente de microfone desconectado: ${e.message}")
         } finally {
+            releaseStreamingLocks()
             try {
                 if (activeRecord?.recordingState == AudioRecord.RECORDSTATE_RECORDING) {
                     activeRecord.stop()
@@ -606,6 +640,7 @@ object AudioStreamManager {
         var enhancer: LoudnessEnhancer? = null
 
         fun start() {
+            acquireStreamingLocks()
             // Se houver dados iniciais de áudio recebidos no peek
             if (initialPeekLen > 0) {
                 jitterBuffer.writeBytes(initialPeek, 0, initialPeekLen)
@@ -768,6 +803,7 @@ object AudioStreamManager {
         fun stop() {
             if (!isRunning) return
             isRunning = false
+            releaseStreamingLocks()
             try { socket.close() } catch (ignored: Exception) {}
             playerThread?.interrupt()
         }
@@ -779,7 +815,6 @@ object AudioStreamManager {
         this.appContext = context.applicationContext
         getBoosterGainPercent(context)
         maximizeDeviceVolume(context)
-        acquireLocks(context)
         try {
             speakerServerSocket = ServerSocket(SPEAKER_PORT).apply { reuseAddress = true }
             isSpeakerRunning = true

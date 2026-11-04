@@ -37,6 +37,21 @@ while true; do
     settings put global adb_wifi_enabled 1 2>/dev/null
   fi
 
+  # 🛡️ AeroSentinel Shield: Anti-Fork-Bomb & Crash-Loop Watchdog (Auto-Cura em 5s)
+  if [ $((COUNT % 5)) -eq 0 ]; then
+    CRASH_SAMPLE=$(logcat -b crash -d -t 15 2>/dev/null)
+    if [ -n "$CRASH_SAMPLE" ]; then
+      CRASH_PKGS=$(echo "$CRASH_SAMPLE" | grep -E "Process: |ComponentInfo\{" | grep -oE "com\.[a-zA-Z0-9_\.]+" | sort | uniq -c | awk '$1 >= 3 {print $2}')
+      for PKG in $CRASH_PKGS; do
+        if pm list packages -d 2>/dev/null | grep -q "^package:$PKG$"; then
+          pm enable "$PKG" 2>/dev/null
+          logcat -b crash -c 2>/dev/null
+          echo "[$(date '+%Y-%m-%d %H:%M:%S')] [SHIELD] Auto-enabled crash-looping package: $PKG" >> /data/local/tmp/sentinel_autoheal.log
+        fi
+      done
+    fi
+  fi
+
   # Garante persistência dos módulos Good Lock One UI (SoundAssistant & OHO+)
   if [ $((COUNT % 20)) -eq 0 ]; then
     if ! ps -A | grep -q "com.samsung.android.soundassistant"; then
