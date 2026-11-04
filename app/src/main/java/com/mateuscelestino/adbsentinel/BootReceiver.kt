@@ -25,30 +25,12 @@ class BootReceiver : BroadcastReceiver() {
             Log.e("BootReceiver", "Erro ao iniciar serviço no boot: ${e.message}")
         }
 
-        // 2. Acorda os módulos Good Lock para evitar perda de customizações One UI
+        // 2. Garante módulos Good Lock habilitados sem abrir telas na cara do usuário
         Thread {
             try {
-                val soundIntent = context.packageManager.getLaunchIntentForPackage("com.samsung.android.soundassistant")
-                if (soundIntent != null) {
-                    soundIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    context.startActivity(soundIntent)
-                    Thread.sleep(600)
-                    Runtime.getRuntime().exec(arrayOf("sh", "-c", "input keyevent 3"))
-                }
+                Runtime.getRuntime().exec(arrayOf("sh", "-c", "pm enable com.samsung.android.soundassistant 2>/dev/null && pm enable com.samsung.android.sidegesturepad 2>/dev/null"))
             } catch (e: Exception) {
-                Log.w("BootReceiver", "Aviso SoundAssistant boot: ${e.message}")
-            }
-
-            try {
-                val ohoIntent = context.packageManager.getLaunchIntentForPackage("com.samsung.android.sidegesturepad")
-                if (ohoIntent != null) {
-                    ohoIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    context.startActivity(ohoIntent)
-                    Thread.sleep(600)
-                    Runtime.getRuntime().exec(arrayOf("sh", "-c", "input keyevent 3"))
-                }
-            } catch (e: Exception) {
-                Log.w("BootReceiver", "Aviso SideGesturePad boot: ${e.message}")
+                Log.w("BootReceiver", "Aviso GoodLock boot: ${e.message}")
             }
         }.start()
     }

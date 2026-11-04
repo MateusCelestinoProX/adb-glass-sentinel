@@ -225,7 +225,7 @@
       "source_location": "L21"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126",
       "label": "WebChromeClient",
       "_callable": true,
       "_callable_class": true,
@@ -235,10 +235,10 @@
       "file_type": "code",
       "norm_label": "webchromeclient",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L125"
+      "source_location": "L126"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
       "label": "WebViewClient",
       "_callable": true,
       "_callable_class": true,
@@ -248,7 +248,7 @@
       "file_type": "code",
       "norm_label": "webviewclient",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L132"
+      "source_location": "L133"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_oncreate_object_onbackpressedcallback_l93",
@@ -3228,7 +3228,7 @@
       "source_location": "L109"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125_onconsolemessage",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126_onconsolemessage",
       "label": ".onConsoleMessage()",
       "_callable": true,
       "_origin": "ast",
@@ -3237,10 +3237,10 @@
       "file_type": "code",
       "norm_label": ".onconsolemessage()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L126"
+      "source_location": "L127"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_onpagefinished",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_onpagefinished",
       "label": ".onPageFinished()",
       "_callable": true,
       "_origin": "ast",
@@ -3249,10 +3249,10 @@
       "file_type": "code",
       "norm_label": ".onpagefinished()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L141"
+      "source_location": "L142"
     },
     {
-      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_shouldinterceptrequest",
+      "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_shouldinterceptrequest",
       "label": ".shouldInterceptRequest()",
       "_callable": true,
       "_origin": "ast",
@@ -3261,7 +3261,7 @@
       "file_type": "code",
       "norm_label": ".shouldinterceptrequest()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L133"
+      "source_location": "L134"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_injectsafeinsets",
@@ -3273,7 +3273,7 @@
       "file_type": "code",
       "norm_label": ".injectsafeinsets()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L168"
+      "source_location": "L169"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_oncreate",
@@ -3309,7 +3309,7 @@
       "file_type": "code",
       "norm_label": ".ondestroy()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L210"
+      "source_location": "L213"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_onpause",
@@ -3321,7 +3321,7 @@
       "file_type": "code",
       "norm_label": ".onpause()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L195"
+      "source_location": "L198"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_onresume",
@@ -3333,7 +3333,7 @@
       "file_type": "code",
       "norm_label": ".onresume()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L201"
+      "source_location": "L204"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_setupcommandstreamtoui",
@@ -3345,7 +3345,7 @@
       "file_type": "code",
       "norm_label": ".setupcommandstreamtoui()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L191"
+      "source_location": "L194"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_setupinsetslistener",
@@ -3357,7 +3357,7 @@
       "file_type": "code",
       "norm_label": ".setupinsetslistener()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L149"
+      "source_location": "L150"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_startandbindservice",
@@ -3369,7 +3369,7 @@
       "file_type": "code",
       "norm_label": ".startandbindservice()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L181"
+      "source_location": "L184"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_samsungdexcontroller_samsungdexcontroller_activatedex",
@@ -5961,7 +5961,7 @@
       "file_type": "code",
       "norm_label": ".buildforegroundnotification()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L316"
+      "source_location": "L309"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_clearconnectionhistory",
@@ -5973,7 +5973,7 @@
       "file_type": "code",
       "norm_label": ".clearconnectionhistory()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L291"
+      "source_location": "L284"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_createnotificationchannels",
@@ -5985,7 +5985,7 @@
       "file_type": "code",
       "norm_label": ".createnotificationchannels()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L300"
+      "source_location": "L293"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_getconnectionhistoryjson",
@@ -5997,7 +5997,7 @@
       "file_type": "code",
       "norm_label": ".getconnectionhistoryjson()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L286"
+      "source_location": "L279"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onadbtoggled",
@@ -6009,7 +6009,7 @@
       "file_type": "code",
       "norm_label": ".onadbtoggled()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L202"
+      "source_location": "L195"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onbind",
@@ -6045,7 +6045,7 @@
       "file_type": "code",
       "norm_label": ".ondestroy()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L338"
+      "source_location": "L331"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_onstartcommand",
@@ -6057,7 +6057,7 @@
       "file_type": "code",
       "norm_label": ".onstartcommand()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L71"
+      "source_location": "L64"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_recordconnectionhistory",
@@ -6069,7 +6069,7 @@
       "file_type": "code",
       "norm_label": ".recordconnectionhistory()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L259"
+      "source_location": "L252"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_restoregoodlockmodules",
@@ -6093,7 +6093,7 @@
       "file_type": "code",
       "norm_label": ".startforegroundsafely()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L176"
+      "source_location": "L169"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_startmonitoring",
@@ -6105,7 +6105,7 @@
       "file_type": "code",
       "norm_label": ".startmonitoring()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L211"
+      "source_location": "L204"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_startresource",
@@ -6117,7 +6117,7 @@
       "file_type": "code",
       "norm_label": ".startresource()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L110"
+      "source_location": "L103"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_stopallresources",
@@ -6129,7 +6129,7 @@
       "file_type": "code",
       "norm_label": ".stopallresources()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L158"
+      "source_location": "L151"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_stopecosystemservers",
@@ -6141,7 +6141,7 @@
       "file_type": "code",
       "norm_label": ".stopecosystemservers()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L296"
+      "source_location": "L289"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_stopresource",
@@ -6153,7 +6153,7 @@
       "file_type": "code",
       "norm_label": ".stopresource()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L134"
+      "source_location": "L127"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_updatenotification",
@@ -6165,7 +6165,7 @@
       "file_type": "code",
       "norm_label": ".updatenotification()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L333"
+      "source_location": "L326"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_adbsentinelservice_updatestatusnotification",
@@ -6177,7 +6177,7 @@
       "file_type": "code",
       "norm_label": ".updatestatusnotification()",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L167"
+      "source_location": "L160"
     },
     {
       "id": "app_src_main_java_com_mateuscelestino_adbsentinel_adbsentinelservice_localbinder_getservice",
@@ -17676,7 +17676,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L317",
+      "source_location": "L310",
       "weight": 1.0
     },
     {
@@ -17688,7 +17688,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L204",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -17748,7 +17748,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L344",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -17760,7 +17760,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L79",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -17772,7 +17772,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L87",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -17784,7 +17784,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L90",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -17796,7 +17796,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L265",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -17808,7 +17808,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L177",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -17820,7 +17820,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L231",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -17832,7 +17832,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L242",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -17844,7 +17844,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L248",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -17856,7 +17856,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L128",
+      "source_location": "L121",
       "weight": 1.0
     },
     {
@@ -17868,7 +17868,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L164",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -17880,7 +17880,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L297",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -17892,7 +17892,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L152",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -17904,7 +17904,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L335",
+      "source_location": "L328",
       "weight": 1.0
     },
     {
@@ -17916,7 +17916,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L169",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -18892,7 +18892,7 @@
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_onpagefinished",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_onpagefinished",
       "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_injectsafeinsets",
       "relation": "calls",
       "_origin": "ast",
@@ -18900,7 +18900,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -18972,7 +18972,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L206",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -18984,7 +18984,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -20604,7 +20604,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L71",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -20616,7 +20616,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L259",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -20896,7 +20896,7 @@
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125_onconsolemessage",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126_onconsolemessage",
       "target": "consolemessage",
       "relation": "references",
       "_origin": "ast",
@@ -20904,11 +20904,11 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_onpagefinished",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_onpagefinished",
       "target": "webview",
       "relation": "references",
       "_origin": "ast",
@@ -20916,11 +20916,11 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_shouldinterceptrequest",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_shouldinterceptrequest",
       "target": "webresourcerequest",
       "relation": "references",
       "_origin": "ast",
@@ -20928,11 +20928,11 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_shouldinterceptrequest",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_shouldinterceptrequest",
       "target": "webview",
       "relation": "references",
       "_origin": "ast",
@@ -20940,7 +20940,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -21156,7 +21156,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L316",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -21208,7 +21208,7 @@
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_shouldinterceptrequest",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_shouldinterceptrequest",
       "target": "webresourceresponse",
       "relation": "references",
       "_origin": "ast",
@@ -21216,7 +21216,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -24250,24 +24250,24 @@
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L125",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
       "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -24513,25 +24513,25 @@
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126",
       "relation": "inherits",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L125",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
       "relation": "inherits",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -28678,7 +28678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L110",
+      "source_location": "L103",
       "weight": 1.0
     },
     {
@@ -28689,7 +28689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L134",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -28700,7 +28700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L158",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -28711,7 +28711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L167",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -28722,7 +28722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L176",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -28733,7 +28733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L202",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -28744,7 +28744,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L211",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -28755,7 +28755,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L259",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -28766,7 +28766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L286",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -28777,7 +28777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L291",
+      "source_location": "L284",
       "weight": 1.0
     },
     {
@@ -28788,7 +28788,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L296",
+      "source_location": "L289",
       "weight": 1.0
     },
     {
@@ -28799,7 +28799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L300",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -28810,7 +28810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L316",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -28821,7 +28821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L333",
+      "source_location": "L326",
       "weight": 1.0
     },
     {
@@ -28832,7 +28832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L338",
+      "source_location": "L331",
       "weight": 1.0
     },
     {
@@ -28876,7 +28876,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/AdbSentinelService.kt",
-      "source_location": "L71",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -29723,7 +29723,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L149",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -29734,7 +29734,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L168",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -29745,7 +29745,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L181",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -29756,7 +29756,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L191",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -29767,7 +29767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L195",
+      "source_location": "L198",
       "weight": 1.0
     },
     {
@@ -29778,7 +29778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L201",
+      "source_location": "L204",
       "weight": 1.0
     },
     {
@@ -29789,7 +29789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L210",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -29804,36 +29804,36 @@
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l125_onconsolemessage",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webchromeclient_l126_onconsolemessage",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L126",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_shouldinterceptrequest",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_shouldinterceptrequest",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L133",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
-      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132",
-      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l132_onpagefinished",
+      "source": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133",
+      "target": "app_src_main_java_com_mateuscelestino_adbsentinel_mainactivity_mainactivity_configurewebview_object_webviewclient_l133_onpagefinished",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L141",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -30482,7 +30482,7 @@
       "confidence_score": 0.85,
       "context": "call",
       "source_file": "app/src/main/java/com/mateuscelestino/adbsentinel/MainActivity.kt",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -30523,5 +30523,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "904bea168ff927580cfe9a68b5fc10f55b8b1f8c"
+  "built_at_commit": "ec6ecbc27db41f9fb78091cad9d5c0d3fd95a48f"
 }

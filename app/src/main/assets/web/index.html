@@ -2,76 +2,952 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber Shader Background</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #05070c;
-    }
-    #bg-webgl-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    .ambient-veil {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(5,7,12,0.02) 0%, rgba(5,7,12,0.35) 100%);
-      pointer-events: none;
-    }
-    .vignette-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.45);
-      pointer-events: none;
-    }
-    .cyber-grid {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: 36px 36px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      pointer-events: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#05070c">
+  <title>AeroSentinel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="bg-webgl-container"></div>
-  <div class="cyber-grid"></div>
-  <div class="ambient-veil"></div>
-  <div class="vignette-layer"></div>
 
-  <script type="module">
-    import { renderShader } from './shaders.js';
-    
-    window.setShader = function(shaderName) {
-      console.log("[CyberShader] Ativando shader:", shaderName);
-      renderShader(shaderName);
-    };
+  <!-- =========================================================
+       UNIVERSAL BACKGROUND VIEWPORT (5 Shaders WebGL Personal OS)
+       ========================================================= -->
+  <div class="bg-viewport">
+    <div id="bg-webgl-container"></div>
+    <div class="ambient-veil"></div>
+    <div class="vignette-layer"></div>
+  </div>
 
-    // Lê shader inicial da URL ou usa 'strands'
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialShader = urlParams.get('shader') || 'strands';
+  <!-- Container Principal do App -->
+  <div class="app-viewport">
     
-    // Inicia imediatamente
-    renderShader(initialShader);
-  </script>
+    <!-- Header de Vidro Líquido -->
+    <header class="header-glass">
+      <div class="brand-badge">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+        </div>
+        <div class="brand-text-col">
+          <h1 class="brand-title">AeroSentinel</h1>
+          <span class="brand-subtitle">Sentinel Studio • Mobile</span>
+        </div>
+      </div>
+
+      <div class="header-status-badge" id="header-status-pill">
+        <span class="status-dot" id="header-status-dot"></span>
+        <span id="header-status-text">PORTA 5555 ATIVA</span>
+      </div>
+    </header>
+
+    <!-- Barra Segmentada de Navegação (AeroSentinel) -->
+    <div class="nav-segment-bar">
+      <button class="nav-segment-btn active" id="tab-btn-sentinel" onclick="switchAeroTab('sentinel')">
+        <span class="tab-btn-icon">🛡️</span>
+        <span>Sentinel &amp; Mac</span>
+      </button>
+      <button class="nav-segment-btn" id="tab-btn-backups" onclick="switchAeroTab('backups')">
+        <span class="tab-btn-icon">📊</span>
+        <span>Backups &amp; Notificações</span>
+        <span class="tab-badge-counter" id="tab-backups-badge">4</span>
+      </button>
+    </div>
+
+    <!-- PAINEL 1: SENTINEL & MAC STUDIO -->
+    <div id="panel-sentinel" class="aero-tab-panel active">
+
+    <!-- Card 1: Toggle Wireless ADB (Dial Ring de Vidro) -->
+    <section class="sentinel-main-card">
+      <div class="toggle-dial-container" id="toggle-dial-btn" title="Toque para Ativar ou Parar o Sistema ADB">
+        <svg class="dial-svg-ring" viewBox="0 0 140 140">
+          <circle class="dial-track" cx="70" cy="70" r="58" />
+          <circle class="dial-progress" id="dial-progress-ring" cx="70" cy="70" r="58" />
+        </svg>
+        <div class="dial-center-btn">
+          <span class="dial-icon" id="dial-icon-emoji">⚡</span>
+          <span class="dial-state-text" id="dial-state-label">WIRELESS ON</span>
+          <span class="dial-sub-hint" id="dial-sub-hint">TOQUE P/ PARAR</span>
+        </div>
+      </div>
+
+      <!-- Pílula do Endpoint com Copiar -->
+      <div class="endpoint-info-pill" id="endpoint-pill" title="Toque para copiar endpoint">
+        <span class="endpoint-label">ENDPOINT:</span>
+        <span class="endpoint-ip" id="endpoint-ip-label">192.168.15.22</span><span class="endpoint-port" id="endpoint-port-label">:5555</span>
+        <span class="copy-badge">COPIAR</span>
+      </div>
+    </section>
+
+    <!-- Card 1.5: MAC ECOSYSTEM STATION (Webcam, Mic/Speaker, DeX & Tailscale Remote) -->
+    <section class="disclosure-card mac-ecosystem-card">
+      <div class="section-header-row">
+        <h2 class="section-title">
+          <span>💻 Mac Ecosystem Studio</span>
+        </h2>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button class="eco-kill-all-btn" id="btn-kill-all" title="Encerra todos os processos de ecossistema no Celular e no Mac">🛑 KILL ALL</button>
+          <span class="section-count-badge" id="eco-status-badge">PRONTO</span>
+        </div>
+      </div>
+
+      <!-- Tailscale & Global ADB Tunnel -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🌐</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Tailscale & ADB Global</span>
+              <span class="eco-desc" id="eco-tailscale-status">Detectando IP Tailnet...</span>
+            </div>
+          </div>
+          <button class="eco-action-btn" id="btn-fix-adb-5555" title="Fixa a porta 5555">FIXAR 5555</button>
+        </div>
+        <div class="eco-link-box" id="tailscale-connect-box">
+          <span class="eco-cmd" id="tailscale-cmd-text">adb connect 100.107.180.88:5555</span>
+          <button class="eco-copy-btn" id="btn-copy-tailscale">COPIAR</button>
+        </div>
+      </div>
+
+      <!-- Áudio Profissional p/ macOS (Caixa de Som & Microfone) -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🔊</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Caixa de Som (Mac ➔ Celular)</span>
+              <span class="eco-desc">Toca o som do MacBook nos alto-falantes estéreo do S22 Ultra (Porta 8082)</span>
+            </div>
+          </div>
+          <button class="eco-toggle-btn" id="btn-toggle-speaker">INICIAR</button>
+        </div>
+        <div class="eco-link-box" id="speaker-url-box" style="display: none;">
+          <span class="eco-cmd" id="speaker-url-text">http://192.168.18.16:8082/stream</span>
+          <button class="eco-copy-btn" id="btn-copy-speaker">COPIAR</button>
+        </div>
+      </div>
+
+      <!-- AMPLIFICADOR & BOOSTER DE VOLUME (Aero Mobile) -->
+      <div class="eco-feature-box booster-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">⚡</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Amplificador &amp; Booster de Volume</span>
+              <span class="eco-desc" id="booster-status-desc">Aumenta a potência além de 100% com soft-clipping analógico suave</span>
+            </div>
+          </div>
+          <button class="eco-action-btn primary" id="btn-max-volume-mobile" title="Coloca o volume do Galaxy S22 Ultra no nível máximo (15/15)">MAX 15/15</button>
+        </div>
+
+        <div class="booster-gain-indicator-row">
+          <span class="booster-gain-badge" id="booster-gain-badge">180% • +4.8 dB</span>
+          <span class="booster-clip-badge">SOFT-CLIPPING PROTECTED</span>
+        </div>
+
+        <!-- Presets Rápidos de 1 Toque -->
+        <div class="booster-presets-grid">
+          <button class="booster-preset-btn" data-gain="100">
+            <span class="preset-pct">100%</span>
+            <span class="preset-label">Padrão</span>
+          </button>
+          <button class="booster-preset-btn" data-gain="150">
+            <span class="preset-pct">150%</span>
+            <span class="preset-label">+3.5dB</span>
+          </button>
+          <button class="booster-preset-btn active" data-gain="180">
+            <span class="preset-pct">180%</span>
+            <span class="preset-label">+4.8dB</span>
+          </button>
+          <button class="booster-preset-btn" data-gain="200">
+            <span class="preset-pct">200%</span>
+            <span class="preset-label">Dobro</span>
+          </button>
+          <button class="booster-preset-btn" data-gain="250">
+            <span class="preset-pct">250%</span>
+            <span class="preset-label">Cinema</span>
+          </button>
+          <button class="booster-preset-btn" data-gain="300">
+            <span class="preset-pct">300%</span>
+            <span class="preset-label">Máximo</span>
+          </button>
+        </div>
+
+        <!-- Slider Contínuo de Precisão Mobile -->
+        <div class="booster-slider-row">
+          <span class="slider-icon">🔉</span>
+          <input type="range" class="booster-slider" id="booster-slider-mobile" min="100" max="300" step="5" value="180">
+          <span class="slider-icon">🔊</span>
+          <span class="slider-val-label" id="booster-val-label">180%</span>
+        </div>
+      </div>
+
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🎙️</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Microfone HD (Celular ➔ Mac)</span>
+              <span class="eco-desc">Transmite captação com cancelamento de ruído p/ Mac na porta 8081</span>
+            </div>
+          </div>
+          <button class="eco-toggle-btn" id="btn-toggle-mic">INICIAR</button>
+        </div>
+        <div class="eco-link-box" id="mic-url-box" style="display: none;">
+          <span class="eco-cmd" id="mic-url-text">http://192.168.18.16:8081/mic.wav</span>
+          <button class="eco-copy-btn" id="btn-copy-mic">COPIAR</button>
+        </div>
+      </div>
+
+      <!-- Samsung DeX & Controle Remoto do Mac -->
+      <div class="eco-feature-box">
+        <div class="eco-feature-header">
+          <div class="eco-title-group">
+            <span class="eco-icon">🖥️</span>
+            <div class="eco-text-col">
+              <span class="eco-name">Samsung DeX & Controle Mac</span>
+              <span class="eco-desc">Ativação do DeX + Controle via Teclado e Trackpad</span>
+            </div>
+          </div>
+          <button class="eco-action-btn primary" id="btn-activate-dex">ATIVAR DEX</button>
+        </div>
+        <div class="eco-link-box">
+          <span class="eco-cmd" id="dex-info-text">Servidor Remoto Mac: Porta 8083</span>
+          <button class="eco-copy-btn" id="btn-dex-cmd-copy">COPIAR SCRIPT</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 2: Dispositivos Conectados (IP Mandatório) -->
+    <section class="disclosure-card">
+      <div class="section-header-row">
+        <h2 class="section-title">
+          <span>📡 Dispositivos no ADB</span>
+        </h2>
+        <span class="section-count-badge" id="active-count-badge">0 ATIVOS</span>
+      </div>
+
+      <div id="active-devices-container">
+        <!-- Renderizado dinamicamente -->
+      </div>
+    </section>
+
+    <!-- Card 3: SUPER GLASS BOX TERMINAL (Dynamic System Accent • Zero Flickeo) -->
+    <section class="terminal-card">
+      <div class="terminal-header">
+        <div class="terminal-title-group">
+          <div class="terminal-lights">
+            <span class="term-light red"></span>
+            <span class="term-light yellow"></span>
+            <span class="term-light green"></span>
+          </div>
+          <span class="terminal-label">ADB SHELL LIVE INSPECTOR</span>
+          <div class="terminal-live-badge" id="terminal-live-badge">
+            <span class="live-dot-pulse"></span>
+            <span id="terminal-live-text">REAL-TIME</span>
+          </div>
+        </div>
+        <div class="terminal-actions">
+          <button class="term-btn-icon" id="btn-term-fullscreen" title="Visualização em Tela Cheia">⛶ TELA CHEIA</button>
+          <button class="term-btn-icon" id="btn-term-pause">PAUSAR</button>
+          <button class="term-btn-icon" id="btn-term-clear">LIMPAR</button>
+        </div>
+      </div>
+
+      <!-- Barra Intuitiva de Data, Hora Ao Vivo e Último Pulso do Terminal -->
+      <div class="terminal-datetime-bar">
+        <div class="term-dt-item">
+          <span class="term-dt-icon">📅</span>
+          <span id="term-live-date">HOJE, --/--/----</span>
+        </div>
+        <span class="term-dt-sep">&bull;</span>
+        <div class="term-dt-item">
+          <span class="term-dt-icon">🕒</span>
+          <span id="term-live-clock" class="term-clock-mono">--:--:--</span>
+        </div>
+        <span class="term-dt-sep">&bull;</span>
+        <div class="term-dt-item term-dt-last">
+          <span id="term-last-cmd-time">Aguardando eventos...</span>
+        </div>
+      </div>
+
+      <!-- Viewport de Comandos em Fluxo Natural e Suave -->
+      <div class="terminal-box-viewport" id="terminal-viewport">
+        <div class="terminal-empty-msg" id="terminal-empty-msg">
+          &gt; Escutando comandos shell recebidos pelo adbd em tempo real...<br>
+          &gt; Data, horário exato, IP de origem e payload sincronizados com a cor do sistema.
+        </div>
+      </div>
+    </section>
+    </div> <!-- Fim de #panel-sentinel -->
+
+    <!-- =========================================================
+         PAINEL 2: CENTRAL DE BACKUPS & AUDITORIA (AeroSentinel)
+         ========================================================= -->
+    <div id="panel-backups" class="aero-tab-panel" style="display: none;">
+      
+      <!-- KPI Telemetry Grid -->
+      <div class="backup-kpi-grid">
+        <div class="backup-kpi-card">
+          <div class="kpi-icon-wrap" style="color: var(--accent-primary);">🛡️</div>
+          <div class="kpi-data-col">
+            <span class="kpi-label">STATUS GERAL</span>
+            <span class="kpi-value" id="kpi-overall-status">100% OPERACIONAL</span>
+            <span class="kpi-subtext">4 Automações Ativas</span>
+          </div>
+        </div>
+
+        <div class="backup-kpi-card">
+          <div class="kpi-icon-wrap" style="color: var(--accent-cyan);">☁️</div>
+          <div class="kpi-data-col">
+            <span class="kpi-label">ÚLTIMO SNAPSHOT</span>
+            <span class="kpi-value" id="kpi-snapshot-size">14.9 GB</span>
+            <span class="kpi-subtext">Hoje • Google Drive</span>
+          </div>
+        </div>
+
+        <div class="backup-kpi-card">
+          <div class="kpi-icon-wrap" style="color: var(--accent-primary);">💬</div>
+          <div class="kpi-data-col">
+            <span class="kpi-label">WHATSAPP SYNC</span>
+            <span class="kpi-value" id="kpi-whatsapp-count">17.024+ ITENS</span>
+            <span class="kpi-subtext">Sync em Fundo Ativo</span>
+          </div>
+        </div>
+
+        <div class="backup-kpi-card">
+          <div class="kpi-icon-wrap" style="color: var(--accent-cyan);">💾</div>
+          <div class="kpi-data-col">
+            <span class="kpi-label">ARMAZENAMENTO</span>
+            <span class="kpi-value" id="kpi-storage-free">21.6 GB LIVRES</span>
+            <span class="kpi-subtext">APFS macOS Saudável</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros e Atualização -->
+      <div class="backup-filter-row">
+        <div class="backup-filter-chips">
+          <button class="filter-chip active" id="chip-filter-all" onclick="filterBackupNotifications('ALL')">TODOS (4)</button>
+          <button class="filter-chip" id="chip-filter-success" onclick="filterBackupNotifications('SUCCESS')">SUCESSO</button>
+          <button class="filter-chip" id="chip-filter-warning" onclick="filterBackupNotifications('WARNING')">ALERTAS</button>
+          <button class="filter-chip" id="chip-filter-info" onclick="filterBackupNotifications('INFO')">INFO</button>
+        </div>
+        <button class="backup-refresh-btn" id="btn-refresh-notifications" onclick="refreshBackupNotifications()" title="Atualizar Notificações">
+          <span>🔄</span>
+        </button>
+      </div>
+
+      <!-- Feed Dinâmico de Notificações de Backup -->
+      <div class="backup-notifications-stream" id="backup-notifications-list">
+        <!-- Itens inseridos dinamicamente pelo JavaScript -->
+      </div>
+
+      <!-- Card Informativo de Auditoria de Integridade -->
+      <section class="disclosure-card backup-audit-box">
+        <div class="section-header-row">
+          <h2 class="section-title">
+            <span>🛡️ Auditoria Completa de Integridade</span>
+          </h2>
+          <span class="section-count-badge" style="background: var(--accent-primary-soft); color: var(--accent-primary); border-color: var(--accent-primary-border);">SHA-256 OK</span>
+        </div>
+        <p class="backup-audit-desc">
+          Todos os backups automatizados e rotinas de governança contam com monitoramento ativo de integridade, cálculo criptográfico SHA-256, sincronização remota com Google Drive e garantia de resíduo zero de armazenamento temporário no APFS.
+        </p>
+        <div class="backup-audit-chips">
+          <span class="audit-chip">✓ GitHub: 100% Ok</span>
+          <span class="audit-chip">✓ WhatsApp: 17k+ Itens</span>
+          <span class="audit-chip">✓ Photos Sentinel: Ativo</span>
+          <span class="audit-chip">✓ APFS: Seguro</span>
+        </div>
+      </section>
+
+    </div> <!-- Fim de #panel-backups -->
+
+  </div>
+
+  <!-- DOCK INFERIOR MINIMALISTA DE VIDRO -->
+  <nav class="bottom-dock-glass">
+    <button class="dock-pill-btn" id="dock-btn-background">
+      <span class="dock-btn-icon">🎨</span>
+      <span>Background &amp; Visual</span>
+    </button>
+    <button class="dock-pill-btn" id="dock-btn-history">
+      <span class="dock-btn-icon">📜</span>
+      <span>Histórico &amp; Chaves</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================
+       WIDGET BACKGROUND & VISUAL (Shaders + Accent Color Picker)
+       ========================================================= -->
+  <div class="modal-overlay" id="background-widget-overlay">
+    <div class="modal-sheet-glass">
+      <div class="modal-sheet-header">
+        <div>
+          <h3 class="modal-title">Widget de Background &amp; Visual</h3>
+          <span class="modal-subtitle">Personalize a estética, o terminal e o motor gráfico WebGL</span>
+        </div>
+        <button class="modal-close-btn" id="btn-bg-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-scrollable-content">
+
+        <!-- Seção 1: Cor Principal da Interface & Terminal -->
+        <div class="widget-section-block">
+          <div class="widget-section-title">
+            <span>✨ Cor Principal do Sistema &amp; Terminal</span>
+          </div>
+          <p class="widget-section-desc">
+            Escolha a cor principal do sistema. Todos os cards, anéis, badges e as cores do Shell Glass Terminal se adaptam instantaneamente.
+          </p>
+
+          <!-- Paleta de Cores de Acento -->
+          <div class="color-palette-row">
+            <button class="color-swatch-btn" data-color="#00f0ff" style="--c: #00f0ff;" title="Ciano Neon"></button>
+            <button class="color-swatch-btn" data-color="#a855f7" style="--c: #a855f7;" title="Violeta Cyber"></button>
+            <button class="color-swatch-btn" data-color="#f59e0b" style="--c: #f59e0b;" title="Ouro Solar"></button>
+            <button class="color-swatch-btn" data-color="#ff2a5f" style="--c: #ff2a5f;" title="Rubi Escarlate"></button>
+            <button class="color-swatch-btn" data-color="#3b82f6" style="--c: #3b82f6;" title="Azul Elétrico"></button>
+            <button class="color-swatch-btn" data-color="#ec4899" style="--c: #ec4899;" title="Rosa Neon"></button>
+            <button class="color-swatch-btn active" data-color="#00ff66" style="--c: #00ff66;" title="Esmeralda"></button>
+            <button class="color-swatch-btn" data-color="#ffffff" style="--c: #ffffff;" title="Branco Puro"></button>
+          </div>
+
+          <!-- Seletor de Cor Livre Hexadecimal -->
+          <div class="custom-color-row">
+            <label class="custom-color-label" for="custom-color-input">
+              <span class="color-preview-circle" id="custom-color-preview"></span>
+              <span id="custom-color-hex-text">Cor Customizada (#00ff66)</span>
+            </label>
+            <input type="color" id="custom-color-input" value="#00ff66">
+          </div>
+        </div>
+
+        <!-- Seção 2: 5 Shaders WebGL do Personal OS -->
+        <div class="widget-section-block">
+          <div class="widget-section-title">
+            <span>🌌 Shaders WebGL (Motor Personal OS)</span>
+          </div>
+          <p class="widget-section-desc">
+            Shaders dinâmicos com suas paletas ricas originais, renderizados na GPU com alta performance.
+          </p>
+
+          <div class="shader-card-list">
+            <!-- 1. Soft Aurora -->
+            <div class="shader-option-card" data-shader="softaurora">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #00f5d4, #9d4edd);"></div>
+                <div>
+                  <div class="shader-title">🌌 Soft Aurora</div>
+                  <div class="shader-subtitle">Aurora boreal cósmica com véus fluidos e ruído 3D Perlin</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 2. 3D Particles -->
+            <div class="shader-option-card" data-shader="particles">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #a855f7, #6366f1);"></div>
+                <div>
+                  <div class="shader-title">✨ 3D Particles</div>
+                  <div class="shader-subtitle">Point cloud instanciada tridimensional com rotação orbital interativa</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 3. Ghost Fibers -->
+            <div class="shader-option-card" data-shader="ghostfibers">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"></div>
+                <div>
+                  <div class="shader-title">🌀 Ghost Fibers</div>
+                  <div class="shader-subtitle">Fibras ópticas espectrais com torção helicoidal harmônica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 4. Plasma Wave -->
+            <div class="shader-option-card" data-shader="plasmawave">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #A855F7, #06B6D4);"></div>
+                <div>
+                  <div class="shader-title">🌊 Plasma Wave</div>
+                  <div class="shader-subtitle">Raymarching tridimensional com campos ondulatórios quânticos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 5. Strands -->
+            <div class="shader-option-card active" data-shader="strands">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #F97316, #7C3AED, #06B6D4);"></div>
+                <div>
+                  <div class="shader-title">🌟 Light Strands</div>
+                  <div class="shader-subtitle">Feixes espectrais multicoloridos com dispersão e reflexos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">ATIVO</span>
+            </div>
+
+            <!-- 6. Side Rays -->
+            <div class="shader-option-card" data-shader="siderays">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #f59e0b, #38bdf8);"></div>
+                <div>
+                  <div class="shader-title">⚡ Side Rays</div>
+                  <div class="shader-subtitle">Feixes de luz volumétrica com iluminação lateral cinematográfica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 7. Volumetric Beams -->
+            <div class="shader-option-card" data-shader="beams">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                <div>
+                  <div class="shader-title">🔦 Beams</div>
+                  <div class="shader-subtitle">Feixes volumétricos 3D com dispersão atmosférica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 8. Floating Lines -->
+            <div class="shader-option-card" data-shader="floatinglines">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #6366f1, #14b8a6);"></div>
+                <div>
+                  <div class="shader-title">〰️ Floating Lines</div>
+                  <div class="shader-subtitle">Camadas de linhas tridimensionais com flexão dinâmica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 9. Liquid Silk -->
+            <div class="shader-option-card" data-shader="silk">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #0ea5e9, #a855f7);"></div>
+                <div>
+                  <div class="shader-title">🧣 Liquid Silk</div>
+                  <div class="shader-subtitle">Tecido de seda ondulante com reflexos orgânicos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 10. Tactical Radar -->
+            <div class="shader-option-card" data-shader="radar">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #10b981, #06b6d4);"></div>
+                <div>
+                  <div class="shader-title">🎯 Tactical Radar</div>
+                  <div class="shader-subtitle">Varredura circular tática com anéis concêntricos e pulsos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 11. Ripple Grid -->
+            <div class="shader-option-card" data-shader="ripplegrid">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);"></div>
+                <div>
+                  <div class="shader-title">🌐 Ripple Grid</div>
+                  <div class="shader-subtitle">Grade geométrica reativa com ondas de choque interativas</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 12. Pixel Blast -->
+            <div class="shader-option-card" data-shader="pixelblast">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #f43f5e, #fb923c);"></div>
+                <div>
+                  <div class="shader-title">💥 Pixel Blast</div>
+                  <div class="shader-subtitle">Matriz de micro-pixels com explosões de ondas e reverberação</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 13. Magic Rings -->
+            <div class="shader-option-card" data-shader="magicrings">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #e11d48, #9333ea);"></div>
+                <div>
+                  <div class="shader-title">💫 Magic Rings</div>
+                  <div class="shader-subtitle">Anéis de energia concêntricos com atenuação harmônica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 14. Grid Scan -->
+            <div class="shader-option-card" data-shader="gridscan">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #059669, #10b981);"></div>
+                <div>
+                  <div class="shader-title">📡 Grid Scan</div>
+                  <div class="shader-subtitle">Varredura a laser futurista sobre malha de cibersegurança</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 15. Liquid Chrome -->
+            <div class="shader-option-card" data-shader="liquidchrome">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #94a3b8, #cbd5e1);"></div>
+                <div>
+                  <div class="shader-title">🪙 Liquid Chrome</div>
+                  <div class="shader-subtitle">Metal cromado líquido com reflexos orgânicos e brilho espelhado</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 16. Line Waves -->
+            <div class="shader-option-card" data-shader="linewaves">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #38bdf8, #818cf8);"></div>
+                <div>
+                  <div class="shader-title">🌊 Line Waves</div>
+                  <div class="shader-subtitle">Ondas lineares entrelaçadas com transição de gradiente suave</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 17. Ferrofluid -->
+            <div class="shader-option-card" data-shader="ferrofluid">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #1e293b, #0f172a);"></div>
+                <div>
+                  <div class="shader-title">🧲 Ferrofluid</div>
+                  <div class="shader-subtitle">Fluido magnético com espinhos dinâmicos e turbulência física</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 18. Dither Matrix -->
+            <div class="shader-option-card" data-shader="dither">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #10b981, #047857);"></div>
+                <div>
+                  <div class="shader-title">👾 Dither Matrix</div>
+                  <div class="shader-subtitle">Matriz de Bayer retrô com quantização cromática analógica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 19. Dark Veil -->
+            <div class="shader-option-card" data-shader="darkveil">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #0f172a, #334155, #64748b);"></div>
+                <div>
+                  <div class="shader-title">🌑 Dark Veil</div>
+                  <div class="shader-subtitle">Cetim negro abissal gerado por rede neural CPPN orgânica</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 20. Web Threads -->
+            <div class="shader-option-card" data-shader="webthreads">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #5227ff, #ff9ffc);"></div>
+                <div>
+                  <div class="shader-title">🕸️ Web Threads</div>
+                  <div class="shader-subtitle">Filamentos quânticos espelhados com emissão de brilho laser</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 21. Topography -->
+            <div class="shader-option-card" data-shader="topography">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+                <div>
+                  <div class="shader-title">🗺️ Topography</div>
+                  <div class="shader-subtitle">Curvas de nível cartográficas com morphing dinâmico e relevo</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 22. Balatro Flow -->
+            <div class="shader-option-card" data-shader="balatro">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #DE443B, #006BB4, #162325);"></div>
+                <div>
+                  <div class="shader-title">🌀 Balatro</div>
+                  <div class="shader-subtitle">Vórtice psicodélico em espiral matemática e contraste dinâmico</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 23. Faulty Terminal -->
+            <div class="shader-option-card" data-shader="faultyterminal">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #22c55e, #15803d);"></div>
+                <div>
+                  <div class="shader-title">📟 Faulty Terminal</div>
+                  <div class="shader-subtitle">Monitor CRT com aberração cromática, ruído e glitch de vídeo</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 24. Morph Slider -->
+            <div class="shader-option-card" data-shader="morphslider">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #f43f5e, #ec4899);"></div>
+                <div>
+                  <div class="shader-title">🎞️ Morph Slider</div>
+                  <div class="shader-subtitle">Transição cinemática com distorção de textura e desfoque temporal</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 25. Antigravity -->
+            <div class="shader-option-card" data-shader="antigravity">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #7c3aed, #a855f7);"></div>
+                <div>
+                  <div class="shader-title">🛸 Antigravity</div>
+                  <div class="shader-subtitle">Partículas 3D em levitação magnética e atração gravitacional</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 26. Northern Aurora -->
+            <div class="shader-option-card" data-shader="aurora">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #06b6d4, #10b981);"></div>
+                <div>
+                  <div class="shader-title">🌠 Northern Aurora</div>
+                  <div class="shader-subtitle">Cortinas polares de luz com ruído simplex ondulatório</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 27. Letter Glitch -->
+            <div class="shader-option-card" data-shader="letterglitch">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #10b981, #064e3b);"></div>
+                <div>
+                  <div class="shader-title">🔤 Letter Glitch</div>
+                  <div class="shader-subtitle">Chuva de caracteres ASCII matriciais com decodificação cibernética</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 28. Electric Plasma -->
+            <div class="shader-option-card" data-shader="plasma">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #d946ef, #8b5cf6);"></div>
+                <div>
+                  <div class="shader-title">⚡ Electric Plasma</div>
+                  <div class="shader-subtitle">Arco de plasma de alta voltagem com ondulações eletromagnéticas</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 29. Liquid Ether -->
+            <div class="shader-option-card" data-shader="liquidether">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #0284c7, #6366f1);"></div>
+                <div>
+                  <div class="shader-title">💧 Liquid Ether</div>
+                  <div class="shader-subtitle">Simulação Navier-Stokes de fluido etéreo com vorticidade real</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 30. Energy Orb -->
+            <div class="shader-option-card" data-shader="orb">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #6366f1, #d946ef);"></div>
+                <div>
+                  <div class="shader-title">🔮 Energy Orb</div>
+                  <div class="shader-subtitle">Orbe de energia cósmica tridimensional com rotação gravitacional</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 31. Prismatic Beam -->
+            <div class="shader-option-card" data-shader="prism">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #f59e0b, #ec4899);"></div>
+                <div>
+                  <div class="shader-title">💎 Prismatic Beam</div>
+                  <div class="shader-subtitle">Refração de prisma com dispersão cromática e reflexos cristalinos</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 32. Prismatic Burst -->
+            <div class="shader-option-card" data-shader="prismaticburst">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #ef4444, #8b5cf6);"></div>
+                <div>
+                  <div class="shader-title">🎆 Prismatic Burst</div>
+                  <div class="shader-subtitle">Explosão de raios policromáticos com rotação tridimensional</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 33. Thunder Lightning -->
+            <div class="shader-option-card" data-shader="lightning">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #eab308, #3b82f6);"></div>
+                <div>
+                  <div class="shader-title">⚡ Lightning</div>
+                  <div class="shader-subtitle">Arco elétrico fractal FBM com descargas de plasma ionizado</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+
+            <!-- 34. Evil Eye -->
+            <div class="shader-option-card" data-shader="evileye">
+              <div class="shader-card-left">
+                <div class="shader-gradient-badge" style="background: linear-gradient(135deg, #dc2626, #7f1d1d);"></div>
+                <div>
+                  <div class="shader-title">👁️ Evil Eye</div>
+                  <div class="shader-subtitle">Olho flamejante com pupila interativa e ruído procedural reativo</div>
+                </div>
+              </div>
+              <span class="shader-status-tag">SELECIONAR</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE HISTÓRICO & CHAVES DO SISTEMA -->
+  <div class="modal-overlay" id="history-modal-overlay">
+    <div class="modal-sheet-glass">
+      <div class="modal-sheet-header">
+        <h3 class="modal-title">Histórico de Conexões &amp; Chaves</h3>
+        <button class="modal-close-btn" id="btn-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-scrollable-content" id="modal-content-list">
+        <!-- Renderizado dinamicamente -->
+      </div>
+
+      <div class="modal-footer-row">
+        <button class="btn-glass-action auth" id="btn-clear-history">Limpar Histórico</button>
+        <button class="btn-glass-action deny" id="btn-revoke-all-keys">Revogar Todas as Chaves</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       TERMINAL FULLSCREEN ULTRA LIGHT GLASS
+       Visualização Expandida • Translucidez Pura • Blur de Fundo
+       ========================================================= -->
+  <div class="terminal-fullscreen-overlay" id="terminal-fullscreen-overlay">
+    <div class="terminal-fullscreen-glass-container">
+
+      <!-- Header Ultra Light Glass -->
+      <header class="term-fs-header">
+        <div class="term-fs-header-left">
+          <div class="terminal-lights">
+            <span class="term-light red"></span>
+            <span class="term-light yellow"></span>
+            <span class="term-light green"></span>
+          </div>
+          <div class="term-fs-title-col">
+            <div class="term-fs-title-row">
+              <span class="term-fs-title">ADB SHELL LIVE INSPECTOR</span>
+              <span class="term-fs-mode-tag">ULTRA LIGHT GLASS</span>
+            </div>
+            <div class="term-fs-subtitle">
+              <span id="term-fs-live-datetime">📅 HOJE • 🕒 --:--:--</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-fs-header-right">
+          <div class="terminal-live-badge" id="term-fs-live-badge">
+            <span class="live-dot-pulse"></span>
+            <span>AO VIVO</span>
+          </div>
+          <span class="term-fs-counter-badge" id="term-fs-counter">0 COMANDOS</span>
+          <button class="term-btn-icon" id="btn-term-fs-pause">PAUSAR</button>
+          <button class="term-btn-icon" id="btn-term-fs-clear">LIMPAR</button>
+          <button class="term-fs-close-btn" id="btn-term-fs-close" title="Reduzir para Card">&times;</button>
+        </div>
+      </header>
+
+      <!-- Barra de Ferramentas / Filtro Ultra Light Glass -->
+      <div class="term-fs-toolbar">
+        <div class="term-fs-filter-chips">
+          <button class="term-filter-chip active" data-filter="all">TODOS</button>
+          <button class="term-filter-chip" data-filter="shell">SHELL</button>
+          <button class="term-filter-chip" data-filter="priv">PRIVILEGIADO</button>
+        </div>
+        <div class="term-fs-search-box">
+          <span class="term-search-icon">🔍</span>
+          <input type="text" id="term-fs-search-input" placeholder="Filtrar por comando, data, hora ou IP..." />
+          <button class="term-search-clear-btn" id="btn-term-fs-search-clear" style="display: none;">&times;</button>
+        </div>
+      </div>
+
+      <!-- Viewport de Comandos Fullscreen Ultra Light Glass -->
+      <div class="terminal-fullscreen-viewport" id="terminal-fullscreen-viewport">
+        <div class="terminal-empty-msg" id="terminal-fs-empty-msg">
+          &gt; Modo Fullscreen Ultra Light Glass ativado.<br>
+          &gt; Escutando comandos shell recebidos pelo adbd em tempo real...<br>
+          &gt; Cores sincronizadas com o tema principal e carimbo intuitivo de data/hora.
+        </div>
+      </div>
+
+      <!-- Rodapé com Info do Host & Cópia Rápida -->
+      <footer class="term-fs-footer">
+        <div class="term-fs-footer-info">
+          <span>HOST: <b id="term-fs-host-ip">192.168.15.23</b></span>
+          <span class="term-fs-dot">&bull;</span>
+          <span>PORTA: <b>5555</b></span>
+          <span class="term-fs-dot">&bull;</span>
+          <span>ESTADO: <b id="term-fs-audit-state" style="color: var(--accent-primary);">AUDITANDO SHELL</b></span>
+        </div>
+        <button class="term-btn-icon" id="btn-term-fs-copy-all">COPIAR TUDO</button>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Scripts Independentes -->
+  <script type="module" src="js/shaders.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

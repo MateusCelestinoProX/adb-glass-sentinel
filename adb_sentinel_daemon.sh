@@ -52,20 +52,10 @@ while true; do
     fi
   fi
 
-  # Garante persistência dos módulos Good Lock One UI (SoundAssistant & OHO+)
-  if [ $((COUNT % 20)) -eq 0 ]; then
-    if ! ps -A | grep -q "com.samsung.android.soundassistant"; then
-      pm enable com.samsung.android.soundassistant 2>/dev/null
-      am start --user 0 -n com.samsung.android.soundassistant/.activities.MainActivity 2>/dev/null
-      sleep 0.5
-      input keyevent 3 2>/dev/null
-    fi
-    if ! ps -A | grep -q "com.samsung.android.sidegesturepad"; then
-      pm enable com.samsung.android.sidegesturepad 2>/dev/null
-      am start --user 0 -n com.samsung.android.sidegesturepad/.MainActivity 2>/dev/null
-      sleep 0.5
-      input keyevent 3 2>/dev/null
-    fi
+  # Garante persistência dos módulos Good Lock One UI (SoundAssistant & OHO+) sem roubar foco da UI
+  if [ $((COUNT % 60)) -eq 0 ]; then
+    pm enable com.samsung.android.soundassistant 2>/dev/null
+    pm enable com.samsung.android.sidegesturepad 2>/dev/null
   fi
 
   # Verifica se o app enviou comando de controle do Sentinel

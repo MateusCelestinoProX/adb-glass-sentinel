@@ -108,6 +108,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun configureWebView() {
+        WebView.setWebContentsDebuggingEnabled(true)
         val settings = webView.settings
         settings.javaScriptEnabled = true
         settings.domStorageEnabled = true
@@ -168,10 +169,12 @@ class MainActivity : AppCompatActivity() {
     fun injectSafeInsets() {
         val js = """
             (function() {
-                document.documentElement.style.setProperty('--safe-top', '${lastSafeTopDp}px');
-                document.documentElement.style.setProperty('--safe-bottom', '${lastSafeBottomDp}px');
-                if (window.dispatchEvent) {
-                    window.dispatchEvent(new CustomEvent('safe_insets_updated', { detail: { top: ${lastSafeTopDp}, bottom: ${lastSafeBottomDp} } }));
+                if (document && document.documentElement && document.documentElement.style) {
+                    document.documentElement.style.setProperty('--safe-top', '${lastSafeTopDp}px');
+                    document.documentElement.style.setProperty('--safe-bottom', '${lastSafeBottomDp}px');
+                    if (window.dispatchEvent) {
+                        window.dispatchEvent(new CustomEvent('safe_insets_updated', { detail: { top: ${lastSafeTopDp}, bottom: ${lastSafeBottomDp} } }));
+                    }
                 }
             })();
         """.trimIndent()
